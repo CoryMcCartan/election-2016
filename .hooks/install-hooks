@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-chmod +x ./hooks/*
+chmod +x ./*
 cp .hooks/* .git/hooks/
 

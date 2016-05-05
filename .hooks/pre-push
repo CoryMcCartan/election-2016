@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
 
-git subtree push --prefix client origin gh-pages
+branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+
+if [ "master" == "$branch" ]; then
+    git checkout gh-pages --quiet
+    git rm -r * --quiet
+    git checkout master -- client/*
+    git mv client/* .
+    rmdir client
+    git add -A
+    git commit -m “updated $(date +”%d.%m.%Y %H:%M:%S”)
+    git push --quiet
+    echo Website deployed.
+    git checkout master --quiet
+fi
+
 
