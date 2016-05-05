@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-chmod +x ./*
-cp .hooks/* .git/hooks/
-
