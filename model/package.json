@@ -1,0 +1,10 @@
+{
+  "name": "election-2016",
+  "version": "1.0.0",
+  "description": "2016 Presidential Election Predictions",
+  "main": "main.js",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^1.5.1"
+  }
+}
