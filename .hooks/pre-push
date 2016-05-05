@@ -9,7 +9,7 @@ if [ "master" == "$branch" ]; then
     git mv client/* .
     rmdir client
     git add -A
-    git commit -m “updated $(date +”%d.%m.%Y %H:%M:%S”)
+    git commit -m "updated"
     git push --quiet
     echo Website deployed.
     git checkout master --quiet
