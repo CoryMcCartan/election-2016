@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
 git push
-git subtree push --prefix dist origin gh-pages
+git checkout gh-pages --quiet
+git pull
+git checkout master --quiet
+git subtree push --prefix client origin gh-pages
 
