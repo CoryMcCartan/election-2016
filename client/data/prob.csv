@@ -1,0 +1,52 @@
+state,probability
+Washington,0.9
+Oregon,0.8
+California,0.95
+Idaho,0.2
+Montana,0.1
+Nevada,0.55
+Arizona,0.4
+New Mexico,0.6
+Colorado,0.7
+Wyoming,0.05
+Utah,0.1
+North Dakota,0.15
+South Dakota,0.1
+Alaska,0.2
+Hawaii,0.8
+Nebraska,0.1
+Texas,0.13
+Kansas,0.1
+Oklahoma,0.05
+Minnesota,0.7
+Iowa,0.6
+Missouri,0.2
+Arkansas,0.11
+Louisiana,0.12
+Alabama,0.1
+Mississippi,0.1
+Georgia,0.1
+Florida,0.6
+Wisconsin,0.7
+Michigan,0.8
+Illinois,0.8
+Indiana,0.4
+Ohio,0.6
+Kentucky,0.3
+Tennessee,0.3
+West Virginia,0.2
+Virginia,0.6
+South Carolina,0.3
+North Carolina,0.6
+Maryland,0.7
+District of Columbia,0.99
+Delaware,0.85
+Pennsylvania,0.75
+New York,0.85
+New Jersey,0.75
+Connecticut,0.75
+Rhode Island,0.85
+Massachusetts,0.85
+Vermont,0.75
+New Hampshire,0.65
+Maine,0.75
