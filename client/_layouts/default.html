@@ -6,7 +6,7 @@
 		<meta name="description" content="{{ site.description }}">
 
 		{% if jekyll.environment == "production" %}
-   		<base href="{{ site.url }}">
+        <base href="{{ site.url }}{{ site.baseurl }}/">
    		<!-- HTTPS redirect -->
    		<script type="text/javascript">
    			if (location.protocol !== "https:") location.protocol = "https:";
