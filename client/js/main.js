@@ -54,10 +54,10 @@ function makeMap(showProbabilities = true) {
     let path = d3.geo.path().projection(projection);
 
     let colorScale = d3.scale.linear()
-        //.domain([0, 0.5, 1])
-        //.range([RED, YELLOW, BLUE]);
-        .domain([0, 0.1, 0.5, 0.9, 1])
-        .range([RED, RED, YELLOW, BLUE, BLUE]);
+        .domain([0, 0.5, 1])
+        .range([RED, YELLOW, BLUE]);
+        //.domain([0, 0.1, 0.5, 0.9, 1])
+        //.range([RED, RED, YELLOW, BLUE, BLUE]);
 
     let color = (data, state) => {
         let info = data.find(s => s.state === state.id);
@@ -75,8 +75,10 @@ function makeMap(showProbabilities = true) {
 
     var states = map.append("g");
 
-    let drawMap = function(error, geo, data) {
+    let data;
+    let drawMap = function(error, geo, _data) {
         if (error) throw error;
+        data = _data;
 
         states.selectAll("path")
             .data(topojson.object(geo, geo.objects.states).geometries)
@@ -119,4 +121,11 @@ function makeMap(showProbabilities = true) {
         map.selectAll(".borders")
             .attr("d", path);
     });
+
+    $("#toggleProbs").onclick = function() {
+        showProbabilities = !showProbabilities;
+
+        states.selectAll("path")
+            .attr("fill", color.bind(null, data));
+    };
 }

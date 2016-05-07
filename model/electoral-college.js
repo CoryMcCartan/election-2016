@@ -67,7 +67,7 @@ let sumElectors = function(vote) {
     for (let state in vote) {
         if (!(state in electors)) debugger;
 
-        if (vote[state] >= 0.5) 
+        if (vote[state][DEM] > vote[state][GOP]) 
             sums[DEM] += electors[state];
         else
             sums[GOP] += electors[state];
