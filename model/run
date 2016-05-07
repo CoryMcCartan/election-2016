@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+node main.js
+rm -r ../client/data/*
+cp -r output/* ../client/data/

@@ -5,6 +5,10 @@
   "main": "main.js",
   "license": "ISC",
   "dependencies": {
+    "d3": "^3.5.17",
+    "fast-csv": "^2.0.0",
+    "gaussian": "^1.1.0",
+    "math": "0.0.3",
     "node-fetch": "^1.5.1"
   }
 }

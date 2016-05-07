@@ -6,8 +6,29 @@
 
 "use strict";
 
+const DEM = 0, GOP = 1;
+const DEM_CANDIDATE = "Hillary Clinton";
+const GOP_CANDIDATE = "Donald Trump";
+
 function main() {
     makeMap(true);
+
+    d3.csv("data/overall.csv", d => ({
+        candidate: d.party === "DEM" ? DEM_CANDIDATE : GOP_CANDIDATE,
+        popularVote: +d.popular,
+        electors: +d.electors,
+        probability: +d.probability,
+    }), (error, candidates) => {
+        showOverall(candidates);
+    })
+}
+
+function showOverall(candidates) {
+    let winner = candidates[DEM].electors > candidates[GOP].electors ? DEM : GOP;
+    $("#demEV").innerHTML = candidates[DEM].electors.toFixed(0);
+    $("#gopEV").innerHTML = candidates[GOP].electors.toFixed(0);
+    $("#winner").innerHTML = candidates[winner].candidate;
+    $("#prob").innerHTML = (candidates[winner].probability * 100).toFixed(0);
 }
 
 function makeMap(showProbabilities = true) {
@@ -33,8 +54,10 @@ function makeMap(showProbabilities = true) {
     let path = d3.geo.path().projection(projection);
 
     let colorScale = d3.scale.linear()
-        .domain([0, 0.5, 1])
-        .range([RED, YELLOW, BLUE]);
+        //.domain([0, 0.5, 1])
+        //.range([RED, YELLOW, BLUE]);
+        .domain([0, 0.1, 0.5, 0.9, 1])
+        .range([RED, RED, YELLOW, BLUE, BLUE]);
 
     let color = (data, state) => {
         let info = data.find(s => s.state === state.id);
@@ -67,12 +90,14 @@ function makeMap(showProbabilities = true) {
             .attr("fill", "none")
             .attr("stroke", "#fff")
             .attr("d", path);
+
+        el.style.opacity = 1;
     };
 
     queue()
         .defer(d3.json, "assets/usa_detailed.json")
         .defer(d3.csv, "data/prob.csv", d => ({ 
-            state: d.state, 
+            state: stateFromAbbr[d.state], 
             probability: +d.probability 
         }))
         .await(drawMap);
