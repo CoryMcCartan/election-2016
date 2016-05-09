@@ -5,7 +5,8 @@ JEKYLL_ENV=production
 pushd client
 jekyll build
 popd
-dir=mktemp -d
+
+dir=`mktemp -d`
 mv client/_site/* $dir/
 git checkout gh-pages --quiet
 git rm -rf *
