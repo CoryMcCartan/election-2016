@@ -10,7 +10,8 @@ dir=`mktemp -d`
 mv client/_site/* $dir/
 git checkout gh-pages --quiet
 git rm -rf *
+rm -rf ./*
 mv $dir/* ./
-git add * && git commit -m 'update'
+git add * && git commit -m 'update `date -f "%D %T"`'
 git push origin -f gh-pages
 git checkout master --quiet
