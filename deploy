@@ -4,5 +4,9 @@ git push
 git checkout gh-pages --quiet
 git pull
 git checkout master --quiet
-git subtree push --prefix client origin gh-pages
+JEKYLL_ENV=production
+cd client
+jekyll build
+cd ..
+git subtree push --prefix client/_site origin gh-pages
 

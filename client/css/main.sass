@@ -5,6 +5,9 @@ $font-stack: "Raleway", "Helvetica Nueue", sans-serif
 
 $grey: #aaa
 
+$desktop: "(min-width: 600px)"
+$mobile: "(max-width: 600px)"
+
 body
     margin: 0
     padding: 0
@@ -38,7 +41,7 @@ img.flag-icon
 
 #map
     width: calc(100% - 2em)
-    max-width: 900px
+    max-width: 880px
     margin: 0 auto 1em auto
     transition: opacity 500ms
     opacity: 0
@@ -64,3 +67,11 @@ footer
 .spacer
     display: inline-block
     width: 2em
+
+
+@media #{$mobile} 
+    nav > h1
+        font-size: 1em
+
+    #map
+        width: 100%

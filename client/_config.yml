@@ -5,6 +5,14 @@ description: >
 url: "https://corymccartan.github.io/" 
 baseurl: "/election-2016"
 
-# Build settings
 sass:
     style: compressed
+
+gems:
+    - jekyll-assets
+
+assets:
+    compress:
+        css: default
+        js: default
+

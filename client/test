@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+JEKYLL_ENV=development
+jekyll serve
+
