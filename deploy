@@ -12,6 +12,6 @@ git checkout gh-pages --quiet
 git rm -rf *
 rm -rf ./*
 mv $dir/* ./
-git add * && git commit -m "update `date -f '%D %T'`"
+git add * && git commit -m "update `date +'%D %T'`"
 git push origin -f gh-pages
 git checkout master --quiet
