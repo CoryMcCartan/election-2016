@@ -1,0 +1,74 @@
+$font-stack: "Raleway", "Helvetica Nueue", sans-serif
+
+$grey: #aaa
+
+$desktop: "(min-width: 600px)"
+$mobile: "(max-width: 600px)"
+
+body
+    margin: 0
+    padding: 0
+    font-family: $font-stack
+
+nav
+    padding: 0.75em
+    border-bottom: 1px solid $grey
+    margin-bottom: 1em
+    width: 100vw
+    top: 0
+    position: fixed
+    background: white
+
+nav > h1
+    display: inline-block
+    font-size: 1.2em
+    margin: 0
+
+img.flag-icon
+    height: 1.2em
+    position: relative
+    top: 0.2em
+    margin-right: 0.5em
+
+.page-content
+    width: 100vw
+    max-width: 1024px
+    min-height: 1em
+    margin: 50px auto
+
+#map
+    width: calc(100% - 2em)
+    max-width: 880px
+    margin: 0 auto 1em auto
+    transition: opacity 500ms
+    opacity: 0
+
+#summary
+    text-align: center
+#summary > h1
+    display: inline-block
+    margin: 0 1em 0.5em
+
+footer
+    margin-top: 2em
+    text-align: center
+    font-size: 0.8em
+    color: #aaa
+
+
+.dem
+    color:  #47d
+
+.gop
+    color: #d54
+.spacer
+    display: inline-block
+    width: 2em
+
+
+@media #{$mobile} 
+    nav > h1
+        font-size: 1em
+
+    #map
+        width: 100%
