@@ -7,7 +7,21 @@ baseurl: "/election-2016"
 
 sass:
     style: compressed
-exclude: test, Gemfile
+exclude: 
+    - test
+    - Gemfile
 
 gems:
     - jekyll-assets
+
+assets:
+    compress:
+        css: sass
+        js: false
+
+    prefix: "/build"
+
+    sources:
+        - js/
+        - css/
+
