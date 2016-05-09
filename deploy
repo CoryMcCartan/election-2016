@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 git push
-git checkout gh-pages --quiet
-git pull
-git checkout master --quiet
 JEKYLL_ENV=production
 cd client
 jekyll build
 cd ..
-git subtree push --prefix client/_site origin gh-pages
+git subtree split --prefix client/_site -b gh-pages
+git push origin -f gh-pages:gh-pages
+git branch -D gh-pages
 

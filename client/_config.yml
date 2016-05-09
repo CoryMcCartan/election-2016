@@ -10,9 +10,3 @@ sass:
 
 gems:
     - jekyll-assets
-
-assets:
-    compress:
-        css: default
-        js: default
-
