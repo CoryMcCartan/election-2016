@@ -1,6 +1,7 @@
 $font-stack: "Raleway", "Helvetica Nueue", sans-serif
 
 $grey: #aaa
+$darkgrey: #555
 
 $desktop: "(min-width: 600px)"
 $mobile: "(max-width: 600px)"
@@ -38,16 +39,62 @@ img.flag-icon
 
 #map
     width: calc(100% - 2em)
-    max-width: 880px
+    max-width: 800px
     margin: 0 auto 1em auto
     transition: opacity 500ms
     opacity: 0
 
+.tooltip
+    transition: opacity 150ms
+    min-width: 140px
+    background-color: rgba(255, 255, 255, 0.9)
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3)
+    padding: 0.6em
+    position: absolute
+    top: 300px
+    left: 120px
+    font-size: 0.7em
+    color: $darkgrey
+    border-radius: 1px
+    opacity: 0
+    pointer-events: none
+    transition-delay: 100ms
+
+    #t-name
+        font-size: 1.6em
+        display: inline-block
+        margin-bottom: 0.3em
+        color: black
+
+    table
+        width: 100%
+        font-size: 1.15em
+        color: black
+
 #summary
     text-align: center
-#summary > h1
-    display: inline-block
-    margin: 0 1em 0.5em
+
+    h1
+        display: inline-block
+        margin: 0 1em 0.5em
+
+.map-controls
+    margin: 1em
+    text-align: center
+
+button
+    outline: none
+    border: 1px solid $grey
+    color: #222
+    border-radius: 4px
+    padding: 1em
+    background-color: white
+    transition: all 100ms
+
+    &:hover
+        background-color: #fafafa
+        border-color: $darkgrey
+        color: black
 
 footer
     margin-top: 2em
@@ -58,9 +105,10 @@ footer
 
 .dem
     color:  #47d
-
 .gop
     color: #d54
+.state
+    transition: opacity 150ms
 .spacer
     display: inline-block
     width: 2em
