@@ -25,6 +25,20 @@
 
         <div class="page-content">
             <div id="map"></div>
+<div class="tooltip">
+    <span id="t-name"></span><br />
+    Chance of winning:
+    <table>
+        <tr>
+            <td>Hillary Clinton</td>
+            <td id="t-dem"></td>
+        </tr>
+        <tr>
+            <td>Donald Trump</td>
+            <td id="t-gop"></td>
+        </tr>
+    </table>
+</div>
 
 <div id="summary">
     <h1 class="dem" id="demEV"></h1>
@@ -40,8 +54,9 @@
     chance of winning the election.
 </div>
 
-<br />
-<button id="toggleProbs">Toggle Probabilities</button>
+<div class="map-controls">
+    <button id="toggleProbs">Toggle Probabilities</button>
+</div>
 
 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>

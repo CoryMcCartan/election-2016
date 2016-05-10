@@ -246,14 +246,19 @@ function makeMap(showProbabilities = true) {
 
     let path = d3.geo.path().projection(projection);
 
+    let tooltip = d3.select(".tooltip")
+    let tName = $("#t-name");
+    let tDEM = $("#t-dem");
+    let tGOP = $("#t-gop");
+
     let colorScale = d3.scale.linear()
         .domain([0, 0.5, 1])
         .range([RED, YELLOW, BLUE]);
         //.domain([0, 0.1, 0.5, 0.9, 1])
         //.range([RED, RED, YELLOW, BLUE, BLUE]);
 
-    let color = (data, state) => {
-        let info = data.find(s => s.state === state.id);
+    let color = (data, state, index) => {
+        let info = data[index];
         if (!info) return GREY;
 
         if (showProbabilities) {
@@ -271,13 +276,50 @@ function makeMap(showProbabilities = true) {
     let data;
     let drawMap = function(error, geo, _data) {
         if (error) throw error;
+
         data = _data;
+        sortByKey(data, "state");
+
+        let geoObject = topojson.object(geo, geo.objects.states).geometries;
+        sortByKey(geoObject, "id");
 
         states.selectAll("path")
-            .data(topojson.object(geo, geo.objects.states).geometries)
+            .data(geoObject)
             .enter().append("path")
                 .attr("fill", color.bind(null, data))
-                .attr("d", path);
+                .attr("d", path)
+                .attr("class", "state")
+            .on("mouseover", function(state, index) {
+                tooltip
+                    .style("opacity", 1.0)
+                    .style("left", d3.event.pageX - 70 + "px")
+                    .style("top", d3.event.pageY + 30 + "px");
+
+                tName.innerHTML = state.id;
+
+                let probability = data[index].probability;
+                tDEM.innerHTML = (probability * 100).toFixed(0) + "%";
+                tGOP.innerHTML = (100 - probability * 100).toFixed(0) + "%";
+
+                if (probability > 0.5) {
+                    tDEM.parentElement.style.fontWeight = "bold";
+                    tGOP.parentElement.style.fontWeight = "normal";
+                } else {
+                    tGOP.parentElement.style.fontWeight = "bold";
+                    tDEM.parentElement.style.fontWeight = "normal";
+                }
+
+                this.style.opacity = 0.75;
+            })
+            .on("mousemove", function() {
+                tooltip
+                    .style("left", d3.event.pageX - 70 + "px")
+                    .style("top", d3.event.pageY + 30 + "px");
+            })
+            .on("mouseout", function() {
+                tooltip.style("opacity", 0.0)
+                this.style.opacity = 1.0;
+            });
 
         map.append("path")
             .datum(topojson.mesh(geo, geo.objects.states, (a, b) => a !== b))
@@ -321,4 +363,13 @@ function makeMap(showProbabilities = true) {
         states.selectAll("path")
             .attr("fill", color.bind(null, data));
     };
+}
+
+function sortByKey(arr, key) {
+    return arr.sort((a, b) => {
+        let x = a[key];
+        let y = b[key];
+
+        return (x < y) ? -1 : (x > y) ? 1 : 0;
+    });
 }
