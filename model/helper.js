@@ -1,5 +1,5 @@
-module.exports = function() {
-    this.abbrFromState = {
+module.exports = function(self) {
+    self.abbrFromState = {
         'Alabama': 'AL',
         'Alaska': 'AK',
         'American Samoa': 'AS',
@@ -60,7 +60,7 @@ module.exports = function() {
         'Wisconsin': 'WI',
         'Wyoming': 'WY'
     };
-    this.stateFromAbbr = {
+    self.stateFromAbbr = {
         "AL": "Alabama",
         "AK": "Alaska",
         "AS": "American Samoa",
@@ -121,4 +121,57 @@ module.exports = function() {
         "WI": "Wisconsin",
         "WY": "Wyoming"
     };
+    self.abbrs = [
+        'AL',
+        'AK',
+        'AZ',
+        'AR',
+        'CA',
+        'CO',
+        'CT',
+        'DE',
+        'DC',
+        'FL',
+        'GA',
+        'HI',
+        'ID',
+        'IL',
+        'IN',
+        'IA',
+        'KS',
+        'KY',
+        'LA',
+        'ME',
+        'MD',
+        'MA',
+        'MI',
+        'MN',
+        'MS',
+        'MO',
+        'MT',
+        'NE',
+        'NV',
+        'NH',
+        'NJ',
+        'NM',
+        'NY',
+        'NC',
+        'ND',
+        'OH',
+        'OK',
+        'OR',
+        'PA',
+        'RI',
+        'SC',
+        'SD',
+        'TN',
+        'TX',
+        'UT',
+        'VT',
+        'VA',
+        'WA',
+        'WV',
+        'WI',
+        'WY'
+    ];
 };
