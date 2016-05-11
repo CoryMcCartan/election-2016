@@ -252,10 +252,10 @@ function makeMap(showProbabilities = true) {
     let tGOP = $("#t-gop");
 
     let colorScale = d3.scale.linear()
-        .domain([0, 0.5, 1])
-        .range([RED, YELLOW, BLUE]);
-        //.domain([0, 0.1, 0.5, 0.9, 1])
-        //.range([RED, RED, YELLOW, BLUE, BLUE]);
+        //.domain([0, 0.5, 1])
+        //.range([RED, YELLOW, BLUE]);
+        .domain([0, 0.1, 0.5, 0.9, 1])
+        .range([RED, RED, YELLOW, BLUE, BLUE]);
 
     let color = (data, state, index) => {
         let info = data[index];
@@ -295,7 +295,8 @@ function makeMap(showProbabilities = true) {
                     .style("left", d3.event.pageX - 70 + "px")
                     .style("top", d3.event.pageY + 30 + "px");
 
-                tName.innerHTML = state.id;
+                let stateElectors = electors[ abbrFromState[state.id] ];
+                tName.innerHTML = `${state.id} (${stateElectors})`;
 
                 let probability = data[index].probability;
                 tDEM.innerHTML = (probability * 100).toFixed(0) + "%";
@@ -373,3 +374,57 @@ function sortByKey(arr, key) {
         return (x < y) ? -1 : (x > y) ? 1 : 0;
     });
 }
+
+const electors = {
+    AL: 9,
+    AK: 3,
+    AZ: 11,
+    AR: 6,
+    CA: 55,
+    CO: 9,
+    CT: 7,
+    DC: 3,
+    DE: 3,
+    FL: 29,
+    GA: 16,
+    HI: 4,
+    ID: 4,
+    IL: 20,
+    IN: 11,
+    IA: 6,
+    KS: 6,
+    KY: 8,
+    LA: 8,
+    ME: 4,
+    MD: 10,
+    MA: 11,
+    MI: 16,
+    MN: 10,
+    MS: 6,
+    MO: 10,
+    MT: 3,
+    NE: 5,
+    NV: 6,
+    NH: 4,
+    NJ: 14,
+    NM: 5,
+    NY: 29,
+    NC: 15,
+    ND: 3,
+    OH: 18,
+    OK: 7,
+    OR: 7,
+    PA: 20,
+    RI: 4,
+    SC: 9,
+    SD: 3,
+    TN: 11,
+    TX: 38,
+    UT: 6,
+    VT: 3,
+    VA: 13,
+    WA: 12,
+    WV: 5,
+    WI: 10,
+    WY: 3
+};
