@@ -3,41 +3,49 @@ title: 2016 Presidential Election Predictions
 layout: default
 ---
 
-<div id="map" class="graphic"></div>
-<div class="tooltip">
-    <span id="t-name"></span><br />
-    Chance of winning:
-    <table>
-        <tr>
-            <td>Hillary Clinton</td>
-            <td id="t-dem"></td>
-        </tr>
-        <tr>
-            <td>Donald Trump</td>
-            <td id="t-gop"></td>
-        </tr>
-    </table>
-</div>
+<section>
+    <div id="map" class="graphic"></div>
+    <div class="tooltip">
+        <span id="t-name"></span><br />
+        Chance of winning:
+        <table>
+            <tr>
+                <td>Hillary Clinton</td>
+                <td id="t-dem"></td>
+            </tr>
+            <tr>
+                <td>Donald Trump</td>
+                <td id="t-gop"></td>
+            </tr>
+        </table>
+    </div>
 
-<div id="summary">
-    <h1 class="dem" id="demEV"></h1>
-    <h1 class="gop" id="gopEV"></h1>
-    <br /> <b>
-    Hillary Clinton
-    <span class="spacer"></span>
-    Donald Trump
-    </b><br />
-    <br />
-    <span id="winner"></span> 
-    has a <span id="prob"></span>%
-    chance of winning the election.
-</div>
+    <div id="summary">
+        <h1 class="dem" id="demEV"></h1>
+        <h1 class="gop" id="gopEV"></h1>
+        <br /> <b>
+        Hillary Clinton
+        <span class="spacer"></span>
+        Donald Trump
+        </b><br />
+        <br />
+        <span id="prediction"></span> 
+    </div>
 
-<div class="map-controls">
-    <button id="toggleProbs">Toggle Probabilities</button>
-</div><br />
+    <div class="graphic-controls">
+        <button id="toggleProbs">Toggle Probabilities</button>
+    </div><br />
+</section>
 
-<div id="histogram" class="graphic"></div>
+<section>
+    <summary>
+        Below is the cumulative results of all of the simulated elections.
+        The number of Democratic electors is shown, with the most likely outcome is
+        shaded in yellow. 
+    </summary>
+
+    <div id="histogram" class="graphic"></div>
+</section>
 
 
 {% javascript lib/lib %}

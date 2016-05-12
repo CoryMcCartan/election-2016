@@ -35,8 +35,13 @@ function showOverall(candidates) {
     let winner = candidates[DEM].electors > candidates[GOP].electors ? DEM : GOP;
     $("#demEV").innerHTML = candidates[DEM].electors.toFixed(0);
     $("#gopEV").innerHTML = candidates[GOP].electors.toFixed(0);
-    $("#winner").innerHTML = candidates[winner].candidate;
-    $("#prob").innerHTML = (candidates[winner].probability * 100).toFixed(0);
+    let name = candidates[winner].candidate;
+    let prob = (candidates[winner].probability * 100).toFixed(0)
+    // figure out a/an
+    let article = "a";
+    if (prob[0] === "8" || prob === "11" || prob === "18")
+        article += "n"; 
+    $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
 }
 
 function makeMap(showProbabilities = true) {
