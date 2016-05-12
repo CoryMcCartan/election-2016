@@ -361,7 +361,7 @@ function makeMap(showProbabilities = true) {
 }
 
 function makeHistogram() {
-    const chartRatio = 0.7;
+    const chartRatio = 0.5;
     const margin = {L: 35, R: 5, B: 35};
 
     let el = $("#histogram");
