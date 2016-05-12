@@ -329,7 +329,7 @@ function makeMap(showProbabilities = true) {
         }))
         .await(drawMap);
 
-    d3.select(window).on("resize", () => {
+    d3.select(window).on("resize.map", () => {
         let width = el.getBoundingClientRect().width;
         let height = width * mapRatio;
 
@@ -365,7 +365,7 @@ function makeHistogram() {
 
     let x = d3.scale.ordinal()
         .domain(d3.range(538))
-        .rangeBands([margin.L, width - margin.R], -0.3);
+        .rangeBands([margin.L, width - margin.R], -0.25);
     let y = d3.scale.linear()
         .range([height, margin.B]);
 
@@ -401,6 +401,7 @@ function makeHistogram() {
             .attr("y", 25)
             .attr("x", width - 10)
             .attr("dy", ".71em")
+            .style("font-weight", "bold")
             .style("text-anchor", "end")
             .text("Electors");
 
@@ -414,6 +415,7 @@ function makeHistogram() {
             .attr("y", 6)
             .attr("x", -35)
             .attr("dy", ".71em")
+            .style("font-weight", "bold")
             .style("text-anchor", "end")
             .text("Frequency");
 
@@ -425,16 +427,22 @@ function makeHistogram() {
             .attr("x", d => x(d.electors))
             .attr("width", x.rangeBand())
             .attr("y", d => y(d.percentage) - margin.B)
-            .attr("height", d => height - y(d.percentage));
+            .attr("height", d => height - y(d.percentage))
+            .on("mouseover", function(state, index) {
+                this.style.opacity = 0.5;
+            })
+            .on("mouseout", function() {
+                this.style.opacity = 1.0;
+            });
 
         el.style.opacity = 1.0;
     });
 
-    d3.select(window).on("resize", () => {
+    d3.select(window).on("resize.hist", () => {
         width = el.getBoundingClientRect().width;
         height = width * chartRatio;
 
-        x.rangeBands([margin.L, width - margin.R], -0.3);
+        x.rangeBands([margin.L, width - margin.R], -0.25);
         y.range([height, margin.B]);
 
         let ticks = innerWidth > 500 ? 30 : 54;
