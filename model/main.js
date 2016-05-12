@@ -58,15 +58,21 @@ function predict(iterations) {
         }
     ];
 
+    outcomes = outcomes.map((c, i) => ({
+        electors: i, 
+        percentage: c / iterations,
+    }));
+
     return {
         summaryData,
         stateData,
+        outcomes,
     };
 }
 
 function output(data) {
-    csv.writeToPath("output/prob.csv", data.stateData, {headers: true});
-
+    csv.writeToPath("output/states.csv", data.stateData, {headers: true});
+    csv.writeToPath("output/electors.csv", data.outcomes, {headers: true});
     csv.writeToPath("output/overall.csv", data.summaryData, {headers: true});
 
     console.log("Wrote data to output folder.");

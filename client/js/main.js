@@ -1,7 +1,5 @@
-//= require lib/lib.min
 //= require states
-
-
+//
 /*
  * 2016 ELECTION PREDICTIONS
  *
@@ -14,8 +12,14 @@ const DEM = 0, GOP = 1;
 const DEM_CANDIDATE = "Hillary Clinton";
 const GOP_CANDIDATE = "Donald Trump";
 
+const RED = "#e65";
+const YELLOW = "#ee8";
+const BLUE = "#59e";
+const GREY = "#aaa";
+
 function main() {
     makeMap(true);
+    makeHistogram()
 
     d3.csv("data/overall.csv", d => ({
         candidate: d.party === "DEM" ? DEM_CANDIDATE : GOP_CANDIDATE,
@@ -36,10 +40,6 @@ function showOverall(candidates) {
 }
 
 function makeMap(showProbabilities = true) {
-    const RED = "#d54";
-    const YELLOW = "#ee8";
-    const BLUE = "#47d";
-    const GREY = "#aaa";
     const mapRatio = 0.6;
     const paddingRatio = 1.2;
 
@@ -145,7 +145,7 @@ function makeMap(showProbabilities = true) {
 
     queue()
         .defer(d3.json, "assets/usa_detailed.json")
-        .defer(d3.csv, "data/prob.csv", d => ({ 
+        .defer(d3.csv, "data/states.csv", d => ({ 
             state: stateFromAbbr[d.state], 
             probability: +d.probability 
         }))
@@ -177,6 +177,112 @@ function makeMap(showProbabilities = true) {
     };
 }
 
+function makeHistogram() {
+    const chartRatio = 0.7;
+    const margin = {L: 35, R: 5, B: 35};
+
+    let el = $("#histogram");
+    let width = el.getBoundingClientRect().width;
+    let height = width * chartRatio;
+
+    let x = d3.scale.ordinal()
+        .domain(d3.range(538))
+        .rangeBands([margin.L, width - margin.R], -0.3);
+    let y = d3.scale.linear()
+        .range([height, margin.B]);
+
+    let ticks = innerWidth > 500 ? 30 : 54;
+
+    let xAxis = d3.svg.axis()
+        .scale(x)
+        .tickValues(x.domain().filter((d, i) => !(i % ticks)))
+        .orient("bottom");
+    let yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .ticks(10, "%");
+
+    let chart = d3.select(el).append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    d3.csv("data/electors.csv", d => ({
+        electors: +d.electors,
+        percentage: +d.percentage,
+    }), (error, data) => {
+        if (error) throw error;
+
+        y.domain([0, d3.max(data, d => d.percentage)]); // get max percentage
+
+        chart.append("g")
+            .attr("class", "x axis")
+            .attr("transform", `translate(0, ${height - margin.B})`)
+            .call(xAxis)
+        .append("text")
+            .attr("class", "label")
+            .attr("y", 25)
+            .attr("x", width - 10)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Electors");
+
+        chart.append("g")
+            .attr("class", "y axis")
+            .attr("transform", `translate(${margin.L}, ${-margin.B})`)
+            .call(yAxis)
+        .append("text")
+            .attr("class", "label")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("x", -35)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Frequency");
+
+        chart.selectAll(".bar")
+            .data(data)
+        .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", d => d.electors >= 270 ? BLUE: RED)
+            .attr("x", d => x(d.electors))
+            .attr("width", x.rangeBand())
+            .attr("y", d => y(d.percentage) - margin.B)
+            .attr("height", d => height - y(d.percentage));
+
+        el.style.opacity = 1.0;
+    });
+
+    d3.select(window).on("resize", () => {
+        width = el.getBoundingClientRect().width;
+        height = width * chartRatio;
+
+        x.rangeBands([margin.L, width - margin.R], -0.3);
+        y.range([height, margin.B]);
+
+        let ticks = innerWidth > 500 ? 30 : 54;
+        xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
+
+        chart.attr("width", width);
+        chart.attr("height", height);
+
+        chart.select(".x.axis")
+            .attr("transform", `translate(0, ${height - margin.B})`)
+            .call(xAxis)
+            .select(".label")
+            .attr("x", width - 10);
+        chart.select(".y.axis")
+            .attr("transform", `translate(${margin.L}, ${-margin.B})`)
+            .call(yAxis)
+            
+        chart.selectAll(".bar")
+            .attr("x", d => x(d.electors))
+            .attr("width", x.rangeBand())
+            .attr("y", d => y(d.percentage) - margin.B)
+            .attr("height", d => height - y(d.percentage));
+
+    });
+}
+
 function sortByKey(arr, key) {
     return arr.sort((a, b) => {
         let x = a[key];
@@ -186,56 +292,3 @@ function sortByKey(arr, key) {
     });
 }
 
-const electors = {
-    AL: 9,
-    AK: 3,
-    AZ: 11,
-    AR: 6,
-    CA: 55,
-    CO: 9,
-    CT: 7,
-    DC: 3,
-    DE: 3,
-    FL: 29,
-    GA: 16,
-    HI: 4,
-    ID: 4,
-    IL: 20,
-    IN: 11,
-    IA: 6,
-    KS: 6,
-    KY: 8,
-    LA: 8,
-    ME: 4,
-    MD: 10,
-    MA: 11,
-    MI: 16,
-    MN: 10,
-    MS: 6,
-    MO: 10,
-    MT: 3,
-    NE: 5,
-    NV: 6,
-    NH: 4,
-    NJ: 14,
-    NM: 5,
-    NY: 29,
-    NC: 15,
-    ND: 3,
-    OH: 18,
-    OK: 7,
-    OR: 7,
-    PA: 20,
-    RI: 4,
-    SC: 9,
-    SD: 3,
-    TN: 11,
-    TX: 38,
-    UT: 6,
-    VT: 3,
-    VA: 13,
-    WA: 12,
-    WV: 5,
-    WI: 10,
-    WY: 3
-};

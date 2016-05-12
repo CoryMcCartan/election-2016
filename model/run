@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm -r output/*
 node main.js $1
 rm -r ../client/data/*
 cp -r output/* ../client/data/

@@ -3,7 +3,7 @@ title: 2016 Presidential Election Predictions
 layout: default
 ---
 
-<div id="map"></div>
+<div id="map" class="graphic"></div>
 <div class="tooltip">
     <span id="t-name"></span><br />
     Chance of winning:
@@ -35,10 +35,10 @@ layout: default
 
 <div class="map-controls">
     <button id="toggleProbs">Toggle Probabilities</button>
-</div>
+</div><br />
+
+<div id="histogram" class="graphic"></div>
 
 
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="https://d3js.org/queue.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v0.min.js"></script>
+{% javascript lib/lib %}
 {% javascript main %}
