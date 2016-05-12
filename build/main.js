@@ -197,7 +197,7 @@ const GREY = "#aaa";
 
 function main() {
     makeMap(true);
-    makeHistogram()
+    makeHistogram();
 
     d3.csv("data/overall.csv", d => ({
         candidate: d.party === "DEM" ? DEM_CANDIDATE : GOP_CANDIDATE,
@@ -390,7 +390,8 @@ function makeHistogram() {
     }), (error, data) => {
         if (error) throw error;
 
-        y.domain([0, d3.max(data, d => d.percentage)]); // get max percentage
+        let mode = d3.max(data, d => d.percentage)
+        y.domain([0, mode]); // get max percentage
 
         chart.append("g")
             .attr("class", "x axis")
@@ -403,7 +404,7 @@ function makeHistogram() {
             .attr("dy", ".71em")
             .style("font-weight", "bold")
             .style("text-anchor", "end")
-            .text("Electors");
+            .text("Democratic Electors");
 
         chart.append("g")
             .attr("class", "y axis")
@@ -423,7 +424,11 @@ function makeHistogram() {
             .data(data)
         .enter().append("rect")
             .attr("class", "bar")
-            .attr("fill", d => d.electors >= 270 ? BLUE: RED)
+            .attr("fill", d => {
+                if (d.percentage === mode) return YELLOW;
+                else if (d.electors >= 270) return BLUE;
+                else return RED;
+            })
             .attr("x", d => x(d.electors))
             .attr("width", x.rangeBand())
             .attr("y", d => y(d.percentage) - margin.B)
