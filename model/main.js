@@ -7,7 +7,7 @@ require("./helper.js")(global);
 require("./predict.js")(global);
 
 function main() {
-    let iterations = +process.argv[2] || 5e4;
+    let iterations = +process.argv[2] || 2e5;
 
     loadData().then(() => {
         let data = predict(iterations);
