@@ -1,5 +1,5 @@
 //= require states
-//
+
 /*
  * 2016 ELECTION PREDICTIONS
  *
@@ -205,7 +205,7 @@ function makeHistogram() {
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(10, "%");
+        .ticks(7, "%");
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)

@@ -4,7 +4,7 @@ let gaussian = require("gaussian");
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 08) - Date.now()) / one_day;
 const historical_weight = untilElection / 365;
-const shift = +0.04;
+const shift = +0.00;
 
 let data2012 = [];
 
