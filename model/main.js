@@ -1,18 +1,18 @@
-let fetch = require("node-fetch");
 let csv = require("fast-csv");
 let gaussian = require("gaussian");
 
 require("./electoral-college.js")(global);
-require("./helper.js")(global);
-require("./predict.js")(global);
+require("./states.js")(global);
+let predictor = require("./predict.js");
+let util = require("./util.js");
 
-function main() {
+function * main() {
     let iterations = +process.argv[2] || 2e5;
 
-    loadData().then(() => {
-        let data = predict(iterations);
-        output(data);
-    });
+    yield* predictor.init();
+
+    let data = predict(iterations);
+    output(data);
 }
 
 function predict(iterations) {
@@ -28,7 +28,7 @@ function predict(iterations) {
         let nationalShift = shiftDist.ppf(Math.random());
         // for every state
         for (let s = 0; s < 51; s++) {
-            let result = modelState(s, nationalShift);
+            let result = predictor.modelState(s, nationalShift);
 
             if (result.dem > 0.5)
                 stateData[s].probability += 1 / iterations;
@@ -42,8 +42,8 @@ function predict(iterations) {
             demWins++;
     }
 
-    // find index of max, which represents mode of electors distribution
-    let demElectors = outcomes.reduce((p, c, i) => outcomes[p] > c ? p : i);
+    // find mean
+    let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations;
 
     let summaryData = [
         {
@@ -82,4 +82,4 @@ function output(data) {
 
 
 
-main();
+util.runAsyncFunction(main);

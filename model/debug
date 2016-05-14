@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-node --debug-brk main.js &
-node-inspector &
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" 127.0.0.1:8080/debug?port=5858
+devtool main.js

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p output/
 node main.js $1
+touch ../client/data/tmp
 rm -r ../client/data/*
 mv output/* ../client/data/

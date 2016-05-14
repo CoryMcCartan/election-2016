@@ -18,9 +18,6 @@ const BLUE = "#59e";
 const GREY = "#aaa";
 
 function main() {
-    makeMap(true);
-    makeHistogram();
-
     d3.csv("data/overall.csv", d => ({
         candidate: d.party === "DEM" ? DEM_CANDIDATE : GOP_CANDIDATE,
         popularVote: +d.popular,
@@ -28,6 +25,8 @@ function main() {
         probability: +d.probability,
     }), (error, candidates) => {
         showOverall(candidates);
+        makeMap(true);
+        makeHistogram(candidates[DEM].electors);
     })
 }
 
@@ -182,7 +181,7 @@ function makeMap(showProbabilities = true) {
     };
 }
 
-function makeHistogram() {
+function makeHistogram(mean) {
     const chartRatio = 0.35;
     const margin = {L: 35, R: 5, B: 35};
 
@@ -252,7 +251,7 @@ function makeHistogram() {
         .enter().append("rect")
             .attr("class", "bar")
             .attr("fill", d => {
-                if (d.percentage === mode) return YELLOW;
+                if (Math.abs(d.electors - mean) < 0.5) return YELLOW;
                 else if (d.electors >= 270) return BLUE;
                 else return RED;
             })
