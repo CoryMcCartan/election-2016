@@ -181,7 +181,7 @@ function makeMap(showProbabilities = true) {
     };
 }
 
-function makeHistogram(mean) {
+function makeHistogram(most) {
     const chartRatio = 0.35;
     const margin = {L: 40, R: 5, B: 35};
 
@@ -251,7 +251,7 @@ function makeHistogram(mean) {
         .enter().append("rect")
             .attr("class", "bar")
             .attr("fill", d => {
-                if (Math.abs(d.electors - mean) < 0.5) return YELLOW;
+                if (Math.abs(d.electors - most) < 0.5) return YELLOW;
                 else if (d.electors >= 270) return BLUE;
                 else return RED;
             })

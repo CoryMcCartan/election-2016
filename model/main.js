@@ -42,8 +42,8 @@ function predict(iterations) {
             demWins++;
     }
 
-    // find mean
-    let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations;
+    //let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
+    let demElectors = outcomes.reduce((p, c, i) => outcomes[p] >= c ? p : i); // mode
 
     let summaryData = [
         {

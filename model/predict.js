@@ -4,9 +4,9 @@ let levenshtein = require('fast-levenshtein');
 
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
-const historical_weight = untilElection / 365;
 
-const moeMultiplier = 1.5;
+const date_multiplier = 1 / (1 - untilElection / 365);
+const moeMultiplier = 1.0;
 let mix; // how much of state vs national data to use
 
 let data2012;
@@ -89,7 +89,7 @@ function processPolls(polls) {
 function weightPolls(polls) {
     const base_n = Math.log(600);
     const likelyVoterAdj = -0.027; // RV surveys favor Dems by 2.7 pts
-    const biasBuffer = 0.01; // ignore biases less than this amount
+    const biasBuffer = 0.005; // ignore biases less than this amount
 
     for (let poll of polls) {
         let dateDiff = (Date.now() - poll.date) / one_day;
@@ -182,11 +182,11 @@ function calculateAverages() {
     US_average /= us_weight;
     state_averages = state_averages.map((a, i) => a / weights[i]);
     state_moe = state_moe.map((a, i) => a / weights[i]);
-    let state_variance = state_moe.map(a => Math.pow(a / 1.96, 2) / 100);
-    let US_variance = Math.pow(US_moe / us_weight / 1.96, 2) / 100;
+    let state_variance = state_moe.map(a => Math.pow(a / 1.96, 2) * date_multiplier / 100);
+    let US_variance = Math.pow(US_moe / us_weight / 1.96, 2) * date_multiplier/ 100;
 
     // update mix based on poll counts
-    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.2);
+    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.25);
 
     return {
         national: US_average,
