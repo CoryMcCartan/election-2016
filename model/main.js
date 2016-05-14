@@ -7,7 +7,7 @@ let predictor = require("./predict.js");
 let util = require("./util.js");
 
 function * main() {
-    let iterations = +process.argv[2] || 2e5;
+    let iterations = +process.argv[2] || 5e4;
 
     yield* predictor.init();
 
@@ -16,7 +16,8 @@ function * main() {
 }
 
 function predict(iterations) {
-    let shiftDist = gaussian(0, 0.05 * 0.05);
+    const nationalVariance = Math.pow(0.025, 2);
+    let shiftDist = gaussian(0, nationalVariance);
 
     // simulate a bunch of elections
     let outcomes = new Array(538 + 1).fill(0);

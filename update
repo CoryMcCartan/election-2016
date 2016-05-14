@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd model
+./run 5e5
+cd ..
+git add .
+git commit -m 'MODEL RUN'
+./deploy
+
