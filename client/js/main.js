@@ -183,7 +183,7 @@ function makeMap(showProbabilities = true) {
 
 function makeHistogram(mean) {
     const chartRatio = 0.35;
-    const margin = {L: 35, R: 5, B: 35};
+    const margin = {L: 40, R: 5, B: 35};
 
     let el = $("#histogram");
     let width = el.getBoundingClientRect().width;
@@ -204,7 +204,7 @@ function makeHistogram(mean) {
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(7, "%");
+        .ticks(6, "%");
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)
