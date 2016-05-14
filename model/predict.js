@@ -6,7 +6,6 @@ const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
 const date_multiplier = 1 / (1 - untilElection / 365);
-const moeMultiplier = 1.0;
 let mix; // how much of state vs national data to use
 
 let data2012;
@@ -146,8 +145,9 @@ function add2012Data(data2012, polls) {
     for (let i = 0; i < 51; i++) {
         polls.push({
             state: abbrs[i],
-            moe: 0.01,
+            moe: 0.00,
             gap: data2012[i].gap,
+            n: +data2012[i].totalVoters,
             weight,
         });
     }
@@ -155,9 +155,12 @@ function add2012Data(data2012, polls) {
 
 function calculateAverages() {
     let US_average = 0;
-    let US_moe = 0;
     let state_averages = Array(51).fill(0);
-    let state_moe = Array(51).fill(0);
+
+    let US_var = 0;
+    let state_var = Array(51).fill(0);
+    let US_total_n = 0;
+    let state_total_n = Array(51).fill(0);
 
     let n_us_polls = 0;
     let n_state_polls = 0;
@@ -167,13 +170,15 @@ function calculateAverages() {
     for (let poll of polls) {
         if (poll.state === "US") {
            US_average += poll.gap * poll.weight;
-           US_moe += poll.moe * moeMultiplier * poll.weight;
+           US_var += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1);
+           US_total_n += poll.n - 1;
            us_weight += poll.weight;
            n_us_polls++;
         } else {
             let index = abbrs.indexOf(poll.state);
             state_averages[index] += poll.gap * poll.weight;
-            state_moe[index] += poll.moe * moeMultiplier * poll.weight;
+            state_var[index] += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1);
+            state_total_n[index] += poll.n - 1;
             weights[index] += poll.weight;
             n_state_polls += 1 / 51;
         }
@@ -181,18 +186,17 @@ function calculateAverages() {
 
     US_average /= us_weight;
     state_averages = state_averages.map((a, i) => a / weights[i]);
-    state_moe = state_moe.map((a, i) => a / weights[i]);
-    let state_variance = state_moe.map(a => Math.pow(a / 1.96, 2) * date_multiplier / 100);
-    let US_variance = Math.pow(US_moe / us_weight / 1.96, 2) * date_multiplier/ 100;
+    state_var = state_var.map((a, i) => 0.01 * a * date_multiplier / state_total_n[i]);
+    US_var *= 0.01 * date_multiplier / US_total_n;
 
     // update mix based on poll counts
-    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.25);
+    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.2);
 
     return {
         national: US_average,
-        national_var: US_variance,
+        national_var: US_var,
         state: state_averages,
-        state_var: state_variance,
+        state_var,
     };
 }
 
