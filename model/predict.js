@@ -14,7 +14,7 @@ let pollsters;
 
 let averages;
 
-const chartName = "2016-general-election-trump-vs-clinton";
+const topicName = "2016-president";
 
 function * init() { 
     data2012 = yield loader.get2012Election();
@@ -23,7 +23,7 @@ function * init() {
     pollsters = yield loader.getPollsterRatings();
     processPollsterData(pollsters);
 
-    polls = yield loader.getPolls(chartName);
+    polls = yield loader.getPolls(topicName);
     processPolls(polls);
 
     weightPolls(polls);
@@ -56,6 +56,16 @@ function processPollsterData(data) {
 }
 
 function processPolls(polls) {
+    let isPresidentialPoll = q => {
+        let name = q.name.toLowerCase();
+        if (!name.includes("president") && !name.includes("general election")) return false;
+        if (name.includes("primary")) return false;
+        if (name.includes("caucus")) return false;
+        return true; 
+    };
+
+    const default_moe = 5.0;
+
     for (let poll of polls) {
         // data cleanup
         poll.date = new Date(poll.start_date);
@@ -69,10 +79,14 @@ function processPolls(polls) {
         delete poll.id;
 
         // remove questions we don't care about
-        let question = poll.questions.find(q => q.chart === chartName);
+        let question = poll.questions.find(q => isPresidentialPoll(q));
+        if (!question) {
+            delete poll;
+            continue;
+        }
         delete poll.questions;
         // remove extraneous data
-        poll.moe = question.subpopulations[0].margin_of_error;
+        poll.moe = question.subpopulations[0].margin_of_error || default_moe;
         poll.type = question.subpopulations[0].name;
         poll.n = question.subpopulations[0].observations;
         poll.state = question.state;
@@ -94,7 +108,7 @@ function weightPolls(polls) {
         let dateDiff = (Date.now() - poll.date) / one_day;
         let recencyWeight = 0.7 * Math.exp(-dateDiff / 30) + 0.3;
 
-        let sampleWeight = Math.log(poll.n) - base_n; 
+        let sampleWeight = Math.log(poll.n) / base_n; 
 
         let pollsters = getPollsterAverages(poll.survey_houses);
         let pollsterRating = Math.exp(-pollsters.plusMinus);

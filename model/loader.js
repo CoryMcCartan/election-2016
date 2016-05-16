@@ -34,9 +34,9 @@ function getPollsterRatings() {
     });
 }
 
-function getPolls(chartName) {
+function getPolls(topicName) {
     let makeURL = n => `http://elections.huffingtonpost.com/pollster/api/` + 
-        `polls.json?page=${n}&chart=${chartName}`;
+        `polls.json?page=${n}&topic=${topicName}`;
 
     let promises = [];
     //          get     n    pages worth of polls
