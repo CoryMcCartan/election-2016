@@ -16,7 +16,7 @@ function * main() {
 }
 
 function predict(iterations) {
-    const nationalVariance = Math.pow(0.025, 2);
+    const nationalVariance = Math.pow(0.02, 2);
     let shiftDist = gaussian(0, nationalVariance);
 
     // simulate a bunch of elections
@@ -29,7 +29,7 @@ function predict(iterations) {
         let nationalShift = shiftDist.ppf(Math.random());
         // for every state
         for (let s = 0; s < 51; s++) {
-            let result = predictor.modelState(s, nationalShift);
+            let result = predictor.modelState(s, nationalShift, nationalVariance);
 
             if (result.dem > 0.5)
                 stateData[s].probability += 1 / iterations;

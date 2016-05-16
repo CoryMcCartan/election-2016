@@ -214,9 +214,11 @@ function calculateAverages() {
     };
 }
 
-function modelState(index, nationalShift) {
+function modelState(index, nationalShift, nationalVariance) {
     let expected = mix * averages.state[index] + (1 - mix) * averages.national;
     let variance = mix * averages.state_var[index] + (1 - mix) * averages.national_var;
+    // some of the variance comes from the national shift, which has already been taken into account
+    variance -= variance < nationalVariance ? variance / 2 : nationalVariance;
 
     let mean = expected + nationalShift;
     let gap = gaussian(mean, variance).ppf(Math.random());
