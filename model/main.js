@@ -44,7 +44,7 @@ function predict(iterations) {
     }
 
     //let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
-    let demElectors = outcomes.reduce((p, c, i) => outcomes[p] >= c ? p : i, 0); // mode
+    let demElectors = outcomes.reduce((p, c, i, a) => a[p] >= c ? p : i, 0); // mode
 
     let summaryData = [
         {
