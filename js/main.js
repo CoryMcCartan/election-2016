@@ -141,7 +141,7 @@ function makeMap(showProbabilities = true) {
             .datum(topojson.mesh(geo, geo.objects.states, (a, b) => a !== b))
             .attr("class", "borders")
             .attr("fill", "none")
-            .attr("stroke", "#fff")
+//            .attr("stroke", "#fff")
             .attr("d", path);
 
         el.style.opacity = 1;
