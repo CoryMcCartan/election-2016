@@ -7,7 +7,7 @@ let predictor = require("./predict.js");
 let util = require("./util.js");
 
 function * main() {
-    let iterations = +process.argv[2] || 5e4;
+    let iterations = +process.argv[2] || 5e5;
 
     yield* predictor.init();
 
@@ -43,8 +43,8 @@ function predict(iterations) {
             demWins++;
     }
 
-    //let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
-    let demElectors = outcomes.reduce((p, c, i, a) => a[p] >= c ? p : i, 0); // mode
+    let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
+    //let demElectors = outcomes.reduce((p, c, i, a) => a[p] >= c ? p : i, 0); // mode
 
     let summaryData = [
         {

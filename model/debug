@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-devtool main.js
+mkdir -p output/
+devtool main.js 
