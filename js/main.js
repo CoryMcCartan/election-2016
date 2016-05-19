@@ -148,7 +148,7 @@ function makeMap(showProbabilities = true) {
     };
 
     queue()
-        .defer(d3.json, "assets/usa_detailed.json")
+        .defer(d3.json, "assets/usa.json")
         .defer(d3.csv, "data/states.csv", d => ({ 
             state: stateFromAbbr[d.state], 
             probability: +d.probability 
