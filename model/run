@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p output/
-touch output/history.csv
 node main.js $1
-touch ../client/data/tmp
-rm -r ../client/data/*
+mkdir -p ../client/data/
+rm ../client/data/*
 cp output/* ../client/data/

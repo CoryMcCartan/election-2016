@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
 mkdir -p output/
-touch output/history.csv
 devtool main.js 

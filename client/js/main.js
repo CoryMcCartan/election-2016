@@ -321,7 +321,7 @@ function makeHistoryLine(history) {
     let width = el.getBoundingClientRect().width;
     let height = width * chartRatio;
 
-    let x = d3.scale.linear()
+    let x = d3.time.scale()
         .domain([startDate, endDate])
         .range([margin.L, width - margin.R]);
     let y = d3.scale.linear()
@@ -336,15 +336,17 @@ function makeHistoryLine(history) {
         .orient("left")
         .ticks(smallScreen() ? 5 : 10, "%");
 
-    let line = d3.svg.line()
+    let demLine = d3.svg.line()
         .x(d => x(d.date))
         .y(d => y(d.probability));
+
+    let gopLine = d3.svg.line()
+        .x(d => x(d.date))
+        .y(d => y(1 - d.probability));
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)
         .attr("height", height);
-
-    let layout = d3.layout.stack().offset("silhoutte");
 
     // axes
     chart.append("g")
@@ -374,15 +376,50 @@ function makeHistoryLine(history) {
         .style("text-anchor", "end")
         .text("Probability");
 
-    chart.selectAll("path")
-        .data(layout([history]))
-    .enter().append("path")
-        .attr("d", line)
+    chart.append("path")
+        .datum(history)
+        .attr("id", "demProbLine")
+        .attr("d", demLine)
         .attr("stroke", BLUE)
-        .attr("stroke-width", 4)
+        .attr("stroke-width", 2)
+        .attr("fill", "transparent");
+
+    chart.append("path")
+        .datum(history)
+        .attr("d", gopLine)
+        .attr("id", "gopProbLine")
+        .attr("stroke", RED)
+        .attr("stroke-width", 2)
         .attr("fill", "transparent");
 
     el.style.opacity = 1.0;
+
+    d3.select(window).on("resize.line", () => {
+        let width = el.getBoundingClientRect().width;
+        let height = width * chartRatio;
+
+        chart
+            .attr("width", width)
+            .attr("height", height);
+
+        x.range([margin.L, width - margin.R]);
+        y.range([height - margin.B, margin.T]);
+
+        chart.select(".x.axis")
+            .attr("transform", `translate(0, ${height - margin.B})`)
+            .call(xAxis)
+            .select(".label")
+            .attr("x", width - 10);
+        chart.select(".y.axis")
+            .attr("transform", `translate(${margin.L}, 0)`)
+            .call(yAxis)
+            
+
+        chart.select("#demProbLine")
+            .attr("d", demLine);
+        chart.select("#gopProbLine")
+            .attr("d", gopLine);
+    });
 }
 
 function sortByKey(arr, key) {

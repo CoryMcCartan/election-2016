@@ -209,13 +209,14 @@ function calculateAverages() {
     return {
         national: US_average,
         national_var: US_var,
+        national_stddev: Math.sqrt(US_var),
         state: state_averages,
         state_var,
     };
 }
 
 function modelState(index, nationalShift) {
-    nationalShift /= averages.national_var;
+    nationalShift *= averages.national_var;
 
     let expected = mix * averages.state[index] + (1 - mix) * averages.national;
     let variance = mix * averages.state_var[index] + (1 - mix) * averages.national_var;
