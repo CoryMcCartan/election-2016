@@ -101,7 +101,7 @@ function processPolls(polls) {
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const likelyVoterAdj = +0.00188; // RV surveys less representative MAGIC NUMBER
+    const likelyVoterAdj = -0.00774; // RV surveys less representative MAGIC NUMBER
     const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
