@@ -1,0 +1,14 @@
+{
+    "short_name": "2016 Election",
+    "name": "2016 Presidential Election Predictions",
+    "lang": "en-US",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "assets/flag.gif",
+            "sizes": "50x50"
+        }
+    ],
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff"
+}

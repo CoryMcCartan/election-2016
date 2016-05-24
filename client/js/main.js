@@ -447,3 +447,11 @@ function sortByKey(arr, key) {
 function smallScreen() {
     return window.innerWidth < 500;
 }
+
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register("service-worker.js", {
+        scope: location.pathname.replace("index.html", "")
+    }).then(() => {
+        console.log("Service Worker Registered.");
+    })
+}
