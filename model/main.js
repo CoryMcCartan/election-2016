@@ -7,11 +7,11 @@ let predictor = require("./predict.js");
 let util = require("./util.js");
 
 function * main() {
-    let iterations = +process.argv[2] || 5e5;
+    let iterations = +process.argv[2] || 2e4;
 
     yield* predictor.init();
 
-    let history = yield getHistory();
+    let history = yield loadHistory();
 
     let data = predict(iterations, history);
 
@@ -69,10 +69,10 @@ function predict(iterations, history) {
 function output(data) {
     csv.writeToPath("output/states.csv", data.stateData, {headers: true});
     csv.writeToPath("output/electors.csv", data.outcomes, {headers: true});
-    csv.writeToPath("output/history.csv", data.summaryData, {headers: true});
+    csv.writeToPath("output/history.csv", data.history, {headers: true});
 
     console.log("Wrote data to output folder.");
-    let percent = data.summaryData[0].probability * 100;
+    let percent = data.history[0].probability * 100;
     console.log(`Democrats have a ${percent.toFixed(2)}% chance of winning the election.`);
 }
 
@@ -85,7 +85,9 @@ function loadHistory() {
        .on("end", () => {
            resolve(history);
        })
-       .on("error", reject);
+       .on("error", () => {
+           resolve([]);
+       });
    });
 }
 
