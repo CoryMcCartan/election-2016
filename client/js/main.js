@@ -19,21 +19,24 @@ const GREY = "#aaa";
 function main() {
     d3.csv("data/history.csv", d => ({
         date: new Date(+d.date),
-        demElectors: +d.demElectors,
+        avgElectors: +d.avgElectors,
+        calledElectors: +d.calledElectors,
         probability: +d.probability,
+        iterations: +d.iterations,
     }), (error, history) => {
-        showOverall(history);
-        makeMap(true);
-        makeHistogram(history[0].demElectors);
+        let expected = showOverall(history);
+        makeMap();
+        makeHistogram(expected);
         makeHistoryLine(history);
-    })
+    });
 }
 
-function showOverall(history) {
+function showOverall(history, prediction = false) {
     let current = history[0];
-    let winner = current.demElectors > 270 ? DEM : GOP;
-    $("#demEV").innerHTML = current.demElectors.toFixed(0);
-    $("#gopEV").innerHTML = (538 - current.demElectors).toFixed(0);
+    let electors = prediction ? current.calledElectors : current.avgElectors;
+    let winner = electors > 270 ? DEM : GOP;
+    $("#demEV").innerHTML = electors.toFixed(0);
+    $("#gopEV").innerHTML = (538 - electors).toFixed(0);
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -51,6 +54,23 @@ function showOverall(history) {
         `${name} has ${article} ${prob}% chance of winning the election. <br />
         This is ${delta >= 0 ? "an increase" : "a decrease"} of 
         ${Math.abs(delta).toFixed(0)}% from yesterday.`
+
+    $("#showProbs").addEventListener("click", function() {
+        $("#demEV").innerHTML = current.avgElectors.toFixed(0);
+        $("#gopEV").innerHTML = (538 - current.avgElectors).toFixed(0);
+
+        this.hidden = true;
+        $("#callStates").hidden = false;
+    });
+    $("#callStates").addEventListener("click", function() {
+        $("#demEV").innerHTML = current.calledElectors.toFixed(0);
+        $("#gopEV").innerHTML = (538 - current.calledElectors).toFixed(0);
+
+        this.hidden = true;
+        $("#showProbs").hidden = false;
+    });
+
+    return electors;
 }
 
 function makeMap(showProbabilities = true) {
@@ -183,12 +203,19 @@ function makeMap(showProbabilities = true) {
             .attr("d", path);
     });
 
-    $("#toggleProbs").onclick = function() {
-        showProbabilities = !showProbabilities;
+    
+    $("#showProbs").addEventListener("click", function() {
+        showProbabilities = true;
 
         states.selectAll("path")
             .attr("fill", color.bind(null, data));
-    };
+    });
+    $("#callStates").addEventListener("click", function() {
+        showProbabilities = false;
+
+        states.selectAll("path")
+            .attr("fill", color.bind(null, data));
+    });
 }
 
 function makeHistogram(most) {

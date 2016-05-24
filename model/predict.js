@@ -5,7 +5,7 @@ let levenshtein = require('fast-levenshtein');
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
-const date_multiplier = 1 / (1 - untilElection / 365);
+const date_multiplier = 1 / (1 - untilElection / 365); 
 let mix; // how much of state vs national data to use
 
 let data2012;
@@ -64,7 +64,7 @@ function processPolls(polls) {
         return true; 
     };
 
-    const default_moe = 5.0;
+    const default_moe = 5.0; // MAGIC NUMBER
 
     for (let poll of polls) {
         // data cleanup
@@ -101,8 +101,8 @@ function processPolls(polls) {
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const likelyVoterAdj = +0.01188; // RV surveys less representative
-    const biasBuffer = 0.005; // ignore biases less than this amount
+    const likelyVoterAdj = +0.00188; // RV surveys less representative MAGIC NUMBER
+    const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
     let n_rv = 0;
@@ -111,14 +111,14 @@ function weightPolls(polls) {
 
     for (let poll of polls) {
         let dateDiff = (Date.now() - poll.date) / one_day;
-        let recencyWeight = 0.7 * Math.exp(-dateDiff / 30) + 0.3;
+        let recencyWeight = 0.7 * Math.exp(-dateDiff / 30) + 0.3; // MAGIC NUMBERS
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
         let pollsters = getPollsterAverages(poll.survey_houses);
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
-        let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.9;
+        let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.9; // MAGIC NUMBERS
 
         poll.weight = recencyWeight * sampleWeight * pollsterRating
             * partisanWeight;
@@ -128,6 +128,7 @@ function weightPolls(polls) {
         if (Math.abs(bias) < biasBuffer)
             biasAdj = 0;
 
+        // if not an LV poll, apply adjustment
         let typeAdj = poll.type === "Likely Voters" ? 0 : likelyVoterAdj;
 
         // stats on registered vs likely voter polls
@@ -203,7 +204,7 @@ function calculateAverages() {
     for (let poll of polls) {
         if (poll.state === "US") {
            US_average += poll.gap * poll.weight;
-           US_var += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1);
+           US_var += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1); // assuming pollsters using 95% confidence interval
            US_total_n += poll.n - 1;
            us_weight += poll.weight;
            n_us_polls++;
@@ -223,7 +224,7 @@ function calculateAverages() {
     US_var *= 0.01 * date_multiplier / US_total_n;
 
     // update mix based on poll counts
-    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.2);
+    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.2); // MAGIC NUMBER
 
     return {
         national: US_average,

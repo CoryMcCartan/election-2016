@@ -55,10 +55,19 @@ function predict(iterations, history) {
 
     let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
     //let demElectors = outcomes.reduce((p, c, i, a) => a[p] >= c ? p : i, 0); // mode
+    
+    // calculate prediction based on calling each state for whoever has the highest prob.
+    let election = {};
+    for (let s = 0; s < 51; s++) {
+        let prob = stateData[s].probability;
+        election[abbrs[s]] = [prob, 1 - prob];
+    }
+    let calledElectors = sumElectors(election)[0];
 
     history.unshift({
         date: Date.now(),
-        demElectors,
+        avgElectors: demElectors,
+        calledElectors,
         probability: demWins / iterations,
         iterations,
     });
