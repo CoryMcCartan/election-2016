@@ -101,8 +101,13 @@ function processPolls(polls) {
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const likelyVoterAdj = -0.027; // RV surveys favor Dems by 2.7 pts
+    const likelyVoterAdj = +0.01188; // RV surveys less representative
     const biasBuffer = 0.005; // ignore biases less than this amount
+
+    let rv_avg = 0;
+    let n_rv = 0;
+    let lv_avg = 0;
+    let n_lv = 0;
 
     for (let poll of polls) {
         let dateDiff = (Date.now() - poll.date) / one_day;
@@ -125,8 +130,22 @@ function weightPolls(polls) {
 
         let typeAdj = poll.type === "Likely Voters" ? 0 : likelyVoterAdj;
 
+        // stats on registered vs likely voter polls
+        if (poll.type === "Likely Voters") {
+            lv_avg += poll.gap;
+            n_lv++;
+        } else {
+            rv_avg += poll.gap;
+            n_rv++;
+        }
+
         poll.gap += biasAdj + typeAdj;
     }
+
+    // calculate average and turn into percent
+    lv_avg /= 0.01 * n_lv || 1;
+    rv_avg /= 0.01 * n_rv || 1;
+    console.log(`RV/LV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
 }
 
 function getPollsterAverages(surveyors) {

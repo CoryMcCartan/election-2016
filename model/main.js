@@ -7,15 +7,23 @@ let predictor = require("./predict.js");
 let util = require("./util.js");
 
 function * main() {
+    console.log("======= 2016 PRESIDENTIAL RACE PREDICTIONS =======");
     let iterations = +process.argv[2] || 2e4;
 
     yield* predictor.init();
 
     let history = yield loadHistory();
 
+    console.log(`Model initialized. Simulating ${iterations} elections...`);
+
     let data = predict(iterations, history);
 
+    console.log(`Simulations finished.`);
+
     output(data);
+
+    console.log("==================================================");
+    console.log();
 }
 
 function predict(iterations, history) {
@@ -50,8 +58,9 @@ function predict(iterations, history) {
 
     history.unshift({
         date: Date.now(),
-        demElectors: demElectors,
+        demElectors,
         probability: demWins / iterations,
+        iterations,
     });
 
     outcomes = outcomes.map((c, i) => ({
@@ -71,8 +80,8 @@ function output(data) {
     csv.writeToPath("output/electors.csv", data.outcomes, {headers: true});
     csv.writeToPath("output/history.csv", data.history, {headers: true});
 
-    console.log("Wrote data to output folder.");
     let percent = data.history[0].probability * 100;
+    console.log("Wrote data to output folder.");
     console.log(`Democrats have a ${percent.toFixed(2)}% chance of winning the election.`);
 }
 
