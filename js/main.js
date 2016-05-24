@@ -234,12 +234,9 @@ function makeHistogram(most) {
             .attr("transform", `translate(0, ${height - margin.B})`)
             .call(xAxis)
         .append("text")
-            .attr("class", "label")
+            .attr("class", "x label")
             .attr("y", 25)
             .attr("x", width - 10)
-            .attr("dy", ".71em")
-            .style("font-weight", "bold")
-            .style("text-anchor", "end")
             .text("Democratic Electors");
 
         chart.append("g")
@@ -247,13 +244,9 @@ function makeHistogram(most) {
             .attr("transform", `translate(${margin.L}, 0)`)
             .call(yAxis)
         .append("text")
-            .attr("class", "label")
-            .attr("transform", "rotate(-90)")
+            .attr("class", "y label")
             .attr("y", 6)
             .attr("x", -5)
-            .attr("dy", ".71em")
-            .style("font-weight", "bold")
-            .style("text-anchor", "end")
             .text("Frequency");
 
         chart.selectAll(".bar")
@@ -354,12 +347,9 @@ function makeHistoryLine(history) {
         .attr("transform", `translate(0, ${height - margin.B})`)
         .call(xAxis)
     .append("text")
-        .attr("class", "label")
+        .attr("class", "x label")
         .attr("y", 25)
         .attr("x", width - 10)
-        .attr("dy", ".71em")
-        .style("font-weight", "bold")
-        .style("text-anchor", "end")
         .text("Date");
 
     chart.append("g")
@@ -367,13 +357,9 @@ function makeHistoryLine(history) {
         .attr("transform", `translate(${margin.L}, 0)`)
         .call(yAxis)
     .append("text")
-        .attr("class", "label")
-        .attr("transform", "rotate(-90)")
+        .attr("class", "y label")
         .attr("y", 6)
         .attr("x", -5)
-        .attr("dy", ".71em")
-        .style("font-weight", "bold")
-        .style("text-anchor", "end")
         .text("Probability");
 
     chart.append("path")
