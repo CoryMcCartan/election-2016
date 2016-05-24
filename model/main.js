@@ -11,13 +11,15 @@ function * main() {
 
     yield* predictor.init();
 
-    let data = predict(iterations);
+    let history = yield getHistory();
+
+    let data = predict(iterations, history);
+
     output(data);
 }
 
-function predict(iterations) {
-    const nationalVariance = Math.pow(0.02, 2);
-    let shiftDist = gaussian(0, nationalVariance);
+function predict(iterations, history) {
+    let shiftDist = gaussian(0, 1);
 
     // simulate a bunch of elections
     let outcomes = new Array(538 + 1).fill(0);
@@ -29,7 +31,7 @@ function predict(iterations) {
         let nationalShift = shiftDist.ppf(Math.random());
         // for every state
         for (let s = 0; s < 51; s++) {
-            let result = predictor.modelState(s, nationalShift, nationalVariance);
+            let result = predictor.modelState(s, nationalShift);
 
             if (result.dem > 0.5)
                 stateData[s].probability += 1 / iterations;
@@ -46,18 +48,11 @@ function predict(iterations) {
     let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
     //let demElectors = outcomes.reduce((p, c, i, a) => a[p] >= c ? p : i, 0); // mode
 
-    let summaryData = [
-        {
-            party: "DEM",
-            electors: demElectors,
-            probability: demWins / iterations,
-        },
-        {
-            party: "GOP",
-            electors: 538 - demElectors,
-            probability: 1 - demWins / iterations,
-        }
-    ];
+    history.unshift({
+        date: Date.now(),
+        demElectors: demElectors,
+        probability: demWins / iterations,
+    });
 
     outcomes = outcomes.map((c, i) => ({
         electors: i, 
@@ -65,7 +60,7 @@ function predict(iterations) {
     }));
 
     return {
-        summaryData,
+        history,
         stateData,
         outcomes,
     };
@@ -74,13 +69,25 @@ function predict(iterations) {
 function output(data) {
     csv.writeToPath("output/states.csv", data.stateData, {headers: true});
     csv.writeToPath("output/electors.csv", data.outcomes, {headers: true});
-    csv.writeToPath("output/overall.csv", data.summaryData, {headers: true});
+    csv.writeToPath("output/history.csv", data.summaryData, {headers: true});
 
     console.log("Wrote data to output folder.");
     let percent = data.summaryData[0].probability * 100;
     console.log(`Democrats have a ${percent.toFixed(2)}% chance of winning the election.`);
 }
 
+function loadHistory() {
+   let history = [];
+
+   return new Promise((resolve, reject) => {
+       csv.fromPath("output/history.csv", {headers: true})
+       .on("data", d => history.push(d))
+       .on("end", () => {
+           resolve(history);
+       })
+       .on("error", reject);
+   });
+}
 
 
 util.runAsyncFunction(main);

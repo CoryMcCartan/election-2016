@@ -13,7 +13,7 @@ function get2012Election() {
             util.sortByKey(data2012, "name");
             resolve(data2012);
         })
-        .on("error", e => reject(e));
+        .on("error", reject);
     });
 }
 
@@ -30,7 +30,7 @@ function getPollsterRatings() {
         .on("end", () => {
             resolve(pollsters);
         })
-        .on("error", e => reject(e));
+        .on("error", reject);
     });
 }
 
