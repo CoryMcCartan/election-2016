@@ -6,6 +6,7 @@ var STATIC_CACHE = [
     "assets/flag.gif",
     "build/lib/all_libs.js",
     "https://fonts.googleapis.com/css?family=Raleway:400,700",
+    "https://fonts.googleapis.com/css?family=Quicksand:400,700,300",
     "assets/usa.json",
 ];
 var DYNAMIC_CACHE = [
