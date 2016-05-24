@@ -9,8 +9,7 @@
 "use strict";
 
 const DEM = 0, GOP = 1;
-const DEM_CANDIDATE = "Hillary Clinton";
-const GOP_CANDIDATE = "Donald Trump";
+const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
 const RED = "#e65";
 const YELLOW = "#ee8";
@@ -18,29 +17,40 @@ const BLUE = "#59e";
 const GREY = "#aaa";
 
 function main() {
-    d3.csv("data/overall.csv", d => ({
-        candidate: d.party === "DEM" ? DEM_CANDIDATE : GOP_CANDIDATE,
-        popularVote: +d.popular,
-        electors: +d.electors,
+    d3.csv("data/history.csv", d => ({
+        date: new Date(+d.date),
+        demElectors: +d.demElectors,
         probability: +d.probability,
-    }), (error, candidates) => {
-        showOverall(candidates);
+    }), (error, history) => {
+        showOverall(history);
         makeMap(true);
-        makeHistogram(candidates[DEM].electors);
+        makeHistogram(history[0].demElectors);
+        makeHistoryLine(history);
     })
 }
 
-function showOverall(candidates) {
-    let winner = candidates[DEM].electors > candidates[GOP].electors ? DEM : GOP;
-    $("#demEV").innerHTML = candidates[DEM].electors.toFixed(0);
-    $("#gopEV").innerHTML = candidates[GOP].electors.toFixed(0);
-    let name = candidates[winner].candidate;
-    let prob = (candidates[winner].probability * 100).toFixed(0)
+function showOverall(history) {
+    let current = history[0];
+    let winner = current.demElectors > 270 ? DEM : GOP;
+    $("#demEV").innerHTML = current.demElectors.toFixed(0);
+    $("#gopEV").innerHTML = (538 - current.demElectors).toFixed(0);
+    let name = CANDIDATES[winner];
+    // because DEM = 0 and GOP = 1, this will invert the probability (which is by
+    // default in terms of the Democrats) if the GOP is favored.
+    let prob = (Math.abs(winner - current.probability) * 100).toFixed(0)
+
+    let last = history[1];
+    // change since yesterday
+    let delta = (prob - Math.abs(winner - last.probability) * 100).toFixed(0)
+
     // figure out a/an
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
-    $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
+    $("#prediction").innerHTML = 
+        `${name} has ${article} ${prob}% chance of winning the election. <br />
+        This is ${delta >= 0 ? "an increase" : "a decrease"} of 
+        ${Math.abs(delta).toFixed(0)}% from yesterday.`
 }
 
 function makeMap(showProbabilities = true) {
@@ -57,7 +67,7 @@ function makeMap(showProbabilities = true) {
 
     let map = d3.select(el).append("svg")
         .attr("width", width)
-        .attr("height", height)
+        .attr("height", height);
 
     let path = d3.geo.path().projection(projection);
 
@@ -183,7 +193,7 @@ function makeMap(showProbabilities = true) {
 
 function makeHistogram(most) {
     const chartRatio = 0.35;
-    const margin = {L: 40, R: 5, B: 35};
+    const margin = {L: 40, R: 5, B: 35, T: 10};
 
     let el = $("#histogram");
     let width = el.getBoundingClientRect().width;
@@ -193,9 +203,9 @@ function makeHistogram(most) {
         .domain(d3.range(538))
         .rangeBands([margin.L, width - margin.R], -0.25);
     let y = d3.scale.linear()
-        .range([height, margin.B]);
+        .range([height - margin.B, margin.T]);
 
-    let ticks = innerWidth > 500 ? 30 : 54;
+    let ticks = smallScreen() ? 54 : 30;
 
     let xAxis = d3.svg.axis()
         .scale(x)
@@ -234,13 +244,13 @@ function makeHistogram(most) {
 
         chart.append("g")
             .attr("class", "y axis")
-            .attr("transform", `translate(${margin.L}, ${-margin.B})`)
+            .attr("transform", `translate(${margin.L}, 0)`)
             .call(yAxis)
         .append("text")
             .attr("class", "label")
             .attr("transform", "rotate(-90)")
             .attr("y", 6)
-            .attr("x", -35)
+            .attr("x", -5)
             .attr("dy", ".71em")
             .style("font-weight", "bold")
             .style("text-anchor", "end")
@@ -257,8 +267,8 @@ function makeHistogram(most) {
             })
             .attr("x", d => x(d.electors))
             .attr("width", x.rangeBand())
-            .attr("y", d => y(d.percentage) - margin.B)
-            .attr("height", d => height - y(d.percentage))
+            .attr("y", d => y(d.percentage))
+            .attr("height", d => height - y(d.percentage) - margin.B)
             .on("mouseover", function(state, index) {
                 this.style.opacity = 0.5;
             })
@@ -276,7 +286,7 @@ function makeHistogram(most) {
         x.rangeBands([margin.L, width - margin.R], -0.25);
         y.range([height, margin.B]);
 
-        let ticks = innerWidth > 500 ? 30 : 54;
+        let ticks = smallScreen() ? 54 : 30;
         xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
 
         chart.attr("width", width);
@@ -300,6 +310,81 @@ function makeHistogram(most) {
     });
 }
 
+function makeHistoryLine(history) {
+    const chartRatio = 0.5;
+    const margin = {L: 40, R: 5, B: 35, T: 10};
+
+    let startDate = history[history.length - 1].date;
+    let endDate = history[0].date;
+
+    let el = $("#history");
+    let width = el.getBoundingClientRect().width;
+    let height = width * chartRatio;
+
+    let x = d3.scale.linear()
+        .domain([startDate, endDate])
+        .range([margin.L, width - margin.R]);
+    let y = d3.scale.linear()
+        .domain([0, 1])
+        .range([height - margin.B, margin.T]);
+
+    let xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+    let yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .ticks(smallScreen() ? 5 : 10, "%");
+
+    let line = d3.svg.line()
+        .x(d => x(d.date))
+        .y(d => y(d.probability));
+
+    let chart = d3.select(el).append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    let layout = d3.layout.stack().offset("silhoutte");
+
+    // axes
+    chart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", `translate(0, ${height - margin.B})`)
+        .call(xAxis)
+    .append("text")
+        .attr("class", "label")
+        .attr("y", 25)
+        .attr("x", width - 10)
+        .attr("dy", ".71em")
+        .style("font-weight", "bold")
+        .style("text-anchor", "end")
+        .text("Date");
+
+    chart.append("g")
+        .attr("class", "y axis")
+        .attr("transform", `translate(${margin.L}, 0)`)
+        .call(yAxis)
+    .append("text")
+        .attr("class", "label")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("x", -5)
+        .attr("dy", ".71em")
+        .style("font-weight", "bold")
+        .style("text-anchor", "end")
+        .text("Probability");
+
+    chart.selectAll("path")
+        .data(layout([history]))
+    .enter().append("path")
+        .attr("d", line)
+        .attr("stroke", BLUE)
+        .attr("stroke-width", 4)
+        .attr("fill", "transparent");
+
+    el.style.opacity = 1.0;
+}
+
 function sortByKey(arr, key) {
     return arr.sort((a, b) => {
         let x = a[key];
@@ -309,3 +394,6 @@ function sortByKey(arr, key) {
     });
 }
 
+function smallScreen() {
+    return window.innerWidth < 500;
+}
