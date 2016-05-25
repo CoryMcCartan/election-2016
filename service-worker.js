@@ -2,22 +2,23 @@
  * Service Worker for offline use.
  */
 var CACHE_VERSION = "v1";
+var base = location.pathname.replace("service-worker.js", "");
 var STATIC_CACHE = [
-    "assets/flag.gif",
-    "build/lib/all_libs.js",
+    base + "assets/flag.gif",
+    base + "assets/usa.json",
+    base + "build/lib/all_libs.js",
     "https://fonts.googleapis.com/css?family=Raleway:400,700",
     "https://fonts.googleapis.com/css?family=Roboto+Mono:300,700,400",
-    "assets/usa.json",
 ];
 var DYNAMIC_CACHE = [
-    location.pathname.replace("service-worker.js", ""), // basepath
-    "index.html",
-    "manifest.json",
-    "build/main.css",
-    "build/main.js",
-    "data/history.csv",
-    "data/states.csv",
-    "data/electors.csv",
+    base,
+    base + "index.html",
+    base + "manifest.json",
+    base + "build/main.css",
+    base + "build/main.js",
+    base + "data/history.csv",
+    base + "data/states.csv",
+    base + "data/electors.csv",
 ];
 var CACHE = STATIC_CACHE.concat(DYNAMIC_CACHE);
 
@@ -36,7 +37,7 @@ this.addEventListener("fetch", function(e) {
     var url = new URL(e.request.url);
 
     var has = function(arr, test) {
-        var length = arr.length
+        var length = arr.length;
         for (var i = 0; i < length; i++) {
            if (arr[i] === test || 
                    (arr[i] === test.slice(1) && test !== "/") )
@@ -46,16 +47,19 @@ this.addEventListener("fetch", function(e) {
     };
 
     if (has(STATIC_CACHE, url.pathname)) { // prefer cached version
+        console.log("STATIC: " + url.pathname);
         e.request.mode = "no-cors";
         e.respondWith(caches.match(e.request));
     } else if (has(DYNAMIC_CACHE, url.pathname)) { // prefer network version
+        console.log("DYNAMIC: " + url.pathname);
         e.respondWith(
             fetch(e.request)
             .catch(function(r) {
                 return caches.match(e.request);
             })
         );
-    } else { // try cache, if not then get from network, then cache
+    } else { // try cache, if not then get from network, then store in cache
+        console.log("NEITHER: " + url.pathname);
         e.respondWith(
             caches.match(e.request)
             .then(function(response) {
@@ -68,7 +72,7 @@ this.addEventListener("fetch", function(e) {
                     })
                 });
             })
-        )
+        );
     }
 
 });
