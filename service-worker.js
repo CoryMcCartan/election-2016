@@ -1,7 +1,10 @@
 /**
  * Service Worker for offline use.
  */
-var CACHE_VERSION = "v1";
+var log = false;
+
+var CACHE_VERSION = "v2";
+
 var base = location.pathname.replace("service-worker.js", "");
 var STATIC_CACHE = [
     base + "assets/flag.gif",
@@ -47,11 +50,11 @@ this.addEventListener("fetch", function(e) {
     };
 
     if (has(STATIC_CACHE, url.pathname)) { // prefer cached version
-        console.log("STATIC: " + url.pathname);
+        if (log) console.log("STATIC: " + url.pathname);
         e.request.mode = "no-cors";
         e.respondWith(caches.match(e.request));
     } else if (has(DYNAMIC_CACHE, url.pathname)) { // prefer network version
-        console.log("DYNAMIC: " + url.pathname);
+        if (log) console.log("DYNAMIC: " + url.pathname);
         e.respondWith(
             fetch(e.request)
             .catch(function(r) {
@@ -59,7 +62,7 @@ this.addEventListener("fetch", function(e) {
             })
         );
     } else { // try cache, if not then get from network, then store in cache
-        console.log("NEITHER: " + url.pathname);
+        if (log) console.log("NEITHER: " + url.pathname);
         e.respondWith(
             caches.match(e.request)
             .then(function(response) {

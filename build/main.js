@@ -211,6 +211,7 @@ function main() {
 
 function showOverall(history, prediction = false) {
     let current = history[0];
+
     let electors = prediction ? current.calledElectors : current.avgElectors;
     let winner = electors > 270 ? DEM : GOP;
     $("#demEV").innerHTML = electors.toFixed(0);
@@ -219,6 +220,8 @@ function showOverall(history, prediction = false) {
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
     let prob = (Math.abs(winner - current.probability) * 100).toFixed(0)
+
+    $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
 
     let last = history[1];
     // change since yesterday
