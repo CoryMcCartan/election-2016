@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd model
+cd `dirname $_`/model
 ./run 5e5
 cd ..
 git add .

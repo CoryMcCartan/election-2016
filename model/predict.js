@@ -5,7 +5,7 @@ let levenshtein = require('fast-levenshtein');
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
-const date_multiplier = 1 / (1 - untilElection / 365); 
+const date_multiplier = Math.exp(untilElection / 365);  // MAGIC NUMBER
 let mix; // how much of state vs national data to use
 
 let data2012;
