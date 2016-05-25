@@ -3,6 +3,7 @@ $font-weight: 300
 
 $grey: #aaa
 $darkgrey: #555
+$lightgrey: #ddd
 
 $desktop: "(min-width: 600px)"
 $mobile: "(max-width: 600px)"
@@ -39,12 +40,12 @@ main
     width: 100vw
     max-width: 960px
     min-height: 1em
-    margin: 50px auto
+    margin: 24px auto 0 auto
 
 .graphic
     width: calc(100% - 2em)
     max-width: 880px
-    margin: 0.5em auto 1em auto
+    margin: 0.5em auto 0.5em auto
     transition: opacity 500ms
     opacity: 0
 
@@ -84,7 +85,7 @@ summary#overall
         margin: 0 1em 0.5em
 
 .graphic-controls
-    margin: 1em
+    margin: 1em 1em 0 1em
     text-align: center
 
 button
@@ -107,10 +108,21 @@ footer
     margin: 2em
     text-align: center
     font-size: 0.8em
-    color: #aaa
+    color: $grey
 
 section
     margin-top: 1em
+    padding: 0.5em
+section + section
+    position: relative
+section + section :before
+    content: ""
+    background-color: $lightgrey
+    position: absolute
+    top: -1em
+    left: 4%
+    right: 4%
+    height: 1px
 
 summary
     margin: 0 2em 1em 2em
