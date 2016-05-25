@@ -171,7 +171,6 @@ function makeMap(showProbabilities = true) {
             .datum(topojson.mesh(geo, geo.objects.states, (a, b) => a !== b))
             .attr("class", "borders")
             .attr("fill", "none")
-//            .attr("stroke", "#fff")
             .attr("d", path);
 
         el.style.opacity = 1;
@@ -219,8 +218,8 @@ function makeMap(showProbabilities = true) {
 }
 
 function makeHistogram(most) {
-    const chartRatio = 0.35;
-    const margin = {L: 40, R: 5, B: 35, T: 10};
+    const chartRatio = 0.4;
+    const margin = {L: 40, R: 5, B: 35, T: 15};
 
     let el = $("#histogram");
     let width = el.getBoundingClientRect().width;
@@ -241,7 +240,7 @@ function makeHistogram(most) {
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(6, "%");
+        .ticks(smallScreen() ? 4 : 6, "%");
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)
@@ -304,10 +303,12 @@ function makeHistogram(most) {
         height = width * chartRatio;
 
         x.rangeBands([margin.L, width - margin.R], -0.25);
-        y.range([height, margin.B]);
+        y.range([height - margin.B, margin.T]);
+
 
         let ticks = smallScreen() ? 54 : 30;
         xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
+        yAxis.ticks(smallScreen() ? 4 : 6, "%");
 
         chart.attr("width", width);
         chart.attr("height", height);
@@ -318,21 +319,20 @@ function makeHistogram(most) {
             .select(".label")
             .attr("x", width - 10);
         chart.select(".y.axis")
-            .attr("transform", `translate(${margin.L}, ${-margin.B})`)
-            .call(yAxis)
+            .call(yAxis);
             
         chart.selectAll(".bar")
             .attr("x", d => x(d.electors))
             .attr("width", x.rangeBand())
-            .attr("y", d => y(d.percentage) - margin.B)
-            .attr("height", d => height - y(d.percentage));
+            .attr("y", d => y(d.percentage))
+            .attr("height", d => height - y(d.percentage) - margin.B);
 
     });
 }
 
 function makeHistoryLine(history) {
     const chartRatio = 0.5;
-    const margin = {L: 40, R: 5, B: 35, T: 10};
+    const margin = {L: 40, R: 5, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
     let endDate = history[0].date;
@@ -351,6 +351,7 @@ function makeHistoryLine(history) {
     let xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
+        .ticks(smallScreen() ? 4 : 7);
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
@@ -418,14 +419,16 @@ function makeHistoryLine(history) {
         x.range([margin.L, width - margin.R]);
         y.range([height - margin.B, margin.T]);
 
+        xAxis.ticks(smallScreen() ? 4 : 7);
+        yAxis.ticks(smallScreen() ? 5 : 10, "%");
+
         chart.select(".x.axis")
             .attr("transform", `translate(0, ${height - margin.B})`)
             .call(xAxis)
             .select(".label")
             .attr("x", width - 10);
         chart.select(".y.axis")
-            .attr("transform", `translate(${margin.L}, 0)`)
-            .call(yAxis)
+            .call(yAxis);
             
 
         chart.select("#demProbLine")
@@ -445,13 +448,13 @@ function sortByKey(arr, key) {
 }
 
 function smallScreen() {
-    return window.innerWidth < 500;
+    return window.innerWidth < 600;
 }
 
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register("service-worker.js", {
-        scope: location.pathname.replace("index.html", "")
-    }).then(() => {
-        console.log("Service Worker Registered.");
-    })
+//     navigator.serviceWorker.register("service-worker.js", {
+//         scope: location.pathname.replace("index.html", "")
+//     }).then(() => {
+//         console.log("Service Worker Registered.");
+//     })
 }
