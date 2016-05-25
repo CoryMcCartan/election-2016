@@ -32,19 +32,26 @@ function predict(iterations, history) {
     // simulate a bunch of elections
     let outcomes = new Array(538 + 1).fill(0);
     let demWins = 0;
+    let recounts = 0;
     let stateData = abbrs.map(a => ({state: a, probability: 0}) ); // probability of winning each state
 
     for (let i = 0; i < iterations; i++) {
         let election = {};
         let nationalShift = shiftDist.ppf(Math.random());
+        let recount = false;
         // for every state
         for (let s = 0; s < 51; s++) {
             let result = predictor.modelState(s, nationalShift);
+
+            if (Math.abs(result.dem - result.gop) < 0.005)
+                recount = true; 
 
             if (result.dem > 0.5)
                 stateData[s].probability += 1 / iterations;
             election[abbrs[s]] = [result.dem, result.gop];
         }
+
+        if (recount) recounts++;
 
         let democraticElectors = sumElectors(election)[0]; 
         outcomes[democraticElectors]++;
@@ -70,6 +77,8 @@ function predict(iterations, history) {
         calledElectors,
         probability: demWins / iterations,
         iterations,
+        recounts: recounts / iterations,
+        ties: outcomes[269] / iterations,
     });
 
     outcomes = outcomes.map((c, i) => ({
