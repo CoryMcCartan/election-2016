@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p output/
-node main.js $1
+node main.js $@
 mkdir -p ../client/data/
 rm ../client/data/*
 cp output/* ../client/data/
