@@ -23,6 +23,12 @@ function main() {
         calledElectors: +d.calledElectors,
         probability: +d.probability,
         iterations: +d.iterations,
+        recount: +d.recounts,
+        tie: +d.ties,
+        demPopEC: +d.demWinPopLoseEC,
+        gopPopEC: +d.gopWinPopLoseEC,
+        demLandslide: +d.demLandslide,
+        gopLandslide: +d.gopLandslide,
     }), (error, history) => {
         let expected = showOverall(history);
         makeMap();
@@ -45,7 +51,8 @@ function showOverall(history, prediction = false) {
 
     $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
 
-    let last = history[1];
+    let oneDay = 24 * 60 * 60 * 1000;
+    let last = history.find(e => current.date - e.date > oneDay);
     // change since yesterday
     let delta = (prob - Math.abs(winner - last.probability) * 100).toFixed(0)
 
@@ -72,6 +79,14 @@ function showOverall(history, prediction = false) {
         this.hidden = true;
         $("#showProbs").hidden = false;
     });
+
+    // scenarios
+    $("td#scn-tie").innerHTML = (100 * current.tie).toFixed(1) + "%";
+    $("td#scn-recount").innerHTML = (100 * current.recount).toFixed(1) + "%";
+    $("td#scn-dem-pop-ec").innerHTML = (100 * current.demPopEC).toFixed(1) + "%";
+    $("td#scn-gop-pop-ec").innerHTML = (100 * current.gopPopEC).toFixed(1) + "%";
+    $("td#scn-dem-landslide").innerHTML = (100 * current.demLandslide).toFixed(1) + "%";
+    $("td#scn-gop-landslide").innerHTML = (100 * current.gopLandslide).toFixed(1) + "%";
 
     return electors;
 }
