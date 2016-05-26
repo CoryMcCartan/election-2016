@@ -308,23 +308,33 @@ function makeMap(showProbabilities = true) {
 
         let geoObject = topojson.object(geo, geo.objects.states).geometries;
         sortByKey(geoObject, "id");
+        // add the state's index to its data
+        geoObject = geoObject.map((d, i) => { 
+            d.index = i; 
+            return d;
+        }); 
 
         states.selectAll("path")
             .data(geoObject)
             .enter().append("path")
                 .attr("fill", color.bind(null, data))
                 .attr("d", path)
-                .attr("class", "state")
-            .on("mouseover", function(state, index) {
+                .attr("class", "state");
+        map
+            .on("mouseover", function() {
+                let el = d3.event.target;
+                if (el.classList[0] !== "state") return;
+
                 tooltip
                     .style("opacity", 1.0)
                     .style("left", d3.event.pageX - 70 + "px")
                     .style("top", d3.event.pageY + 30 + "px");
 
-                let stateElectors = electors[ abbrFromState[state.id] ];
-                tName.innerHTML = `${state.id} (${stateElectors})`;
+                let id = el.__data__.id;
+                let stateElectors = electors[ abbrFromState[id] ];
+                tName.innerHTML = `${id} (${stateElectors})`;
 
-                let probability = data[index].probability;
+                let probability = data[el.__data__.index].probability;
                 tDEM.innerHTML = (probability * 100).toFixed(0) + "%";
                 tGOP.innerHTML = (100 - probability * 100).toFixed(0) + "%";
 
@@ -336,16 +346,21 @@ function makeMap(showProbabilities = true) {
                     tDEM.parentElement.style.fontWeight = "normal";
                 }
 
-                this.style.opacity = 0.75;
+                el.style.opacity = 0.75;
             })
             .on("mousemove", function() {
+                if (d3.event.target.classList[0] !== "state") return;
+
                 tooltip
                     .style("left", d3.event.pageX - 70 + "px")
                     .style("top", d3.event.pageY + 30 + "px");
             })
             .on("mouseout", function() {
+                let el = d3.event.target;
+                if (el.classList[0] !== "state") return;
+
                 tooltip.style("opacity", 0.0);
-                this.style.opacity = 1.0;
+                el.style.opacity = 1.0;
             });
 
         map.append("path")
@@ -427,7 +442,7 @@ function makeHistogram(most) {
         .attr("width", width)
         .attr("height", height);
 
-    let tooltip = d3.select("#hist-tooltip");
+    let tooltip = $("#hist-tooltip");
     let tElectors = $("#ht-electors");
     let tPercent = $("#ht-percent");
 
@@ -472,16 +487,25 @@ function makeHistogram(most) {
             .attr("x", d => x(d.electors))
             .attr("width", x.rangeBand())
             .attr("y", d => y(d.percentage))
-            .attr("height", d => height - y(d.percentage) - margin.B)
-            .on("mouseover", function(state, index) {
-                this.style.opacity = 0.5;
-                tooltip.style("opacity", 1.0);
-                tElectors.innerHTML = state.electors;
-                tPercent.innerHTML = (100 * state.percentage).toFixed(2) + "%";
+            .attr("height", d => height - y(d.percentage) - margin.B);
+
+        let usingTooltip = false;
+        chart
+            .on("mouseover", function() {
+                let el = d3.event.target;
+                if (el.classList[0] !== "bar") return;
+
+                el.style.opacity = 0.5;
+                tooltip.style.opacity = 1.0;
+                tElectors.innerHTML = el.__data__.electors;
+                tPercent.innerHTML = (100 * el.__data__.percentage).toFixed(2) + "%";
             })
             .on("mouseout", function() {
-                this.style.opacity = 1.0;
-                tooltip.style("opacity", 0.0);
+                let el = d3.event.target;
+                if (el.classList[0] !== "bar") return;
+
+                el.style.opacity = 1.0;
+                tooltip.style.opacity = 0.0;
             });
 
         el.style.opacity = 1.0;
