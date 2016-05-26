@@ -29,8 +29,8 @@ function * init() {
     weightPolls(polls);
 
     let pollAverages = calculateAverages();
-
     add2012Data(data2012, polls, pollAverages);
+
 
     averages = calculateAverages();
 }
@@ -197,13 +197,18 @@ function add2012Data(data2012, polls, avgs) {
     let gapAdj = avgs.national - gap2012;
 
     for (let i = 0; i < 51; i++) {
+        let state = data2012[i];
+
         polls.push({
             state: abbrs[i],
             moe: 0.5, 
-            gap: data2012[i].gap + gapAdj,
-            n: +data2012[i].totalVoters,
+            gap: state.gap + gapAdj,
+            n: +state.totalVoters,
             weight,
         });
+
+        // predict 2016 turnout
+        state.turnout2016 = state.population_2015 / state.population * state.totalVoters;
     }
 }
 
@@ -265,12 +270,15 @@ function modelState(index, nationalShift) {
     let mean = expected + nationalShift;
     let gap = gaussian(mean, variance).ppf(Math.random());
 
-    let dem = 0.5 + gap / 2;
-    let gop = 0.5 - gap / 2;
+    let turnout = data2012[index].turnout2016;
+
+    let dem = turnout * (0.5 + gap / 2);
+    let gop = turnout * (0.5 - gap / 2);
     
     return {
         dem,
         gop,
+        turnout,
     };
 }
 

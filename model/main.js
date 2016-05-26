@@ -34,31 +34,53 @@ function predict(iterations, history) {
     let outcomes = new Array(538 + 1).fill(0);
     let demWins = 0;
     let recounts = 0;
+    let demWinPopLoseEC = 0;
+    let gopWinPopLoseEC = 0;
+    let demLandslide = 0;
+    let gopLandslide = 0;
     let stateData = abbrs.map(a => ({state: a, probability: 0}) ); // probability of winning each state
 
     for (let i = 0; i < iterations; i++) {
         let election = {};
         let nationalShift = shiftDist.ppf(Math.random());
         let recount = false;
+        let demPopularVote = 0;
+        let gopPopularVote = 0;
         // for every state
         for (let s = 0; s < 51; s++) {
             let result = predictor.modelState(s, nationalShift);
 
-            if (Math.abs(result.dem - result.gop) < 0.005)
+            if (Math.abs(result.dem - result.gop) < 0.005 * result.turnout)
                 recount = true; 
 
-            if (result.dem > 0.5)
+            demPopularVote += result.dem;
+            gopPopularVote += result.gop;
+
+            if (result.dem > result.gop)
                 stateData[s].probability += 1 / iterations;
+
             election[abbrs[s]] = [result.dem, result.gop];
         }
-
-        if (recount) recounts++;
 
         let democraticElectors = sumElectors(election)[0]; 
         outcomes[democraticElectors]++;
 
-        if (democraticElectors >= 270)
+        if (recount && Math.abs(democraticElectors - 270) < 20) recounts++;
+
+        let total = demPopularVote + gopPopularVote;
+        let gap = demPopularVote - gopPopularVote;
+        if (gap / total > 0.1)
+            demLandslide++;
+        else if (gap / total < -0.1)
+            gopLandslide++;
+
+        if (democraticElectors >= 270) {
             demWins++;
+            if (demPopularVote < gopPopularVote)
+                gopWinPopLoseEC++;
+        } else if (gopPopularVote < demPopularVote) {
+            demWinPopLoseEC++;
+        }
     }
 
     let demElectors = outcomes.reduce((p, c, i) => p + c * i) / iterations; // mean
@@ -80,6 +102,10 @@ function predict(iterations, history) {
         iterations,
         recounts: recounts / iterations,
         ties: outcomes[269] / iterations,
+        demWinPopLoseEC: demWinPopLoseEC / iterations,
+        gopWinPopLoseEC: gopWinPopLoseEC / iterations,
+        demLandslide: demLandslide / iterations,
+        gopLandslide: gopLandslide / iterations,
     });
 
     outcomes = outcomes.map((c, i) => ({

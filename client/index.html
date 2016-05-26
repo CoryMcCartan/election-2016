@@ -41,6 +41,7 @@ layout: default
 </section>
 
 <section>
+    <h2>Distribution of Outcomes</h2>
     <summary>
         Below is the cumulative result of all of the simulated elections.
         The number of Democratic electors is shown, with the expected outcome 
@@ -56,6 +57,7 @@ layout: default
 </section>
 
 <section>
+    <h2>History</h2>
     <summary>
         Below is the output of the model over time.  The blue line represents
         Hillary Clinton&rsquo;s chances of winning, and the red line Donald
@@ -63,6 +65,44 @@ layout: default
     </summary>
 
     <div id="history" class="graphic"></div>
+</section>
+
+<section>
+    <h2>Possible Scenarios</h2>
+    <summary>
+        Below is a list of possible scenarios, and the chance of each occurring.
+    </summary>
+
+    <table id="scenario">
+        <tr>
+            <th>Scenario</td>
+            <th>Probability</td>
+        </tr>
+        <tr>
+            <td>Electoral College tie</td>
+            <td id="scn-tie"></td>
+        </tr>
+        <tr>
+            <td>Recount</td>
+            <td id="scn-recount"></td>
+        </tr>
+        <tr>
+            <td>Clinton wins popular vote but loses Electoral College</td>
+            <td id="scn-dem-pop-ec"></td>
+        </tr>
+        <tr>
+            <td>Trump wins popular vote but loses Electoral College</td>
+            <td id="scn-gop-pop-ec"></td>
+        </tr>
+        <tr>
+            <td>Clinton landslide</td>
+            <td id="scn-dem-landslide"></td>
+        </tr>
+        <tr>
+            <td>Trump landslide</td>
+            <td id="scn-gop-landslide"></td>
+        </tr>
+    </table>
 </section>
 
 
