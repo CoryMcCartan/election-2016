@@ -94,10 +94,10 @@ function makeMap(showProbabilities = true) {
 
     let path = d3.geo.path().projection(projection);
 
-    let tooltip = d3.select(".tooltip")
-    let tName = $("#t-name");
-    let tDEM = $("#t-dem");
-    let tGOP = $("#t-gop");
+    let tooltip = d3.select("#map-tooltip");
+    let tName = $("#mt-name");
+    let tDEM = $("#mt-dem");
+    let tGOP = $("#mt-gop");
 
     let colorScale = d3.scale.linear()
         //.domain([0, 0.5, 1])
@@ -166,7 +166,7 @@ function makeMap(showProbabilities = true) {
                     .style("top", d3.event.pageY + 30 + "px");
             })
             .on("mouseout", function() {
-                tooltip.style("opacity", 0.0)
+                tooltip.style("opacity", 0.0);
                 this.style.opacity = 1.0;
             });
 
@@ -249,6 +249,10 @@ function makeHistogram(most) {
         .attr("width", width)
         .attr("height", height);
 
+    let tooltip = d3.select("#hist-tooltip");
+    let tElectors = $("#ht-electors");
+    let tPercent = $("#ht-percent");
+
     d3.csv("data/electors.csv", d => ({
         electors: +d.electors,
         percentage: +d.percentage,
@@ -293,9 +297,13 @@ function makeHistogram(most) {
             .attr("height", d => height - y(d.percentage) - margin.B)
             .on("mouseover", function(state, index) {
                 this.style.opacity = 0.5;
+                tooltip.style("opacity", 1.0);
+                tElectors.innerHTML = state.electors;
+                tPercent.innerHTML = (100 * state.percentage).toFixed(2) + "%";
             })
             .on("mouseout", function() {
                 this.style.opacity = 1.0;
+                tooltip.style("opacity", 0.0);
             });
 
         el.style.opacity = 1.0;
@@ -335,7 +343,7 @@ function makeHistogram(most) {
 
 function makeHistoryLine(history) {
     const chartRatio = 0.5;
-    const margin = {L: 40, R: 5, B: 35, T: 15};
+    const margin = {L: 40, R: 40, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
     let endDate = history[0].date;
@@ -380,7 +388,7 @@ function makeHistoryLine(history) {
     .append("text")
         .attr("class", "x label")
         .attr("y", 25)
-        .attr("x", width - 10)
+        .attr("x", width - 50)
         .text("Date");
 
     chart.append("g")
@@ -392,6 +400,19 @@ function makeHistoryLine(history) {
         .attr("y", 6)
         .attr("x", -5)
         .text("Probability");
+
+    // labels
+    let prob = history[0].probability;
+    let demEndLabel = chart.append("text")
+        .attr("class", "dem end-label")
+        .attr("x", width - 30)
+        .attr("y", y(prob) + 5)
+        .text((100 * prob).toFixed(0) + "%");
+    let gopEndLabel = chart.append("text")
+        .attr("class", "gop end-label")
+        .attr("x", width - 30)
+        .attr("y", y(1 - prob) + 5)
+        .text((100 - 100 * prob).toFixed(0) + "%");
 
     chart.append("path")
         .datum(history)
@@ -429,9 +450,16 @@ function makeHistoryLine(history) {
             .attr("transform", `translate(0, ${height - margin.B})`)
             .call(xAxis)
             .select(".label")
-            .attr("x", width - 10);
+            .attr("x", width - 50);
         chart.select(".y.axis")
             .call(yAxis);
+
+        demEndLabel
+            .attr("x", width - 30)
+            .attr("y", y(prob) + 5);
+        gopEndLabel
+            .attr("x", width - 30)
+            .attr("y", y(1 - prob) + 5);
             
 
         chart.select("#demProbLine")

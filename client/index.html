@@ -7,17 +7,17 @@ layout: default
 
 <section>
     <div id="map" class="graphic"></div>
-    <div class="tooltip">
-        <span id="t-name"></span><br />
+    <div id="map-tooltip" class="tooltip">
+        <span id="mt-name"></span><br />
         Chance of winning:
         <table>
             <tr>
                 <td>Hillary Clinton &nbsp;&nbsp;</td>
-                <td id="t-dem"></td>
+                <td id="mt-dem"></td>
             </tr>
             <tr>
                 <td>Donald Trump &nbsp;</td>
-                <td id="t-gop"></td>
+                <td id="mt-gop"></td>
             </tr>
         </table>
     </div>
@@ -47,7 +47,12 @@ layout: default
         shaded in yellow. 
     </summary>
 
-    <div id="histogram" class="graphic"></div>
+    <div id="histogram" class="graphic">
+        <div id="hist-tooltip" class="tooltip">
+            <span id="ht-electors"></span> <br />
+            <span id="ht-percent"></span> 
+        </div>
+    </div>
 </section>
 
 <section>
