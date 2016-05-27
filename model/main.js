@@ -1,17 +1,21 @@
 let csv = require("fast-csv");
 let gaussian = require("gaussian");
+let argv = require("minimist")(process.argv.slice(2));
 
 require("./electoral-college.js")(global);
 require("./states.js")(global);
 let predictor = require("./predict.js");
 let util = require("./util.js");
 
+let LOG;
+
 function * main() {
     console.log("======= 2016 PRESIDENTIAL RACE PREDICTIONS =======");
-    let iterations = +process.argv[2] || 2e4;
-    let addToHistory = process.argv[3] !== "--dry";
+    let iterations = +argv._[0] || 2e4;
+    let addToHistory = !argv.dry;
+    LOG = !!argv.v || !!argv.verbose;
 
-    yield* predictor.init();
+    yield* predictor.init(LOG);
 
     let history = yield loadHistory();
 
@@ -147,6 +151,5 @@ function loadHistory() {
        });
    });
 }
-
 
 util.runAsyncFunction(main);

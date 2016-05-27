@@ -1,6 +1,7 @@
 let gaussian = require("gaussian");
 let loader = require("./loader.js")
-let levenshtein = require('fast-levenshtein');
+
+let LOG;
 
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
@@ -11,12 +12,15 @@ let mix; // how much of state vs national data to use
 let data2012;
 let polls;
 let pollsters;
+let averagePollster;
 
 let averages;
 
 const topicName = "2016-president";
 
-function * init() { 
+function * init(log) { 
+    LOG = log;
+
     data2012 = yield loader.get2012Election();
     processElection(data2012);
 
@@ -42,6 +46,9 @@ function processElection(data) {
 }
 
 function processPollsterData(data) {
+    let length = data.length;
+    let avgPredictive = 0;
+
     for (let pollster of data) {
         // data cleanup
         pollster.advancedPlusMinus = +pollster.advancedPlusMinus;
@@ -54,7 +61,15 @@ function processPollsterData(data) {
         pollster.banned = pollster.banned === "yes";
         delete pollster.ncpp_aapor_roper;
         delete pollster.id;
+
+        avgPredictive += pollster.meanRevertedBias;
     }
+
+    averagePollster = {
+        pollster: "AVERAGE",
+        predictivePlusMinus: avgPredictive / length,
+        meanRevertedBias: 0,
+    };
 }
 
 function processPolls(polls) {
@@ -82,7 +97,6 @@ function processPolls(polls) {
         delete poll.end_date;
         delete poll.start_date;
         delete poll.pollster;
-        delete poll.method;
         delete poll.source;
         delete poll.id;
 
@@ -93,10 +107,14 @@ function processPolls(polls) {
             delete poll;
             continue;
         }
-        if (questions.length > 1) 
-            console.log(`EXTRA QUESIONTS: ${JSON.stringify(questions)}`);
-        if (question.subpopulations.length > 1) 
-            console.log(`EXTRA SUBPOPULATIONS: ${JSON.stringify(question.subpopulations)}`);
+
+        if (LOG) {
+            if (questions.length > 1) 
+                console.log(`EXTRA QUESIONTS: ${JSON.stringify(questions)}`);
+            if (question.subpopulations.length > 1) 
+                console.log(`EXTRA SUBPOPULATIONS: ${JSON.stringify(question.subpopulations)}`);
+        }
+
         delete poll.questions;
         // remove extraneous data
         poll.moe = question.subpopulations[0].margin_of_error || default_moe;
@@ -110,7 +128,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.07; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.1; // MAGIC NUMBER 
     }
 }
 
@@ -130,7 +148,11 @@ function weightPolls(polls) {
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
-        let pollsters = getPollsterAverages(poll.survey_houses);
+        let pollsters = getPollsterAverages(poll.survey_houses, poll.method);
+        if (pollsters.banned) {
+            delete poll;
+            continue;
+        }
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
         let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.9; // MAGIC NUMBERS
@@ -165,10 +187,11 @@ function weightPolls(polls) {
     console.log(`RV/LV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
 }
 
-function getPollsterAverages(surveyors) {
+function getPollsterAverages(surveyors, method) {
     let pollster = {
         plusMinus: 0,
         meanBias: 0,
+        banned: false,
     };
 
     let total = surveyors.length;
@@ -176,14 +199,34 @@ function getPollsterAverages(surveyors) {
     for (let surveyor of surveyors) {
         // find pollster with closest name
         let name = surveyor.name;
-        let matchedPollster = pollsters.reduce((p, c) => {
-            let distanceC = levenshtein.get(c.pollster, name);
-            let distanceP = levenshtein.get(p.pollster, name);
-            return distanceC < distanceP ? c : p;
+        let matched = pollsters.filter(p => {
+            return p.pollster.includes(name) || name.includes(p.pollster);
         });
+        if (matched.length === 0) {
+            // special cases
+            if (name.includes("Hart")) {
+                matched = pollsters.find(p => p.pollster.includes("Hart"));
+                break;
+            } else if (name.includes("Schoen")) {
+                matched = pollsters.find(p => p.pollster.includes("Schoen"));
+                break;
+            }
 
-        pollster.plusMinus += matchedPollster.predictivePlusMinus / total / 100; 
-        pollster.meanBias += matchedPollster.meanRevertedBias / total / 100; 
+            matched = averagePollster;
+            if (LOG)
+                console.log(`NOT FOUND: ${name}.`);
+        } else if (matched.length > 1) {
+            if (method.toLowerCase() === "internet")
+                matched = matched.find(p => p.pollster.includes("online")) || averagePollster;
+            else
+                matched = matched.find(p => p.pollster.includes("telephone")) || averagePollster;
+        } else {
+            matched = matched[0];
+        }
+
+        pollster.plusMinus += matched.predictivePlusMinus / total / 100; 
+        pollster.meanBias += matched.meanRevertedBias / total / 100; 
+        pollster.banned |= matched.banned;
     }
 
     return pollster;
@@ -222,7 +265,7 @@ function calculateAverages() {
     let state_total_n = Array(51).fill(0);
 
     let n_us_polls = 0;
-    let n_state_polls = 0;
+    let n_state_polls = Array(51).fill(0);
     let us_weight = 0;
     let weights = Array(51).fill(0);
 
@@ -239,7 +282,7 @@ function calculateAverages() {
             state_var[index] += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1);
             state_total_n[index] += poll.n - 1;
             weights[index] += poll.weight;
-            n_state_polls += 1 / 51;
+            n_state_polls[index]++;
         }
     }
 
@@ -249,8 +292,17 @@ function calculateAverages() {
     US_var *= 0.01 * date_multiplier / US_total_n;
 
     // update mix based on poll counts
-    mix = Math.pow(n_state_polls / (n_state_polls + n_us_polls), 0.025); // MAGIC NUMBER
+    let total_state_polls = n_state_polls.reduce((p, c) => p + c);
+    mix = Math.pow(total_state_polls / (total_state_polls + n_us_polls), 0.25); // MAGIC NUMBER
     console.log(`State/National mix: ${mix.toFixed(2)}`);
+
+    if (LOG) {
+        console.log(`Total National Polls: ${n_us_polls}.`);
+        console.log(`State\tPolls`);
+        for (let s = 0; s < 51; s++) {
+            console.log(`${abbrs[s]}\t${n_state_polls[s]}`);
+        }
+    }
 
     return {
         national: US_average,
