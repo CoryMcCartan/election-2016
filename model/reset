@@ -3,4 +3,3 @@
 rm -f output/history.csv
 touch output/history.csv
 ./run
-./run

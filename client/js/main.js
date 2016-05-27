@@ -51,19 +51,22 @@ function showOverall(history, prediction = false) {
 
     $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
 
-    let oneDay = 24 * 60 * 60 * 1000;
-    let last = history.find(e => current.date - e.date > oneDay);
-    // change since yesterday
-    let delta = (prob - Math.abs(winner - last.probability) * 100).toFixed(0)
-
     // figure out a/an
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
-    $("#prediction").innerHTML = 
-        `${name} has ${article} ${prob}% chance of winning the election. <br />
-        This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-        ${Math.abs(delta).toFixed(0)}% from yesterday.`
+    $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
+
+    let oneDay = 24 * 60 * 60 * 1000;
+    let last = history.find(e => current.date - e.date > oneDay);
+    if (last) { // if the model is at least one day old
+        // change since yesterday
+        let delta = (prob - Math.abs(winner - last.probability) * 100).toFixed(0)
+
+        $("#prediction").innerHTML += 
+            `<br /> This is ${delta >= 0 ? "an increase" : "a decrease"} of 
+            ${Math.abs(delta).toFixed(0)}% from yesterday.`
+    }
 
     $("#showProbs").addEventListener("click", function() {
         $("#demEV").innerHTML = current.avgElectors.toFixed(0);
