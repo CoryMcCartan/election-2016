@@ -6,7 +6,9 @@ let LOG;
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
-const date_multiplier = Math.exp(1.4 * untilElection / 281);  // MAGIC NUMBER (from Iowa Caucuses to Election Day)
+// MAGIC NUMBER should be 3x more @150 days
+// This is partially accounted for by 'undecided' below
+const date_multiplier = Math.exp(untilElection / 140); 
 
 let data2012;
 let polls;
@@ -129,7 +131,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.5; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
     }
 }
 
