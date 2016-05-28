@@ -6,8 +6,7 @@ let LOG;
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
-const date_multiplier = Math.exp(untilElection / 281);  // MAGIC NUMBER (from Iowa Caucuses to Election Day)
-let mix; // how much of state vs national data to use
+const date_multiplier = Math.exp(1.5 * untilElection / 281);  // MAGIC NUMBER (from Iowa Caucuses to Election Day)
 
 let data2012;
 let polls;
@@ -32,11 +31,11 @@ function * init(log) {
 
     weightPolls(polls);
 
-    let pollAverages = calculateAverages();
+    let pollAverages = calculateAverages(false);
     add2012Data(data2012, polls, pollAverages);
 
 
-    averages = calculateAverages();
+    averages = calculateAverages(LOG);
 }
 
 function processElection(data) {
@@ -67,7 +66,7 @@ function processPollsterData(data) {
 
     averagePollster = {
         pollster: "AVERAGE",
-        predictivePlusMinus: avgPredictive / length,
+        predictivePlusMinus: avgPredictive / length + 0.5, // assume slightly worse than average b/c unknown
         meanRevertedBias: 0,
     };
 }
@@ -81,12 +80,13 @@ function processPolls(polls) {
         if (name.includes("primary")) return false;
         if (name.includes("caucus")) return false;
         let responses = q.subpopulations[0].responses;
+        if (responses.find(r => r.choice === "Bloomberg")) return false;
         if (!responses.find(r => r.choice === "Clinton")) return false;
         if (!responses.find(r => r.choice === "Trump")) return false;
         return true; 
     };
 
-    const default_moe = 5.0; // MAGIC NUMBER
+    const default_moe = 3.0; // MAGIC NUMBER
     const default_n = 600; // MAGIC NUMBER
 
     for (let poll of polls) {
@@ -104,13 +104,14 @@ function processPolls(polls) {
         let questions = poll.questions.filter(q => isPresidentialPoll(q));
         let question = questions[0];
         if (!question) {
+            if (LOG) console.log("Deleted poll — no matching question.");
             delete poll;
             continue;
         }
 
         if (LOG) {
             if (questions.length > 1) 
-                console.log(`EXTRA QUESIONTS: ${JSON.stringify(questions)}`);
+                console.log(`EXTRA QUESTIONS: ${JSON.stringify(questions)}`);
             if (question.subpopulations.length > 1) 
                 console.log(`EXTRA SUBPOPULATIONS: ${JSON.stringify(question.subpopulations)}`);
         }
@@ -128,13 +129,14 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.1; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.5; // MAGIC NUMBER 
     }
 }
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const likelyVoterAdj = -0.011; // RV surveys less representative MAGIC NUMBER
+    const regVoterBias = +0.017; // MAGIC NUMBER
+    const likelyVoterBias = -0.000; // MAGIC NUMBER
     const biasBuffer = 0.01; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
@@ -144,18 +146,23 @@ function weightPolls(polls) {
 
     for (let poll of polls) {
         let dateDiff = (Date.now() - poll.date) / one_day;
-        let recencyWeight = 0.7 * Math.exp(-dateDiff / 30) + 0.3; // MAGIC NUMBERS
+        let recencyWeight;
+        if (poll.state === "US") // more US polls, so recency is less important
+            recencyWeight = Math.exp(-dateDiff / 30); // MAGIC NUMBER
+        else // fewer state polls, so more recent means more accurate
+            recencyWeight = Math.exp(-dateDiff / 15); // MAGIC NUMBER
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
         let pollsters = getPollsterAverages(poll.survey_houses, poll.method);
         if (pollsters.banned) {
+            if (LOG) console.log("Deleted poll — pollster banned.");
             delete poll;
             continue;
         }
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
-        let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.9; // MAGIC NUMBERS
+        let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.8; // MAGIC NUMBERS
         let typeWeight = poll.type === "Likely Voters" ? 1 : 0.8; // MAGIC NUMBERS
 
         poll.weight = recencyWeight * sampleWeight * pollsterRating
@@ -167,7 +174,7 @@ function weightPolls(polls) {
             biasAdj = 0;
 
         // if not an LV poll, apply adjustment
-        let typeAdj = poll.type === "Likely Voters" ? 0 : likelyVoterAdj;
+        let typeAdj = poll.type === "Likely Voters" ? likelyVoterBias : regVoterBias;
 
         // stats on registered vs likely voter polls
         if (poll.type === "Likely Voters") {
@@ -178,7 +185,7 @@ function weightPolls(polls) {
             n_rv++;
         }
 
-        poll.gap += biasAdj + typeAdj;
+        poll.gap += biasAdj - typeAdj;
     }
 
     // calculate average and turn into percent
@@ -210,6 +217,18 @@ function getPollsterAverages(surveyors, method) {
             } else if (name.includes("Schoen")) {
                 matched = pollsters.find(p => p.pollster.includes("Schoen"));
                 break;
+            } else if (name.includes("Selzer")) {
+                matched = pollsters.find(p => p.pollster.includes("Selzer"));
+                break;
+            } else if (name.includes("Opinion Research Corporation")) {
+                matched = pollsters.find(p => p.pollster.includes("Opinion Research Corp."));
+                break;
+            } else if (name.includes("Greenberg Quinlan Rosner")) {
+                matched = pollsters.find(p => p.pollster.includes("Greenberg Quinlan Rosner"));
+                break;
+            } else if (name.includes("Field Poll")) {
+                matched = pollsters.find(p => p.pollster.includes("Field Poll"));
+                break;
             }
 
             matched = averagePollster;
@@ -233,19 +252,22 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 0.4;
+    let weight = 0.05; // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
     let gapAdj = avgs.national - gap2012;
+    if (LOG) console.log(`Shift since 2012: ${(100 * gapAdj).toFixed(2)}%`);
+
+    let moe_multiplier = Math.sqrt(avgs.national_var) * 1.96 * 100;
 
     for (let i = 0; i < 51; i++) {
         let state = data2012[i];
 
         polls.push({
             state: abbrs[i],
-            moe: 0.5, 
-            gap: state.gap + gapAdj,
+            moe: (1 + Math.abs(state.gap)) * moe_multiplier,
+            gap: state.gap + (1 - Math.abs(state.gap)) * gapAdj, // shift applies more in closer states
             n: +state.totalVoters,
             weight,
         });
@@ -255,7 +277,7 @@ function add2012Data(data2012, polls, avgs) {
     }
 }
 
-function calculateAverages() {
+function calculateAverages(LOG) {
     let US_average = 0;
     let state_averages = Array(51).fill(0);
 
@@ -272,14 +294,14 @@ function calculateAverages() {
     for (let poll of polls) {
         if (poll.state === "US") {
            US_average += poll.gap * poll.weight;
-           US_var += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1); // assuming pollsters using 95% confidence interval
+           US_var += Math.pow(0.01 * poll.moe / 1.96, 2) * (poll.n - 1); // assuming pollsters use 95% interval
            US_total_n += poll.n - 1;
            us_weight += poll.weight;
            n_us_polls++;
         } else {
             let index = abbrs.indexOf(poll.state);
             state_averages[index] += poll.gap * poll.weight;
-            state_var[index] += Math.pow(poll.moe / 1.96, 2) * (poll.n - 1);
+            state_var[index] += Math.pow(0.01 * poll.moe / 1.96, 2) * (poll.n - 1);
             state_total_n[index] += poll.n - 1;
             weights[index] += poll.weight;
             n_state_polls[index]++;
@@ -288,19 +310,20 @@ function calculateAverages() {
 
     US_average /= us_weight;
     state_averages = state_averages.map((a, i) => a / weights[i]);
-    state_var = state_var.map((a, i) => 0.01 * a * date_multiplier / state_total_n[i]);
-    US_var *= 0.01 * date_multiplier / US_total_n;
-
-    // update mix based on poll counts
-    let total_state_polls = n_state_polls.reduce((p, c) => p + c);
-    mix = Math.pow(total_state_polls / (total_state_polls + n_us_polls), 0.25); // MAGIC NUMBER
-    console.log(`State/National mix: ${mix.toFixed(2)}`);
+    state_var = state_var.map((a, i) => a 
+                              * date_multiplier 
+                              * (0.9 + 1 / n_state_polls[i]) // fewer polls => more uncertainty
+                              / state_total_n[i]);
+    US_var *= date_multiplier * (1 + 1 / n_us_polls) / US_total_n;
 
     if (LOG) {
-        console.log(`Total National Polls: ${n_us_polls}.`);
-        console.log(`State\tPolls`);
+        console.log(`State\tPolls\tAverage\tStdDev`);
+        console.log(`USA\t${n_us_polls}\t${(100 * US_average).toFixed(1)}%\t` + 
+                    `${(100 * Math.sqrt(US_var)).toFixed(2)}%`);
         for (let s = 0; s < 51; s++) {
-            console.log(`${abbrs[s]}\t${n_state_polls[s]}`);
+            console.log(`${abbrs[s]}\t${n_state_polls[s]}\t` +
+                        `${(100 * state_averages[s]).toFixed(1)}%\t` + 
+                        `${(100 * Math.sqrt(state_var[s])).toFixed(2)}%`);
         }
     }
 
@@ -314,12 +337,11 @@ function calculateAverages() {
 }
 
 function modelState(index, nationalShift) {
-    nationalShift *= averages.national_var;
+    nationalShift *= averages.national_var; 
 
-    let expected = mix * averages.state[index] + (1 - mix) * averages.national;
-    let variance = mix * averages.state_var[index] + (1 - mix) * averages.national_var;
+    let variance = averages.state_var[index];
 
-    let mean = expected + nationalShift;
+    let mean = averages.state[index] + nationalShift;
     let gap = gaussian(mean, variance).ppf(Math.random());
 
     let turnout = data2012[index].turnout2016;

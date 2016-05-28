@@ -40,7 +40,7 @@ function getPolls(topicName) {
 
     let promises = [];
     //          get     10*n    polls
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         promises[i] = fetch(makeURL(i)).then(t => t.json());
     }
 
