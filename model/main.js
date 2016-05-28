@@ -47,7 +47,7 @@ function predict(iterations, history) {
     for (let i = 0; i < iterations; i++) {
         let election = {};
         let nationalShift = shiftDist.ppf(Math.random());
-        let recount = false;
+        let recount = 0;
         let demPopularVote = 0;
         let gopPopularVote = 0;
         // for every state
@@ -55,7 +55,7 @@ function predict(iterations, history) {
             let result = predictor.modelState(s, nationalShift);
 
             if (Math.abs(result.dem - result.gop) < 0.005 * result.turnout)
-                recount = true; 
+                recount += electors[s]; 
 
             demPopularVote += result.dem;
             gopPopularVote += result.gop;
@@ -69,7 +69,7 @@ function predict(iterations, history) {
         let democraticElectors = sumElectors(election)[0]; 
         outcomes[democraticElectors]++;
 
-        if (recount && Math.abs(democraticElectors - 270) < 20) recounts++;
+        if (Math.abs(democraticElectors - 270) <= recount) recounts++;
 
         let total = demPopularVote + gopPopularVote;
         let gap = demPopularVote - gopPopularVote;

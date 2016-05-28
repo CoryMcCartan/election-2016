@@ -6,7 +6,7 @@ let LOG;
 const one_day = 1000 * 60 * 60 * 24;
 const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
 
-const date_multiplier = Math.exp(1.5 * untilElection / 281);  // MAGIC NUMBER (from Iowa Caucuses to Election Day)
+const date_multiplier = Math.exp(1.4 * untilElection / 281);  // MAGIC NUMBER (from Iowa Caucuses to Election Day)
 
 let data2012;
 let polls;
@@ -252,7 +252,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 0.05; // MAGIC NUMBER
+    let weight = 0.15; // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;

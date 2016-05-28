@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd `dirname $_`/model
-./run 5e5
+./run 5e5 --verbose
 cd ..
 git add .
 git commit -m 'MODEL RUN'

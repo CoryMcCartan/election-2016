@@ -79,4 +79,5 @@ let sumElectors = function(vote) {
 
 module.exports = function(self) {
     self.sumElectors = sumElectors;
+    self.electors = electors;
 };
