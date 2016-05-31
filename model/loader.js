@@ -36,11 +36,11 @@ function getPollsterRatings() {
 
 function getPolls(topicName) {
     let makeURL = n => `http://elections.huffingtonpost.com/pollster/api/` + 
-        `polls.json?page=${n}&topic=${topicName}`;
+        `polls.json?page=${n+1}&topic=${topicName}`;
 
     let promises = [];
     //          get     10*n    polls
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
         promises[i] = fetch(makeURL(i)).then(t => t.json());
     }
 

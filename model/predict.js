@@ -8,7 +8,8 @@ const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-const date_multiplier = Math.exp(untilElection / 120); 
+const date_multiplier = Math.exp(untilElection / 60); 
+const nominationBoost = +0.04; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
 
 let data2012;
 let polls;
@@ -133,7 +134,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.4; // MAGIC NUMBER 
     }
 }
 
@@ -141,7 +142,7 @@ function weightPolls(polls) {
     const base_n = Math.log(600);
     const regVoterBias = +0.017; // MAGIC NUMBER
     const likelyVoterBias = -0.000; // MAGIC NUMBER
-    const biasBuffer = 0.01; // ignore biases less than this amount MAGIC NUMBER
+    const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
     let n_rv = 0;
@@ -190,6 +191,13 @@ function weightPolls(polls) {
         }
 
         poll.gap += biasAdj - typeAdj;
+
+        if (LOG) console.log(
+                `POLL: ${((poll.survey_houses[0] || {name: ""}).name + "                     ").substring(0, 20)}\t\t` +
+                `DATE: ${poll.date.toLocaleDateString()}\t\t` + 
+                `WEIGHT: ${poll.weight.toFixed(2)}\t` + 
+                `ADJUSTMENT: ${(100 * (biasAdj - typeAdj)).toFixed(2)}`
+        );
     }
 
     // calculate average and turn into percent
@@ -233,6 +241,9 @@ function getPollsterAverages(surveyors, method) {
             } else if (name.includes("Field Poll")) {
                 matched = pollsters.find(p => p.pollster.includes("Field Poll"));
                 break;
+            } else if (name.includes("SurveyMonkey")) {
+                matched = pollsters.find(p => p.pollster.includes("NBC"));
+                break;
             }
 
             matched = averagePollster;
@@ -256,14 +267,14 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 0.15; // MAGIC NUMBER
+    let weight = 0.1; // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
     let gapAdj = avgs.national - gap2012;
     if (LOG) console.log(`Shift since 2012: ${(100 * gapAdj).toFixed(2)}%`);
 
-    let moe_multiplier = Math.sqrt(avgs.national_var) * 1.96 * 100;
+    let moe_multiplier = 0.2 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIT NUMBER
 
     for (let i = 0; i < 51; i++) {
         let state = data2012[i];
@@ -313,7 +324,11 @@ function calculateAverages(LOG) {
     }
 
     US_average /= us_weight;
+    // adjust for trump having nomination but clinton not
+    US_average += Date.now() > new Date(2016, 5, 7) ? 0 : nominationBoost; // TODO remove after june 7
     state_averages = state_averages.map((a, i) => a / weights[i]);
+    // revert to mean of 50%
+    state_averages = state_averages.map(a => ((20 - date_multiplier) * a)/(21 - date_multiplier)); // MAGIC NUMBER
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
                               * (0.9 + 1 / n_state_polls[i]) // fewer polls => more uncertainty
