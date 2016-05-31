@@ -14,8 +14,9 @@ function * main() {
     let iterations = +argv._[0] || 2e4;
     let addToHistory = !argv.dry;
     LOG = !!argv.v || !!argv.verbose;
+    let nowCast = !!argv.now
 
-    yield* predictor.init(LOG);
+    yield* predictor.init(LOG, nowCast);
 
     let history = yield loadHistory();
 

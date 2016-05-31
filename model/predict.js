@@ -8,8 +8,8 @@ const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-const date_multiplier = Math.exp(untilElection / 60); 
-const nominationBoost = +0.04; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
+let date_multiplier = Math.exp(untilElection / 80); 
+let nominationBoost = +0.04; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
 
 let data2012;
 let polls;
@@ -20,8 +20,12 @@ let averages;
 
 const topicName = "2016-president";
 
-function * init(log) { 
+function * init(log, nowCast) { 
     LOG = log;
+    if (nowCast) {
+        date_multiplier = 1;
+        nominationBoost = 0.00;
+    }
 
     console.log(`${~~untilElection} days until Election Day.`);
 
@@ -297,7 +301,9 @@ function calculateAverages(LOG) {
     let state_averages = Array(51).fill(0);
 
     let US_var = 0;
+    let US_mean_var = 0;
     let state_var = Array(51).fill(0);
+    let state_mean_var = Array(51).fill(0);
     let US_total_n = 0;
     let state_total_n = Array(51).fill(0);
 
@@ -327,15 +333,28 @@ function calculateAverages(LOG) {
     // adjust for trump having nomination but clinton not
     US_average += Date.now() > new Date(2016, 5, 7) ? 0 : nominationBoost; // TODO remove after june 7
     state_averages = state_averages.map((a, i) => a / weights[i]);
+
+    // calculate var in means
+    for (let poll of polls) {
+        if (poll.state === "US") {
+           US_mean_var += Math.pow(poll.gap - US_average, 2) / n_us_polls;
+        } else {
+            let i = abbrs.indexOf(poll.state);
+            state_mean_var[i] += Math.pow(poll.gap - state_averages[i], 2) / n_state_polls[i];
+        }
+    }
     // revert to mean of 50%
     state_averages = state_averages.map(a => ((20 - date_multiplier) * a)/(21 - date_multiplier)); // MAGIC NUMBER
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
-                              * (0.9 + 1 / n_state_polls[i]) // fewer polls => more uncertainty
+                              * (1 + 1 / n_state_polls[i]) // fewer polls => more uncertainty
                               / state_total_n[i]);
+    state_var = state_var.map((a, i) => a + state_mean_var[i] * date_multiplier / 2);
     US_var *= date_multiplier * (1 + 1 / n_us_polls) / US_total_n;
+    US_var += US_mean_var * date_multiplier / 2;
 
     if (LOG) {
+        console.log(`US Mean StdDev: ${(100 * Math.sqrt(US_mean_var)).toFixed(2)}%`);
         console.log(`State\tPolls\tAverage\tStdDev`);
         console.log(`USA\t${n_us_polls}\t${(100 * US_average).toFixed(1)}%\t` + 
                     `${(100 * Math.sqrt(US_var)).toFixed(2)}%`);
