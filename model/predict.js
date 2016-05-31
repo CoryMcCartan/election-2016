@@ -1,6 +1,5 @@
 let gaussian = require("gaussian");
-let loader = require("./loader.js")
-
+let loader = require("./loader.js") 
 let LOG;
 
 const one_day = 1000 * 60 * 60 * 24;
@@ -8,7 +7,7 @@ const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 100); 
+let date_multiplier = Math.exp(untilElection / 115); 
 let nominationBoost = +0.03; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
 
 let data2012;
@@ -344,7 +343,7 @@ function calculateAverages(LOG) {
         }
     }
     // revert to mean of 50%
-    state_averages = state_averages.map(a => ((20 - date_multiplier) * a)/(21 - date_multiplier)); // MAGIC NUMBER
+    state_averages = state_averages.map(a => ((16 - date_multiplier) * a)/15); // MAGIC NUMBER
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
                               * (1 + 1 / n_state_polls[i]) // fewer polls => more uncertainty
