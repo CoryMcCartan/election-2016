@@ -4,11 +4,11 @@ let loader = require("./loader.js")
 let LOG;
 
 const one_day = 1000 * 60 * 60 * 24;
-const untilElection = (new Date(2016, 11, 8) - Date.now()) / one_day;
+const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-const date_multiplier = Math.exp(untilElection / 140); 
+const date_multiplier = Math.exp(untilElection / 120); 
 
 let data2012;
 let polls;
@@ -21,6 +21,8 @@ const topicName = "2016-president";
 
 function * init(log) { 
     LOG = log;
+
+    console.log(`${~~untilElection} days until Election Day.`);
 
     data2012 = yield loader.get2012Election();
     processElection(data2012);
@@ -193,7 +195,7 @@ function weightPolls(polls) {
     // calculate average and turn into percent
     lv_avg /= 0.01 * n_lv || 1;
     rv_avg /= 0.01 * n_rv || 1;
-    console.log(`RV/LV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
+    if (LOG) console.log(`RV/LV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
 }
 
 function getPollsterAverages(surveyors, method) {
