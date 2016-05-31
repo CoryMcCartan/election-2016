@@ -8,8 +8,8 @@ const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 80); 
-let nominationBoost = +0.04; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
+let date_multiplier = Math.exp(untilElection / 100); 
+let nominationBoost = +0.03; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
 
 let data2012;
 let polls;
@@ -138,7 +138,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.4; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.5; // MAGIC NUMBER 
     }
 }
 
@@ -278,7 +278,7 @@ function add2012Data(data2012, polls, avgs) {
     let gapAdj = avgs.national - gap2012;
     if (LOG) console.log(`Shift since 2012: ${(100 * gapAdj).toFixed(2)}%`);
 
-    let moe_multiplier = 0.2 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIT NUMBER
+    let moe_multiplier = 0.3 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIT NUMBER
 
     for (let i = 0; i < 51; i++) {
         let state = data2012[i];
