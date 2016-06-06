@@ -22,9 +22,8 @@ function getPollsterRatings() {
 
     return new Promise((resolve, reject) => {
         // load pollster ratings
-        csv.fromPath("data/pollster-ratings.tsv", {
+        csv.fromPath("data/pollster-ratings.csv", {
             headers: true,
-            delimiter: "\t",
         })
         .on("data", d => pollsters.push(d))
         .on("end", () => {

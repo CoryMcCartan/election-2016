@@ -8,7 +8,7 @@ const untilElection = (new Date(2016, 10, 8) - Date.now()) / one_day;
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
 let date_multiplier = Math.exp(untilElection / 115); 
-let nominationBoost = +0.03; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
+let nominationBoost = +0.02; // reflects boost a candidate gets from being nominee MAGIC NUMBER 
 
 let data2012;
 let polls;
@@ -63,11 +63,12 @@ function processPollsterData(data) {
         pollster.simplePlusMinus = +pollster.simplePlusMinus;
         pollster.simpleAverageError = +pollster.simpleAverageError;
         pollster.meanRevertedBias = +pollster.meanRevertedBias;
+        pollster.racesCalled = +pollster.racesCalled;
         pollster.polls = +pollster.polls;
         pollster.callsCellPhones = pollster.callsCellPhones === "yes";
+        pollster.internet = pollster.internet === "yes";
         pollster.banned = pollster.banned === "yes";
         delete pollster.ncpp_aapor_roper;
-        delete pollster.id;
 
         avgPredictive += pollster.meanRevertedBias;
     }
@@ -145,7 +146,7 @@ function weightPolls(polls) {
     const base_n = Math.log(600);
     const regVoterBias = +0.017; // MAGIC NUMBER
     const likelyVoterBias = -0.000; // MAGIC NUMBER
-    const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
+    const biasBuffer = 0.003; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
     let n_rv = 0;
@@ -172,9 +173,10 @@ function weightPolls(polls) {
 
         let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.8; // MAGIC NUMBERS
         let typeWeight = poll.type === "Likely Voters" ? 1 : 0.8; // MAGIC NUMBERS
+        let cellWeight = poll.callsCellphones ? 1 : 0.8; // MAGIC NUMBERS
 
         poll.weight = recencyWeight * sampleWeight * pollsterRating
-            * partisanWeight;
+            * partisanWeight * cellWeight * typeWeight;
 
         let bias = pollsters.meanBias;
         let biasAdj = bias - Math.sign(bias) * biasBuffer;
@@ -243,9 +245,6 @@ function getPollsterAverages(surveyors, method) {
                 break;
             } else if (name.includes("Field Poll")) {
                 matched = pollsters.find(p => p.pollster.includes("Field Poll"));
-                break;
-            } else if (name.includes("SurveyMonkey")) {
-                matched = pollsters.find(p => p.pollster.includes("NBC"));
                 break;
             }
 
