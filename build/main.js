@@ -190,7 +190,9 @@ const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
 const RED = "#e65";
-const YELLOW = "#ee8";
+const LIGHT_RED = "#fbb";
+const YELLOW = "#ee5";
+const LIGHT_BLUE = "#ccf";
 const BLUE = "#59e";
 const GREY = "#aaa";
 
@@ -296,10 +298,8 @@ function makeMap(showProbabilities = true) {
     let tGOP = $("#mt-gop");
 
     let colorScale = d3.scale.linear()
-        //.domain([0, 0.5, 1])
-        //.range([RED, YELLOW, BLUE]);
-        .domain([0, 0.1, 0.5, 0.9, 1])
-        .range([RED, RED, YELLOW, BLUE, BLUE]);
+        .domain([0, 0.35, 0.5, 0.65, 1])
+        .range([RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE]);
 
     let color = (data, state, index) => {
         let info = data[index];
