@@ -56,7 +56,9 @@ this.addEventListener("fetch", function(e) {
     } else if (has(DYNAMIC_CACHE, url.pathname)) { // prefer network version
         if (log) console.log("DYNAMIC: " + url.pathname);
         e.respondWith(
-            fetch(e.request)
+            fetch(e.request).then(function(resp) {
+                return resp; 
+            })
             .catch(function(r) {
                 return caches.match(e.request);
             })
