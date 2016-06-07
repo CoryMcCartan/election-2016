@@ -8,7 +8,7 @@ const untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 166); 
+let date_multiplier = Math.exp(untilElection / 150); 
 
 let data2012;
 let polls;
@@ -341,7 +341,7 @@ function calculateAverages(LOG, trendAdj = false) {
         if (poll.state === "US") {
             US_average += poll.gap * poll.weight;
             let dateDiff = (NOW - poll.date) / one_day;
-            if (dateDiff < 7) {
+            if (dateDiff < 14) {
                 US_average_recent += poll.gap * poll.weight;
                 us_weight_recent += poll.weight;
             } else {
@@ -366,6 +366,7 @@ function calculateAverages(LOG, trendAdj = false) {
     US_average_old /= us_weight_old;
     US_average_recent /= us_weight_recent;
     let trend = US_average_recent - US_average_old;
+    if (us_weight_old === 0 || us_weight_recent === 0) trend = 0;
     if (LOG) console.log(`Trend in last week: ${(100 * trend).toFixed(2)}%`);
     state_averages = state_averages.map((a, i) => a / weights[i]);
     if (trendAdj)

@@ -120,8 +120,8 @@ function makeMap(showProbabilities = true) {
     let tGOP = $("#mt-gop");
 
     let colorScale = d3.scale.linear()
-        .domain([0, 0.35, 0.5, 0.65, 1])
-        .range([RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE]);
+        .domain([0, 0.05, 0.35, 0.5, 0.65, 0.95, 1])
+        .range([RED, RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE, BLUE]);
 
     let color = (data, state, index) => {
         let info = data[index];
