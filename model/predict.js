@@ -145,7 +145,7 @@ function processPolls(polls) {
 function weightPolls(polls) {
     const base_n = Math.log(600);
     const regVoterBias = +0.012; // MAGIC NUMBER
-    const likelyVoterBias = -0.007; // MAGIC NUMBER
+    const likelyVoterBias = -0.002; // MAGIC NUMBER
     const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
@@ -271,7 +271,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 5e-3; // MAGIC NUMBER
+    let weight = 1e-3; // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
