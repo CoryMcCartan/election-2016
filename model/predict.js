@@ -159,10 +159,10 @@ function weightPolls(polls) {
     for (let poll of polls) {
         let dateDiff = (NOW - poll.date) / one_day;
         let recencyWeight;
-        if (poll.state === "US") // more US polls, so recency is less important
+        if (poll.state === "US") // more US polls, so can afford to be more picky
+            recencyWeight = Math.exp(-dateDiff / 20); // MAGIC NUMBER
+        else // fewer state polls, so more tolerance with recency
             recencyWeight = Math.exp(-dateDiff / 30); // MAGIC NUMBER
-        else // fewer state polls, so more recent means more accurate
-            recencyWeight = Math.exp(-dateDiff / 15); // MAGIC NUMBER
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
