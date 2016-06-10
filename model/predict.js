@@ -141,7 +141,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.3 * (2 - (untilElection / 365)); // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.5 * (2 - (untilElection / 365)); // MAGIC NUMBER 
     }
 }
 
@@ -398,7 +398,7 @@ function calculateAverages(LOG, trendAdj = false) {
             state_mean_var[i] += Math.pow(poll.gap - state_averages[i], 2) / n_state_polls[i];
         }
     }
-    // revert to mean of 50%
+
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
                               * (1 + 2 / n_state_polls[i]) // fewer polls => more uncertainty
