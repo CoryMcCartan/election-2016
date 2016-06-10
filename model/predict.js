@@ -8,7 +8,8 @@ const untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 150); 
+let date_multiplier = Math.exp(untilElection / 120); 
+let noTrend = false;
 
 let data2012;
 let polls;
@@ -23,6 +24,7 @@ function * init(log, nowCast) {
     LOG = log;
     if (nowCast) {
         date_multiplier = 1;
+        noTrend = true;
     }
 
     console.log(`${~~untilElection} days until Election Day.`);
@@ -38,7 +40,7 @@ function * init(log, nowCast) {
 
     weightPolls(polls);
 
-    let pollAverages = calculateAverages(false);
+    let pollAverages = calculateAverages(true);
     add2012Data(data2012, polls, pollAverages);
 
     let trendAdj = trendAdjustment(polls, pollAverages);
@@ -95,12 +97,13 @@ function processPolls(polls) {
         return true; 
     };
 
-    const default_moe = 3.0; // MAGIC NUMBER
-    const default_n = 600; // MAGIC NUMBER
+    const default_moe = 4.0; // MAGIC NUMBER
+    const default_n = 400; // MAGIC NUMBER
 
     for (let poll of polls) {
         // data cleanup
         poll.date = new Date(poll.start_date);
+        poll.partisan = poll.partisan.toLowerCase !== "nonpartisan";
         delete poll.affiliation;
         delete poll.last_updated;
         delete poll.end_date;
@@ -122,13 +125,13 @@ function processPolls(polls) {
             if (questions.length > 1) 
                 console.log(`EXTRA QUESTIONS: ${JSON.stringify(questions)}`);
             if (question.subpopulations.length > 1) 
-                console.log(`EXTRA SUBPOPULATIONS: ${JSON.stringify(question.subpopulations)}`);
+                console.log(`EXTRA SUBPOPULATIONS: ${question.subpopulations.slice(1).map(x => x.name).join(" | ")}`);
         }
 
         delete poll.questions;
         // remove extraneous data
         poll.moe = question.subpopulations[0].margin_of_error || default_moe;
-        poll.type = question.subpopulations[0].name;
+        poll.type = question.subpopulations[0].name.toLowerCase();
         poll.n = question.subpopulations[0].observations || default_n;
         poll.state = question.state;
         let responses  = question.subpopulations[0].responses;
@@ -144,7 +147,7 @@ function processPolls(polls) {
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const regVoterBias = +0.012; // MAGIC NUMBER
+    const regVoterBias = +0.011; // MAGIC NUMBER
     const likelyVoterBias = -0.002; // MAGIC NUMBER
     const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
@@ -172,8 +175,22 @@ function weightPolls(polls) {
         }
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
-        let partisanWeight = poll.partisan === "Nonpartisan" ? 1 : 0.8; // MAGIC NUMBERS
-        let typeWeight = poll.type === "Likely Voters" ? 1 : 0.7; // MAGIC NUMBERS
+        let partisanWeight = poll.partisan ? 0.9 : 1.0; // MAGIC NUMBERS
+
+        let typeWeight;
+        if (poll.type === "likely voters")
+            typeWeight = 1;
+        else if (poll.type === "registered voters")
+            typeWeight = 0.8;
+        else if (poll.type === "adults")
+            typeWeight = 0.5;
+        else {
+            console.log("=========");
+            console.log("'" + poll.type + "'");
+            console.log("=========");
+            poll.weight = 0;
+            continue;
+        }
 
         poll.weight = recencyWeight * sampleWeight * pollsterRating
             * partisanWeight * typeWeight;
@@ -285,8 +302,8 @@ function add2012Data(data2012, polls, avgs) {
 
         polls.push({
             state: abbrs[i],
-            moe: (1 + 4*Math.abs(state.gap)) * moe_multiplier, // MAGIC NUMBER
-            gap: state.gap + (1 - Math.abs(state.gap)) * gapAdj, // shift applies more in closer states
+            moe: (0.9 + 2*Math.abs(state.gap)) * moe_multiplier, // MAGIC NUMBER
+            gap: state.gap + gapAdj, 
             n: +state.totalVoters,
             date: new Date(2012, 10, 08),
             weight,
@@ -369,7 +386,7 @@ function calculateAverages(LOG, trendAdj = false) {
     if (us_weight_old === 0 || us_weight_recent === 0) trend = 0;
     if (LOG) console.log(`Trend in last week: ${(100 * trend).toFixed(2)}%`);
     state_averages = state_averages.map((a, i) => a / weights[i]);
-    if (trendAdj)
+    if (trendAdj && !noTrend)
         state_averages = state_averages.map((a, i) => a + trendAdj[i]);
 
     // calculate var in means
@@ -382,7 +399,6 @@ function calculateAverages(LOG, trendAdj = false) {
         }
     }
     // revert to mean of 50%
-    state_averages = state_averages.map(a => ((13 - date_multiplier) * a)/12); // MAGIC NUMBER
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
                               * (1 + 2 / n_state_polls[i]) // fewer polls => more uncertainty
