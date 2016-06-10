@@ -197,7 +197,7 @@ const BLUE = "#59e";
 const GREY = "#aaa";
 
 function main() {
-    d3.csv("data/history.csv", d => ({
+    d3.csv("data/history.csv?" + Math.random(), d => ({
         date: new Date(+d.date),
         avgElectors: +d.avgElectors,
         calledElectors: +d.calledElectors,
