@@ -134,6 +134,17 @@ function processPolls(polls) {
         poll.type = question.subpopulations[0].name.toLowerCase();
         poll.n = question.subpopulations[0].observations || default_n;
         poll.state = question.state;
+        if (!poll.state) {
+            console.log('NO STATE');
+            for (let i = 0; i < 51; i++) {
+                let name = stateFromAbbr[abbrs[i]].toLowerCase(); 
+                if (question.name.toLowerCase().includes(name + " "));
+                poll.state = abbrs[i];
+                console.log(poll.state);
+                break;
+            }
+            console.log('');
+        }
         let responses  = question.subpopulations[0].responses;
 
         let dem = responses.find(r => r.party == "Dem").value;
