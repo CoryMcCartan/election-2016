@@ -159,10 +159,7 @@ function weightPolls(polls) {
     for (let poll of polls) {
         let dateDiff = (NOW - poll.date) / one_day;
         let recencyWeight;
-        if (poll.state === "US") // more US polls, so can afford to be more picky
-            recencyWeight = Math.exp(-dateDiff / 20); // MAGIC NUMBER
-        else // fewer state polls, so more tolerance with recency
-            recencyWeight = Math.exp(-dateDiff / 30); // MAGIC NUMBER
+        recencyWeight = Math.exp(-dateDiff / 31); // MAGIC NUMBER
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
@@ -327,7 +324,7 @@ function trendAdjustment(polls, avgs) {
     // apply trend adjustment
     for (let i = 0; i < 51; i++) {
         let dateDiff = (NOW - most_recent[i]) / one_day;
-        let weight = 1 - Math.exp(-dateDiff / 21); // MAGIC NUMBER
+        let weight = 1 - Math.exp(-dateDiff / 28); // MAGIC NUMBER
         weight /= Math.pow(date_multiplier, 2); // MAGIC NUMBER
         adj[i] = avgs.trend * weight;
     }
