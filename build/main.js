@@ -392,7 +392,7 @@ function makeMap(showProbabilities = true) {
 
     queue()
         .defer(d3.json, "assets/usa.json")
-        .defer(d3.csv, "data/states.csv", d => ({ 
+        .defer(d3.csv, "data/states.csv?" + Math.random(), d => ({ 
             state: stateFromAbbr[d.state], 
             probability: +d.probability 
         }))
@@ -464,7 +464,7 @@ function makeHistogram(most) {
     let tElectors = $("#ht-electors");
     let tPercent = $("#ht-percent");
 
-    d3.csv("data/electors.csv", d => ({
+    d3.csv("data/electors.csv?" + Math.random(), d => ({
         electors: +d.electors,
         percentage: +d.percentage,
     }), (error, data) => {
