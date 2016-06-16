@@ -8,7 +8,7 @@ const untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
 
 // MAGIC NUMBER should be 3x more @150 days
 // This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 120); 
+let date_multiplier = Math.exp(untilElection / 115); 
 let noTrend = false;
 
 let data2012;
@@ -170,7 +170,7 @@ function weightPolls(polls) {
     for (let poll of polls) {
         let dateDiff = (NOW - poll.date) / one_day;
         let recencyWeight;
-        recencyWeight = Math.exp(-dateDiff / 31); // MAGIC NUMBER
+        recencyWeight = Math.exp(-dateDiff / 30); // MAGIC NUMBER
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
@@ -296,7 +296,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 1e-3; // MAGIC NUMBER
+    let weight = 3e-3; // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
