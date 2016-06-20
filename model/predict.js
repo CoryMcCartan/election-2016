@@ -6,9 +6,7 @@ const one_day = 1000 * 60 * 60 * 24;
 let NOW = Date.now();
 const untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
 
-// MAGIC NUMBER should be 3x more @150 days
-// This is partially accounted for by 'undecided' below
-let date_multiplier = Math.exp(untilElection / 115); 
+let date_multiplier = Math.exp(untilElection / 136); 
 let noTrend = false;
 
 let data2012;
@@ -98,7 +96,7 @@ function processPolls(polls) {
     };
 
     const default_moe = 5.0; // MAGIC NUMBER
-    const default_n = 300; // MAGIC NUMBER
+    const default_n = 400; // MAGIC NUMBER
 
     for (let poll of polls) {
         // data cleanup
@@ -152,14 +150,14 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / (dem + gop); // normalize to 0-1, and assume undecideds split the same way
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.5 * (2 - (untilElection / 365)); // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
     }
 }
 
 function weightPolls(polls) {
     const base_n = Math.log(600);
-    const regVoterBias = +0.011; // MAGIC NUMBER
-    const likelyVoterBias = -0.002; // MAGIC NUMBER
+    const regVoterBias = +0.011; 
+    const likelyVoterBias = -0.000; 
     const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
@@ -183,7 +181,7 @@ function weightPolls(polls) {
         }
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
-        let partisanWeight = poll.partisan ? 0.9 : 1.0; // MAGIC NUMBERS
+        let partisanWeight = poll.partisan ? 0.75 : 1.0; // MAGIC NUMBERS
 
         let typeWeight;
         if (poll.type === "likely voters")
@@ -236,7 +234,7 @@ function weightPolls(polls) {
     // calculate average and turn into percent
     lv_avg /= 0.01 * n_lv || 1;
     rv_avg /= 0.01 * n_rv || 1;
-    if (LOG) console.log(`RV/LV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
+    if (LOG) console.log(`LV-RV average bias: ${(lv_avg - rv_avg).toFixed(3)}%`);
 }
 
 function getPollsterAverages(surveyors, method) {
@@ -303,14 +301,14 @@ function add2012Data(data2012, polls, avgs) {
     let gapAdj = avgs.national - gap2012;
     if (LOG) console.log(`Shift since 2012: ${(100 * gapAdj).toFixed(2)}%`);
 
-    let moe_multiplier = 0.2 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIC NUMBER
+    let moe_multiplier = 0.35 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIC NUMBER
 
     for (let i = 0; i < 51; i++) {
         let state = data2012[i];
 
         polls.push({
             state: abbrs[i],
-            moe: (0.9 + 2*Math.abs(state.gap)) * moe_multiplier, // MAGIC NUMBER
+            moe: (0.9 + 4*Math.abs(state.gap)) * moe_multiplier, // MAGIC NUMBER
             gap: state.gap + gapAdj, 
             n: +state.totalVoters,
             date: new Date(2012, 10, 08),
@@ -336,7 +334,7 @@ function trendAdjustment(polls, avgs) {
     for (let i = 0; i < 51; i++) {
         let dateDiff = (NOW - most_recent[i]) / one_day;
         let weight = 1 - Math.exp(-dateDiff / 28); // MAGIC NUMBER
-        weight /= Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        weight /= Math.pow(date_multiplier, 3); // MAGIC NUMBER
         adj[i] = avgs.trend * weight;
     }
 
@@ -407,13 +405,14 @@ function calculateAverages(LOG, trendAdj = false) {
         }
     }
 
+    state_var = state_var.map((a, i) => a + state_mean_var[i] * state_total_n[i] / 2);
     state_var = state_var.map((a, i) => a 
                               * date_multiplier 
-                              * (1 + 2 / n_state_polls[i]) // fewer polls => more uncertainty
+                              * Math.exp(1 / n_state_polls[i]) // fewer polls => more uncertainty
                               / state_total_n[i]);
-    state_var = state_var.map((a, i) => a + state_mean_var[i] * date_multiplier);
-    US_var *= date_multiplier * (1 + 2 / n_us_polls) / US_total_n;
-    US_var += US_mean_var * date_multiplier;
+
+    US_var += US_mean_var * US_total_n; 
+    US_var *= date_multiplier * Math.exp(1 / n_us_polls) / US_total_n;
 
     if (LOG) {
         console.log(`US Mean StdDev: ${(100 * Math.sqrt(US_mean_var)).toFixed(2)}%`);
@@ -438,9 +437,10 @@ function calculateAverages(LOG, trendAdj = false) {
 }
 
 function modelState(index, nationalShift) {
-    nationalShift *= averages.national_var; 
+    let mix = 0.16 * date_multiplier; // MAGIC NUMBER
+    nationalShift *= mix * Math.sqrt(averages.national_var); 
 
-    let variance = averages.state_var[index];
+    let variance = averages.state_var[index] - mix*mix * averages.national_var;
 
     let mean = averages.state[index] + nationalShift;
     let gap = gaussian(mean, variance).ppf(Math.random());
