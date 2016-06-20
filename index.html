@@ -6,16 +6,15 @@
         <meta name="description" content="Statistical predictions for the electoral college in the 2016 U.S.  presidential election.
 ">
         <link rel="manifest" href="manifest.json">
+        <link rel="canonical" href="https://corymccartan.github.io/election-2016/" /> <!-- for search engines -->
 
-        
-
-        <link rel="icon" type="image/gif" href="/election-2016/assets/flag.gif">
+        <link rel="icon" type="image/gif" href="assets/flag.gif">
 
         <title>2016 Presidential Election Predictions</title>
 
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,400italic' rel='stylesheet' type='text/css'> 
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300,700,400' rel='stylesheet' type='text/css'>
-        <link type="text/css" rel="stylesheet" href="/election-2016/build/main.css">
+        <link type="text/css" rel="stylesheet" href="build/main.css">
 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,7 +30,7 @@
     <body>
         <nav>
             <h1> 
-                <img class="flag-icon" src="/election-2016/assets/flag.gif">
+                <img class="flag-icon" src="assets/flag.gif">
                 2016 Presidential Election Predictions 
             </h1>
             <a href="https://github.com/CoryMcCartan/election-2016" target="_blank" id="github">View Code</a>
@@ -41,7 +40,7 @@
             <time></time>
 
 <section>
-    <div id="map" class="graphic"></div>
+    <figure id="map" class="graphic" title="Electoral College Map"></figure>
     <div id="map-tooltip" class="tooltip">
         <span id="mt-name"></span><br />
         Chance of winning:
@@ -83,12 +82,12 @@
         shaded in yellow. 
     </summary>
 
-    <div id="histogram" class="graphic">
+    <figure id="histogram" class="graphic" title="Histogram of Possible Outcomes">
         <div id="hist-tooltip" class="tooltip">
             <span id="ht-electors"></span> <br />
             <span id="ht-percent"></span> 
         </div>
-    </div>
+    </figure>
 </section>
 
 <section>
@@ -99,7 +98,7 @@
         Trump&rsquo;s.
     </summary>
 
-    <div id="history" class="graphic"></div>
+    <figure id="history" class="graphic" title="Probabilities Over Time"></figure>
 </section>
 
 <section>
@@ -108,7 +107,7 @@
         Below is a list of possible scenarios, and the chance of each occurring.
     </summary>
 
-    <table id="scenario">
+    <table id="scenario" title="Possible Scenarios">
         <tr>
             <th>Scenario</td>
             <th>Probability</td>
@@ -141,8 +140,8 @@
 </section>
 
 
-<script type="text/javascript" src="/election-2016/build/lib/all_libs.js"></script>
-<script type="text/javascript" src="/election-2016/build/main.js"></script>
+<script type="text/javascript" src="build/lib/all_libs.js"></script>
+<script type="text/javascript" src="build/main.js"></script>
 
         </main>
 
