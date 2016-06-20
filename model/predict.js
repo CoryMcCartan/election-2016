@@ -170,7 +170,7 @@ function weightPolls(polls) {
     for (let poll of polls) {
         let dateDiff = (NOW - poll.date) / one_day;
         let recencyWeight;
-        recencyWeight = Math.exp(-dateDiff / 30); // MAGIC NUMBER
+        recencyWeight = Math.exp(-dateDiff / 21); // MAGIC NUMBER
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
