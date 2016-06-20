@@ -97,8 +97,8 @@ function processPolls(polls) {
         return true; 
     };
 
-    const default_moe = 4.0; // MAGIC NUMBER
-    const default_n = 400; // MAGIC NUMBER
+    const default_moe = 5.0; // MAGIC NUMBER
+    const default_n = 300; // MAGIC NUMBER
 
     for (let poll of polls) {
         // data cleanup
