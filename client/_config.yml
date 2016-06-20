@@ -2,8 +2,7 @@ title: 2016 Presidential Election Predictions
 description: > 
     Statistical predictions for the electoral college in the 2016 U.S. 
     presidential election.
-url: "https://corymccartan.github.io/" 
-baseurl: "/election-2016"
+url: "https://corymccartan.github.io/election-2016/" 
 
 sass:
     style: compressed
@@ -19,7 +18,7 @@ assets:
         css: sass
         js: false
 
-    prefix: "/build"
+    prefix: "build"
 
     sources:
         - js/
