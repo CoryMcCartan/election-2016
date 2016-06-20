@@ -77,7 +77,7 @@ function processPollsterData(data) {
 
     averagePollster = {
         pollster: "AVERAGE",
-        predictivePlusMinus: avgPredictive / length + 1.0, // assume worse than average b/c unknown
+        predictivePlusMinus: avgPredictive / length + 2.0, // assume worse than average b/c unknown
         meanRevertedBias: 0,
     };
 }
