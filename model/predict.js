@@ -132,12 +132,14 @@ function processPolls(polls) {
         poll.state = question.state;
         if (!poll.state) {
             console.log('NO STATE');
+            let questionName = question.name.toLowerCase();
             for (let i = 0; i < 51; i++) {
                 let name = stateFromAbbr[abbrs[i]].toLowerCase(); 
-                if (question.name.toLowerCase().includes(name + " "));
-                poll.state = abbrs[i];
-                console.log(poll.state);
-                break;
+                if (questionName.includes(name + " ")) {
+                    poll.state = abbrs[i];
+                    console.log(poll.state);
+                    break;
+                }
             }
             console.log('');
         }
