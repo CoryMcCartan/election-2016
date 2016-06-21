@@ -40,6 +40,7 @@ function predict(iterations, history) {
     // simulate a bunch of elections
     let outcomes = new Array(538 + 1).fill(0);
     let demWins = 0;
+    let demPopWins = 0;
     let recounts = 0;
     let demWinPopLoseEC = 0;
     let gopWinPopLoseEC = 0;
@@ -83,9 +84,12 @@ function predict(iterations, history) {
 
         if (democraticElectors >= 270) {
             demWins++;
-            if (demPopularVote < gopPopularVote)
+            if (demPopularVote > gopPopularVote)
+                demPopWins++;
+            else
                 gopWinPopLoseEC++;
         } else if (gopPopularVote < demPopularVote) {
+            demPopWins++;
             demWinPopLoseEC++;
         }
     }
@@ -109,6 +113,8 @@ function predict(iterations, history) {
         iterations,
         recounts: recounts / iterations,
         ties: outcomes[269] / iterations,
+        demWinPop: demPopWins / iterations,
+        gopWinPop: 1 - demPopWins / iterations,
         demWinPopLoseEC: demWinPopLoseEC / iterations,
         gopWinPopLoseEC: gopWinPopLoseEC / iterations,
         demLandslide: demLandslide / iterations,

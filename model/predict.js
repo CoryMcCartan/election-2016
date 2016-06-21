@@ -131,17 +131,15 @@ function processPolls(polls) {
         poll.n = question.subpopulations[0].observations || default_n;
         poll.state = question.state;
         if (!poll.state) {
-            console.log('NO STATE');
             let questionName = question.name.toLowerCase();
             for (let i = 0; i < 51; i++) {
                 let name = stateFromAbbr[abbrs[i]].toLowerCase(); 
                 if (questionName.includes(name + " ")) {
                     poll.state = abbrs[i];
-                    console.log(poll.state);
+                    if (LOG) console.log('NO STATE\n' + poll.state + "\n");
                     break;
                 }
             }
-            console.log('');
         }
         let responses  = question.subpopulations[0].responses;
 
