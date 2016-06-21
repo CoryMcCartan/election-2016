@@ -27,6 +27,8 @@ function main() {
         iterations: +d.iterations,
         recount: +d.recounts,
         tie: +d.ties,
+        demPop: +d.demWinPop,
+        gopPop: +d.gopWinPop,
         demPopEC: +d.demWinPopLoseEC,
         gopPopEC: +d.gopWinPopLoseEC,
         demLandslide: +d.demLandslide,
@@ -88,6 +90,8 @@ function showOverall(history, prediction = false) {
     // scenarios
     $("td#scn-tie").innerHTML = (100 * current.tie).toFixed(1) + "%";
     $("td#scn-recount").innerHTML = (100 * current.recount).toFixed(1) + "%";
+    $("td#scn-dem-pop").innerHTML = (100 * current.demPop).toFixed(1) + "%";
+    $("td#scn-gop-pop").innerHTML = (100 * current.gopPop).toFixed(1) + "%";
     $("td#scn-dem-pop-ec").innerHTML = (100 * current.demPopEC).toFixed(1) + "%";
     $("td#scn-gop-pop-ec").innerHTML = (100 * current.gopPopEC).toFixed(1) + "%";
     $("td#scn-dem-landslide").innerHTML = (100 * current.demLandslide).toFixed(1) + "%";
