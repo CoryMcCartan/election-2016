@@ -3,13 +3,15 @@
 rm -f output/history.csv
 touch output/history.csv
 
-for day in {5..30}
+for day in {5..31}
 do
+    echo MAY $day
     ./run 7e4 --date 5/$day/2016
 done
 
 for day in {1..20}
 do
+    echo JUNE $day
     ./run 7e4 --date 6/$day/2016
 done
 
