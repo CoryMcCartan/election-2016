@@ -15,8 +15,9 @@ function * main() {
     let addToHistory = !argv.dry;
     LOG = !!argv.v || !!argv.verbose;
     let nowCast = !!argv.now
+    let date = argv.date ? new Date(argv.date + " 00:00") : new Date();
 
-    yield* predictor.init(LOG, nowCast);
+    yield* predictor.init(LOG, nowCast, date);
 
     let history = yield loadHistory();
 

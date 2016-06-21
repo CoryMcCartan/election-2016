@@ -33,9 +33,12 @@ function getPollsterRatings() {
     });
 }
 
-function getPolls(topicName) {
+function getPolls(topicName, date) {
+    let month = ("0" + (date.getMonth() + 1)).slice(-2);
+    let day = ("0" + date.getDate()).slice(-2);
+    let datestr = `${date.getFullYear()}-${month}-${day}`;
     let makeURL = n => `http://elections.huffingtonpost.com/pollster/api/` + 
-        `polls.json?page=${n+1}&topic=${topicName}`;
+        `polls.json?page=${n+1}&topic=${topicName}&before=${datestr}`;
 
     let promises = [];
     //          get     10*n    polls

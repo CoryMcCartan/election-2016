@@ -4,10 +4,8 @@ let LOG;
 
 const one_day = 1000 * 60 * 60 * 24;
 let NOW = Date.now();
-const untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
-
-let date_multiplier = Math.exp(untilElection / 136); 
-let noTrend = false;
+let untilElection;
+let date_multiplier;
 
 let data2012;
 let polls;
@@ -18,12 +16,12 @@ let averages;
 
 const topicName = "2016-president";
 
-function * init(log, nowCast) { 
+function * init(log, nowCast, date) { 
+    NOW = nowCast ? new Date(2016, 10, 8) : date;
+    untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
+    date_multiplier = Math.exp(untilElection / 136); 
+
     LOG = log;
-    if (nowCast) {
-        date_multiplier = 1;
-        noTrend = true;
-    }
 
     console.log(`${~~untilElection} days until Election Day.`);
 
@@ -33,12 +31,12 @@ function * init(log, nowCast) {
     pollsters = yield loader.getPollsterRatings();
     processPollsterData(pollsters);
 
-    polls = yield loader.getPolls(topicName);
+    polls = yield loader.getPolls(topicName, date);
     processPolls(polls);
 
     weightPolls(polls);
 
-    let pollAverages = calculateAverages(true);
+    let pollAverages = calculateAverages(LOG);
     add2012Data(data2012, polls, pollAverages);
 
     let trendAdj = trendAdjustment(polls, pollAverages);
@@ -392,7 +390,7 @@ function calculateAverages(LOG, trendAdj = false) {
     if (us_weight_old === 0 || us_weight_recent === 0) trend = 0;
     if (LOG) console.log(`Trend in last week: ${(100 * trend).toFixed(2)}%`);
     state_averages = state_averages.map((a, i) => a / weights[i]);
-    if (trendAdj && !noTrend)
+    if (trendAdj)
         state_averages = state_averages.map((a, i) => a + trendAdj[i]);
 
     // calculate var in means

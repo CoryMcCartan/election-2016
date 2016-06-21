@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+for day in {1..30}
+do
+    ./run 5e4 --date 5/$day/2016
+done
+
+for day in {1..20}
+do
+    ./run 5e4 --date 6/$day/2016
+done
