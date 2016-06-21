@@ -456,6 +456,17 @@ function makeHistoryLine(history) {
         .attr("y", y(1 - prob) + 5)
         .text((100 - 100 * prob).toFixed(0) + "%");
 
+    let demEndCircle = chart.append("circle")
+        .attr("class", "dem end-circle")
+        .attr("cx", x(endDate))
+        .attr("cy", y(prob))
+        .attr("r", 3);
+    let gopEndCircle = chart.append("circle")
+        .attr("class", "gop end-circle")
+        .attr("cx", x(endDate))
+        .attr("cy", y(1 - prob))
+        .attr("r", 3);
+
     chart.append("path")
         .datum(history)
         .attr("id", "demProbLine")
@@ -502,6 +513,14 @@ function makeHistoryLine(history) {
         gopEndLabel
             .attr("x", width - 30)
             .attr("y", y(1 - prob) + 5);
+
+        demEndCircle
+            .attr("cx", x(endDate))
+            .attr("cy", y(prob));
+        gopEndCircle
+            .attr("cx", x(endDate))
+            .attr("cy", y(1 - prob));
+            
             
 
         chart.select("#demProbLine")
