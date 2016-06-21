@@ -8,6 +8,7 @@ let predictor = require("./predict.js");
 let util = require("./util.js");
 
 let LOG;
+let date;
 
 function * main() {
     console.log("======= 2016 PRESIDENTIAL RACE PREDICTIONS =======");
@@ -15,7 +16,7 @@ function * main() {
     let addToHistory = !argv.dry;
     LOG = !!argv.v || !!argv.verbose;
     let nowCast = !!argv.now
-    let date = argv.date ? new Date(argv.date + " 00:00") : new Date();
+    date = argv.date ? new Date(argv.date + " 00:00") : new Date();
 
     yield* predictor.init(LOG, nowCast, date);
 
@@ -101,7 +102,7 @@ function predict(iterations, history) {
     let calledElectors = sumElectors(election)[0];
 
     history.unshift({
-        date: Date.now(),
+        date: date.getTime(),
         avgElectors: demElectors,
         calledElectors,
         probability: demWins / iterations,
