@@ -136,7 +136,7 @@ function processPolls(polls) {
                 let name = stateFromAbbr[abbrs[i]].toLowerCase(); 
                 if (questionName.includes(name + " ")) {
                     poll.state = abbrs[i];
-                    if (LOG) console.log('NO STATE\n' + poll.state + "\n");
+                    if (LOG) console.log(`NO STATE: ${questionName}\n${poll.state}\n`);
                     break;
                 }
             }
