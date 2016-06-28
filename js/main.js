@@ -23,7 +23,7 @@ function main() {
         date: new Date(+d.date),
         avgElectors: +d.avgElectors,
         calledElectors: +d.calledElectors,
-        probability: +d.probability,
+        prob: +d.probability,
         iterations: +d.iterations,
         recount: +d.recounts,
         tie: +d.ties,
@@ -51,7 +51,7 @@ function showOverall(history, prediction = false) {
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
-    let prob = (Math.abs(winner - current.probability) * 100).toFixed(0)
+    let prob = (Math.abs(winner - current.prob) * 100).toFixed(0)
 
     $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
 
@@ -65,7 +65,7 @@ function showOverall(history, prediction = false) {
     let last = history.find(e => current.date - e.date > oneDay);
     if (last) { // if the model is at least one day old
         // change since yesterday
-        let delta = (prob - Math.abs(winner - last.probability) * 100).toFixed(0)
+        let delta = (prob - Math.abs(winner - last.prob) * 100).toFixed(0)
 
         $("#prediction").innerHTML += 
             `<br /> This is ${delta >= 0 ? "an increase" : "a decrease"} of 
@@ -416,11 +416,11 @@ function makeHistoryLine(history) {
 
     let demLine = d3.svg.line()
         .x(d => x(d.date))
-        .y(d => y(d.probability));
+        .y(d => y(d.prob));
 
     let gopLine = d3.svg.line()
         .x(d => x(d.date))
-        .y(d => y(1 - d.probability));
+        .y(d => y(1 - d.prob));
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)
@@ -448,7 +448,7 @@ function makeHistoryLine(history) {
         .text("Probability");
 
     // labels
-    let prob = history[0].probability;
+    let prob = history[0].prob;
     let demEndLabel = chart.append("text")
         .attr("class", "dem end-label")
         .attr("x", width - 30)
@@ -460,12 +460,12 @@ function makeHistoryLine(history) {
         .attr("y", y(1 - prob) + 5)
         .text((100 - 100 * prob).toFixed(0) + "%");
 
-    let demEndCircle = chart.append("circle")
+    let demCircle = chart.append("circle")
         .attr("class", "dem end-circle")
         .attr("cx", x(endDate))
         .attr("cy", y(prob))
         .attr("r", 3);
-    let gopEndCircle = chart.append("circle")
+    let gopCircle = chart.append("circle")
         .attr("class", "gop end-circle")
         .attr("cx", x(endDate))
         .attr("cy", y(1 - prob))
@@ -486,6 +486,43 @@ function makeHistoryLine(history) {
         .attr("stroke", RED)
         .attr("stroke-width", 2)
         .attr("fill", "transparent");
+
+    chart
+        .on("mousemove", function() {
+            let e_x = d3.mouse(this)[0];
+            let date = x.invert(e_x);
+            let i = history.findIndex(d => d.date < date) - 1;
+            let prob;
+            if (i < 0 || i >= history.length - 1) {
+                prob = history[0].prob;
+                e_x = x(endDate);
+            } else {
+                let gap = history[i].date - history[i+1].date;
+                let weight = (date - history[i+1].date) / gap;
+                prob = weight * history[i].prob + (1-weight) * history[i+1].prob;
+            }
+
+            demCircle
+                .attr("cx", e_x)
+                .attr("cy", y(prob));
+            gopCircle
+                .attr("cx", e_x)
+                .attr("cy", y(1 - prob));
+
+            demEndLabel.text((100 * prob).toFixed(0) + "%");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+        })
+        .on("mouseout", function() {
+            demCircle
+                .attr("cx", x(endDate))
+                .attr("cy", y(prob));
+            gopCircle
+                .attr("cx", x(endDate))
+                .attr("cy", y(1 - prob));
+
+            demEndLabel.text((100 * prob).toFixed(0) + "%");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+        });
 
     el.style.opacity = 1.0;
 
@@ -518,10 +555,10 @@ function makeHistoryLine(history) {
             .attr("x", width - 30)
             .attr("y", y(1 - prob) + 5);
 
-        demEndCircle
+        demCircle
             .attr("cx", x(endDate))
             .attr("cy", y(prob));
-        gopEndCircle
+        gopCircle
             .attr("cx", x(endDate))
             .attr("cy", y(1 - prob));
             
