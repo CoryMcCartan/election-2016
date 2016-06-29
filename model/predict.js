@@ -19,7 +19,7 @@ const topicName = "2016-president";
 function * init(log, nowCast, date) { 
     NOW = nowCast ? new Date(2016, 10, 8) : date;
     untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
-    date_multiplier = Math.exp(untilElection / 136); 
+    date_multiplier = Math.exp(untilElection / 120); 
 
     LOG = log;
 
@@ -435,7 +435,7 @@ function calculateAverages(LOG, trendAdj = false) {
 }
 
 function modelState(index, nationalShift) {
-    let mix = 0.16 * date_multiplier; // MAGIC NUMBER
+    let mix = 0.18 * date_multiplier; // MAGIC NUMBER
     nationalShift *= mix * Math.sqrt(averages.national_var); 
 
     let variance = averages.state_var[index] - mix*mix * averages.national_var;
