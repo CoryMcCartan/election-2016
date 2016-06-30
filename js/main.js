@@ -69,7 +69,7 @@ function showOverall(history, prediction = false) {
 
         $("#prediction").innerHTML += 
             `<br /> This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.abs(delta).toFixed(0)}% from yesterday.`
+            ${Math.round(Math.abs(delta)).toFixed(0)}% from yesterday.`
     }
 
     $("#showProbs").addEventListener("click", function() {
