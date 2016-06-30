@@ -189,11 +189,11 @@ window.electors = {
 const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
-const RED = "#e65";
-const LIGHT_RED = "#fbb";
+const RED = "#e76";
+const LIGHT_RED = "#fed";
 const YELLOW = "#ee5";
-const LIGHT_BLUE = "#ccf";
-const BLUE = "#59e";
+const LIGHT_BLUE = "#def";
+const BLUE = "#69f";
 const GREY = "#aaa";
 
 function main() {
@@ -224,8 +224,8 @@ function showOverall(history, prediction = false) {
 
     let electors = prediction ? current.calledElectors : current.avgElectors;
     let winner = electors > 270 ? DEM : GOP;
-    $("#demEV").innerHTML = electors.toFixed(0);
-    $("#gopEV").innerHTML = (538 - electors).toFixed(0);
+    $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
+    $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -238,6 +238,10 @@ function showOverall(history, prediction = false) {
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
     $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
+    let demElectors = electors.toFixed(1);
+    let gopElectors = (538 - electors).toFixed(1);
+    $("#prediction").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
+        `electors, compared to Trump’s ${gopElectors} electors.`
 
     let oneDay = 24 * 60 * 60 * 1000;
     let last = history.find(e => current.date - e.date > oneDay);
@@ -246,13 +250,13 @@ function showOverall(history, prediction = false) {
         let delta = (prob - Math.abs(winner - last.prob) * 100).toFixed(0)
 
         $("#prediction").innerHTML += 
-            `<br /> This is ${delta >= 0 ? "an increase" : "a decrease"} of 
+            `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.round(Math.abs(delta)).toFixed(0)}% from yesterday.`
     }
 
     $("#showProbs").addEventListener("click", function() {
-        $("#demEV").innerHTML = current.avgElectors.toFixed(0);
-        $("#gopEV").innerHTML = (538 - current.avgElectors).toFixed(0);
+        $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
+        $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
 
         this.hidden = true;
         $("#callStates").hidden = false;
@@ -302,7 +306,7 @@ function makeMap(showProbabilities = true) {
     let tGOP = $("#mt-gop");
 
     let colorScale = d3.scale.linear()
-        .domain([0, 0.04, 0.3, 0.5, 0.7, 0.96, 1])
+        .domain([0, 0.04, 0.49, 0.50, 0.51, 0.96, 1])
         .range([RED, RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE, BLUE]);
 
     let color = (data, state, index) => {
@@ -435,7 +439,7 @@ function makeMap(showProbabilities = true) {
     });
 }
 
-function makeHistogram(most) {
+function makeHistogram(mean) {
     const chartRatio = 0.3;
     const margin = {L: 40, R: 5, B: 35, T: 15};
 
@@ -445,7 +449,7 @@ function makeHistogram(most) {
 
     let x = d3.scale.ordinal()
         .domain(d3.range(538))
-        .rangeBands([margin.L, width - margin.R], -0.25);
+        .rangeBands([margin.L, width - margin.R], smallScreen() ? -0.5 : -0.2);
     let y = d3.scale.linear()
         .range([height - margin.B, margin.T]);
 
@@ -468,6 +472,8 @@ function makeHistogram(most) {
     let tElectors = $("#ht-electors");
     let tPercent = $("#ht-percent");
 
+    let modeLabel, meanLabel, modeIndex;
+
     d3.csv("data/electors.csv?" + Math.random(), d => ({
         electors: +d.electors,
         percentage: +d.percentage,
@@ -475,6 +481,7 @@ function makeHistogram(most) {
         if (error) throw error;
 
         let mode = d3.max(data, d => d.percentage)
+        modeIndex = data.findIndex(d => d.percentage === mode);
         y.domain([0, mode]); // get max percentage
 
         chart.append("g")
@@ -502,7 +509,8 @@ function makeHistogram(most) {
         .enter().append("rect")
             .attr("class", "bar")
             .attr("fill", d => {
-                if (Math.abs(d.electors - most) < 0.5) return YELLOW;
+                if (Math.abs(d.electors - mean) < 0.5) return YELLOW;
+                else if (d.electors === modeIndex) return YELLOW;
                 else if (d.electors >= 270) return BLUE;
                 else return RED;
             })
@@ -510,6 +518,19 @@ function makeHistogram(most) {
             .attr("width", x.rangeBand())
             .attr("y", d => y(d.percentage))
             .attr("height", d => height - y(d.percentage) - margin.B);
+
+        let y0 = y(0);
+        modeLabel = chart.append("g")
+            .attr("transform", `translate(${x(modeIndex)}, ${y0})`);
+        modeLabel.append("text")
+            .attr("class", "hist-label")
+            .text("Mode");
+
+        meanLabel = chart.append("g")
+            .attr("transform", `translate(${x(Math.round(mean))}, ${y0})`);
+        meanLabel.append("text")
+            .attr("class", "hist-label")
+            .text("Mean");
 
         let usingTooltip = false;
         chart
@@ -537,7 +558,7 @@ function makeHistogram(most) {
         width = el.getBoundingClientRect().width;
         height = width * chartRatio;
 
-        x.rangeBands([margin.L, width - margin.R], -0.25);
+        x.rangeBands([margin.L, width - margin.R], smallScreen() ? -0.5 : -0.2);
         y.range([height - margin.B, margin.T]);
 
 
@@ -561,7 +582,10 @@ function makeHistogram(most) {
             .attr("width", x.rangeBand())
             .attr("y", d => y(d.percentage))
             .attr("height", d => height - y(d.percentage) - margin.B);
-
+        
+        let y0 = y(0);
+        modeLabel.attr("transform", `translate(${x(modeIndex)}, ${y0})`);
+        meanLabel.attr("transform", `translate(${x(Math.round(mean))}, ${y0})`);
     });
 }
 
