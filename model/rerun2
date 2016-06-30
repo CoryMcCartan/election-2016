@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-rm -f output/history.csv
-touch output/history.csv
-
-for day in {5..31}
-do
-    echo MAY $day
-    ./run 4e4 --date 5/$day/2016
-done
-
-for day in {1..28}
+for day in {16..28}
 do
     echo JUNE $day
     ./run 5e4 --date 6/$day/2016

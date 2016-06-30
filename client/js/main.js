@@ -124,7 +124,7 @@ function makeMap(showProbabilities = true) {
     let tGOP = $("#mt-gop");
 
     let colorScale = d3.scale.linear()
-        .domain([0, 0.05, 0.35, 0.5, 0.65, 0.95, 1])
+        .domain([0, 0.04, 0.3, 0.5, 0.7, 0.96, 1])
         .range([RED, RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE, BLUE]);
 
     let color = (data, state, index) => {
@@ -258,7 +258,7 @@ function makeMap(showProbabilities = true) {
 }
 
 function makeHistogram(most) {
-    const chartRatio = 0.35;
+    const chartRatio = 0.3;
     const margin = {L: 40, R: 5, B: 35, T: 15};
 
     let el = $("#histogram");
