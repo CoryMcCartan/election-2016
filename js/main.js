@@ -12,9 +12,9 @@ const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
 const RED = "#e76";
-const LIGHT_RED = "#fed";
+const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
-const LIGHT_BLUE = "#def";
+const LIGHT_BLUE = "#e7eeff";
 const BLUE = "#69f";
 const GREY = "#aaa";
 
@@ -54,16 +54,11 @@ function showOverall(history, prediction = false) {
     let prob = (Math.abs(winner - current.prob) * 100).toFixed(0)
 
     $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
-
     // figure out a/an
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
     $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
-    let demElectors = electors.toFixed(1);
-    let gopElectors = (538 - electors).toFixed(1);
-    $("#prediction").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
-        `electors, compared to Trump’s ${gopElectors} electors.`
 
     let oneDay = 24 * 60 * 60 * 1000;
     let last = history.find(e => current.date - e.date > oneDay);
@@ -75,6 +70,11 @@ function showOverall(history, prediction = false) {
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.round(Math.abs(delta)).toFixed(0)}% from yesterday.`
     }
+
+    let demElectors = electors.toFixed(0);
+    let gopElectors = (538 - electors).toFixed(0);
+    $("#prediction").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
+        `electors to Trump’s ${gopElectors}.`
 
     $("#showProbs").addEventListener("click", function() {
         $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
