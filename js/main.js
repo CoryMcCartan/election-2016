@@ -51,7 +51,7 @@ function showOverall(history, prediction = false) {
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
-    let prob = (Math.abs(winner - current.prob) * 100).toFixed(0)
+    let prob = Math.round(Math.abs(winner - current.prob) * 100).toFixed(0);
 
     $("time").innerHTML = `Last Updated ${current.date.toLocaleString()}.`;
     // figure out a/an
@@ -64,11 +64,11 @@ function showOverall(history, prediction = false) {
     let last = history.find(e => current.date - e.date > oneDay);
     if (last) { // if the model is at least one day old
         // change since yesterday
-        let delta = Math.round(prob - Math.abs(winner - last.prob) * 100).toFixed(0)
+        let delta = Math.round((current.prob - last.prob) * 100);
 
         $("#prediction").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.round(Math.abs(delta)).toFixed(0)}% from yesterday.`
+            ${Math.abs(delta).toFixed(0)}% from yesterday.`
     }
 
     let demElectors = electors.toFixed(0);
