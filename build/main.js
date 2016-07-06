@@ -242,11 +242,11 @@ function showOverall(history, prediction = false) {
     let last = history.find(e => current.date - e.date > oneDay);
     if (last) { // if the model is at least one day old
         // change since yesterday
-        let delta = Math.round((current.prob - last.prob) * 100);
+        let delta = (current.prob - last.prob) * 100;
 
         $("#prediction").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.abs(delta).toFixed(0)}% from yesterday.`
+            ${Math.abs(delta).toFixed(1)}% from yesterday.`
     }
 
     let demElectors = electors.toFixed(0);
