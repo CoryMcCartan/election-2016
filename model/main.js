@@ -58,7 +58,7 @@ function predict(iterations, history) {
         for (let s = 0; s < 51; s++) {
             let result = predictor.modelState(s, nationalShift);
 
-            if (Math.abs(result.dem - result.gop) < 0.005 * result.turnout)
+            if (Math.abs(result.dem - result.gop) < 0.005 * result.turnout) // within 0.5%
                 recount += electors[s]; 
 
             demPopularVote += result.dem;
@@ -73,7 +73,7 @@ function predict(iterations, history) {
         let democraticElectors = sumElectors(election)[0]; 
         outcomes[democraticElectors]++;
 
-        if (Math.abs(democraticElectors - 270) <= recount) recounts++;
+        if (Math.abs(democraticElectors - 270) <= recount) recounts++; // if recount decides the election
 
         let total = demPopularVote + gopPopularVote;
         let gap = demPopularVote - gopPopularVote;

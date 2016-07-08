@@ -223,7 +223,7 @@ function weightPolls(polls) {
                 `POLL: ${((poll.survey_houses[0] || {name: ""}).name + "                     ").substring(0, 20)}\t\t` +
                 `DATE: ${poll.date.toLocaleDateString()}\t\t` + 
                 `STATE: ${poll.state}\t` + 
-                `WEIGHT: ${poll.weight.toFixed(2)}\t` + 
+                `WEIGHT: ${poll.weight.toFixed(3)}\t` + 
                 `GAP: ${(100 * poll.gap).toFixed(2)}%\t` + 
                 `ADJUSTMENT: ${(100 * (biasAdj - typeAdj)).toFixed(2)}%`
         );
