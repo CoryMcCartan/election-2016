@@ -19,7 +19,7 @@ const topicName = "2016-president";
 function * init(log, nowCast, date) { 
     NOW = nowCast ? new Date(2016, 10, 8) : date;
     untilElection = (new Date(2016, 10, 8) - NOW) / one_day;
-    date_multiplier = Math.exp(untilElection / 300); 
+    date_multiplier = Math.exp(untilElection / 280); 
 
     LOG = log;
 
@@ -164,9 +164,10 @@ function weightPolls(polls) {
     let n_lv = 0;
 
     for (let poll of polls) {
-        let dateDiff = (NOW - poll.date) / one_day;
+        let dateDiff = (Date.now() - poll.date) / one_day;
         let recencyWeight;
-        recencyWeight = Math.exp(-dateDiff / 14); // MAGIC NUMBER
+        let factor = 10 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
@@ -189,9 +190,11 @@ function weightPolls(polls) {
         else if (poll.type === "adults")
             typeWeight = 0.5;
         else {
-            console.log("=========");
-            console.log("'" + poll.type + "'");
-            console.log("=========");
+            if (LOG) {
+                console.log("=========");
+                console.log("'" + poll.type + "'");
+                console.log("=========");
+            }
             poll.weight = 0;
             continue;
         }
@@ -292,14 +295,14 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 1e-4 * Math.pow(date_multiplier, 10); // MAGIC NUMBER
+    let weight = 1e-3 * Math.pow(date_multiplier, 10); // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
     let gapAdj = avgs.national - gap2012;
     if (LOG) console.log(`Shift since 2012: ${(100 * gapAdj).toFixed(2)}%`);
 
-    let moe_multiplier = 0.4 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIC NUMBER
+    let moe_multiplier = 0.35 * Math.sqrt(avgs.national_var) * 1.96 * 100; //MAGIC NUMBER
 
     for (let i = 0; i < 51; i++) {
         let state = data2012[i];
@@ -437,7 +440,7 @@ function calculateAverages(LOG, trendAdj = false) {
 function modelState(index, nationalShift) {
     nationalShift *= Math.sqrt(averages.national_var); 
 
-    let variance = averages.state_var[index] - 0.4*averages.national_var; // MAGIC NUMBER
+    let variance = averages.state_var[index] - 0.5*averages.national_var; // MAGIC NUMBER
 
     let mean = averages.state[index] + nationalShift;
     let gap = gaussian(mean, variance).ppf(Math.random());
