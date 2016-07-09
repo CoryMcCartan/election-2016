@@ -295,7 +295,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 1e-3 * Math.pow(date_multiplier, 10); // MAGIC NUMBER
+    let weight = 6e-4 * Math.pow(date_multiplier, 10); // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
