@@ -189,11 +189,11 @@ window.electors = {
 const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
-const RED = "#e76";
+const RED = "#f76";
 const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
 const LIGHT_BLUE = "#e7eeff";
-const BLUE = "#69f";
+const BLUE = "#68f";
 const GREY = "#aaa";
 
 function main() {
