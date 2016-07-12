@@ -1,5 +1,4 @@
-# 2016 Presidential Election Predictions
+# 2016 Election Predictions
 
-Statistical predictions for the electoral college in the 2016 U.S. 
-presidential election.
+Statistical predictions for the the 2016 U.S. general election.
 

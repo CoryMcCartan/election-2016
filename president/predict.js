@@ -164,7 +164,8 @@ function weightPolls(polls) {
     let n_lv = 0;
 
     for (let poll of polls) {
-        let dateDiff = (Date.now() - poll.date) / one_day;
+        let now = Math.min(Date.now(), NOW);
+        let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
         let factor = 10 * Math.pow(date_multiplier, 1.5); // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
@@ -364,7 +365,8 @@ function calculateAverages(LOG, trendAdj = false) {
     for (let poll of polls) {
         if (poll.state === "US") {
             US_average += poll.gap * poll.weight;
-            let dateDiff = (NOW - poll.date) / one_day;
+            let now = Math.min(Date.now(), NOW);
+            let dateDiff = (now - poll.date) / one_day;
             if (dateDiff < 14) {
                 US_average_recent += poll.gap * poll.weight;
                 us_weight_recent += poll.weight;

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd `dirname $_`/model
+cd `dirname $_`/president
 ./run 5e5 --verbose
 cd ..
 git add .
