@@ -143,8 +143,8 @@ function processPolls(polls) {
         }
         let responses  = question.subpopulations[0].responses;
 
-        let dem = responses.find(r => r.party == "Dem").value;
-        let gop = responses.find(r => r.party == "Rep").value;
+        let dem = responses.find(r => r.choice.toLowerCase() == "clinton").value;
+        let gop = responses.find(r => r.choice.toLowerCase() == "trump").value;
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
