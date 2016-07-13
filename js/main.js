@@ -11,7 +11,7 @@
 const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
-const RED = "#f36360";
+const RED = "#f66660";
 const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
 const LIGHT_BLUE = "#e7eeff";
