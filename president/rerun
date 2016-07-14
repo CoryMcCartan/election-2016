@@ -26,4 +26,4 @@ git add .
 git commit -m 're-run of model'
 ./update
 
-cd model
+cd president
