@@ -452,7 +452,7 @@ function modelState(index, nationalShift) {
 
     let state_var = averages.state_var[index] - nat_var; // MAGIC NUMBER
     if (state_var < 0.0001) {
-        console.log("BELOW THRESHOLD");
+        if (i%1e5 == 0) console.log(abbrs[index] + ": BELOW THRESHOLD");
         state_var = 0.0001;
     }
     state_var *= 0.4; // MAGIC NUMBER
