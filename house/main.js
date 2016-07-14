@@ -301,6 +301,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function calculateAverages(data2014, polls) {
+    polls = polls.filter(p => !p.skip);
     let average = polls.reduce((p, c) => p + c.gap * c.weight, 0);
     let variance = polls.reduce((p, c) => p + Math.pow(c.moe / 196, 2) * (c.n - 1) * c.weight, 0);
     let weights = polls.reduce((p, c) => p + c.weight, 0);
