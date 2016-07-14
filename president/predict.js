@@ -68,7 +68,7 @@ function processPollsterData(data) {
         pollster.banned = pollster.banned === "yes";
         delete pollster.ncpp_aapor_roper;
 
-        avgPredictive += pollster.meanRevertedBias;
+        avgPredictive += pollster.predictivePlusMinus;
     }
 
     averagePollster = {
@@ -89,9 +89,9 @@ function processPolls(polls) {
         if (name.includes("caucus")) return false;
         if (!q.subpopulations.length) return false;
         let responses = q.subpopulations[0].responses;
-        if (responses.find(r => r.choice === "Bloomberg")) return false;
-        if (!responses.find(r => r.choice === "Clinton")) return false;
-        if (!responses.find(r => r.choice === "Trump")) return false;
+        if (responses.find(r => r.choice.toLowerCase().includes("bloomberg"))) return false;
+        if (!responses.find(r => r.choice.toLowerCase().includes("clinton"))) return false;
+        if (!responses.find(r => r.choice.toLowerCase().includes("trump"))) return false;
         return true; 
     };
 
@@ -145,12 +145,12 @@ function processPolls(polls) {
         }
         let responses  = question.subpopulations[0].responses;
 
-        let dem = responses.find(r => r.choice.toLowerCase() == "clinton").value;
-        let gop = responses.find(r => r.choice.toLowerCase() == "trump").value;
+        let dem = responses.find(r => r.choice.toLowerCase().includes("clinton")).value;
+        let gop = responses.find(r => r.choice.toLowerCase().includes("trump")).value;
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.17 * date_multiplier; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.18 * date_multiplier; // MAGIC NUMBER 
     }
 }
 
@@ -169,7 +169,7 @@ function weightPolls(polls) {
     for (let poll of polls) {
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
-        let factor = 12 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        let factor = 10 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
@@ -224,7 +224,7 @@ function weightPolls(polls) {
             n_rv++;
         }
 
-        poll.gap += biasAdj - typeAdj;
+        poll.gap -= biasAdj + typeAdj;
 
         if (LOG) console.log(
                 `POLL: ${((poll.survey_houses[0] || {name: ""}).name + "                     ").substring(0, 20)}\t\t` +
@@ -232,7 +232,7 @@ function weightPolls(polls) {
                 `STATE: ${poll.state}\t` + 
                 `WEIGHT: ${poll.weight.toFixed(3)}\t` + 
                 `GAP: ${(100 * poll.gap).toFixed(2)}%\t` + 
-                `ADJUSTMENT: ${(100 * (biasAdj - typeAdj)).toFixed(2)}%`
+                `ADJUSTMENT: ${(100 * (-biasAdj + typeAdj)).toFixed(2)}%`
         );
     }
 
