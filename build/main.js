@@ -362,7 +362,7 @@ function makeMap(showProbabilities = true) {
 
                 let probability = data[el.__data__.index].probability;
                 tDEM.innerHTML = (probability * 100).toFixed(0) + "%";
-                tGOP.innerHTML = (100 - probability * 100).toFixed(0) + "%";
+                tGOP.innerHTML = Math.abs(100 - probability * 100).toFixed(0) + "%";
 
                 if (probability > 0.5) {
                     tDEM.parentElement.style.fontWeight = "bold";
