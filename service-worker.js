@@ -3,25 +3,38 @@
  */
 var log = false;
 
-var CACHE_VERSION = "v2";
+var CACHE_VERSION = "v1.0";
 
 var base = location.pathname.replace("service-worker.js", "");
 var STATIC_CACHE = [
     base + "assets/flag.gif",
     base + "assets/usa.json",
-    base + "build/lib/all_libs.js",
+    base + "js/lib/d3.v3.min.js",
+    base + "js/lib/queue.v1.min.js",
+    base + "js/lib/topojson.v0.min.js",
+    base + "js/lib/lib.min.js",
+    base + "js/states.js",
     "https://fonts.googleapis.com/css?family=Raleway:400,700",
     "https://fonts.googleapis.com/css?family=Roboto+Mono:300,700,400",
 ];
 var DYNAMIC_CACHE = [
     base,
     base + "index.html",
+    base + "president/index.html",
+    base + "president/",
+    base + "house/index.html",
+    base + "house/",
     base + "manifest.json",
-    base + "build/main.css",
-    base + "build/main.js",
-    base + "data/history.csv",
-    base + "data/states.csv",
-    base + "data/electors.csv",
+    base + "css/main.css",
+    base + "js/president.js",
+    base + "js/house.js",
+    base + "js/main.js",
+    base + "data/president-history.csv",
+    base + "data/president-states.csv",
+    base + "data/president-electors.csv",
+    base + "data/house-history.csv",
+    base + "data/house-districts.csv",
+    base + "data/house-seats.csv",
 ];
 var CACHE = STATIC_CACHE.concat(DYNAMIC_CACHE);
 
