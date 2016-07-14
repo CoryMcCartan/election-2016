@@ -1,0 +1,3605 @@
+abbr,district,incumbent,first_name,last_name,total,party,votes,percent
+AL,1,TRUE,Bradley,Byrne,,R,103758,68.16%
+AL,1,FALSE,Burton R.,LeFlore,,D,48278,31.71%
+AL,1,FALSE,,,,W,198,0.13%
+AL,1,FALSE,,,District Votes:,,152234,
+AL,,FALSE,,,,,,
+AL,2,TRUE,Martha,Roby,,R,113103,67.34%
+AL,2,FALSE,Erick,Wright,,D,54692,32.56%
+AL,2,FALSE,,,,W,157,0.09%
+AL,2,FALSE,,,District Votes:,,167952,
+AL,,FALSE,,,,,,
+AL,3,TRUE,Mike,Rogers,,R,103558,66.12%
+AL,3,FALSE,Thomas,Casson,,R,,
+AL,3,FALSE,,,Party Votes:,R,,
+AL,3,FALSE,Jesse T.,Smith,,D,52816,33.72%
+AL,3,FALSE,,,,W,246,0.16%
+AL,3,FALSE,,,District Votes:,,156620,
+AL,,FALSE,,,,,,
+AL,4,TRUE,Robert,Aderholt,,R,132831,98.57%
+AL,4,FALSE,,,,W,1921,1.43%
+AL,4,FALSE,,,District Votes:,,134752,
+AL,,FALSE,,,,,,
+AL,5,TRUE,Mo,Brooks,,R,115338,74.42%
+AL,5,FALSE,Jerry,Hill,,R,,
+AL,5,FALSE,,,Party Votes:,R,,
+AL,5,FALSE,Mark,Bray,,IND,39005,25.17%
+AL,5,FALSE,,,,W,631,0.41%
+AL,5,FALSE,,,District Votes:,,154974,
+AL,,FALSE,,,,,,
+AL,6,FALSE,Gary,Palmer,,R,135945,76.18%
+AL,6,FALSE,Paul,DeMarco,,R,,
+AL,6,FALSE,Scott,Beason,,R,,
+AL,6,FALSE,Chad,Mathis,,R,,
+AL,6,FALSE,Will,Brooke,,R,,
+AL,6,FALSE,Tom,Vigneulle,,R,,
+AL,6,FALSE,Robert,Shattuck,,R,,
+AL,6,FALSE,,,Party Votes:,R,,
+AL,6,FALSE,Mark,Lester,,D,42291,23.7%
+AL,6,FALSE,Avery,Vise,,D,,
+AL,6,FALSE,,,,W,213,0.12%
+AL,6,FALSE,,,District Votes:,,178449,
+AL,,FALSE,,,,,,
+AL,7,TRUE,Terri A.,Sewell,,D,133687,98.37%
+AL,7,FALSE,Tamara Harris,Johnson,,D,,
+AL,7,FALSE,,,Party Votes:,D,,
+AL,7,FALSE,,,,W,2212,1.63%
+AL,7,FALSE,,,District Votes:,,135899,
+AL,,FALSE,,,,,,
+AL,H,FALSE,,,Total State Votes:,,1080880,
+AL,,FALSE,,,,,,
+,,FALSE,,,,,,
+AK,0,TRUE,Don,Young,,R,142572,50.97%
+AK,0,FALSE,John R.,Cox,,R,,
+AK,0,FALSE,David  ,Seaward,,R,,
+AK,0,FALSE,"David F. ""Dave""",Dohner,,R,,
+AK,0,FALSE,,,Party Votes:,R,,
+AK,0,FALSE,Forrest ,Dunbar,,D,114602,40.97%
+AK,0,FALSE,Frank J.,Vondersaar,,D,,
+AK,0,FALSE,,,Party Votes:,D,,
+AK,0,FALSE,Jim C.,McDermott,,LIB,21290,7.61%
+AK,0,FALSE,,,Party Votes:,LIB,,
+AK,0,FALSE,,,,W,1277,0.46%
+AK,0,FALSE,,,District Votes:,,279741,
+AK,H,FALSE,,,Total State Votes:,,279741,
+AK,,FALSE,,,,,,
+AK,,FALSE,,,,,,
+,,FALSE,,,,,,
+AZ,1,TRUE,Ann,Kirkpatrick,,D,97391,52.61%
+AZ,1,FALSE,,,Party Votes:,D,,
+AZ,1,FALSE,Andy,Tobin,,R,87723,47.39%
+AZ,1,FALSE,Gary,Kiehne,,R,,
+AZ,1,FALSE,Adam,Kwasman,,R,,
+AZ,1,FALSE,,,Party Votes:,R,,
+AZ,1,FALSE,,,District Votes:,,185114,
+AZ,2,FALSE,Martha ,McSally,,R,109714,50.01%
+AZ,2,FALSE,Chuck,Wooten,,R,,
+AZ,2,FALSE,Shelley,Kais,,R,,
+AZ,2,FALSE,,,Party Votes:,R,,
+AZ,2,TRUE,Ron,Barber,,D,109547,49.94%
+AZ,2,FALSE,,,Party Votes:,D,,
+AZ,2,FALSE,Sampson U.,Ramirez,,W,56,0.03%
+AZ,2,FALSE,Sydney,Dudikoff,,W,48,0.02%
+AZ,2,FALSE,,,District Votes:,,219365,
+AZ,3,TRUE,Raul ,Grijalva,,D,58192,55.72%
+AZ,3,FALSE,,,Party Votes:,D,,
+AZ,3,FALSE,Gabby,Saucedo Mercer,,R,46185,44.23%
+AZ,3,FALSE,,,Party Votes:,R,,
+AZ,3,FALSE,F.,Sánchez,,W,43,0.04%
+AZ,3,FALSE,Lee,Thompson,,W,8,0.01%
+AZ,3,FALSE,,,District Votes:,,104428,
+AZ,,FALSE,,,,,,
+AZ,4,TRUE,Paul,Gosar,,R,122560,69.96%
+AZ,4,FALSE,,,Party Votes:,R,,
+AZ,4,FALSE,Mike,Weisser,,D,45179,25.79%
+AZ,4,FALSE,,,Party Votes:,D,,
+AZ,4,FALSE,Chris,Rike,,W(LIB)/LIB,7440,4.25%
+AZ,4,FALSE,,,Party Votes:,LIB,,
+AZ,4,FALSE,,,District Votes:,,175179,
+AZ,5,TRUE,Matt,Salmon,,R,124867,69.58%
+AZ,5,FALSE,,,Party Votes:,R,,
+AZ,5,FALSE,James,Woods,,D,54596,30.42%
+AZ,5,FALSE,,,Party Votes:,D,,
+AZ,5,FALSE,,,District Votes:,,179463,
+AZ,6,TRUE,David ,Schweikert,,R,129578,64.86%
+AZ,6,FALSE,,,Party Votes:,R,,
+AZ,6,FALSE,W. John,Williamson,,D,70198,35.14%
+AZ,6,FALSE,,,Party Votes:,D,,
+AZ,6,FALSE,,,District Votes:,,199776,
+AZ,7,FALSE,Ruben,Gallego,,D,54235,74.85%
+AZ,7,FALSE,Mary Rose,Wilcox,,D,,
+AZ,7,FALSE,Randy ,Camacho,,D,,
+AZ,7,FALSE,Jarrett,Maupin,,D,,
+AZ,7,FALSE,,,Party Votes:,D,,
+AZ,7,FALSE,Joe,Cobb,,LIB,10715,14.79%
+AZ,7,FALSE,,,Party Votes:,LIB,,
+AZ,7,FALSE,Rebecca,DeWitt,,W(AE)/AE,3858,5.32%
+AZ,7,FALSE,,,Party Votes:,AE,,
+AZ,7,FALSE,José,Peñalosa,,JP,3496,4.83%
+AZ,7,FALSE,Gary,Dunn,,W,129,0.18%
+AZ,7,FALSE,Gustavo,Ortega,,W,17,0.02%
+AZ,7,FALSE,Samuel,Esquivel,,W,4,0.01%
+AZ,7,FALSE,,,District Votes:,,72454,
+AZ,8,TRUE,Trent,Franks,,R,128710,75.81%
+AZ,8,FALSE,Clair,Van Steenwyk,,R,,
+AZ,8,FALSE,,,Party Votes:,R,,
+AZ,8,FALSE,Stephen,Dolgos,,W(AE)/AE,41066,24.19%
+AZ,8,FALSE,,,Party Votes:,AE,,
+AZ,8,FALSE,,,District Votes:,,169776,
+AZ,9,TRUE,Kyrsten,Sinema,,D,88609,54.68%
+AZ,9,FALSE,,,Party Votes:,D,,
+AZ,9,FALSE,Wendy,Rogers,,R,67841,41.86%
+AZ,9,FALSE,Andrew,Walter,,R,,
+AZ,9,FALSE,,,Party Votes:,R,,
+AZ,9,FALSE,Powell,Gammill,,W(LIB)/LIB,5612,3.46%
+AZ,9,FALSE,,,Party Votes:,LIB,,
+AZ,9,FALSE,,,District Votes:,,162062,
+AZ,H,FALSE,,,Total State Votes:,,1467617,
+,,FALSE,,,,,,
+AR,1,TRUE,Rick ,Crawford,,R,124139,63.25%
+AR,1,FALSE,Jackie,McPherson,,D,63555,32.38%
+AR,1,FALSE,Brian Scott,Willhite,,LIB,8562,4.36%
+AR,1,FALSE,,,District Votes:,,196256,
+AR,2,FALSE,French ,Hill,,R,123073,51.86%
+AR,2,FALSE,Ann,Clemmer,,R,,
+AR,2,FALSE,Conrad,Reynolds,,R,,
+AR,2,FALSE,,,Party Votes:,R,,
+AR,2,FALSE,Patrick Henry,Hays,,D,103477,43.6%
+AR,2,FALSE,Debbie ,Standiford,,LIB,10590,4.46%
+AR,2,FALSE,Charles,Neely,,W,190,0.08%
+AR,2,FALSE,,,District Votes:,,237330,
+AR,3,TRUE,Steve,Womack,,R,151630,79.41%
+AR,3,FALSE,Grant ,Brand,,LIB,39305,20.59%
+AR,3,FALSE,,,District Votes:,,190935,
+AR,4,FALSE,Bruce,Westerman,,R,110789,53.75%
+AR,4,FALSE,Tommy ,Moll,,R,,
+AR,4,FALSE,,,Party Votes:,R,,
+AR,4,FALSE,James Lee,Witt,,D,87742,42.57%
+AR,4,FALSE,Ken,Hamilton,,LIB,7598,3.69%
+AR,4,FALSE,Janis K.,Percefull,,W,2,0%
+AR,4,FALSE,,,District Votes:,,206131,
+AR,H,FALSE,,,Total State Votes:,,830652,
+AR,,FALSE,,,,,,
+,,FALSE,,,,,,
+CA,1,TRUE,Doug,La Malfa,,R,132052,61.03%
+CA,1,FALSE,Heidi,Hall,,D,84320,38.97%
+CA,1,FALSE,Gregory,Cheadle,,R,,
+CA,1,FALSE,Dan,Levine,,D,,
+CA,1,FALSE,,,District Votes:,,216372,
+CA,2,TRUE,Jared,Huffman,,D,163124,74.99%
+CA,2,FALSE,Dale K.,Mensing,,R,54400,25.01%
+CA,2,FALSE,Andy,Caffrey,,D,,
+CA,2,FALSE,,,District Votes:,,217524,
+CA,3,TRUE,John,Garamendi,,D,79224,52.72%
+CA,3,FALSE,Dan,Logue,,R,71036,47.28%
+CA,3,FALSE,,,District Votes:,,150260,
+CA,4,TRUE,Tom,McClintock,,R,126784,60.05%
+CA,4,FALSE,"Arthur ""Art""",Moore,,R,84350,39.95%
+CA,4,FALSE,Jeffrey D.,Gerlach,,NOP,,
+CA,4,FALSE,,,District Votes:,,211134,
+CA,5,TRUE,Mike,Thompson,,D,129613,75.73%
+CA,5,FALSE,James,Hinton,,NOP,41535,24.27%
+CA,5,FALSE,Douglas S.,Van Raam,,NOP,,
+CA,5,FALSE,,,District Votes:,,171148,
+CA,6,TRUE,Doris,Matsui,,D,97008,72.69%
+CA,6,FALSE,"Joseph, Sr.",McCray,,R,36448,27.31%
+CA,6,FALSE,,,District Votes:,,133456,
+CA,7,TRUE,Ami,Bera,,D,92521,50.4%
+CA,7,FALSE,Doug,Ose,,R,91066,49.6%
+CA,7,FALSE,Igor,Birman,,R,,
+CA,7,FALSE,Elizabeth,Emken,,R,,
+CA,7,FALSE,Douglas Arthur,Tuma,,LIB,,
+CA,7,FALSE,Phill A.,Tufi,,NOP,,
+CA,7,FALSE,,,District Votes:,,183587,
+CA,8,TRUE,Paul,Cook,,R,77480,67.65%
+CA,8,FALSE,Bob,Conaway,,D,37056,32.35%
+CA,8,FALSE,Paul,Hannosh,,R,,
+CA,8,FALSE,Odessia D.,Lee,,D,,
+CA,8,FALSE,,,District Votes:,,114536,
+CA,9,TRUE,Jerry,McNerney,,D,63475,52.37%
+CA,9,FALSE,"Antonio C. ""Tony""",Amador,,R,57729,47.63%
+CA,9,FALSE,Steve Anthony,Colangelo,,R,,
+CA,9,FALSE,"Karen ""Mathews""",Davis,,R,,
+CA,9,FALSE,,,District Votes:,,121204,
+CA,10,TRUE,Jeff,Denham,,R,70582,56.15%
+CA,10,FALSE,Michael,Eggman,,D,55123,43.85%
+CA,10,FALSE,"Michael J. ""Mike""",Barkley,,D,,
+CA,10,FALSE,David Paul,Christensen,,W(NOP),,
+CA,10,FALSE,,,District Votes:,,125705,
+CA,11,FALSE,Mark,Desaulnier,,D,117502,67.27%
+CA,11,FALSE,Tue,Phan,,R,57160,32.73%
+CA,11,FALSE,Cheryl,Sudduth,,D,,
+CA,11,FALSE,Tony,Daysog,,D,,
+CA,11,FALSE,Jason,Ramey,,NOP,,
+CA,11,FALSE,Ki,Ingersol,,D,,
+CA,11,FALSE,Virginia,Fuller,,W(AIP),,
+CA,11,FALSE,,,District Votes:,,174662,
+CA,12,TRUE,Nancy,Pelosi,,D,160067,83.25%
+CA,12,FALSE,John,Dennis,,R,32197,16.75%
+CA,12,FALSE,Barry,Hermanson,,GRE,,
+CA,12,FALSE,David,Peterson,,D,,
+CA,12,FALSE,Frank,Lara,,PAF,,
+CA,12,FALSE,Michael,Steger,,D,,
+CA,12,FALSE,"A. J. ""Desmond""",Thorsson,,NOP,,
+CA,12,FALSE,Jim,Welles,,NOP,,
+CA,12,FALSE,,,District Votes:,,192264,
+CA,13,TRUE,Barbara,Lee,,D,168491,88.48%
+CA,13,FALSE,Dakin,Sundeen,,R,21940,11.52%
+CA,13,FALSE,Justin,Jelincic,,D,,
+CA,13,FALSE,Lawrence N.,Allen,,PAF,,
+CA,13,FALSE,,,District Votes:,,190431,
+CA,14,TRUE,Jackie,Speier,,D,114389,76.7%
+CA,14,FALSE,Robin,Chew,,R,34757,23.3%
+CA,14,FALSE,,,District Votes:,,149146,
+CA,15,TRUE,Eric,Swalwell,,D,99756,69.81%
+CA,15,FALSE,Hugh,Bussell,,R,43150,30.19%
+CA,15,FALSE,Ellen M.,Corbett,,D,,
+CA,15,FALSE,,,District Votes:,,142906,
+CA,16,TRUE,Jim,Costa,,D,46277,50.73%
+CA,16,FALSE,Johnny,Tacherra,,R,44943,49.27%
+CA,16,FALSE,Steve,Crass,,R,,
+CA,16,FALSE,Mel,Levey,,R,,
+CA,16,FALSE,Joanna,Garcia-Botelho,,R,,
+CA,16,FALSE,Job,Melton,,D,,
+CA,16,FALSE,,,District Votes:,,91220,
+CA,17,TRUE,Mike,Honda,,D,69561,51.75%
+CA,17,FALSE,Ro,Khanna,,D,64847,48.25%
+CA,17,FALSE,Vanila,Singh,,R,,
+CA,17,FALSE,Joel,VanLandingham,,R,,
+CA,17,FALSE,,,District Votes:,,134408,
+CA,18,TRUE,Anna G.,Eshoo,,D,133060,67.75%
+CA,18,FALSE,Richard B.,Fox,,R,63326,32.25%
+CA,18,FALSE,Bruce,Anderson,,R,,
+CA,18,FALSE,Oscar Alejandro,Braun,,R,,
+CA,18,FALSE,,,District Votes:,,196386,
+CA,19,TRUE,Zoe,Lofgren,,D,85888,67.21%
+CA,19,FALSE,Robert,Murray,,D,41900,32.79%
+CA,19,FALSE,,,District Votes:,,127788,
+CA,20,TRUE,Sam,Farr,,D,106034,75.18%
+CA,20,FALSE,Ronald Paul,Kabat,,NOP,35010,24.82%
+CA,20,FALSE,,,District Votes:,,141044,
+CA,21,TRUE,David,Valadao,,R,45907,57.83%
+CA,21,FALSE,Amanda,Renteria,,D,33470,42.17%
+CA,21,FALSE,John S.,Hernandez,,D,,
+CA,21,FALSE,,,District Votes:,,79377,
+CA,22,TRUE,Devin G.,Nunes,,R,96053,72.04%
+CA,22,FALSE,"Suzanna ""Sam""",Augilera-Marrero,,D,37289,27.96%
+CA,22,FALSE,John P.,Catano,,R,,
+CA,22,FALSE,,,District Votes:,,133342,
+CA,23,TRUE,Kevin,McCarthy,,R,100317,74.84%
+CA,23,FALSE,Raul,Garcia,,D,33726,25.16%
+CA,23,FALSE,Mike,Biglay,,W(R),,
+CA,23,FALSE,Ronald L.,Porter,,W(NOP),,
+CA,23,FALSE,Gail K.,Lightfoot,,W(LIB),,
+CA,23,FALSE,,,District Votes:,,134043,
+CA,24,TRUE,Lois,Capps,,D,103228,51.93%
+CA,24,FALSE,Chris,Mitchum,,R,95566,48.07%
+CA,24,FALSE,Justin Donald,Fareed,,R,,
+CA,24,FALSE,Dale,Francisco,,R,,
+CA,24,FALSE,Bradley,Allen,,R,,
+CA,24,FALSE,Sandra,Marshall,,D,,
+CA,24,FALSE,"Paul H., Jr.",Coyne,,D,,
+CA,24,FALSE,Steve,Isakson,,NOP,,
+CA,24,FALSE,Alexis,Stuart,,R,,
+CA,24,FALSE,,,District Votes:,,198794,
+CA,25,FALSE,Steve,Knight,,R,60847,53.34%
+CA,25,FALSE,Tony,Strickland,,R,53225,46.66%
+CA,25,FALSE,Lee,Rogers,,D,,
+CA,25,FALSE,"Evan ""Ivan""",Thomas,,D,,
+CA,25,FALSE,Troy,Castagna,,R,,
+CA,25,FALSE,David Koster,Bruce,,LIB,,
+CA,25,FALSE,Michael,Mussack,,NOP,,
+CA,25,FALSE,Navraj,Singh,,R,,
+CA,25,FALSE,,,District Votes:,,114072,
+CA,26,TRUE,Julia,Brownley,,D,87176,51.33%
+CA,26,FALSE,Jeff,Gorell,,R,82653,48.67%
+CA,26,FALSE,Rafael Alberto,Dagnesses,,R,,
+CA,26,FALSE,Douglas William,Kmiec,,NOP,,
+CA,26,FALSE,,,District Votes:,,169829,
+CA,27,TRUE,Judy,Chu,,D,75728,59.36%
+CA,27,FALSE,Jack,Orswell,,R,51852,40.64%
+CA,27,FALSE,,,District Votes:,,127580,
+CA,28,TRUE,Adam B.,Schiff,,D,91996,76.5%
+CA,28,FALSE,Steve,Stokes,,NOP,28268,23.5%
+CA,28,FALSE,Sal,Genovese,,D,,
+CA,28,FALSE,Sam,Yousuf,,W(R),,
+CA,28,FALSE,,,District Votes:,,120264,
+CA,29,TRUE,Tony,Cardenas,,D,50096,74.61%
+CA,29,FALSE,William O'Callaghan,Leader,,R,17045,25.39%
+CA,29,FALSE,Venice J.,Gamble,,D,,
+CA,29,FALSE,,,District Votes:,,67141,
+CA,30,TRUE,Brad,Sherman,,D,86568,65.64%
+CA,30,FALSE,Mark S.,Reed,,R,45315,34.36%
+CA,30,FALSE,Pablo,Kleinman,,R,,
+CA,30,FALSE,Marc,Litchman,,D,,
+CA,30,FALSE,Michael W.,Powelson,,GRE,,
+CA,30,FALSE,A.,Rab,,W(NOP),,
+CA,30,FALSE,,,District Votes:,,131883,
+CA,31,FALSE,Pete,Aguilar,,D,51622,51.73%
+CA,31,FALSE,Paul,Chabot,,R,48162,48.27%
+CA,31,FALSE,Lesli,Gooch,,R,,
+CA,31,FALSE,Eloise Gomez,Reyes,,D,,
+CA,31,FALSE,Joe,Baca,,D,,
+CA,31,FALSE,Danny,Tillman,,D,,
+CA,31,FALSE,Ryan,Downing,,R,,
+CA,31,FALSE,,,District Votes:,,99784,
+CA,32,TRUE,Grace F.,Napolitano,,D,50353,59.66%
+CA,32,FALSE,Arturo Enrique,Alas,,R,34053,40.34%
+CA,32,FALSE,,,District Votes:,,84406,
+CA,33,FALSE,Ted,Lieu,,D,108331,59.19%
+CA,33,FALSE,Elan,Carr,,R,74700,40.81%
+CA,33,FALSE,Wendy,Greuel,,D,,
+CA,33,FALSE,Marianne,Williamson,,NOP,,
+CA,33,FALSE,Matt,Miller,,D,,
+CA,33,FALSE,Lily,Gilani,,R,,
+CA,33,FALSE,Kevin,Mottus,,R,,
+CA,33,FALSE,Barbara L.,Mulvaney,,D,,
+CA,33,FALSE,David,Kanuth,,D,,
+CA,33,FALSE,Kristie,Holmes,,D,,
+CA,33,FALSE,Mark Matthew,Herd,,LIB,,
+CA,33,FALSE,Michael Ian,Sachs,,GRE,,
+CA,33,FALSE,Michael,Shapiro,,D,,
+CA,33,FALSE,Tom,Fox,,NOP,,
+CA,33,FALSE,"Zein E., Jr.",Obagi,,D,,
+CA,33,FALSE,Vince,Flaherty,,D,,
+CA,33,FALSE,James,Graf,,D,,
+CA,33,FALSE,Brent C.,Roske,,NOP,,
+CA,33,FALSE,Theo,Milonopoulos,,W(NOP),,
+CA,33,FALSE,,,District Votes:,,183031,
+CA,34,TRUE,Xavier,Becerra,,D,44697,72.54%
+CA,34,FALSE,Adrienne Nicole,Edwards,,D,16924,27.46%
+CA,34,FALSE,Howard,Johnson,,PAF,,
+CA,34,FALSE,Jonathan Turner,Smith,,W(NOP),,
+CA,34,FALSE,,,District Votes:,,61621,
+CA,35,FALSE,Norma J.,Torres,,D,39502,63.45%
+CA,35,FALSE,Christina,Gagnier,,D,22753,36.55%
+CA,35,FALSE,Scott,Heydenfeldt,,D,,
+CA,35,FALSE,Anthony,Vieyra,,D,,
+CA,35,FALSE,"Benjamin ""Ben""",Lopez,,W(R),,
+CA,35,FALSE,,,District Votes:,,62255,
+CA,36,TRUE,Raul,Ruiz,,D,72682,54.18%
+CA,36,FALSE,Brian,Nestande,,R,61457,45.82%
+CA,36,FALSE,Ray,Haynes,,R,,
+CA,36,FALSE,,,District Votes:,,134139,
+CA,37,TRUE,Karen,Bass,,D,96787,84.28%
+CA,37,FALSE,R. Adam,King,,R,18051,15.72%
+CA,37,FALSE,Mervin,Evans,,D,,
+CA,37,FALSE,,,District Votes:,,114838,
+CA,38,TRUE,Linda T.,Sanchez,,D,58192,59.09%
+CA,38,FALSE,Benjamin,Campos,,R,40288,40.91%
+CA,38,FALSE,,,District Votes:,,98480,
+CA,39,TRUE,Ed,Royce,,R,91319,68.54%
+CA,39,FALSE,Peter O.,Anderson,,D,41906,31.46%
+CA,39,FALSE,,,District Votes:,,133225,
+CA,40,TRUE,Lucille,Roybal-Allard,,D,30208,61.18%
+CA,40,FALSE,David,Sanchez,,D,19171,38.82%
+CA,40,FALSE,,,District Votes:,,49379,
+CA,41,TRUE,Mark,Takano,,D,46948,56.64%
+CA,41,FALSE,Steve,Adams,,R,35936,43.36%
+CA,41,FALSE,Veronica,Franco,,D,,
+CA,41,FALSE,Yvonne Terrell,Girard,,R,,
+CA,41,FALSE,,,District Votes:,,82884,
+CA,42,TRUE,Ken,Calvert,,R,74540,65.74%
+CA,42,FALSE,Tim,Sheridan,,D,38850,34.26%
+CA,42,FALSE,Chris,Marquez,,D,,
+CA,42,FALSE,Kerri,Condley,,D,,
+CA,42,FALSE,Floyd,Harvey,,W(R),,
+CA,42,FALSE,,,District Votes:,,113390,
+CA,43,TRUE,Maxine,Waters,,D,69681,70.96%
+CA,43,FALSE,"John, Jr.",Wood,,R,28521,29.04%
+CA,43,FALSE,Brandon M.,Cook,,W(AIP),,
+CA,43,FALSE,,,District Votes:,,98202,
+CA,44,TRUE,Janice,Hahn,,D,59670,86.65%
+CA,44,FALSE,Adam,Shbeita,,W(PAF)/PAF,9192,13.35%
+CA,44,FALSE,,,District Votes:,,68862,
+CA,45,FALSE,Mimi,Walters,,R,106083,65.12%
+CA,45,FALSE,Drew E.,Leavens,,D,56819,34.88%
+CA,45,FALSE,Greg,Raths,,R,,
+CA,45,FALSE,Al,Salehi,,NOP,,
+CA,45,FALSE,,,District Votes:,,162902,
+CA,46,TRUE,Loretta,Sanchez,,D,49738,59.7%
+CA,46,FALSE,Adam,Nick,,R,33577,40.3%
+CA,46,FALSE,John J.,Cullum,,R,,
+CA,46,FALSE,Carlos,Vazquez,,R,,
+CA,46,FALSE,Ehab,Atalla,,D,,
+CA,46,FALSE,,,District Votes:,,83315,
+CA,47,TRUE,Alan,Lowenthal,,D,69091,55.99%
+CA,47,FALSE,Andy,Whallon,,R,54309,44.01%
+CA,47,FALSE,George,Brogan,,W(R),,
+CA,47,FALSE,,,District Votes:,,123400,
+CA,48,TRUE,Dana,Rohrabacher,,R,112082,64.12%
+CA,48,FALSE,Suzanne Joyce,Savary,,D,62713,35.88%
+CA,48,FALSE,Wendy Brooks,Leece,,R,,
+CA,48,FALSE,David,Burns,,D,,
+CA,48,FALSE,Robert John,Banuelos,,D,,
+CA,48,FALSE,,,District Votes:,,174795,
+CA,49,TRUE,Darrell,Issa,,R,98161,60.17%
+CA,49,FALSE,Dave,Peiser,,D,64981,39.83%
+CA,49,FALSE,Noboru,Isagawa,,D,,
+CA,49,FALSE,Johnny,Moore,,W(D),,
+CA,49,FALSE,,,District Votes:,,163142,
+CA,50,TRUE,Duncan D.,Hunter,,R,111997,71.2%
+CA,50,FALSE,James H.,Kimber,,D,45302,28.8%
+CA,50,FALSE,Michael,Benoit,,LIB,,
+CA,50,FALSE,,,District Votes:,,157299,
+CA,51,TRUE,Juan,Vargas,,D,56373,68.79%
+CA,51,FALSE,Stephen,Meade,,R,25577,31.21%
+CA,51,FALSE,Ernest,Griffes,,W(R),,
+CA,51,FALSE,,,District Votes:,,81950,
+CA,52,TRUE,Scott,Peters,,D,98826,51.59%
+CA,52,FALSE,Carl,DeMaio,,R,92746,48.41%
+CA,52,FALSE,Kirk,Jorgensen,,R,,
+CA,52,FALSE,"Fred J., Jr.",Simon,,R,,
+CA,52,FALSE,,,District Votes:,,191572,
+CA,53,TRUE,Susan A.,Davis,,D,87104,58.84%
+CA,53,FALSE,Larry A.,Wilske,,R,60940,41.16%
+CA,53,FALSE,Wayne S.,True,,R,,
+CA,53,FALSE,John R.,Edwards,,R,,
+CA,53,FALSE,Joel,Marchese,,R,,
+CA,53,FALSE,Jim,Stieringer,,R,,
+CA,53,FALSE,John W.,Campbell,,NOP,,
+CA,53,FALSE,Christina,Bobb,,NOP,,
+CA,53,FALSE,,,District Votes:,,148044,
+CA,H,FALSE,,,Total State Votes:,,7132421,
+,,FALSE,,,,,,
+CO,1,TRUE,Diana,DeGette,,D,183281,65.81%
+CO,1,FALSE,,,Party Votes:,D,,
+CO,1,FALSE,Martin,Walsh,,R,80682,28.97%
+CO,1,FALSE,Kathleen,Cunningham,,W(R),,
+CO,1,FALSE,,,Party Votes:,R,,
+CO,1,FALSE,Frank,Atwood,,LIB,9292,3.34%
+CO,1,FALSE,,,,,,
+CO,1,FALSE,Danny E.,Stroud,,UN,5236,1.88%
+CO,1,FALSE,Daniel,Kirschler,,W,2,0%
+CO,1,FALSE,Logan,Blackburn,,W,1,0%
+CO,1,FALSE,,,District Votes:,,278494,
+CO,,FALSE,,,,,,
+CO,2,TRUE,Jared,Polis,,D,196300,56.74%
+CO,2,FALSE,,,Party Votes:,D,,
+CO,2,FALSE,George,Leing,,R,149645,43.26%
+CO,2,FALSE,,,Party Votes:,R,,
+CO,2,FALSE,,,District Votes:,,345945,
+CO,,FALSE,,,,,,
+CO,3,TRUE,Scott R.,Tipton,,R,163011,57.98%
+CO,3,FALSE,David,Cox,,R,,
+CO,3,FALSE,,,Party Votes:,R,,
+CO,3,FALSE,Abel J.,Tapia,,D,100364,35.7%
+CO,3,FALSE,,,Party Votes:,D,,
+CO,3,FALSE,Tisha T.,Casida,,UN,11294,4.02%
+CO,3,FALSE,Travis,Mero,,LIB,6472,2.3%
+CO,3,FALSE,,,District Votes:,,281141,
+CO,,FALSE,,,,,,
+CO,4,FALSE,Ken,Buck,,R,185292,64.67%
+CO,4,FALSE,Scott W.,Renfroe,,R,,
+CO,4,FALSE,Barbara J.,Kirkmeyer,,R,,
+CO,4,FALSE,Steve,Laffey,,R,,
+CO,4,FALSE,,,Party Votes:,R,,
+CO,4,FALSE,Vic,Meyers,,D,83727,29.22%
+CO,4,FALSE,Dan,Chapin,,W(D),,
+CO,4,FALSE,,,Party Votes:,D,,
+CO,4,FALSE,Jess,Loban,,LIB,9472,3.31%
+CO,4,FALSE,Grant,Doherty,,UN,8016,2.8%
+CO,4,FALSE,,,District Votes:,,286507,
+CO,,FALSE,,,,,,
+CO,5,TRUE,Doug,Lamborn,,R,157182,59.8%
+CO,5,FALSE,Bentley,Rayburn,,R,,
+CO,5,FALSE,,,Party Votes:,R,,
+CO,5,FALSE,Irv,Halter,,D,105673,40.2%
+CO,5,FALSE,,,Party Votes:,D,,
+CO,5,FALSE,,,District Votes:,,262855,
+CO,,FALSE,,,,,,
+CO,6,TRUE,Mike,Coffman,,R,143467,51.9%
+CO,6,FALSE,,,Party Votes:,R,,
+CO,6,FALSE,Andrew,Romanoff,,D,118847,42.99%
+CO,6,FALSE,,,Party Votes:,D,,
+CO,6,FALSE,Norm,Olsen,,LIB,8623,3.12%
+CO,6,FALSE,Gary,Swing,,GRE,5503,1.99%
+CO,6,FALSE,,,District Votes:,,276440,
+CO,,FALSE,,,,,,
+CO,7,TRUE,Ed,Perlmutter,,D,148225,55.07%
+CO,7,FALSE,,,Party Votes:,D,,
+CO,7,FALSE,Don,Ytterberg,,R,120918,44.93%
+CO,7,FALSE,,,Party Votes:,R,,
+CO,7,FALSE,"Douglas ""Dayhorse""",Campbell,,AMC,,
+CO,7,FALSE,,,Party Votes:,AMC,,
+CO,7,FALSE,,,District Votes:,,269143,
+CO,H,FALSE,,,Total State Votes:,,2000525,
+CO,,FALSE,,,,,,
+,,FALSE,,,,,,
+CT,1,TRUE,John B.,Larson,,D,127430,58.49%
+CT,1,FALSE,John B.,Larson,,WF,8395,3.85%
+CT,1,FALSE,Matthew M.,Corey,,R,78609,36.08%
+CT,1,FALSE,Jeffery,Russell,,GRE,3447,1.58%
+CT,1,FALSE,,,District Votes:,,217881,
+CT,,FALSE,,,,,,
+CT,2,TRUE,Joe,Courtney,,D,131294,57.6%
+CT,2,FALSE,Joe,Courtney,,WF,10654,4.67%
+CT,2,FALSE,Lori,Hopkins-Cavanagh,,R,80837,35.46%
+CT,2,FALSE,William C.,Clyde,,GRE,2549,1.12%
+CT,2,FALSE,Daniel ,Reale,,LIB,2602,1.14%
+CT,2,FALSE,,,District Votes:,,227936,
+CT,3,TRUE,Rosa L.,DeLauro,,D,130009,61.93%
+CT,3,FALSE,Rosa L.,DeLauro,,WF,10476,4.99%
+CT,3,FALSE,James E.,Brown,,R,69454,33.08%
+CT,3,FALSE,,,District Votes:,,209939,
+CT,4,TRUE,Jim,Himes,,D,101401,51.01%
+CT,4,FALSE,Jim,Himes,,WF,5472,2.75%
+CT,4,FALSE,Dan,Debicella,,R,88209,44.37%
+CT,4,FALSE,Dan,Debicella,,IP,3713,1.87%
+CT,4,FALSE,Stephen A.,Miller,,W,3,0%
+CT,4,FALSE,Sophie E.,Pastore,,W,2,0%
+CT,4,FALSE,,,District Votes:,,198800,
+CT,5,TRUE,Elizabeth,Esty,,D,106256,49.82%
+CT,5,FALSE,Elizabeth,Esty,,WF,7308,3.43%
+CT,5,FALSE,John J.,Pistone,,PC,1970,0.92%
+CT,5,FALSE,Mark,Greenberg,,R,92404,43.32%
+CT,5,FALSE,Mark,Greenberg,,IP,5363,2.51%
+CT,5,FALSE,,,District Votes:,,213301,
+CT,H,FALSE,,,Total State Votes:,,1067857,
+,,FALSE,,,,,,
+DE,0,TRUE,"John C., Jr.",Carney,,D,137251,59.26%
+DE,0,FALSE,Rose,Izzo,,R,85146,36.76%
+DE,0,FALSE,Bernard,August,,GRE,4801,2.07%
+DE,0,FALSE,Scott,Gesty,,LIB,4419,1.91%
+DE,0,FALSE,,,District Votes:,,231617,
+DE,H,FALSE,,,Total State Votes:,,231617,
+DE,,FALSE,,,,,,
+,,FALSE,,,,,,
+FL,1,TRUE,Jeff,Miller,,R,165086,70.15%
+FL,1,FALSE,John E.,Krause,,R,,
+FL,1,FALSE,,,Party Votes:,R,,
+FL,1,FALSE,Jim,Bryan,,D,54976,23.36%
+FL,1,FALSE,Mark,Wichern,,NPA,15281,6.49%
+FL,1,FALSE,,,District Votes:,,235343,
+FL,2,FALSE,Gwen,Graham,,D,126096,50.48%
+FL,2,TRUE,Steve,Southerland,,R,123262,49.35%
+FL,2,FALSE,Luther ,Lee,,W,422,0.17%
+FL,2,FALSE,,,District Votes:,,249780,
+FL,3,TRUE,Ted,Yoho,,R,148691,64.98%
+FL,3,FALSE,Jake ,Rush,,R,,
+FL,3,FALSE,,,Party Votes:,R,,
+FL,3,FALSE,Marihelen,Wheeler,,D,73910,32.3%
+FL,3,FALSE,Howard Term Limits,Lawson,,NPA,6208,2.71%
+FL,3,FALSE,,,District Votes:,,228809,
+FL,,FALSE,,,,,,
+FL,4,TRUE,Ander,Crenshaw,,R,177887,78.28%
+FL,4,FALSE,Ryman,Shoaf,,R,,
+FL,4,FALSE,,,Party Votes:,R,,
+FL,4,FALSE,Paula ,Moser-Bartlett,,NPA,35663,15.69%
+FL,4,FALSE,Gary L.,Koniz,,NPA,13690,6.02%
+FL,4,FALSE,Deborah Katz,Pueschel,,W,13,0.01%
+FL,4,FALSE,,,District Votes:,,227253,
+FL,,FALSE,,,,,,
+FL,5,TRUE,Corrine ,Brown,,D,112340,65.47%
+FL,5,FALSE,Glo,Smith,,R,59237,34.53%
+FL,5,FALSE,Thuy (Twee),Lowe,,R,,
+FL,5,FALSE,,,Party Votes:,R,,
+FL,5,FALSE,,,District Votes:,,171577,
+FL,,FALSE,,,,,,
+FL,6,TRUE,Ron,DeSantis,,R,166254,62.54%
+FL,6,FALSE,David,Cox,,D,99563,37.46%
+FL,6,FALSE,,,District Votes:,,265817,
+FL,7,TRUE,John  ,Mica,,R,144474,63.6%
+FL,7,FALSE,David ,Smith,,R,,
+FL,7,FALSE,Don,Oehlrich,,R,,
+FL,7,FALSE,Kelly ,Shirley,,R,,
+FL,7,FALSE,,,Party Votes:,R,,
+FL,7,FALSE,Wes,Neuman,,D,73011,32.14%
+FL,7,FALSE,Al,Krulick,,NPA,9679,4.26%
+FL,7,FALSE,,,District Votes:,,227164,
+FL,8,TRUE,Bill,Posey,,R,180728,65.84%
+FL,8,FALSE,Gabriel,Rothblatt,,D,93724,34.14%
+FL,8,FALSE,"Christopher L., Jr",Duncan,,W,61,0.02%
+FL,8,FALSE,,,District Votes:,,274513,
+FL,9,TRUE,Alan,Grayson,,D,93850,53.97%
+FL,9,FALSE,Nick,Ruiz,,D,,
+FL,9,FALSE,,,Party Votes:,D,,
+FL,9,FALSE,Carol ,Platt,,R,74963,43.11%
+FL,9,FALSE,Jorge ,Bonilla,,R,,
+FL,9,FALSE,Peter,Vivaldi,,R,,
+FL,9,FALSE,,,Party Votes:,R,,
+FL,9,FALSE,Marko,Milakovich,,NPA,5060,2.91%
+FL,9,FALSE,Leon Leo,Ray,,W,5,0%
+FL,9,FALSE,,,District Votes:,,173878,
+FL,10,TRUE,Daniel ,Webster,,R,143128,61.54%
+FL,10,FALSE,Michael,McKenna,,D,89426,38.45%
+FL,10,FALSE,Shayan,Modarres,,D,,
+FL,10,FALSE,William,Ferree,,D,,
+FL,10,FALSE,,,Party Votes:,D,,
+FL,10,FALSE,David B.,Falstad,,W,20,0.01%
+FL,10,FALSE,,,District Votes:,,232574,
+FL,11,TRUE,"Richard B. ""Rich""",Nugent,,R,181508,66.66%
+FL,11,FALSE,Dave ,Koller,,D,90786,33.34%
+FL,11,FALSE,,,District Votes:,,272294,
+FL,12,TRUE,Gus Michael,Bilirakis,,R,Unopposed,
+FL,12,FALSE,,,District Votes:,,,
+FL,13,TRUE,David W.,Jolly,,R,168172,75.22%
+FL,13,FALSE,Lucas,Overby,,LBF,55318,24.74%
+FL,13,FALSE,Michael Stephen,Levinson,,W,86,0.04%
+FL,13,FALSE,,,District Votes:,,223576,
+FL,14,TRUE,Kathy ,Castor,,D,Unopposed,
+FL,14,FALSE,,,District Votes:,,,
+FL,15,TRUE,Dennis A.,Ross,,R,128750,60.28%
+FL,15,FALSE,Alan M.,Cohn,,D,84832,39.72%
+FL,15,FALSE,,,District Votes:,,213582,
+FL,16,TRUE,Vern,Buchanan,,R,169126,61.54%
+FL,16,FALSE,Henry ,Lawrence,,D,105483,38.38%
+FL,16,FALSE,Joe,Newman,,W,220,0.08%
+FL,16,FALSE,,,District Votes:,,274829,
+FL,17,TRUE,Tom,Rooney,,R,141493,63.24%
+FL,17,FALSE,Will,Bronson,,D,82263,36.76%
+FL,17,FALSE,,,District Votes:,,223756,
+FL,18,TRUE,Patrick ,Murphy,,D,151478,59.78%
+FL,18,FALSE,Carl J.,Domino,,R,101896,40.22%
+FL,18,FALSE,Alan ,Schlesinger,,R,,
+FL,18,FALSE,Beverly ,Hires,,R,,
+FL,18,FALSE,Brian ,Lara,,R,,
+FL,18,FALSE,Calvin D.,Turnquest,,R,,
+FL,18,FALSE,Nick,Wukoson,,R,,
+FL,18,FALSE,,,Party Votes:,R,,
+FL,18,FALSE,,,District Votes:,,253374,
+FL,19,TRUE,Curt ,Clawson,,R,159354,64.55%
+FL,19,FALSE,April,Freeman,,D,80824,32.74%
+FL,19,FALSE,Ray ,Netherwood,,LBF,6671,2.7%
+FL,19,FALSE,Timothy J.,Rossano,,W,12,0%
+FL,19,FALSE,,,District Votes:,,246861,
+FL,20,TRUE,Alcee L.,Hasting,,D,128498,81.6%
+FL,20,FALSE,Jean L.,Enright,,D,,
+FL,20,FALSE,Jameel,McCline,,D,,
+FL,20,FALSE,,,Party Votes:,D,,
+FL,20,FALSE,Jay,Bonner,,R,28968,18.4%
+FL,20,FALSE,,,District Votes:,,157466,
+FL,,FALSE,,,,,,
+FL,21,TRUE,Ted,Deutch,,D,153395,99.63%
+FL,21,FALSE,Emmanuel G.,Morel,,D,,
+FL,21,FALSE,,,Party Votes:,D,,
+FL,21,FALSE,W. Michael,Trout,,W,575,0.37%
+FL,21,FALSE,,,District Votes:,,153970,
+FL,,FALSE,,,,,,
+FL,22,TRUE,Lois,Frankel,,D,125404,58.03%
+FL,22,FALSE,Paul,Spain,,R,90685,41.97%
+FL,22,FALSE,Andrea Leigh,McGee,,R,,
+FL,22,FALSE,David,Wagie,,R,,
+FL,22,FALSE,,,Party Votes:,R,,
+FL,22,FALSE,Raymond,Schamis,,W,7,0%
+FL,22,FALSE,,,District Votes:,,216096,
+FL,,FALSE,,,,,,
+FL,23,TRUE,Debbie Wasserman,Schultz,,D,103269,62.67%
+FL,23,FALSE,"Joseph ""Joe""",Kaufman,,R,61519,37.33%
+FL,23,FALSE,Juan ,Garcia,,R,,
+FL,23,FALSE,,,Party Votes:,R,,
+FL,23,FALSE,,,District Votes:,,164788,
+FL,,FALSE,,,,,,
+FL,24,TRUE,Frederica S.,Wilson,,D,129192,86.18%
+FL,24,FALSE,Michael A.,Etienne,,D,,
+FL,24,FALSE,,,Party Votes:,D,,
+FL,24,FALSE,Dufirstson Julio ,Neree,,R,15239,10.16%
+FL,24,FALSE,Luis E.,Fernandez,,NPA,5487,3.66%
+FL,24,FALSE,,,District Votes:,,149918,
+FL,,FALSE,,,,,,
+FL,25,TRUE,Mario,Diaz-Balart,,R,Unopposed,
+FL,25,FALSE,,,District Votes:,,n/a,
+FL,,FALSE,,,,,,
+FL,26,FALSE,Carlos ,Curbelo,,R,83031,51.46%
+FL,26,FALSE,Ed,MacDougall,,R,,
+FL,26,FALSE,Joe A.,Martinez,,R,,
+FL,26,FALSE,David,Rivera,,R,,
+FL,26,FALSE,Lorenzo Palomares,Starbuck,,R,,
+FL,26,FALSE,,,Party Votes:,R,,
+FL,26,TRUE,Joe,Garcia,,D,78306,48.54%
+FL,26,FALSE,,,District Votes:,,161337,
+FL,27,TRUE,Ileana ,Ros-Lehtinen,,R,Unopposed,
+FL,27,FALSE,,,District Votes:,,n/a,
+FL,H,FALSE,,,Total State Votes:,,4998555,
+,,FALSE,,,,,,
+GA,1,FALSE,"E. L. ""Buddy""",Carter,,R,95337,60.91%
+GA,1,FALSE,"Robert E. ""Bob""",Johnson,,R,,
+GA,1,FALSE,John A.,McCallum,,R,,
+GA,1,FALSE,"J. L. ""Jeff""",Chapman,,R,,
+GA,1,FALSE,Darwin,Carter,,R,,
+GA,1,FALSE,Earl T.,Martin,,R,,
+GA,1,FALSE,,,Party Votes:,R,,
+GA,1,FALSE,Brian Corwin,Reese,,D,61175,39.09%
+GA,1,FALSE,Amy L.,Tavio,,D,,
+GA,1,FALSE,Marc Anthony,Smith,,D,,
+GA,1,FALSE,,,Party Votes:,D,,
+GA,1,FALSE,,,District Votes:,,156512,
+GA,,FALSE,,,,,,
+GA,2,TRUE,Sanford D.,Bishop,,D,96363,59.15%
+GA,2,FALSE,,,Party Votes:,D,,
+GA,2,FALSE,"Gregory P. ""Greg""",Duke,,R,66537,40.85%
+GA,2,FALSE,Vivian L.,Childs,,R,,
+GA,2,FALSE,,,Party Votes:,R,,
+GA,2,FALSE,,,District Votes:,,162900,
+GA,,FALSE,,,,,,
+GA,3,TRUE,Lynn Acton,Westmoreland,,R,156277,100%
+GA,3,FALSE,"C. E. ""Chip""",Flanagan,,R,,
+GA,3,FALSE,,,Party Votes:,R,,
+GA,3,FALSE,,,District Votes:,,156277,
+GA,,FALSE,,,,,,
+GA,4,TRUE,"Henry C. ""Hank,"" Jr.",Johnson,,D,161211,99.93%
+GA,4,FALSE,"Thomas E. ""Tom""",Brown,,D,,
+GA,4,FALSE,,,Party Votes:,D,,
+GA,4,FALSE,Raymond L.,Davis,,W,109,0.07%
+GA,4,FALSE,,,District Votes:,,161320,
+GA,,FALSE,,,,,,
+GA,5,TRUE,John R.,Lewis,,D,170326,100%
+GA,5,FALSE,,,Party Votes:,D,,
+GA,5,FALSE,,,District Votes:,,170326,
+GA,,FALSE,,,,,,
+GA,6,TRUE,"Thomas E. ""Tom""",Price,,R,139018,66.04%
+GA,6,FALSE,,,Party Votes:,R,,
+GA,6,FALSE,Robert G.,Montigel,,D,71486,33.96%
+GA,6,FALSE,,,Party Votes:,D,,
+GA,6,FALSE,,,District Votes:,,210504,
+GA,,FALSE,,,,,,
+GA,7,TRUE,"William Robert ""Rob""",Woodall,,R,113557,65.39%
+GA,7,FALSE,,,Party Votes:,R,,
+GA,7,FALSE,Thomas Dee,Wight,,D,60112,34.61%
+GA,7,FALSE,,,Party Votes:,D,,
+GA,7,FALSE,,,District Votes:,,173669,
+GA,,FALSE,,,,,,
+GA,8,TRUE,James Austin,Scott,,R,129938,99.91%
+GA,8,FALSE,,,Party Votes:,R,,
+GA,8,FALSE,Ronald L.,Cain,,W,119,0.09%
+GA,8,FALSE,,,District Votes:,,130057,
+GA,,FALSE,,,,,,
+GA,9,TRUE,"Douglas Allen ""Doug""",Collins,,R,146059,80.67%
+GA,9,FALSE,"Bernard A. ""Bernie""",Fontaine,,R,,
+GA,9,FALSE,,,Party Votes:,R,,
+GA,9,FALSE,David Donald,Vogel,,D,34988,19.33%
+GA,9,FALSE,,,Party Votes:,D,,
+GA,9,FALSE,,,District Votes:,,181047,
+GA,,FALSE,,,,,,
+GA,10,FALSE,Jody B.,Hice,,R,130703,66.52%
+GA,10,FALSE,"M. A. ""Mike""",Collins,,R,,
+GA,10,FALSE,Donna H.,Sheldon,,R,,
+GA,10,FALSE,Gary,Gerrard,,R,,
+GA,10,FALSE,Stephen K.,Simpson,,R,,
+GA,10,FALSE,S. Mitchell,Swan,,R,,
+GA,10,FALSE,Brian Richard,Slowinski,,R,,
+GA,10,FALSE,,,Party Votes:,R,,
+GA,10,FALSE,"Ivory Kenneth ""Ken""",Dious,,D,65777,33.48%
+GA,10,FALSE,,,Party Votes:,D,,
+GA,10,FALSE,,,District Votes:,,196480,
+GA,,FALSE,,,,,,
+GA,11,FALSE,Barry D.,Loudermilk,,R,161532,100%
+GA,11,FALSE,"R. L. ""Bob""",Barr,,R,,
+GA,11,FALSE,Tricia R.,Pridemore,,R,,
+GA,11,FALSE,"Edward H. ""Ed""",Lindsey,,R,,
+GA,11,FALSE,Larry,Mrozinski,,R,,
+GA,11,FALSE,S. Allan,Levene,,R,,
+GA,11,FALSE,,,Party Votes:,R,,
+GA,11,FALSE,,,District Votes:,,161532,
+GA,,FALSE,,,,,,
+GA,12,FALSE,"Richard ""Rick""",Allen,,R,91336,54.75%
+GA,12,FALSE,Eugene C.,Yu,,R,,
+GA,12,FALSE,Delvis William,Dutton,,R,,
+GA,12,FALSE,John E.,Stone,,R,,
+GA,12,FALSE,Diane Swanson,Vann,,R,,
+GA,12,FALSE,,,Party Votes:,R,,
+GA,12,TRUE,John Jenkins,Barrow,,D,75478,45.25%
+GA,12,FALSE,,,Party Votes:,D,,
+GA,12,FALSE,,,District Votes:,,166814,
+GA,,FALSE,,,,,,
+GA,13,TRUE,David Albert,Scott,,D,159445,100%
+GA,13,FALSE,Michael C.,Owens,,D,,
+GA,13,FALSE,,,Party Votes:,D,,
+GA,13,FALSE,,,District Votes:,,159445,
+GA,,FALSE,,,,,,
+GA,14,TRUE,"John Thomas ""Tom""",Graves,,R,118782,100%
+GA,14,FALSE,"Kenneth L., Sr.",Herron,,R,,
+GA,14,FALSE,,,Party Votes:,R,,
+GA,14,FALSE,,,District Votes:,,118782,
+GA,,FALSE,,,,,,
+GA,H,FALSE,,,Total State Votes:,,2305665,
+GA,,FALSE,,,,,,
+,,FALSE,,,,,,
+HI,1,FALSE,Mark,Takai,,D,93390,51.93%
+HI,1,FALSE,Donna Mercado,Kim,,D,,
+HI,1,FALSE,Stanley,Chang,,D,,
+HI,1,FALSE,Ikaika,Anderson,,D,,
+HI,1,FALSE,Will,Espero,,D,,
+HI,1,FALSE,Joey,Manahan,,D,,
+HI,1,FALSE,Kathryn,Xian,,D,,
+HI,1,FALSE,,,Party Votes:,D,,
+HI,1,FALSE,Charles,Djou,,R,86454,48.07%
+HI,1,FALSE,Allan,Levene,,R,,
+HI,1,FALSE,,,Party Votes:,R,,
+HI,1,FALSE,Robert H.,Meyer,,N,,
+HI,1,FALSE,Calvin (G),Griffin,,N,,
+HI,1,FALSE,,,Party Votes:,N,,
+HI,1,FALSE,,,District Votes:,,179844,
+HI,2,TRUE,Tulsi,Gabbard,,D,142010,78.75%
+HI,2,FALSE,,,Party Votes:,D,,
+HI,2,FALSE,Kawika,Crowley,,R,33630,18.65%
+HI,2,FALSE,Marissa D.,Capelouto,,R,,
+HI,2,FALSE,,,Party Votes:,R,,
+HI,2,FALSE,Joe,Kent,,LIB,4693,2.6%
+HI,2,FALSE,,,Party Votes:,LIB,,
+HI,2,FALSE,,,District Votes:,,180333,
+HI,H,FALSE,,,Total State Votes:,,360177,
+HI,,FALSE,,,,,,
+HI,,FALSE,,,,,,
+,,FALSE,,,,,,
+ID,1,TRUE,Raul R.,Labrador,,R,143580,65.01%
+ID,1,FALSE,Lisa,Marie,,R,,
+ID,1,FALSE,Michael ,Greenway,,R,,
+ID,1,FALSE,Reed C.,McCandless,,R,7,0%
+ID,1,FALSE,Sean ,Blackwell,,R,,
+ID,1,FALSE,,,Party Votes:,R,,
+ID,1,FALSE,Shirley G.,Ringo,,D,77277,34.99%
+ID,1,FALSE,Ryan Andrew,Barone,,D,,
+ID,1,FALSE,,,Party Votes:,D,,
+ID,1,FALSE,,,District Votes:,,220864,
+ID,2,TRUE,Mike,Simpson,,R,131492,61.36%
+ID,2,FALSE,Bryan D.,Smith,,R,,
+ID,2,FALSE,,,Party Votes:,R,,
+ID,2,FALSE,Richard ,Stallings,,D,82801,38.64%
+ID,2,FALSE,,,Party Votes:,D,,
+ID,2,FALSE,,,District Votes:,,214293,
+ID,H,FALSE,,,Total State Votes:,,435157,
+ID,,FALSE,,,,,,
+ID,,FALSE,,,,,,
+,,FALSE,,,,,,
+IL,1,TRUE,Bobby L.,Rush,,D,162268,73.09%
+IL,1,FALSE,,,Party Votes:,D,,
+IL,1,FALSE,Jimmy Lee,Tillman,,R,59749,26.91%
+IL,1,FALSE,,,Party Votes:,R,,
+IL,1,FALSE,,,District Votes:,,222017,
+IL,,FALSE,,,,,,
+IL,2,TRUE,Robin ,Kelly,,D,160337,78.49%
+IL,2,FALSE,,,Party Votes:,D,,
+IL,2,FALSE,Eric M.,Wallace,,R,43799,21.44%
+IL,2,FALSE,,,Party Votes:,R,,
+IL,2,FALSE,Marcus,Lewis,,W,130,0.06%
+IL,2,FALSE,,,District Votes:,,204266,
+IL,,FALSE,,,,,,
+IL,3,TRUE,Daniel William ,Lipinski,,D,116764,64.56%
+IL,3,FALSE,,,Party Votes:,D,,
+IL,3,FALSE,Sharon M.,Brannigan,,R,64091,35.44%
+IL,3,FALSE,Diane M.,Harris,,R,,
+IL,3,FALSE,,,Party Votes:,R,,
+IL,3,FALSE,,,District Votes:,,180855,
+IL,,FALSE,,,,,,
+IL,4,TRUE,Luis V.,Gutierrez,,D,79666,78.15%
+IL,4,FALSE,Alexander,Eidenberg,,D,,
+IL,4,FALSE,Jorge Gerardo,Zavala,,D,,
+IL,4,FALSE,,,Party Votes:,D,,
+IL,4,FALSE,Hector ,Concepcion,,R,22278,21.85%
+IL,4,FALSE,,,Party Votes:,R,,
+IL,4,FALSE,,,District Votes:,,101944,
+IL,,FALSE,,,,,,
+IL,5,TRUE,Mike,Quigley,,D,116364,63.23%
+IL,5,FALSE,,,Party Votes:,D,,
+IL,5,FALSE,Vince,Kolber,,R,56350,30.62%
+IL,5,FALSE,Fredrick K.,White,,W(R),,
+IL,5,FALSE,,,Party Votes:,R,,
+IL,5,FALSE,Nancy ,Wade,,GRE,11305,6.14%
+IL,5,FALSE,,,Party Votes:,GRE,,
+IL,5,FALSE,,,District Votes:,,184019,
+IL,6,TRUE,Peter J. ,Roskam,,R,160287,67.14%
+IL,6,FALSE,,,Party Votes:,R,,
+IL,6,FALSE,Michael,Mason,,D,78465,32.86%
+IL,6,FALSE,,,Party Votes:,D,,
+IL,6,FALSE,,,District Votes:,,238752,
+IL,7,TRUE,Danny K.,Davis,,D,155110,85.1%
+IL,7,FALSE,,,Party Votes:,D,,
+IL,7,FALSE,Robert L. ,Bumpers,,R,27168,14.9%
+IL,7,FALSE,,,Party Votes:,R,,
+IL,7,FALSE,,,District Votes:,,182278,
+IL,8,TRUE,Tammy,Duckworth,,D,84178,55.73%
+IL,8,FALSE,,,Party Votes:,D,,
+IL,8,FALSE,Larry,Kaifesh,,R,66878,44.27%
+IL,8,FALSE,Manju,Goel,,R,,
+IL,8,FALSE,,,Party Votes:,R,,
+IL,8,FALSE,,,District Votes:,,151056,
+IL,9,TRUE,Janice D.,Schakowsky,,D,141000,66.06%
+IL,9,FALSE,,,Party Votes:,D,,
+IL,9,FALSE,Susanne,Atanus,,R,72384,33.91%
+IL,9,FALSE,"David Earl, III",Williams,,R,,
+IL,9,FALSE,,,Party Votes:,R,,
+IL,9,FALSE,Phil,Collins,,W,66,0.03%
+IL,9,FALSE,,,District Votes:,,213450,
+IL,10,FALSE,Robert,Dold,,R,95992,51.3%
+IL,10,FALSE,,,Party Votes:,R,,
+IL,10,TRUE,Brad,Schneider,,D,91136,48.7%
+IL,10,FALSE,,,Party Votes:,D,,
+IL,10,FALSE,,,District Votes:,,187128,
+IL,,FALSE,,,,,,
+IL,11,TRUE,Bill ,Foster,,D,93436,53.46%
+IL,11,FALSE,,,Party Votes:,D,,
+IL,11,FALSE,Darlene,Senger,,R,81335,46.54%
+IL,11,FALSE,Chris ,Balkema,,R,,
+IL,11,FALSE,Bert,Miller,,R,,
+IL,11,FALSE,Ian,Bayne,,R,,
+IL,11,FALSE,,,Party Votes:,R,,
+IL,11,FALSE,"Constant ""Connor""",Vlakancic,,W,1,
+IL,11,FALSE,,,District Votes:,,174772,
+IL,,FALSE,,,,,,
+IL,12,FALSE,Mike,Bost,,R,110038,52.46%
+IL,12,FALSE,,,Party Votes:,R,,
+IL,12,TRUE,"William L. ""Bill"" ",Enyart,,D,87860,41.89%
+IL,12,FALSE,,,Party Votes:,D,,
+IL,12,FALSE,Paula,Bradshaw,,GRE,11840,5.65%
+IL,12,FALSE,,,Party Votes:,GRE,,
+IL,12,FALSE,,,District Votes:,,209738,
+IL,13,TRUE,Rodney,Davis,,R,123337,58.66%
+IL,13,FALSE,Erika ,Harold,,R,,
+IL,13,FALSE,Michael ,Firsching,,R,,
+IL,13,FALSE,,,Party Votes:,R,,
+IL,13,FALSE,Ann E.,Callis,,D,86935,41.34%
+IL,13,FALSE,George,Gollin,,D,,
+IL,13,FALSE,David L.,Green,,D,,
+IL,13,FALSE,,,Party Votes:,D,,
+IL,13,FALSE,,,District Votes:,,210272,
+IL,14,TRUE,"Randall M. ""Randy"" ",Hultgren,,R,145369,65.41%
+IL,14,FALSE,,,Party Votes:,R,,
+IL,14,FALSE,Dennis,Anderson,,D,76861,34.59%
+IL,14,FALSE,John J.,Hosta,,D,,
+IL,14,FALSE,,,Party Votes:,D,,
+IL,14,FALSE,,,District Votes:,,222230,
+IL,15,TRUE,John M.,Shimkus,,R,166274,74.92%
+IL,15,FALSE,,,Party Votes:,R,,
+IL,15,FALSE,Eric,Thorsland,,D,55652,25.08%
+IL,15,FALSE,,,Party Votes:,D,,
+IL,15,FALSE,,,District Votes:,,221926,
+IL,16,TRUE,Adam ,Kinzinger,,R,153388,70.62%
+IL,16,FALSE,"David J., Jr.",Hale,,R,,
+IL,16,FALSE,,,Party Votes:,R,,
+IL,16,FALSE,Randall Wayne ,Olsen,,D,63810,29.38%
+IL,16,FALSE,,,Party Votes:,D,,
+IL,16,FALSE,,,District Votes:,,217198,
+IL,17,TRUE,Cheri ,Bustos,,D,110560,55.46%
+IL,17,FALSE,,,Party Votes:,D,,
+IL,17,FALSE,Bobby,Schilling,,R,88785,44.53%
+IL,17,FALSE,,,Party Votes:,R,,
+IL,17,FALSE,Bill,Fawell,,W,16,0.01%
+IL,17,FALSE,,,District Votes:,,199361,
+IL,,FALSE,,,,,,
+IL,18,TRUE,Aaron ,Schock,,R,184363,74.72%
+IL,18,FALSE,,,Party Votes:,R,,
+IL,18,FALSE,Darrel,Miller,,D,62377,25.28%
+IL,18,FALSE,Rob ,Mellon,,D,,
+IL,18,FALSE,,,Party Votes:,D,,
+IL,18,FALSE,,,District Votes:,,246740,
+IL,H,FALSE,,,Total State Votes:,,3568002,
+IL,,FALSE,,,,,,
+,,FALSE,,,,,,
+IN,1,TRUE,Peter J.,Visclosky,,D,86579,60.85%
+IN,1,FALSE,,,Party Votes:,D,,
+IN,1,FALSE,Mark ,Leyva,,R,51000,35.84%
+IN,1,FALSE,,,Party Votes:,R,,
+IN,1,FALSE,Donna T.,Dunn,,LIB,4714,3.31%
+IN,1,FALSE,,,District Votes:,,142293,
+IN,,FALSE,,,,,,
+IN,2,TRUE,Jackie,Walorski,,R,85583,58.94%
+IN,2,FALSE,,,Party Votes:,R,,
+IN,2,FALSE,Joe,Bock,,D,55590,38.29%
+IN,2,FALSE,Dan,Morrison,,D,,
+IN,2,FALSE,Bob,Kern,,D,,
+IN,2,FALSE,Douglas M.,Carpenter,,D,,
+IN,2,FALSE,,,Party Votes:,D,,
+IN,2,FALSE,Jeff,Petermann,,LIB,4027,2.77%
+IN,2,FALSE,,,District Votes:,,145200,
+IN,,FALSE,,,,,,
+IN,3,TRUE,Marlin A.,Stutzman,,R,102889,69.15%
+IN,3,FALSE,Mark William,Baringer,,R,,
+IN,3,FALSE,"James (Jim) E., III",Mahoney,,R,,
+IN,3,FALSE,,,Party Votes:,R,,
+IN,3,FALSE,Justin ,Kuhnle,,D,39771,26.73%
+IN,3,FALSE,Tommy A.,Schrader,,D,,
+IN,3,FALSE,Jim ,Redmond,,D,,
+IN,3,FALSE,,,Party Votes:,D,,
+IN,3,FALSE,Scott,Wise,,LIB,6133,4.12%
+IN,3,FALSE,,,District Votes:,,148793,
+IN,,FALSE,,,,,,
+IN,4,TRUE,Todd,Rokita,,R,94998,66.87%
+IN,4,FALSE,Kevin J. ,Grant,,R,,
+IN,4,FALSE,,,Party Votes:,R,,
+IN,4,FALSE,John ,Dale,,D,47056,33.13%
+IN,4,FALSE,Roger D.,Day,,D,,
+IN,4,FALSE,Jeffery Oliver,Blaydes,,D,,
+IN,4,FALSE,Howard Joseph ,Pollchik,,D,,
+IN,4,FALSE,John L. ,Futrell,,D,,
+IN,4,FALSE,,,Party Votes:,D,,
+IN,4,FALSE,,,District Votes:,,142054,
+IN,,FALSE,,,,,,
+IN,5,TRUE,Susan ,Brooks,,R,105277,65.21%
+IN,5,FALSE,David S. ,Stockdale,,R,,
+IN,5,FALSE,David M. (Mike),Campbell,,R,,
+IN,5,FALSE,,,Party Votes:,R,,
+IN,5,FALSE,Shawn A.,Denney,,D,49756,30.82%
+IN,5,FALSE,David William ,Ford,,D,,
+IN,5,FALSE,Allen Ray ,Davidson,,D,,
+IN,5,FALSE,,,Party Votes:,D,,
+IN,5,FALSE,John,Krom,,LIB,6407,3.97%
+IN,5,FALSE,,,,,,
+IN,5,FALSE,,,District Votes:,,161440,
+IN,,FALSE,,,,,,
+IN,6,TRUE,Luke,Messer,,R,102187,65.9%
+IN,6,FALSE,,,Party Votes:,R,,
+IN,6,FALSE,Susan Hall,Heitzman,,D,45509,29.35%
+IN,6,FALSE,Lane,Siekman,,D,,
+IN,6,FALSE,Corinne Nicole,Westerfield,,D,,
+IN,6,FALSE,,,Party Votes:,D,,
+IN,6,FALSE,Eric,Miller,,LIB,7375,4.76%
+IN,6,FALSE,,,District Votes:,,155071,
+IN,,FALSE,,,,,,
+IN,7,TRUE,André ,Carson,,D,61443,54.73%
+IN,7,FALSE,Curtis,Godfrey,,D,,
+IN,7,FALSE,Mmoja,Ajabu,,D,,
+IN,7,FALSE,Pierre Quincy,Pullins,,D,,
+IN,7,FALSE,,,Party Votes:,D,,
+IN,7,FALSE,Catherine (Cat),Ping,,R,46887,41.77%
+IN,7,FALSE,"Wayne ""Gunny""",Harmon,,R,,
+IN,7,FALSE,J D ,Miniear,,R,,
+IN,7,FALSE,Gordon ,Smith,,R,,
+IN,7,FALSE,Erin Kent,Magee,,R,,
+IN,7,FALSE,,,Party Votes:,R,,
+IN,7,FALSE,Chris,Mayo,,LIB,3931,3.5%
+IN,7,FALSE,,,District Votes:,,112261,
+IN,,FALSE,,,,,,
+IN,8,TRUE,Larry D.,Bucshon,,R,103344,60.32%
+IN,8,FALSE,Andrew T.,McNeil,,R,,
+IN,8,FALSE,,,Party Votes:,R,,
+IN,8,FALSE,Tom ,Spangler,,D,61384,35.83%
+IN,8,FALSE,,,Party Votes:,D,,
+IN,8,FALSE,Andrew,Horning,,LIB,6587,3.84%
+IN,8,FALSE,,,District Votes:,,171315,
+IN,,FALSE,,,,,,
+IN,9,TRUE,Todd,Young,,R,101594,62.56%
+IN,9,FALSE,Kathy Lowe ,Heil,,R,,
+IN,9,FALSE,Mark G.,Jones,,R,,
+IN,9,FALSE,,,Party Votes:,R,,
+IN,9,FALSE,Bill,Bailey,,D,55016,33.88%
+IN,9,FALSE,"James R., Jr.",McClure,,D,,
+IN,9,FALSE,J. S. ,Miller,,D,,
+IN,9,FALSE,William Joseph (Billy),Thomas,,D,,
+IN,9,FALSE,,,Party Votes:,D,,
+IN,9,FALSE,R. Mike,Frey,,LIB,5777,3.56%
+IN,9,FALSE,,,District Votes:,,162387,
+IN,,FALSE,,,,,,
+IN,H,FALSE,,,Total State Votes:,,1340814,
+IN,,FALSE,,,,,,
+,,FALSE,,,,,,
+IA,1,FALSE,Rod,Blum,,R,147762,51.07%
+IA,1,FALSE,Steve ,Rathje,,R,,
+IA,1,FALSE,Gail E.,Boliver,,R,,
+IA,1,FALSE,,Scattered,,W(R),,
+IA,1,FALSE,,,Party Votes:,R,,
+IA,1,FALSE,Pat,Murphy,,D,141145,48.79%
+IA,1,FALSE,Monica,Vernon,,D,,
+IA,1,FALSE,Swati,Dandekar,,D,,
+IA,1,FALSE,Anesa ,Kajtazovic,,D,,
+IA,1,FALSE,Dave ,O'Brien,,D,,
+IA,1,FALSE,,Scattered,,W(D),,
+IA,1,FALSE,,,Party Votes:,D,,
+IA,1,FALSE,,Scattered,,W,399,0.14%
+IA,1,FALSE,,,District Votes:,,289306,
+IA,,FALSE,,,,,,
+IA,2,TRUE,Dave,Loebsack,,D,143431,52.48%
+IA,2,FALSE,,Scattered,,W(D),,
+IA,2,FALSE,,,Party Votes:,D,,
+IA,2,FALSE,Mariannette ,Miller-Meeks,,R,129455,47.36%
+IA,2,FALSE,Mark S.,Lofgren,,R,,
+IA,2,FALSE,Matthew C.,Waldren,,R,,
+IA,2,FALSE,,Scattered,,W(R),,
+IA,2,FALSE,,,Party Votes:,R,,
+IA,2,FALSE,,Scattered,,W,443,0.16%
+IA,2,FALSE,,,District Votes:,,273329,
+IA,,FALSE,,,,,,
+IA,3,FALSE,David,Young,,R,148814,52.76%
+IA,3,FALSE,Brad,Zaun,,R,,
+IA,3,FALSE,Robert ,Cramer,,R,,
+IA,3,FALSE,Matt,Schultz,,R,,
+IA,3,FALSE,Monte,Shaw,,R,,
+IA,3,FALSE,Joe,Grandanette,,R,,
+IA,3,FALSE,,Scattered,,W(R),,
+IA,3,FALSE,,,Party Votes:,R,,
+IA,3,FALSE,Staci,Appel,,D,119109,42.23%
+IA,3,FALSE,,Scattered,,W(D),,
+IA,3,FALSE,,,Party Votes:,D,,
+IA,3,FALSE,Edward B.,Wright,,LIB,9054,3.21%
+IA,3,FALSE,Bryan Jack,Holder,,NNE,4360,1.55%
+IA,3,FALSE,,,,,,
+IA,3,FALSE,,Scattered,,W,729,0.26%
+IA,3,FALSE,,,District Votes:,,282066,
+IA,4,TRUE,Steve ,King,,R,169834,61.62%
+IA,4,FALSE,,Scattered,,W(R),,
+IA,4,FALSE,,,Party Votes:,R,,
+IA,4,FALSE,Jim,Mowrer,,D,105504,38.28%
+IA,4,FALSE,,Scattered,,W(D),,
+IA,4,FALSE,,,Party Votes:,D,,
+IA,4,FALSE,,Scattered,,W,295,0.11%
+IA,4,FALSE,,,District Votes:,,275633,
+IA,H,FALSE,,,Total State Votes:,,1120334,
+IA,,FALSE,,,,,,
+,,FALSE,,,,,,
+KS,1,TRUE,Tim,Huelskamp,,R ,138764,67.97%
+KS,1,FALSE,Alan,LaPolice,,R ,,
+KS,1,FALSE,,,Party Votes:,R,,
+KS,1,FALSE,James E.,Sherow,,D,65397,32.03%
+KS,1,FALSE,Bryan R.,Whitney,,D,,
+KS,1,FALSE,,,Party Votes:,D,,
+KS,1,FALSE,,,District Votes:,,204161,
+KS,2,TRUE,Lynn,Jenkins,,R ,128742,57.04%
+KS,2,FALSE,Joshua Joel,Tucker,,R ,,
+KS,2,FALSE,,,Party Votes:,R,,
+KS,2,FALSE,Margie,Wakefield,,D,87153,38.62%
+KS,2,FALSE,,,Party Votes:,D,,
+KS,2,FALSE,Christopher ,Clemmons,,LIB,9791,4.34%
+KS,2,FALSE,,,District Votes:,,225686,
+KS,3,TRUE,Kevin,Yoder,,R ,134493,60.02%
+KS,3,FALSE,,,Party Votes:,R,,
+KS,3,FALSE,Kelly,Kultala,,D,89584,39.98%
+KS,3,FALSE,Reginald (Reggie),Marselus,,D,,
+KS,3,FALSE,,,Party Votes:,D,,
+KS,3,FALSE,,,District Votes:,,224077,
+KS,4,TRUE,Mike,Pompeo,,R,138757,66.66%
+KS,4,FALSE,Todd,Tiahrt,,R,,
+KS,4,FALSE,,,Party Votes:,R,,
+KS,4,FALSE,Perry L.,Schuckman,,D,69396,33.34%
+KS,4,FALSE,,,Party Votes:,D,,
+KS,4,FALSE,,,District Votes:,,208153,
+KS,H,FALSE,,,Total State Votes:,,862077,
+KS,,FALSE,,,,,,
+,,FALSE,,,,,,
+KY,1,TRUE,Ed,Whitfield,,R,173022,73.12%
+KY,1,FALSE,Charles Kendall,Hatchett,,D,63596,26.88%
+KY,1,FALSE,Wesley Seaton,Bolin,,D,,
+KY,1,FALSE,,,Party Votes:,D,,
+KY,1,FALSE,,,District Votes:,,236618,
+KY,2,TRUE,S. Brett,Guthrie,,R,156936,69.19%
+KY,2,FALSE,Ron,Leach,,D,69898,30.81%
+KY,2,FALSE,,,District Votes:,,226834,
+KY,3,TRUE,John A.,Yarmuth,,D,157056,63.49%
+KY,3,FALSE,E. Ray,Pierce,,D,,
+KY,3,FALSE,,,Party Votes:,D,,
+KY,3,FALSE,Michael,Macfarlane,,R,87981,35.57%
+KY,3,FALSE,Gregory Peter,Puccetti,,IND,2318,0.94%
+KY,3,FALSE,,,District Votes:,,247355,
+KY,4,TRUE,Thomas,Massie,,R,150464,67.73%
+KY,4,FALSE,Peter,Newberry,,D,71694,32.27%
+KY,4,FALSE,,,District Votes:,,222158,
+KY,5,TRUE,"Harold ""Hal"" ",Rogers,,R,171350,78.25%
+KY,5,FALSE,Kenneth S. ,Stepp,,D,47617,21.75%
+KY,5,FALSE,Billy Ray,Wilson,,D,,
+KY,5,FALSE,,,Party Votes:,D,,
+KY,5,FALSE,,,District Votes:,,218967,
+KY,6,TRUE,Andy,Barr,,R,147404,59.99%
+KY,6,FALSE,Elisabeth,Jensen,,D,98290,40.01%
+KY,6,FALSE,"Geoffrey M. ""Geoff""",Young,,D,,
+KY,6,FALSE,,,Party Votes:,D,,
+KY,6,FALSE,,,District Votes:,,245694,
+KY,H,FALSE,,,Total State Votes:,,1397626,
+,,FALSE,,,,,,
+LA,1,TRUE,Steve,Scalise,,R,189250,77.56%
+LA,1,FALSE,"M.V. ""Vinny""",Mendoza,,D,24761,10.15%
+LA,1,FALSE,Lee A.,Dugas,,D,21286,8.72%
+LA,1,FALSE,"Jeffry ""Jeff""",Sanford,,LIB,8707,3.57%
+LA,1,FALSE,,,District Votes:,,244004,
+LA,2,TRUE,Cedric,Richmond,,D,152201,68.69%
+LA,2,FALSE,Gary,Landrieu,,D,37805,17.06%
+LA,2,FALSE,David,Brooks,,NPA,16327,7.37%
+LA,2,FALSE,Samuel,Davenport,,LIB,15237,6.88%
+LA,2,FALSE,,,District Votes:,,221570,
+LA,3,TRUE,"Charles W., Jr.",Boustany,,R,185867,78.67%
+LA,3,FALSE,Russell,Richard,,NPA,28342,12%
+LA,3,FALSE,Bryan,Barrilleaux,,R,22059,9.34%
+LA,3,FALSE,,,District Votes:,,236268,
+LA,4,TRUE,John,Fleming,,R,152683,73.43%
+LA,4,FALSE,Randall,Lord,,LIB,55236,26.57%
+LA,4,FALSE,,,District Votes:,,207919,
+LA,5,FALSE,Ralph Lee,Abraham,,R,134616,64.22%
+LA,5,FALSE,"""Jamie""",Mayo,,D,75006,35.78%
+LA,5,FALSE,,,District Votes:,,209622,
+LA,6,FALSE,Garret,Graves,,R,139209,62.43%
+LA,6,FALSE,Edwin,Edwards,,D,83781,37.57%
+LA,6,FALSE,,,District Votes:,,258479,
+LA,H,FALSE,,,Total State Votes:,,1407791,
+LA,,FALSE,,,,,,
+,,FALSE,,,,,,
+ME,1,TRUE,Chellie,Pingree,,D,186674,60.43%
+ME,1,FALSE,,,Party Votes:,D,,
+ME,1,FALSE,Isaac J. ,Misiuk,,R,94751,30.67%
+ME,1,FALSE,,,Party Votes:,R,,
+ME,1,FALSE,Richard P.,Murphy,,IND,27410,8.87%
+ME,1,FALSE,,Others,,W,63,0.02%
+ME,1,FALSE,,,District Votes:,,308898,
+ME,,FALSE,,,,,,
+ME,2,FALSE,Bruce ,Poliquin,,R,133308,47.03%
+ME,2,FALSE,Kevin L.,Raye,,R,,
+ME,2,FALSE,,,Party Votes:,R,,
+ME,2,FALSE,Emily Ann,Cain,,D,118556,41.83%
+ME,2,FALSE,Troy Dale ,Jackson,,D,,
+ME,2,FALSE,,,Party Votes:,D,,
+ME,2,FALSE,Blaine,Richardson,,IND,31336,11.06%
+ME,2,FALSE,,Others,,W,248,0.09%
+ME,2,FALSE,,,District Votes:,,283448,
+ME,H,FALSE,,,Total State Votes:,,592346,
+ME,,FALSE,,,,,,
+,,FALSE,,,,,,
+MD,1,TRUE,Andy,Harris,,R,176342,70.42%
+MD,1,FALSE,"Jonathan, Jr. ",Goff,,R,,
+MD,1,FALSE,,,Party Votes:,R,,
+MD,1,FALSE,Bill,Tilghman,,D,73843,29.49%
+MD,1,FALSE,John J.,LaFerla,,D,,
+MD,1,FALSE,,,Party Votes:,D,,
+MD,1,FALSE,,Scattered,,W,233,0.09%
+MD,1,FALSE,,,District Votes:,,250418,
+MD,2,TRUE,C. A. Dutch ,Ruppersberger,,D,120412,61.32%
+MD,2,FALSE,Paul,Rundquist,,D,,
+MD,2,FALSE,Blaine,Taylor,,D,,
+MD,2,FALSE,,,Party Votes:,D,,
+MD,2,FALSE,David ,Banach,,R,70411,35.86%
+MD,2,FALSE,,,Party Votes:,R,,
+MD,2,FALSE,Ian,Schlakman,,GRE,5326,2.71%
+MD,2,FALSE,,Scattered,,W,205,0.1%
+MD,2,FALSE,,,District Votes:,,196354,
+MD,3,TRUE,John ,Sarbanes,,D,128594,59.55%
+MD,3,FALSE,Matthew,Molyett,,D,,
+MD,3,FALSE,,,Party Votes:,D,,
+MD,3,FALSE,Charles A.,Long,,R,87029,40.3%
+MD,3,FALSE,"Thomas E. ""Pinkston""",Harris,,R,,
+MD,3,FALSE,Michael,Jackson,,R,,
+MD,3,FALSE,,,Party Votes:,R,,
+MD,3,FALSE,,Scattered,,W,323,0.15%
+MD,3,FALSE,,,District Votes:,,215946,
+MD,4,TRUE,Donna F. ,Edwards,,D,134628,70.18%
+MD,4,FALSE,Warren,Christopher,,D,,
+MD,4,FALSE,,,Party Votes:,D,,
+MD,4,FALSE,Nancy ,Hoyt,,R,54217,28.26%
+MD,4,FALSE,Greg,Holmes,,R,,
+MD,4,FALSE,George ,McDermott,,R,,
+MD,4,FALSE,John R. ,Graziani,,R,,
+MD,4,FALSE,,,Party Votes:,R,,
+MD,4,FALSE,Arvin,Vohra,,LIB,2795,1.46%
+MD,4,FALSE,,Scattered,,W,197,0.1%
+MD,4,FALSE,,,District Votes:,,191837,
+MD,5,TRUE,Steny H. ,Hoyer,,D,144725,64.03%
+MD,5,FALSE,,,Party Votes:,D,,
+MD,5,FALSE,Chris,Chaffee,,R,80752,35.72%
+MD,5,FALSE,Mark Kenneth,Arness,,R,,
+MD,5,FALSE,Tom,Potter,,R,,
+MD,5,FALSE,,,Party Votes:,R,,
+MD,5,FALSE,,Scattered,,W,336,0.15%
+MD,5,FALSE,Dennis L.,Fritz,,W,227,0.1%
+MD,5,FALSE,,,District Votes:,,226040,
+MD,6,TRUE,John K.,Delaney,,D,94704,49.7%
+MD,6,FALSE,,,Party Votes:,D,,
+MD,6,FALSE,Dan ,Bongino,,R,91930,48.25%
+MD,6,FALSE,"Harold W., Jr",Painter,,R,,
+MD,6,FALSE,,,Party Votes:,R,,
+MD,6,FALSE,George,Gluck,,GRE,3762,1.97%
+MD,6,FALSE,,Scattered,,W,140,0.07%
+MD,6,FALSE,,,District Votes:,,190536,
+MD,,FALSE,,,,,,
+MD,7,TRUE,Elijah,Cummings,,D,144639,69.94%
+MD,7,FALSE,Bryant,Alexander,,D,,
+MD,7,FALSE,"Fred Donald, Jr. ",Dickson,,D,,
+MD,7,FALSE,,,Party Votes:,D,,
+MD,7,FALSE,Carrogan R. ,Vaughn,,R,55860,27.01%
+MD,7,FALSE,Ray,Bly,,R,,
+MD,7,FALSE,,,Party Votes:,R,,
+MD,7,FALSE,Scott,Soffen,,LIB,6103,2.95%
+MD,7,FALSE,,Scattered,,W,207,0.1%
+MD,7,FALSE,,,District Votes:,,206809,
+MD,,FALSE,,,,,,
+MD,8,TRUE,Chris ,Van Hollen,,D,136722,60.74%
+MD,8,FALSE,George,English,,D,,
+MD,8,FALSE,Lih,Young,,D,16,0.01%
+MD,8,FALSE,,,Party Votes:,D,,
+MD,8,FALSE,Dave,Wallace,,R,87859,39.03%
+MD,8,FALSE,,,Party Votes:,R,,
+MD,8,FALSE,Andrew Jaye,Wildman,,W,102,0.05%
+MD,8,FALSE,,Scattered,,W,398,0.18%
+MD,8,FALSE,,,District Votes:,,225097,
+MD,H,FALSE,,,Total State Votes:,,1703037,
+,,FALSE,,,,,,
+MA,1,TRUE,Richard E.,Neal,,D,167612,97.96%
+MA,1,FALSE,,All Others,,W(D),,
+MA,1,FALSE,,,Party Votes:,D,,
+MA,1,FALSE,,,,W,3498,2.04%
+MA,1,FALSE,,,District Votes:,,171110,
+MA,,FALSE,,,,,,
+MA,2,TRUE,James P.,McGovern,,D,169640,98.2%
+MA,2,FALSE,,All Others,,W(D),,
+MA,2,FALSE,,,Party Votes:,D,,
+MA,2,FALSE,,,,W,3105,1.8%
+MA,2,FALSE,,,District Votes:,,172745,
+MA,,FALSE,,,,,,
+MA,3,TRUE,Nicola S.,Tsongas,,D,139104,62.96%
+MA,3,FALSE,,,,W(D),,
+MA,3,FALSE,,,Party Votes:,D,,
+MA,3,FALSE,Roseann L. Ehrhard ,Wofford,,R,81638,36.95%
+MA,3,FALSE,,All Others,,W(R),,
+MA,3,FALSE,,,Party Votes:,R,,
+MA,3,FALSE,,,,W,204,0.09%
+MA,3,FALSE,,,District Votes:,,220946,
+MA,,FALSE,,,,,,
+MA,4,TRUE,"Joseph P., III",Kennedy,,D,184158,97.91%
+MA,4,FALSE,,All Others,,W(D),,
+MA,4,FALSE,,,Party Votes:,D,,
+MA,4,FALSE,,,,W,3940,2.09%
+MA,4,FALSE,,,District Votes:,,188098,
+MA,,FALSE,,,,,,
+MA,5,TRUE,Katherine M.,Clark,,D,182100,98.29%
+MA,5,FALSE,Sheldon,Schwartz,,D,,
+MA,5,FALSE,,All Others,,W(D),,
+MA,5,FALSE,,,Party Votes:,D,,
+MA,5,FALSE,,,,W,3159,1.71%
+MA,5,FALSE,William F.,Wilt,,W,1,0%
+MA,5,FALSE,,,District Votes:,,185260,
+MA,,FALSE,,,,,,
+MA,6,FALSE,Seth W.,Moulton,,D,149638,54.97%
+MA,6,TRUE,John F.,Tierney,,D,,
+MA,6,FALSE,Marisa A. ,DeFranco,,D,,
+MA,6,FALSE,John Patrick,Devine,,D,,
+MA,6,FALSE,John J.,Gutta,,D,,
+MA,6,FALSE,,All Others,,W(D),,
+MA,6,FALSE,,,Party Votes:,D,,
+MA,6,FALSE,Richard R.,Tisei,,R,111989,41.14%
+MA,6,FALSE,,All Others,,W(R),,
+MA,6,FALSE,,,Party Votes:,R,,
+MA,6,FALSE,Christopher J. ,Stockwell,,IND,10373,3.81%
+MA,6,FALSE,,,,W,219,0.08%
+MA,6,FALSE,,,District Votes:,,272219,
+MA,,FALSE,,,,,,
+MA,7,TRUE,Michael E.,Capuano,,D,142133,98.33%
+MA,7,FALSE,,All Others,,W(D),,
+MA,7,FALSE,,,Party Votes:,D,,
+MA,7,FALSE,,,,W,2413,1.67%
+MA,7,FALSE,,,District Votes:,,144546,
+MA,,FALSE,,,,,,
+MA,8,TRUE,Stephen F. ,Lynch,,D,200644,98.67%
+MA,8,FALSE,,All Others,,W(D),,
+MA,8,FALSE,,,Party Votes:,D,,
+MA,8,FALSE,,,,W,2707,1.33%
+MA,8,FALSE,,,District Votes:,,203351,
+MA,,FALSE,,,,,,
+MA,9,TRUE,William Richard ,Keating,,D,140413,54.95%
+MA,9,FALSE,,All Others,,W(D),,
+MA,9,FALSE,,,Party Votes:,D,,
+MA,9,FALSE,John C.,Chapman,,R,114971,44.99%
+MA,9,FALSE,Mark C.,Alliegro,,R,,
+MA,9,FALSE,Daniel L.,Shores,,R,,
+MA,9,FALSE,"Vincent A., Jr.",Cogliano,,R,,
+MA,9,FALSE,,All Others,,W(R),,
+MA,9,FALSE,,,Party Votes:,R,,
+MA,9,FALSE,,,,W,157,0.06%
+MA,9,FALSE,,,,,,
+MA,9,FALSE,,,District Votes:,,255541,
+MA,H,FALSE,,,Total State Votes:,,1813816,
+MA,,FALSE,,,,,,
+,,FALSE,,,,,,
+MI,1,TRUE,Dan,Benishek,,R,130414,52.14%
+MI,1,FALSE,Alan ,Arcand,,R,,
+MI,1,FALSE,,,Party Votes:,R,,
+MI,1,FALSE,Jerry,Cannon,,D,113263,45.28%
+MI,1,FALSE,,,Party Votes:,D,,
+MI,1,FALSE,Loel Robert,Gnadt,,LIB,3823,1.53%
+MI,1,FALSE,Ellis,Boal,,GRE,2631,1.05%
+MI,1,FALSE,,,District Votes:,,250131,
+MI,,FALSE,,,,,,
+MI,2,TRUE,Bill,Huizenga,,R,135568,63.63%
+MI,2,FALSE,,,Party Votes:,R,,
+MI,2,FALSE,Dean,Vanderstelt,,D,70851,33.25%
+MI,2,FALSE,,,Party Votes:,D,,
+MI,2,FALSE,"Ronald, II",Welch,,LIB,3877,1.82%
+MI,2,FALSE,Ronald E.,Graeser,,UST,2776,1.3%
+MI,2,FALSE,,,District Votes:,,213072,
+MI,,FALSE,,,,,,
+MI,3,TRUE,Justin,Amash,,R,125754,57.91%
+MI,3,FALSE,Brian,Ellis,,R,,
+MI,3,FALSE,,,Party Votes:,R,,
+MI,3,FALSE,Bob,Goodrich,,D,84720,39.01%
+MI,3,FALSE,,,Party Votes:,D,,
+MI,3,FALSE,Tonya,Duncan,,GRE,6691,3.08%
+MI,3,FALSE,,,District Votes:,,217165,
+MI,,FALSE,,,,,,
+MI,4,FALSE,John,Moolenaar,,R,123962,56.49%
+MI,4,FALSE,Paul,Mitchell,,R,,
+MI,4,FALSE,Peter,Konetchy,,R,,
+MI,4,FALSE,,,Party Votes:,R,,
+MI,4,FALSE,Jeff,Holmes,,D,85777,39.09%
+MI,4,FALSE,,,Party Votes:,D,,
+MI,4,FALSE,George M.,Zimmer,,UST,4990,2.27%
+MI,4,FALSE,Will Tyler,White,,LIB,4694,2.14%
+MI,4,FALSE,,,District Votes:,,219423,
+MI,,FALSE,,,,,,
+MI,5,TRUE,Daniel T.,Kildee,,D,148182,66.71%
+MI,5,FALSE,,,Party Votes:,D,,
+MI,5,FALSE,Allen,Hardwick,,R,69222,31.16%
+MI,5,FALSE,Tom,Whitmire,,R,,
+MI,5,FALSE,,,Party Votes:,R,,
+MI,5,FALSE,Harold H.,Jones,,LIB,4734,2.13%
+MI,5,FALSE,,,District Votes:,,222138,
+MI,,FALSE,,,,,,
+MI,6,TRUE,Fred,Upton,,R,116801,55.89%
+MI,6,FALSE,Jim,Bussler,,R,,
+MI,6,FALSE,,,Party Votes:,R,,
+MI,6,FALSE,Paul,Clements,,D,84391,40.38%
+MI,6,FALSE,,,Party Votes:,D,,
+MI,6,FALSE,John M. ,Lawrence,,GRE,2254,1.08%
+MI,6,FALSE,Erwin J.,Hass,,LIB,5530,2.65%
+MI,6,FALSE,,,District Votes:,,208976,
+MI,,FALSE,,,,,,
+MI,7,TRUE,Tim,Walberg,,R,119564,53.45%
+MI,7,FALSE,Douglas Radcliffe,North,,R,,
+MI,7,FALSE,,,Party Votes:,R,,
+MI,7,FALSE,Pam,Byrnes,,D,92083,41.17%
+MI,7,FALSE,,,Party Votes:,D,,
+MI,7,FALSE,Ken,Proctor,,LIB,4531,2.03%
+MI,7,FALSE,David,Swartout,,NPA,4369,1.95%
+MI,7,FALSE,Rick,Strawcutter,,UST,3138,1.4%
+MI,7,FALSE,,,District Votes:,,223685,
+MI,,FALSE,,,,,,
+MI,8,FALSE,Mike,Bishop,,R,132739,54.6%
+MI,8,FALSE,Tom,McMillin,,R,,
+MI,8,FALSE,,,Party Votes:,R,,
+MI,8,FALSE,Eric,Schertzing,,D,102269,42.06%
+MI,8,FALSE,Susan,Grettenberger,,D,,
+MI,8,FALSE,Ken,Darga,,D,,
+MI,8,FALSE,Jeffrey ,Hank,,D,,
+MI,8,FALSE,,,Party Votes:,D,,
+MI,8,FALSE,"James, II",Weeks,,LIB,4557,1.87%
+MI,8,FALSE,Jim,Casha,,GRE,1880,0.77%
+MI,8,FALSE,Jeremy,Burgess,,NLP,1680,0.69%
+MI,8,FALSE,,,District Votes:,,243125,
+MI,,FALSE,,,,,,
+MI,9,TRUE,Sander,Levin,,D,136342,60.39%
+MI,9,FALSE,,,Party Votes:,D,,
+MI,9,FALSE,George,Brikho,,R,81470,36.09%
+MI,9,FALSE,,,Party Votes:,R,,
+MI,9,FALSE,Gregory,Creswell,,LIB,4792,2.12%
+MI,9,FALSE,John V.,McDermott,,GRE,3153,1.4%
+MI,9,FALSE,,,District Votes:,,225757,
+MI,,FALSE,,,,,,
+MI,10,TRUE,Candice S.,Miller,,R,157069,68.68%
+MI,10,FALSE,,,Party Votes:,R,,
+MI,10,FALSE,Chuck,Stadler,,D,67143,29.36%
+MI,10,FALSE,,,Party Votes:,D,,
+MI,10,FALSE,Harley,Mikkelson,,GRE,4480,1.96%
+MI,10,FALSE,,,,,,
+MI,10,FALSE,,,District Votes:,,228692,
+MI,,FALSE,,,,,,
+MI,11,FALSE,Dave,Trott,,R,140435,55.9%
+MI,11,TRUE,Kerry Lynn,Bentivolio,,R,,
+MI,11,FALSE,,,Party Votes:,R,,
+MI,11,FALSE,Bobby,McKenzie,,D,101681,40.47%
+MI,11,FALSE,Anil,Kumar,,D,,
+MI,11,FALSE,Nancy ,Skinner,,D,,
+MI,11,FALSE,Bill,Roberts,,D,,
+MI,11,FALSE,,,Party Votes:,D,,
+MI,11,FALSE,John J.,Tatar,,LIB,7711,3.07%
+MI,11,TRUE,Kerry Lynn,Bentivolio,,W,1411,0.56%
+MI,11,FALSE,,,District Votes:,,251238,
+MI,,FALSE,,,,,,
+MI,12,FALSE,Debbie,Dingell,,D,134346,65.01%
+MI,12,FALSE,Raymond G.,Mullins,,D,,
+MI,12,FALSE,,,Party Votes:,D,,
+MI,12,FALSE,Terry,Bowman,,R,64716,31.32%
+MI,12,FALSE,,,Party Votes:,R,,
+MI,12,FALSE,Gary,Walkowicz,,NPA,5039,2.44%
+MI,12,FALSE,Bhagwan,Dashairya,,LIB,2559,1.24%
+MI,12,FALSE,,,District Votes:,,206660,
+MI,,FALSE,,,,,,
+MI,13,TRUE,"John, Jr.",Conyers,,D,132710,79.49%
+MI,13,FALSE,Horace,Sheffield,,D,,
+MI,13,FALSE,,,Party Votes:,D,,
+MI,13,FALSE,Jeff ,Gorman,,R,27234,16.31%
+MI,13,FALSE,,,Party Votes:,R,,
+MI,13,FALSE,Chris,Sharer,,LIB,3537,2.12%
+MI,13,FALSE,Sam,Johnson,,NPA,3466,2.08%
+MI,13,FALSE,,,District Votes:,,166947,
+MI,,FALSE,,,,,,
+MI,14,FALSE,Brenda,Lawrence,,D,165272,77.79%
+MI,14,FALSE,Rudy,Hobbs,,D,,
+MI,14,FALSE,Hansen,Clarke,,D,,
+MI,14,FALSE,Burgess D.,Foster,,D,,
+MI,14,FALSE,,,Party Votes:,D,,
+MI,14,FALSE,Christina L.,Barr,,R,41801,19.67%
+MI,14,FALSE,Christina ,Conyers,,R,,
+MI,14,FALSE,,,Party Votes:,R,,
+MI,14,FALSE,Leonard,Schwartz,,LIB,3366,1.58%
+MI,14,FALSE,Stephen,Boyle,,GRE,1999,0.94%
+MI,14,FALSE,Calvin,Pruden,,W,30,0.01%
+MI,14,FALSE,,,District Votes:,,212468,
+MI,,FALSE,,,,,,
+MI,H,FALSE,,,Total State Votes:,,3089477,
+MI,,FALSE,,,,,,
+,,FALSE,,,,,,
+MN,1,TRUE,Tim,Walz,,DFL,122851,54.19%
+MN,1,FALSE,,,Party Votes:,DFL,,
+MN,1,FALSE,Jim,Hagedorn,,R,103536,45.67%
+MN,1,FALSE,Aaron,Miller,,R,,
+MN,1,FALSE,,,Party Votes:,R,,
+MN,1,FALSE,,Scattered,,W,308,0.14%
+MN,1,FALSE,,,District Votes:,,226695,
+MN,,FALSE,,,,,,
+MN,2,TRUE,John,Kline,,R,137778,56.04%
+MN,2,FALSE,,,Party Votes:,R,,
+MN,2,FALSE,Mike,Obermueller,,DFL,95565,38.87%
+MN,2,FALSE,Michael J.,Roberts,,DFL,,
+MN,2,FALSE,,,Party Votes:,DFL,,
+MN,2,FALSE,Paula,Overby,,IDP,12319,5.01%
+MN,2,FALSE,,,Party Votes:,IDP,,
+MN,2,FALSE,,Scattered,,W,186,0.08%
+MN,2,FALSE,,,District Votes:,,245848,
+MN,,FALSE,,,,,,
+MN,3,TRUE,Erik,Paulsen,,R,167515,62.14%
+MN,3,FALSE,Sharon,Sund,,DFL,101846,37.78%
+MN,3,FALSE,,Scattered,,W,224,0.08%
+MN,3,FALSE,,,District Votes:,,269585,
+MN,,FALSE,,,,,,
+MN,4,TRUE,Betty,McCollum,,DFL,147857,61.19%
+MN,4,FALSE,Sharna,Wahlgren,,R,79492,32.9%
+MN,4,FALSE,Dave,Thomas,,IDP,14059,5.82%
+MN,4,FALSE,,Scattered,,W,229,0.09%
+MN,4,FALSE,,,District Votes:,,241637,
+MN,,FALSE,,,,,,
+MN,5,TRUE,Keith,Ellison,,DFL,167079,70.79%
+MN,5,FALSE,Doug,Daggett,,R,56577,23.97%
+MN,5,FALSE,Lee,Bauer,,IDP,12001,5.08%
+MN,5,FALSE,,Scattered,,W,353,0.15%
+MN,5,FALSE,,,District Votes:,,236010,
+MN,,FALSE,,,,,,
+MN,6,FALSE,Tom,Emmer,,R,133328,56.29%
+MN,6,FALSE,Rhonda,Sivarajah,,R,,
+MN,6,FALSE,,,Party Votes:,R,,
+MN,6,FALSE,Joe,Perske,,DFL,90926,38.39%
+MN,6,FALSE,,,Party Votes:,DFL,,
+MN,6,FALSE,John,Denney,,IDP,12457,5.26%
+MN,6,FALSE,,,Party Votes:,IDP,,
+MN,6,FALSE,,Scattered,,W,135,0.06%
+MN,6,FALSE,,,District Votes:,,236846,
+MN,,FALSE,,,,,,
+MN,7,TRUE,Collin C.,Peterson,,DFL,130546,54.21%
+MN,7,FALSE,Torrey,Westrom,,R,109955,45.66%
+MN,7,FALSE,,Scattered,,W,334,0.14%
+MN,7,FALSE,,,District Votes:,,240835,
+MN,,FALSE,,,,,,
+MN,8,TRUE,Rick,Nolan,,DFL,129090,48.51%
+MN,8,FALSE,Stewart,Mills,,R,125358,47.11%
+MN,8,FALSE,Ray Skip,Sandman,,GRE,11450,4.3%
+MN,8,FALSE,,Scattered,,W,185,0.07%
+MN,8,FALSE,,,District Votes:,,266083,
+MN,,FALSE,,,,,,
+MN,H,FALSE,,,Total State Votes:,,1963539,
+MN,,FALSE,,,,,,
+,,FALSE,,,,,,
+MS,1,TRUE,Alan,Nunnelee,,R,102622,67.91%
+MS,1,FALSE,,,Party Votes:,R,,
+MS,1,FALSE,Ron E. ,Dickey,,D,43713,28.93%
+MS,1,FALSE,Rex N.,Weathers,,D,,
+MS,1,FALSE,,,Party Votes:,D,,
+MS,1,FALSE,Danny,Bedwell,,LIB,3830,2.53%
+MS,1,FALSE,Lajena,Walley,,REF,946,0.63%
+MS,1,FALSE,,,District Votes:,,151111,
+MS,,FALSE,,,,,,
+MS,2,TRUE,Bennie G.,Thompson,,D,100688,67.74%
+MS,2,FALSE,Damien,Fairconetue,,D,,
+MS,2,FALSE,,,Party Votes:,D,,
+MS,2,FALSE,Troy,Ray,,IND,36465,24.53%
+MS,2,FALSE,Shelley,Shoemake,,REF,11493,7.73%
+MS,2,FALSE,,,District Votes:,,148646,
+MS,,FALSE,,,,,,
+MS,3,TRUE,Gregg,Harper,,R,117771,68.89%
+MS,3,FALSE,Hardy,Caraway,,R,,
+MS,3,FALSE,,,Party Votes:,R,,
+MS,3,FALSE,Douglas MacArthur (Doug),Magee,,D,47744,27.93%
+MS,3,FALSE,Dennis C. ,Quinn,,D,,
+MS,3,FALSE,Jim,Liljeberg,,D,,
+MS,3,FALSE,,,Party Votes:,D,,
+MS,3,FALSE,Roger,Gerrard,,IND,3890,2.28%
+MS,3,FALSE,Barbara Dale,Washer,,REF,1541,0.9%
+MS,3,FALSE,,,District Votes:,,170946,
+MS,3,FALSE,,,,,,
+MS,,FALSE,,,,,,
+MS,4,TRUE,Steven McCarty,Palazzo,,R,108776,69.92%
+MS,4,FALSE,Gene,Taylor,,R,,
+MS,4,FALSE,Tom ,Carter,,R,,
+MS,4,FALSE,Tavish C.,Kelly,,R,,
+MS,4,FALSE,Ron ,Vincent,,R,,
+MS,4,FALSE,,,Party Votes:,R,,
+MS,4,FALSE,Matt,Moore,,D,37869,24.34%
+MS,4,FALSE,Trish,Causey,,D,,
+MS,4,FALSE,,,Party Votes:,D,,
+MS,4,FALSE,Cindy,Burleson,,IND,3684,2.37%
+MS,4,FALSE,Joey,Robinson,,LIB,3473,2.23%
+MS,4,FALSE,Eli,Jackson,,REF,917,0.59%
+MS,4,FALSE,Ed,Reich,,IND,857,0.55%
+MS,4,FALSE,,,District Votes:,,155576,
+MS,,FALSE,,,,,,
+MS,H,FALSE,,,Total State Votes:,,626279,
+MS,,FALSE,,,,,,
+,,FALSE,,,,,,
+MO,1,TRUE,Lacy ,Clay,,D,119315,72.98%
+MO,1,FALSE,,,Party Votes:,D,,
+MO,1,FALSE,Daniel J.,Elder,,R,35273,21.57%
+MO,1,FALSE,Martin D.,Baker,,R,,
+MO,1,FALSE,David,Koehr,,R,,
+MO,1,FALSE,,,Party Votes:,R,,
+MO,1,FALSE,Robb E.,Cunningham,,LIB,8906,5.45%
+MO,1,FALSE,,,Party Votes:,LIB,,
+MO,1,FALSE,,,District Votes:,,163494,
+MO,,FALSE,,,,,,
+MO,2,TRUE,Ann,Wagner,,R,148191,64.12%
+MO,2,FALSE,,,Party Votes:,R,,
+MO,2,FALSE,Arthur ,Lieber,,D,75384,32.62%
+MO,2,FALSE,,,Party Votes:,D,,
+MO,2,FALSE,Bill,Slantz,,LIB,7542,3.26%
+MO,2,FALSE,,,Party Votes:,LIB,,
+MO,2,FALSE,,,District Votes:,,231117,
+MO,,FALSE,,,,,,
+MO,3,TRUE,Blaine,Luetkemeyer,,R,130940,68.33%
+MO,3,FALSE,John ,Morris,,R,,
+MO,3,FALSE,Leonard ,Steinman,,R,,
+MO,3,FALSE,,,Party Votes:,R,,
+MO,3,FALSE,Courtney ,Denton,,D,52021,27.15%
+MO,3,FALSE,Velma,Steinman,,D,,
+MO,3,FALSE,,,Party Votes:,D,,
+MO,3,FALSE,Steven,Hedrick,,LIB,8593,4.48%
+MO,3,FALSE,,,Party Votes:,LIB,,
+MO,3,FALSE,Harold,Davis,,W,66,0.03%
+MO,3,FALSE,,,District Votes:,,191620,
+MO,,FALSE,,,,,,
+MO,4,TRUE,Vicky ,Hartzler,,R,120014,68.08%
+MO,4,FALSE,John ,Webb,,R,,
+MO,4,FALSE,,,Party Votes:,R,,
+MO,4,FALSE,Nate ,Irvin,,D,46464,26.36%
+MO,4,FALSE,,,Party Votes:,D,,
+MO,4,FALSE,Herschel L.,Young,,LIB,9793,5.56%
+MO,4,FALSE,Randall (Randy),Langkraehr,,LIB,,
+MO,4,FALSE,,,Party Votes:,LIB,,
+MO,4,FALSE,Gregory A.,Cowan,,W,15,0.01%
+MO,4,FALSE,,,District Votes:,,176286,
+MO,,FALSE,,,,,,
+MO,5,TRUE,"Emanuel, II",Cleaver,,D,79256,51.59%
+MO,5,FALSE,Mark S.,Memoly,,D,,
+MO,5,FALSE,Charles,Lindsey,,D,,
+MO,5,FALSE,Eric,Holmes,,D,,
+MO,5,FALSE,Bob,Gough,,D,,
+MO,5,FALSE,,,Party Votes:,D,,
+MO,5,FALSE,Jacob ,Turk,,R,69071,44.96%
+MO,5,FALSE,Bill,Lindsey,,R,,
+MO,5,FALSE,Michael,Burris,,R,,
+MO,5,FALSE,Berton A.,Knox,,R,,
+MO,5,FALSE,,,Party Votes:,R,,
+MO,5,FALSE,Roy,Welborn,,LIB,5308,3.45%
+MO,5,FALSE,,,Party Votes:,LIB,,
+MO,5,FALSE,,,District Votes:,,153635,
+MO,,FALSE,,,,,,
+MO,6,TRUE,Sam ,Graves,,R,124616,66.65%
+MO,6,FALSE,Christopher,Ryan,,R,,
+MO,6,FALSE,Kyle,Reid,,R,,
+MO,6,FALSE,Brian L.,Tharp,,R,,
+MO,6,FALSE,,,Party Votes:,R,,
+MO,6,FALSE,W.A. (Bill),Hedge,,D,55157,29.5%
+MO,6,FALSE,Edwards Dwayne,Fields,,D,,
+MO,6,FALSE,Gary Lynn,Crose,,D,,
+MO,6,FALSE,,,Party Votes:,D,,
+MO,6,FALSE,Russ,Monchil,,LIB,7197,3.85%
+MO,6,FALSE,,,Party Votes:,LIB,,
+MO,6,FALSE,,,District Votes:,,186970,
+MO,,FALSE,,,,,,
+MO,7,TRUE,Billy,Long,,R,104054,63.46%
+MO,7,FALSE,Marshall ,Works,,R,,
+MO,7,FALSE,,,Party Votes:,R,,
+MO,7,FALSE,Jim,Evans,,D,47282,28.84%
+MO,7,FALSE,Genevieve,Williams,,D,,
+MO,7,FALSE,,,Party Votes:,D,,
+MO,7,FALSE,Kevin,Craig,,LIB,12584,7.68%
+MO,7,FALSE,,,Party Votes:,LIB,,
+MO,7,FALSE,Nikolas,Bruce,,W,32,0.02%
+MO,7,FALSE,John C.,Hagerty,,W,3,0%
+MO,7,FALSE,Martin,Lindstedt,,W,2,0%
+MO,7,FALSE,,,District Votes:,,163957,
+MO,,FALSE,,,,,,
+MO,8,TRUE,Jason ,Smith,,R,106124,66.65%
+MO,8,FALSE,,,Party Votes:,R,,
+MO,8,FALSE,Barbara,Stocker,,D,38721,24.32%
+MO,8,FALSE,,,Party Votes:,D,,
+MO,8,FALSE,Terry,Hampton,,IND,6821,4.28%
+MO,8,FALSE,Doug,Enyart,,CON,3799,2.39%
+MO,8,FALSE,,,Party Votes:,CON,,
+MO,8,FALSE,Rick ,Vandeven,,LIB,3759,2.36%
+MO,8,FALSE,,,Party Votes:,LIB,,
+MO,8,FALSE,,,District Votes:,,159224,
+MO,,FALSE,,,,,,
+MO,H,FALSE,,,Total State Votes:,,1426303,
+,,FALSE,,,,,,
+MT,0,FALSE,Ryan,Zinke,,R,203871,55.41%
+MT,0,FALSE,Corey ,Stapleton,,R,,
+MT,0,FALSE,Matt,Rosendale,,R,,
+MT,0,FALSE,Elsie,Arntzen,,R,,
+MT,0,FALSE,Drew,Turiano,,R,,
+MT,0,FALSE,,,Party Votes:,R,,
+MT,0,FALSE,John ,Lewis,,D,148690,40.41%
+MT,0,FALSE,John ,Driscoll,,D,,
+MT,0,FALSE,,,Party Votes:,D,,
+MT,0,FALSE,Mike,Fellows,,LIB,15402,4.19%
+MT,0,FALSE,,,District Votes:,,367963,
+MT,H,FALSE,,,Total State Votes:,,367963,
+,,FALSE,,,,,,
+NE,1,TRUE,Jeff,Fortenberry,,R,123219,68.82%
+NE,1,FALSE,Jessica L.,Turek,,R,,
+NE,1,FALSE,Dennis L.,Parker,,R,,
+NE,1,FALSE,,,Party Votes:,R,,
+NE,1,FALSE,Dennis P.,Crawford,,D,55838,31.18%
+NE,1,FALSE,,,Party Votes:,D,,
+NE,1,FALSE,Dennis P.,Crawford,,N(D),,
+NE,1,FALSE,,,Party Votes:,N(D),,
+NE,1,TRUE,Jeff,Fortenberry,,N(R),,
+NE,1,FALSE,Jessica L.,Turek,,N(R),,
+NE,1,FALSE,Dennis L.,Parker,,N(R),,
+NE,1,FALSE,,,Party Votes:,N(R),,
+NE,1,FALSE,,,District Votes:,,179057,
+NE,,FALSE,,,,,,
+NE,2,FALSE,Brad ,Ashford,,D,83872,48.9%
+NE,2,FALSE,Mark ,Aupperle,,D,,
+NE,2,FALSE,,,Party Votes:,D,,
+NE,2,TRUE,Lee,Terry,,R,78157,45.57%
+NE,2,FALSE,Dan,Frei,,R,,
+NE,2,FALSE,,,Party Votes:,R,,
+NE,2,FALSE,Steven,Laird,,LIB,9021,5.26%
+NE,2,FALSE,Andy ,Shambaugh,,LIB,,
+NE,2,FALSE,,,Party Votes:,LIB,,
+NE,2,FALSE,Brad ,Ashford,,N(D),,
+NE,2,FALSE,Mark ,Aupperle,,N(D),,
+NE,2,FALSE,,,Party Votes:,N(D),,
+NE,2,FALSE,Steven,Laird,,N(LIB),,
+NE,2,FALSE,Andy ,Shambaugh,,N(LIB),,
+NE,2,FALSE,,,Party Votes:,N(LIB),,
+NE,2,FALSE,Dan,Frei,,N(R),,
+NE,2,TRUE,Lee,Terry,,N(R),,
+NE,2,FALSE,,,Party Votes:,N(R),,
+NE,2,FALSE,,Scattered,,W,459,0.27%
+NE,2,FALSE,,,District Votes:,,171509,
+NE,,FALSE,,,,,,
+NE,3,TRUE,Adrian,Smith,,R,139440,75.39%
+NE,3,FALSE,Tom,Brewer,,R,,
+NE,3,FALSE,,,Party Votes:,R,,
+NE,3,FALSE,Mark ,Sullivan,,D,45524,24.61%
+NE,3,FALSE,,,Party Votes:,D,,
+NE,3,FALSE,Mark ,Sullivan,,N(D),,
+NE,3,FALSE,,,Party Votes:,N(D),,
+NE,3,TRUE,Adrian,Smith,,N(R),,
+NE,3,FALSE,Tom,Brewer,,N(R),,
+NE,3,FALSE,,,Party Votes:,N(R),,
+NE,3,FALSE,,,District Votes:,,184964,
+NE,,FALSE,,,,,,
+NE,H,FALSE,,,Total State Votes:,,535530,
+NE,,FALSE,,,,,,
+,,FALSE,,,,,,
+NV,1,TRUE,Dina,Titus,,D,45643,56.84%
+NV,1,FALSE,Herbert Glenn,Peters,,D,,
+NV,1,FALSE,,,Party Votes:,D,,
+NV,1,FALSE,Annette,Teijeiro,,R,30413,37.87%
+NV,1,FALSE,Jose,Padilla,,R,,
+NV,1,FALSE,,,Party Votes:,R,,
+NV,1,FALSE,"Richard ""Ricardo Carlos""",Charles,,LIB,2617,3.26%
+NV,1,FALSE,Kamau,Bakari,,IAP,1626,2.02%
+NV,1,FALSE,,,District Votes:,,80299,
+NV,,FALSE,,,,,,
+NV,2,TRUE,Mark E.,Amodei,,R,122402,65.73%
+NV,2,FALSE,Kristen ,Spees,,D,52016,27.93%
+NV,2,FALSE,Brian ,Dempsey,,D,,
+NV,2,FALSE,Vance,Alm,,D,,
+NV,2,FALSE,Ed ,Lee,,D,,
+NV,2,FALSE,,,Party Votes:,D,,
+NV,2,FALSE,Janine,Hansen,,IAP,11792,6.33%
+NV,2,FALSE,,,District Votes:,,186210,
+NV,,FALSE,,,,,,
+NV,3,TRUE,Joe,Heck,,R,88528,60.75%
+NV,3,FALSE,Erin,Bilbray,,D,52644,36.13%
+NV,3,FALSE,"Zachary ""Mr. Z.""",Campbell,,D,,
+NV,3,FALSE,,,Party Votes:,D,,
+NV,3,FALSE,David,Goossen,,IND,1637,1.12%
+NV,3,FALSE,Randy,Kimmick,,LIB,1566,1.07%
+NV,3,FALSE,Steven,St. John,,IND,1344,0.92%
+NV,3,FALSE,,,District Votes:,,145719,
+NV,,FALSE,,,,,,
+NV,4,FALSE,Cresent,Hardy,,R,63466,48.53%
+NV,4,FALSE,Niger,Innis,,R,,
+NV,4,FALSE,Mike ,Monroe,,R,,
+NV,4,FALSE,"Carlo ""Mazunga""",Poliak,,R,,
+NV,4,FALSE,,,Party Votes:,R,,
+NV,4,TRUE,Steven A.,Horsford,,D,59844,45.76%
+NV,4,FALSE,"Mark J., Jr.",Budetich,,D,,
+NV,4,FALSE,Sid,Zeller,,D,,
+NV,4,FALSE,,,Party Votes:,D,,
+NV,4,FALSE,Steve ,Brown,,LIB,4119,3.15%
+NV,4,FALSE,Russell,Best,,IAP,3352,2.56%
+NV,4,FALSE,,,District Votes:,,130781,
+NV,,FALSE,,,,,,
+NV,H,FALSE,,,Total State Votes:,,543009,
+,,FALSE,,,,,,
+NH,1,FALSE,Frank C.,Guinta,,R,125508,51.71%
+NH,1,FALSE,Dan ,Innis,,R,,
+NH,1,FALSE,Brendan,Kelly,,R,,
+NH,1,FALSE,Everett,Jabour,,R,,
+NH,1,FALSE,,Scattered,,W(R),,
+NH,1,TRUE,Carol,Shea-Porter,,W(R),,
+NH,1,FALSE,,,Party Votes:,R,,
+NH,1,TRUE,Carol,Shea-Porter,,D,116769,48.11%
+NH,1,FALSE,,Scattered,,W(D),,
+NH,1,FALSE,Frank C.,Guinta,,W(D),,
+NH,1,FALSE,Dan ,Innis,,W(D),,
+NH,1,FALSE,Brendan,Kelly,,W(D),,
+NH,1,FALSE,Everett,Jabour,,W(D),,
+NH,1,FALSE,,,Party Votes:,D,,
+NH,1,FALSE,,,,,,
+NH,1,FALSE,,Scattered,,W,459,0.19%
+NH,1,FALSE,,,District Votes:,,242736,
+NH,,FALSE,,,,,,
+NH,2,TRUE,Ann McLane,Kuster,,D,130700,54.87%
+NH,2,FALSE,,Scattered,,W(D),,
+NH,2,FALSE,Marilinda,Garcia,,W(D),,
+NH,2,FALSE,Gary ,Lambert,,W(D),,
+NH,2,FALSE,Jim ,Lawrence,,W(D),,
+NH,2,FALSE,Mike ,Little,,W(D),,
+NH,2,FALSE,,,Party Votes:,D,,
+NH,2,FALSE,Marilinda,Garcia,,R,106871,44.87%
+NH,2,FALSE,Gary ,Lambert,,R,,
+NH,2,FALSE,Jim ,Lawrence,,R,,
+NH,2,FALSE,Mike ,Little,,R,,
+NH,2,FALSE,,Scattered,,W(R),,
+NH,2,TRUE,Ann McLane,Kuster,,W(R),,
+NH,2,FALSE,,,Party Votes:,R,,
+NH,2,FALSE,,Scattered,,W,613,0.26%
+NH,2,FALSE,,,District Votes:,,238184,
+NH,,FALSE,,,,,,
+NH,H,FALSE,,,Total State Votes:,,480920,
+NH,,FALSE,,,,,,
+,,FALSE,,,,,,
+NJ,01,FALSE,Donald W. ,Norcross,,D,93315,57.43%
+NJ,01,FALSE,"Frank C., Jr.",Broomell,,D,,
+NJ,01,FALSE,Frank W.,Minor,,D,,
+NJ,01,FALSE,,,Party Votes:,D,,
+NJ,01,FALSE,Garry W.,Cobb,,R,64073,39.43%
+NJ,01,FALSE,Claire H. ,Gustafson,,R,,
+NJ,01,FALSE,Gerard ,McManus,,R,,
+NJ,01,FALSE,Lee,Lucas,,R,,
+NJ,01,FALSE,,,Party Votes:,R,,
+NJ,01,FALSE,Scot John,Tomaszewski,,WDB,1784,1.1%
+NJ,01,FALSE,Robert,Shapiro,,SBP,1134,0.7%
+NJ,01,FALSE,Margaret M.,Chapman,,CN,1103,0.68%
+NJ,01,FALSE,Mike,Berman,,OP,634,0.39%
+NJ,01,FALSE,Donald E.,Letton,,DRP,449,0.28%
+NJ,01,FALSE,,,District Votes:,,162492,
+NJ,,FALSE,,,,,,
+NJ,2,TRUE,Frank A. ,LoBiondo,,R,108875,61.46%
+NJ,2,FALSE,Mike,Assad,,R,,
+NJ,2,FALSE,,,Party Votes:,R,,
+NJ,2,FALSE,"William J., Jr.",Hughes,,D,66026,37.27%
+NJ,2,FALSE,David H. ,Cole,,D,,
+NJ,2,FALSE,,,Party Votes:,D,,
+NJ,2,FALSE,Alexander H.,Spano,,DRP,663,0.37%
+NJ,2,FALSE,Gary,Stein,,IND,612,0.35%
+NJ,2,FALSE,Constantino,Rozzo,,ALP,501,0.28%
+NJ,2,FALSE,Bayode,Olabisi,,IND,471,0.27%
+NJ,2,FALSE,,,District Votes:,,177148,
+NJ,,FALSE,,,,,,
+NJ,3,FALSE,Tom,MacArthur,,R,100471,53.99%
+NJ,3,FALSE,Steve,Lonegan,,R,,
+NJ,3,FALSE,,,Party Votes:,R,,
+NJ,3,FALSE,Aimee,Belgard,,D,82537,44.35%
+NJ,3,FALSE,Howard,Kleinhendler,,D,,
+NJ,3,FALSE,Bruce ,Todd,,D,,
+NJ,3,FALSE,,,Party Votes:,D,,
+NJ,3,FALSE,Frederick John,LaVergne,,DRP,3095,1.66%
+NJ,3,FALSE,,,District Votes:,,186103,
+NJ,,FALSE,,,,,,
+NJ,4,TRUE,Christopher H.,Smith,,R,118826,67.96%
+NJ,4,FALSE,,,Party Votes:,R,,
+NJ,4,FALSE,Ruben M. ,Scolavino,,D,54415,31.12%
+NJ,4,FALSE,,,Party Votes:,D,,
+NJ,4,FALSE,Scott,Neuman,,DRP,1608,0.92%
+NJ,4,FALSE,,,District Votes:,,174849,
+NJ,,FALSE,,,,,,
+NJ,5,TRUE,Scott,Garrett,,R,104678,55.41%
+NJ,5,FALSE,,,Party Votes:,R,,
+NJ,5,FALSE,Roy,Cho,,D,81808,43.3%
+NJ,5,FALSE,Diane,Sare,,D,,
+NJ,5,FALSE,,,Party Votes:,D,,
+NJ,5,FALSE,Mark D.,Quick,,FA,2435,1.29%
+NJ,5,FALSE,,,District Votes:,,188921,
+NJ,,FALSE,,,,,,
+NJ,6,TRUE,"Frank , Jr.",Pallone,,D,72190,59.93%
+NJ,6,FALSE,,,Party Votes:,D,,
+NJ,6,FALSE,Anthony E.,Wilkinson,,R,46891,38.93%
+NJ,6,FALSE,,,Party Votes:,R,,
+NJ,6,FALSE,Dorit,Goikhman,,LIB,1376,1.14%
+NJ,6,FALSE,,,District Votes:,,120457,
+NJ,,FALSE,,,,,,
+NJ,7,TRUE,Leonard,Lance,,R,104287,59.25%
+NJ,7,FALSE,David ,Larsen,,R,,
+NJ,7,FALSE,,,Party Votes:,R,,
+NJ,7,FALSE,Janice ,Kovach,,D,68232,38.77%
+NJ,7,FALSE,,,Party Votes:,D,,
+NJ,7,FALSE,James,Gawron,,LIB,3478,1.98%
+NJ,7,FALSE,,,District Votes:,,175997,
+NJ,,FALSE,,,,,,
+NJ,8,TRUE,Albio,Sires,,D,61510,77.35%
+NJ,8,FALSE,,,Party Votes:,D,,
+NJ,8,FALSE,Jude Anthony ,Tiscornia,,R,15141,19.04%
+NJ,8,FALSE,,,Party Votes:,R,,
+NJ,8,FALSE,Herbert H.,Shaw,,PAC,1192,1.5%
+NJ,8,FALSE,Pablo,Olivera,,WU,1022,1.29%
+NJ,8,FALSE,Robert,Thorne,,TN,653,0.82%
+NJ,8,FALSE,,,District Votes:,,79518,
+NJ,,FALSE,,,,,,
+NJ,9,TRUE,"Bill, Jr.",Pascrell,,D,82498,68.49%
+NJ,9,FALSE,,,Party Votes:,D,,
+NJ,9,FALSE,Dierdre G.,Paul,,R,36246,30.09%
+NJ,9,FALSE,,,Party Votes:,R,,
+NJ,9,FALSE,Nestor,Montilla,,SI,1715,1.42%
+NJ,9,FALSE,,,District Votes:,,120459,
+NJ,,FALSE,,,,,,
+NJ,10,TRUE,"Donald M., Jr.",Payne,,D,95734,85.38%
+NJ,10,FALSE,Robert Louis,Toussaint,,D,,
+NJ,10,FALSE,Aaron,Fraser,,D,,
+NJ,10,FALSE,"Curtis Alphonzo, III",Vaughn,,D,,
+NJ,10,FALSE,,,Party Votes:,D,,
+NJ,10,FALSE,Yolanda ,Dentley,,R,14154,12.62%
+NJ,10,FALSE,,,Party Votes:,R,,
+NJ,10,FALSE,Gwendolyn A.,Franklin,,BBH,1237,1.1%
+NJ,10,FALSE,Dark,Angel,,FV,998,0.89%
+NJ,10,FALSE,,,District Votes:,,112123,
+NJ,,FALSE,,,,,,
+NJ,11,TRUE,Rodney P.,Frelinghuysen,,R,109455,62.57%
+NJ,11,FALSE,Rick,Van Glahn,,R,,
+NJ,11,FALSE,,,Party Votes:,R,,
+NJ,11,FALSE,Mark,Dunec,,D,65477,37.43%
+NJ,11,FALSE,Brian,Murphy,,D,,
+NJ,11,FALSE,Lee Anne,Brogowski,,D,,
+NJ,11,FALSE,,,Party Votes:,D,,
+NJ,11,FALSE,,,District Votes:,,174932,
+NJ,,FALSE,,,,,,
+NJ,12,FALSE,Bonnie Watson,Coleman,,D,90430,60.95%
+NJ,12,FALSE,Linda R.,Greenstein,,D,,
+NJ,12,FALSE,Upendra,Chivukula,,D,,
+NJ,12,FALSE,Andrew,Zwicker,,D,,
+NJ,12,FALSE,,,Party Votes:,D,,
+NJ,12,FALSE,Alieta,Eck,,R,54168,36.51%
+NJ,12,FALSE,,,Party Votes:,R,,
+NJ,12,FALSE,Don,DeZarn,,LMP,1330,0.9%
+NJ,12,FALSE,Steven,Welzer,,GRE,890,0.6%
+NJ,12,FALSE,Kenneth J.,Cody,,TVH,567,0.38%
+NJ,12,FALSE,Jack,Freudenheim,,SC,531,0.36%
+NJ,12,FALSE,Allen J.,Cannon,,DRP,450,0.3%
+NJ,12,FALSE,,,District Votes:,,148366,
+NJ,,FALSE,,,,,,
+NJ,H,FALSE,,,Total State Votes:,,1982640,
+NJ,,FALSE,,,,,,
+NJ,,FALSE,,,,,,
+,,FALSE,,,,,,
+NM,1,TRUE,Michelle,Lujan Grisham,,D,105474,58.59%
+NM,1,FALSE,,,Party Votes:,D,,
+NM,1,FALSE,Michael H.,Frese,,R,74558,41.41%
+NM,1,FALSE,Richard G. ,Priem,,R,,
+NM,1,FALSE,,,Party Votes:,R,,
+NM,1,FALSE,,,District Votes:,,180032,
+NM,,FALSE,,,,,,
+NM,2,TRUE,Steve ,Pearce,,R,95209,64.43%
+NM,2,FALSE,,,Party Votes:,R,,
+NM,2,FALSE,"Roxanne ""Rocky""",Lara,,D,52499,35.53%
+NM,2,FALSE,,,Party Votes:,D,,
+NM,2,FALSE,Jack A.,McGrann,,W,69,0.05%
+NM,2,FALSE,,,District Votes:,,147777,
+NM,,FALSE,,,,,,
+NM,3,TRUE,Ben R.,Lujan,,D,113249,61.52%
+NM,3,FALSE,Robert,Blanch,,D,,
+NM,3,FALSE,,,Party Votes:,D,,
+NM,3,FALSE,Jefferson L. ,Byrd,,R,70775,38.45%
+NM,3,FALSE,,,Party Votes:,R,,
+NM,3,FALSE,Thomas F.,Hook,,W,52,0.03%
+NM,3,FALSE,,,,,,
+NM,3,FALSE,,,District Votes:,,184076,
+NM,H,FALSE,,,Total State Votes:,,511885,
+NM,,FALSE,,,,,,
+,,FALSE,,,,,,
+NY,1,FALSE,Lee M.,Zeldin,,R,16973,9.82%
+NY,1,FALSE,Lee M.,Zeldin,,R,77062,44.58%
+NY,1,FALSE,George,Demos,,R,,
+NY,1,FALSE,,,Party Votes:,R,,
+NY,1,TRUE,Timothy H.,Bishop,,D,68387,39.56%
+NY,1,TRUE,Timothy H.,Bishop,,D,4878,2.82%
+NY,1,TRUE,Timothy H.,Bishop,,D,5457,3.16%
+NY,1,FALSE,,Scattered,,W,108,0.06%
+NY,1,FALSE,,,District Votes:,,172865,
+NY,,FALSE,,,,,,
+NY,2,TRUE,Peter T.,King,,R,76659,55.02%
+NY,2,TRUE,Peter T.,King,,R,13789,9.9%
+NY,2,TRUE,Peter T.,King,,R,4729,3.39%
+NY,2,FALSE,Patricia,Maher,,D ,41814,30.01%
+NY,2,FALSE,William D.,Stevenson,,GRE,2281,1.64%
+NY,2,FALSE,,Scattered,,W,58,0.04%
+NY,2,FALSE,,,District Votes:,,139330,
+NY,,FALSE,,,,,,
+NY,3,TRUE,Steve J.,Israel,,D,80393,48.91%
+NY,3,TRUE,Steve J.,Israel,,D,4448,2.71%
+NY,3,TRUE,Steve J.,Israel,,D,5191,3.16%
+NY,3,FALSE,Grant M.,Lally,,R,63219,38.46%
+NY,3,FALSE,Stephen A.,Labate,,R,,
+NY,3,FALSE,,,Party Votes:,R,,
+NY,3,FALSE,Grant M.,Lally,,LIB,11050,6.72%
+NY,3,FALSE,,Scattered,,W,74,0.05%
+NY,3,FALSE,,,District Votes:,,164375,
+NY,,FALSE,,,,,,
+NY,4,FALSE,Kathleen M.,Rice,,WF,6021,3.54%
+NY,4,FALSE,Kathleen M.,Rice,,D,83772,49.25%
+NY,4,FALSE,Kevan M.,Abrahams,,D,,
+NY,4,FALSE,,,Party Votes:,D,,
+NY,4,FALSE,Bruce A.,Blakeman,,R,67811,39.87%
+NY,4,FALSE,Frank J.,Scaturro,,R,,
+NY,4,FALSE,,,Party Votes:,R,,
+NY,4,FALSE,Bruce A.,Blakeman,,IDP,2437,1.43%
+NY,4,FALSE,Bruce A.,Blakeman,,CRV,9879,5.81%
+NY,4,FALSE,,Opportunity to Ballot,,CRV,,
+NY,4,FALSE,,,Party Votes:,CRV,,
+NY,4,FALSE,,Scattered,,W,179,0.11%
+NY,4,FALSE,,,District Votes:,,170099,
+NY,,FALSE,,,,,,
+NY,5,TRUE,Gregory  W.,Meeks,,D,75712,94.85%
+NY,5,FALSE,Joseph R.,Marthone,,D,,
+NY,5,FALSE,,,Party Votes:,D,,
+NY,5,FALSE,Allen F.,Steinhardt,,AFC,3870,4.85%
+NY,5,FALSE,,Scattered,,W,239,0.3%
+NY,5,FALSE,,,District Votes:,,79821,
+NY,,FALSE,,,,,,
+NY,6,TRUE,Grace,Meng,,D,49227,87.96%
+NY,6,TRUE,Grace,Meng,,WF,6141,10.97%
+NY,6,FALSE,,Scattered,,W,595,1.06%
+NY,6,FALSE,,,District Votes:,,55963,
+NY,,FALSE,,,,,,
+NY,7,TRUE,Nydia M.,Valezquez,,WF,9451,14.81%
+NY,7,TRUE,Nydia M.,Valezquez,,D,47142,73.88%
+NY,7,FALSE,Jeffrey M.,Kurzon,,D,,
+NY,7,FALSE,,,Party Votes:,D,,
+NY,7,FALSE,Jose Luis ,Fernandez,,R,5713,8.95%
+NY,7,FALSE,Allan E.,Romaguera,,CRV,1398,2.19%
+NY,7,FALSE,,Scattered,,W,108,0.17%
+NY,7,FALSE,,,District Votes:,,63812,
+NY,,FALSE,,,,,,
+NY,8,TRUE,Hakeem S.,Jeffries,,D,70469,83.89%
+NY,8,TRUE,Hakeem S.,Jeffries,,WF,6786,8.08%
+NY,8,FALSE,Alan ,Bellone,,CRV,6673,7.94%
+NY,8,FALSE,,Scattered,,W,71,0.08%
+NY,8,FALSE,,,District Votes:,,83999,
+NY,,FALSE,,,,,,
+NY,9,TRUE,Yvette D.,Clarke,,D,70997,76.7%
+NY,9,TRUE,Yvette D.,Clarke,,WF,11662,12.6%
+NY,9,FALSE,Daniel J.,Cavanagh,,CRV,9727,10.51%
+NY,9,FALSE,,Scattered,,W,183,0.2%
+NY,9,FALSE,,,District Votes:,,92569,
+NY,,FALSE,,,,,,
+NY,10,TRUE,Jerrold L.,Nadler,,D,73945,72.58%
+NY,10,TRUE,Jerrold L.,Nadler,,WF,15135,14.86%
+NY,10,FALSE,Ross,Brady,,CRV,12042,11.82%
+NY,10,FALSE,Michael J.,Dilger,,FEP,554,0.54%
+NY,10,FALSE,,Scattered,,W,205,0.2%
+NY,10,FALSE,,,District Votes:,,101881,
+NY,,FALSE,,,,,,
+NY,11,TRUE,Michael G.,Grimm,,R,48291,44.98%
+NY,11,TRUE,Michael G.,Grimm,,CRV,8251,7.69%
+NY,11,TRUE,Michael G.,Grimm,,IDP,2344,2.18%
+NY,11,FALSE,"Domenic M., Jr.",Recchia,,D,41429,38.59%
+NY,11,FALSE,"Domenic M., Jr.",Recchia,,WF,3815,3.55%
+NY,11,FALSE,Henry J.,Bardel,,GRE,2687,2.5%
+NY,11,FALSE,,Scattered,,W,546,0.51%
+NY,11,FALSE,,,District Votes:,,107363,
+NY,,FALSE,,,,,,
+NY,12,TRUE,Carolyn B.,Maloney,,D,78440,69.15%
+NY,12,TRUE,Carolyn B.,Maloney,,WF,12163,10.72%
+NY,12,FALSE,Nicholas S.,Di Iorio,,R,19564,17.25%
+NY,12,FALSE,Nicholas S.,Di Iorio,,CRV,1841,1.62%
+NY,12,FALSE,Nicholas S.,Di Iorio,,IDP,1326,1.17%
+NY,12,FALSE,,Scattered,,W,95,0.08%
+NY,12,FALSE,,,District Votes:,,113429,
+NY,,FALSE,,,,,,
+NY,13,TRUE,Charles B.,Rangel,,D,63437,80.96%
+NY,13,FALSE,Adriano ,Espaillat,,D,,
+NY,13,FALSE,"Michael A., Jr.",Walrond,,D,,
+NY,13,FALSE,Yolanda,Garcia,,D,,
+NY,13,FALSE,,,Party Votes:,D,,
+NY,13,TRUE,Charles B.,Rangel,,WF,4959,6.33%
+NY,13,FALSE,Daniel Vila,Rivera,,GRE,9806,12.52%
+NY,13,FALSE,Kenneth D.,Schaeffer,,WF,,
+NY,13,FALSE,,Scattered,,W,151,0.19%
+NY,13,FALSE,,,District Votes:,,78353,
+NY,,FALSE,,,,,,
+NY,14,TRUE,Joseph,Crowley,,D,45370,79.31%
+NY,14,TRUE,Joseph,Crowley,,WF,4982,8.71%
+NY,14,FALSE,Elizabeth,Perri,,CRV,6735,11.77%
+NY,14,FALSE,,Scattered,,W,117,0.2%
+NY,14,FALSE,,,District Votes:,,57204,
+NY,,FALSE,,,,,,
+NY,15,TRUE,Jose E.,Serrano,,WF,1778,3.14%
+NY,15,TRUE,Jose E.,Serrano,,D,53128,93.93%
+NY,15,FALSE,Sam,Sloan,,D,,
+NY,15,FALSE,,,Party Votes:,D,,
+NY,15,FALSE,Eduardo,Ramirez,,CRV,1047,1.85%
+NY,15,FALSE,William  ,Edstrom,,GRE,568,1%
+NY,15,FALSE,,Scattered,,W,42,0.07%
+NY,15,FALSE,,,District Votes:,,56563,
+NY,,FALSE,,,,,,
+NY,16,TRUE,Eliot L.,Engel,,D,90088,89.74%
+NY,16,TRUE,Eliot L.,Engel,,WF,9570,9.53%
+NY,16,FALSE,,Scattered,,W,733,0.73%
+NY,16,FALSE,,,District Votes:,,100391,
+NY,,FALSE,,,,,,
+NY,17,TRUE,Nita M.,Lowey,,D,89295,51.3%
+NY,17,TRUE,Nita M.,Lowey,,WF,8855,5.09%
+NY,17,FALSE,Christopher E.,Day,,R,63549,36.51%
+NY,17,FALSE,Christopher E.,Day,,CRV,12232,7.03%
+NY,17,FALSE,,Scattered,,W,123,0.07%
+NY,17,FALSE,,,District Votes:,,174054,
+NY,,FALSE,,,,,,
+NY,18,TRUE,Sean Patrick,Maloney,,D,76235,42.57%
+NY,18,TRUE,Sean Patrick,Maloney,,WF,12758,7.12%
+NY,18,FALSE,Nan,Hayworth,,R,66523,37.14%
+NY,18,FALSE,Nan,Hayworth,,CRV,15714,8.77%
+NY,18,FALSE,Nan,Hayworth,,IDP,3423,1.91%
+NY,18,TRUE,Sean Patrick,Maloney,,IDP,,
+NY,18,FALSE,,,Party Votes:,IDP,,
+NY,18,FALSE,Scott A.,Smith,,MSC,4294,2.4%
+NY,18,FALSE,,Scattered,,W,144,0.08%
+NY,18,FALSE,,,District Votes:,,179091,
+NY,,FALSE,,,,,,
+NY,19,TRUE,Christopher P.,Gibson,,R,102118,50.02%
+NY,19,TRUE,Christopher P.,Gibson,,CRV,20420,10%
+NY,19,TRUE,Christopher P.,Gibson,,IDP,9056,4.44%
+NY,19,FALSE,Sean S.,Eldridge,,D,60533,29.65%
+NY,19,FALSE,Sean S.,Eldridge,,WF,11937,5.85%
+NY,19,FALSE,,Scattered,,W,109,0.05%
+NY,19,FALSE,,,District Votes:,,204173,
+NY,,FALSE,,,,,,
+NY,20,TRUE,Paul D.,Tonko,,D,103437,50.62%
+NY,20,TRUE,Paul D.,Tonko,,IDP,10389,5.08%
+NY,20,TRUE,Paul D.,Tonko,,WF,11285,5.52%
+NY,20,FALSE,James M.,Fischer,,R,61820,30.26%
+NY,20,FALSE,James M.,Fischer,,CRV,17284,8.46%
+NY,20,FALSE,,Scattered,,W,114,0.06%
+NY,20,FALSE,,,District Votes:,,204329,
+NY,,FALSE,,,,,,
+NY,21,FALSE,Elise M.,Stefanik,,R,79615,45.58%
+NY,21,FALSE,Matthew A.,Doheny,,R,,
+NY,21,FALSE,,,Party Votes:,R,,
+NY,21,FALSE,Elise M.,Stefanik,,CRV,12207,6.99%
+NY,21,FALSE,Elise M.,Stefanik,,IDP,4404,2.52%
+NY,21,FALSE,Matthew A.,Doheny,,IDP,,
+NY,21,FALSE,Aaron G.,Woolf,,D,53140,30.42%
+NY,21,FALSE,Aaron G.,Woolf,,WF,5923,3.39%
+NY,21,FALSE,Matthew J.,Funiciello,,GRE,19238,11.01%
+NY,21,FALSE,,Scattered,,W,141,0.08%
+NY,21,FALSE,,,District Votes:,,174668,
+NY,,FALSE,,,,,,
+NY,22,TRUE,Richard L.,Hanna,,IDP,16277,12.34%
+NY,22,TRUE,Richard L.,Hanna,,R,113574,86.09%
+NY,22,FALSE,Claudia,Tenney,,R,,
+NY,22,FALSE,,,Party Votes:,R,,
+NY,22,FALSE,,Scattered,,W,2081,1.58%
+NY,22,FALSE,,,District Votes:,,131932,
+NY,,FALSE,,,,,,
+NY,23,TRUE,"Thomas W., II",Reed,,R,94375,51.44%
+NY,23,TRUE,"Thomas W., II",Reed,,CRV,13917,7.58%
+NY,23,TRUE,"Thomas W., II",Reed,,IDP,4838,2.64%
+NY,23,FALSE,Martha,Robertson,,D,60233,32.83%
+NY,23,FALSE,Martha,Robertson,,WF,10009,5.46%
+NY,23,FALSE,,Scattered,,W,109,0.06%
+NY,23,FALSE,,,District Votes:,,183481,
+NY,,FALSE,,,,,,
+NY,24,FALSE,John M.,Katko,,R,93881,47.12%
+NY,24,FALSE,John M.,Katko,,CRV,17768,8.92%
+NY,24,FALSE,John M.,Katko,,IDP,6825,3.43%
+NY,24,TRUE,Daniel B.,Maffei,,D,72631,36.46%
+NY,24,TRUE,Daniel B.,Maffei,,WF,7673,3.85%
+NY,24,FALSE,,Scattered,,W,444,0.22%
+NY,24,FALSE,,,District Votes:,,199222,
+NY,,FALSE,,,,,,
+NY,25,TRUE,Louise M.,Slaughter,,D,87264,45.22%
+NY,25,TRUE,Louise M.,Slaughter,,WF,9539,4.94%
+NY,25,FALSE,Mark W.,Assini,,R,75990,39.38%
+NY,25,FALSE,Mark W.,Assini,,CRV,19942,10.33%
+NY,25,FALSE,,Scattered,,W,236,0.12%
+NY,25,FALSE,,,District Votes:,,192971,
+NY,,FALSE,,,,,,
+NY,26,TRUE,Brian,Higgins,,D,100648,60.59%
+NY,26,TRUE,Brian,Higgins,,WF,12562,7.56%
+NY,26,FALSE,Kathleen A.,Weppner,,R,38477,23.16%
+NY,26,FALSE,Kathleen A.,Weppner,,CRV,14432,8.69%
+NY,26,FALSE,,Scattered,,W,5,0%
+NY,26,FALSE,,,District Votes:,,166124,
+NY,,FALSE,,,,,,
+NY,27,TRUE,Chris,Collins,,R,109171,53.61%
+NY,27,TRUE,Chris,Collins,,CRV,27605,13.56%
+NY,27,TRUE,Chris,Collins,,IDP,7899,3.88%
+NY,27,FALSE,James D.,O'Donnell,,D,50939,25.01%
+NY,27,FALSE,James D.,O'Donnell,,WF,7972,3.91%
+NY,27,FALSE,,Scattered,,W,59,0.03%
+NY,27,FALSE,,,District Votes:,,203645,
+NY,,FALSE,,,,,,
+NY,H,FALSE,,,Total State Votes:,,3651707,
+,,FALSE,,,,,,
+NC,1,TRUE,G. K.,Butterfield,,D,154333,73.38%
+NC,1,FALSE,Dan,Whittacre,,D,,
+NC,1,FALSE,,,Party Votes:,D,,
+NC,1,FALSE,Arthur,Rich,,R,55990,26.62%
+NC,1,FALSE,Brent,Shypulefski,,R,,
+NC,1,FALSE,,,Party Votes:,R,,
+NC,1,FALSE,,,District Votes:,,210323,
+NC,,FALSE,,,,,,
+NC,2,TRUE,Renee,Ellmers,,R,122128,58.83%
+NC,2,FALSE,Frank,Roche,,R,,
+NC,2,FALSE,,,Party Votes:,R,,
+NC,2,FALSE,Clay,Aiken,,D,85479,41.17%
+NC,2,FALSE,Keith,Crisco,,D,,
+NC,2,FALSE,Toni,Morris,,D,,
+NC,2,FALSE,,,Party Votes:,D,,
+NC,2,FALSE,,,District Votes:,,207607,
+NC,,FALSE,,,,,,
+NC,3,TRUE,Walter,Jones,,R,139415,67.81%
+NC,3,FALSE,Taylor,Griffin,,R,,
+NC,3,FALSE,Al (Big Al),Novinec,,R,,
+NC,3,FALSE,,,Party Votes:,R,,
+NC,3,FALSE,Marshall,Adame,,D,66182,32.19%
+NC,3,FALSE,,,District Votes:,,205597,
+NC,,FALSE,,,,,,
+NC,4,TRUE,David,Price,,D,169946,74.75%
+NC,4,FALSE,Paul,Wright,,R,57416,25.25%
+NC,4,FALSE,,,District Votes:,,227362,
+NC,,FALSE,,,,,,
+NC,5,TRUE,Virginia,Foxx,,R,139279,61.02%
+NC,5,FALSE,Philip,Doyle,,R,,
+NC,5,FALSE,,,Party Votes:,R,,
+NC,5,FALSE,Joshua (Josh),Brannon,,D,88973,38.98%
+NC,5,FALSE,Gardenia,Henley,,D,,
+NC,5,FALSE,Michael W. ,Holleman,,D,,
+NC,5,FALSE,Will,Stinson,,D,,
+NC,5,FALSE,,,Party Votes:,D,,
+NC,5,FALSE,,,District Votes:,,228252,
+NC,,FALSE,,,,,,
+NC,6,FALSE,Mark,Walker,,R,147312,58.67%
+NC,6,FALSE,"Phil, Jr.",Berger,,R,,
+NC,6,FALSE,Bruce,VonCannon,,R,,
+NC,6,FALSE,Zach,Matheny,,R,,
+NC,6,FALSE,Jeff,Phillips,,R,,
+NC,6,FALSE,Don,Webb,,R,,
+NC,6,FALSE,Mike,Causey,,R,,
+NC,6,FALSE,Kenn,Kopf,,R,,
+NC,6,FALSE,Charlie,Sutherland,,R,,
+NC,6,FALSE,,,Party Votes:,R,,
+NC,6,FALSE,Laura,Fjeld,,D,103758,41.33%
+NC,6,FALSE,Bruce,Davis,,D,,
+NC,6,FALSE,,,Party Votes:,D,,
+NC,6,FALSE,,,District Votes:,,251070,
+NC,,FALSE,,,,,,
+NC,7,FALSE,David,Rouzer,,R,134431,59.35%
+NC,7,FALSE,Woody,White,,R,,
+NC,7,FALSE,Chris,Andrade,,R,,
+NC,7,FALSE,,,Party Votes:,R,,
+NC,7,FALSE,"Jonathan, Jr.",Barfield,,D,84054,37.11%
+NC,7,FALSE,"Walter A., Jr.",Martin,,D,,
+NC,7,FALSE,,,Party Votes:,D,,
+NC,7,FALSE,J. Wesley,Casteen,,LIB,7850,3.47%
+NC,7,FALSE,,Scattered,,W,163,0.07%
+NC,7,FALSE,Louis,Harmati,,W,6,0%
+NC,7,FALSE,,,District Votes:,,226504,
+NC,,FALSE,,,,,,
+NC,8,TRUE,Richard,Hudson,,R,121568,64.86%
+NC,8,FALSE,Antonio,Blue,,D,65854,35.14%
+NC,8,FALSE,,,District Votes:,,187422,
+NC,,FALSE,,,,,,
+NC,9,TRUE,Robert,Pittenger,,R,163080,93.9%
+NC,9,FALSE,Michael  ,Steinberg,,R,,
+NC,9,FALSE,,,Party Votes:,R,,
+NC,9,FALSE,,Scattered,,W,8219,4.73%
+NC,9,FALSE,Shawn,Eckles,,W,2369,1.36%
+NC,9,FALSE,,,District Votes:,,173668,
+NC,,FALSE,,,,,,
+NC,10,TRUE,Patrick,McHenry,,R,133504,61.02%
+NC,10,FALSE,Richard,Lynch,,R,,
+NC,10,FALSE,,,Party Votes:,R,,
+NC,10,FALSE,Tate,MacQueen,,D,85292,38.98%
+NC,10,FALSE,,,District Votes:,,218796,
+NC,,FALSE,,,,,,
+NC,11,TRUE,Mark,Meadows,,R,144682,62.9%
+NC,11,FALSE,Tom,Hill,,D,85342,37.1%
+NC,11,FALSE,Keith,Ruehl,,D,,
+NC,11,FALSE,,,Party Votes:,D,,
+NC,11,FALSE,,,District Votes:,,230024,
+NC,,FALSE,,,,,,
+NC,12,FALSE,Alma,Adams,,D,130096,75.35%
+NC,12,FALSE,Malcolm,Graham,,D,,
+NC,12,FALSE,George,Battle,,D,,
+NC,12,FALSE,Marcus,Brandon,,D,,
+NC,12,FALSE,James (Smuggie),Mitchell,,D,,
+NC,12,FALSE,Curtis C.,Osborne,,D,,
+NC,12,FALSE,Rajive,Patel,,D,,
+NC,12,FALSE,,,Party Votes:,D,,
+NC,12,FALSE,Vince,Coakley,,R,42568,24.65%
+NC,12,FALSE,Leon,Threatt,,R,,
+NC,12,FALSE,,,Party Votes:,R,,
+NC,12,FALSE,,,Total District Votes (Full Term):,,172664,
+NC,,FALSE,,,,,,
+NC,13,TRUE,George,Holding,,R,153991,57.31%
+NC,13,FALSE,Brenda,Cleary,,D,114718,42.69%
+NC,13,FALSE,Virginia,Conlon,,D,,
+NC,13,FALSE,Arunava (Ron),Sanyal,,D,,
+NC,13,FALSE,,,Party Votes:,D,,
+NC,13,FALSE,,,District Votes:,,268709,
+NC,,FALSE,,,,,,
+NC,H,FALSE,,,Total State Votes:,,2977244,
+NC,,FALSE,,,,,,
+,,FALSE,,,,,,
+ND,0,TRUE,Kevin,Cramer,,R,138100,55.54%
+ND,0,FALSE,,Scattered,,W(R),,
+ND,0,FALSE,,,Party Votes:,R,,
+ND,0,FALSE,George,Sinner,,DNL,95678,38.48%
+ND,0,FALSE,,Scattered,,W(DNL),,
+ND,0,FALSE,,,Party Votes:,DNL,,
+ND,0,FALSE,"Robert J. ""Jack""",Seaman,,LIB,14531,5.84%
+ND,0,FALSE,,Scattered,,W(LIB),,
+ND,0,FALSE,,,Party Votes:,LIB,,
+ND,0,FALSE,,Scattered,,W,361,0.15%
+ND,0,FALSE,,,District Votes:,,248670,
+ND,H,FALSE,,,Total State Votes:,,248670,
+,,FALSE,,,,,,
+OH,1,TRUE,Steve,Chabot,,R,124779,63.22%
+OH,1,FALSE,,,Party Votes:,R,,
+OH,1,FALSE,Fred,Kundrata,,D,72604,36.78%
+OH,1,FALSE,Jim,Prues,,D,,
+OH,1,FALSE,,,Party Votes:,D,,
+OH,1,FALSE,,,District Votes:,,197383,
+OH,,FALSE,,,,,,
+OH,2,TRUE,Brad ,Wenstrup,,R,132658,65.96%
+OH,2,FALSE,,,Party Votes:,R,,
+OH,2,FALSE,Marek,Tyszkiewicz,,D,68453,34.04%
+OH,2,FALSE,Ronny,Richards,,D,,
+OH,2,FALSE,William R. ,Smith,,D,,
+OH,2,FALSE,John,Sheil,,D,,
+OH,2,FALSE,,,Party Votes:,D,,
+OH,2,FALSE,,,District Votes:,,201111,
+OH,,FALSE,,,,,,
+OH,3,TRUE,Joyce B.,Beatty,,D,91769,64.06%
+OH,3,FALSE,,,Party Votes:,D,,
+OH,3,FALSE,John ,Adams,,R,51475,35.93%
+OH,3,FALSE,Eric T.,Vennon,,R,,
+OH,3,FALSE,,,Party Votes:,R,,
+OH,3,FALSE,Ralph A.,Applegate,,W,17,0.01%
+OH,3,FALSE,,,District Votes:,,143261,
+OH,,FALSE,,,,,,
+OH,4,TRUE,Jim ,Jordan,,R,125907,67.67%
+OH,4,FALSE,,,Party Votes:,R,,
+OH,4,FALSE,Janet,Garrett,,D,60165,32.33%
+OH,4,FALSE,,,Party Votes:,D,,
+OH,4,FALSE,,,District Votes:,,186072,
+OH,,FALSE,,,,,,
+OH,5,TRUE,Bob,Latta,,R,134449,66.46%
+OH,5,FALSE,,,Party Votes:,R,,
+OH,5,FALSE,Robert L.,Fry,,D,58507,28.92%
+OH,5,FALSE,,,Party Votes:,D,,
+OH,5,FALSE,Eric,Eberly,,LIB,9344,4.62%
+OH,5,FALSE,,,Party Votes:,LIB,,
+OH,5,FALSE,,,District Votes:,,202300,
+OH,,FALSE,,,,,,
+OH,6,TRUE,Bill,Johnson,,R,111026,58.23%
+OH,6,FALSE,,,Party Votes:,R,,
+OH,6,FALSE,Jennifer ,Garrison,,D,73561,38.58%
+OH,6,FALSE,Gregory D.,Howard,,D,,
+OH,6,FALSE,,,Party Votes:,D,,
+OH,6,FALSE,Dennis,Lambert,,GRE,6065,3.18%
+OH,6,FALSE,,,Party Votes:,GRE,,
+OH,6,FALSE,,,District Votes:,,190652,
+OH,,FALSE,,,,,,
+OH,7,TRUE,Bob ,Gibbs,,R,143959,100%
+OH,7,FALSE,,,Party Votes:,R,,
+OH,7,FALSE,,,District Votes:,,143959,
+OH,,FALSE,,,,,,
+OH,8,TRUE,John A.,Boehner,,R,126539,67.19%
+OH,8,FALSE,J. D.,Winteregg,,R,,
+OH,8,FALSE,Eric  ,Gurr,,R,,
+OH,8,FALSE,,,Party Votes:,R,,
+OH,8,FALSE,Tom,Poetter,,D,51534,27.36%
+OH,8,FALSE,Matthew J.,Guyette,,D,,
+OH,8,FALSE,,,Party Votes:,D,,
+OH,8,FALSE,"James J., Jr.",Condit,,CON,10257,5.45%
+OH,8,FALSE,,,Party Votes:,CON,,
+OH,8,FALSE,,,District Votes:,,188330,
+OH,,FALSE,,,,,,
+OH,9,TRUE,Marcy,Kaptur,,D,108870,67.74%
+OH,9,FALSE,,,Party Votes:,D,,
+OH,9,FALSE,Richard,May,,R,51704,32.17%
+OH,9,FALSE,"Robert C., Jr.",Horrocks,,R,,
+OH,9,FALSE,,,Party Votes:,R,,
+OH,9,FALSE,Cory,Hoffman,,W,112,0.07%
+OH,9,FALSE,George A.,Skalsky,,W,29,0.02%
+OH,9,FALSE,,,District Votes:,,160715,
+OH,,FALSE,,,,,,
+OH,10,TRUE,Mike,Turner,,R,130752,65.18%
+OH,10,FALSE,John D.,Anderson,,R,,
+OH,10,FALSE,,,Party Votes:,R,,
+OH,10,FALSE,Robert,Klepinger,,D,63249,31.53%
+OH,10,FALSE,Bill,Conner,,D,,
+OH,10,FALSE,,,Party Votes:,D,,
+OH,10,FALSE,David A.,Harlow,,LIB,6605,3.29%
+OH,10,FALSE,,,Party Votes:,LIB,,
+OH,10,FALSE,,,District Votes:,,200606,
+OH,,FALSE,,,,,,
+OH,11,TRUE,Marcia L.,Fudge,,D,137105,79.45%
+OH,11,FALSE,,,Party Votes:,D,,
+OH,11,FALSE,Mark,Zetzer,,R,35461,20.55%
+OH,11,FALSE,,,Party Votes:,R,,
+OH,11,FALSE,,,District Votes:,,172566,
+OH,,FALSE,,,,,,
+OH,12,TRUE,Pat,Tiberi,,R,150573,68.11%
+OH,12,FALSE,,,Party Votes:,R,,
+OH,12,FALSE,David Arthur,Tibbs,,D,61360,27.75%
+OH,12,FALSE,,,Party Votes:,D,,
+OH,12,FALSE,Bob,Hart,,GRE,9148,4.14%
+OH,12,FALSE,,,Party Votes:,GRE,,
+OH,12,FALSE,,,District Votes:,,221081,
+OH,,FALSE,,,,,,
+OH,13,TRUE,Tim,Ryan,,D,120230,68.49%
+OH,13,FALSE,John Stephen,Luchansky,,D,,
+OH,13,FALSE,,,Party Votes:,D,,
+OH,13,FALSE,Thomas,Pekarek,,R,55233,31.46%
+OH,13,FALSE,,,Party Votes:,R,,
+OH,13,FALSE,David Allen,Pastorius,,W,86,0.05%
+OH,13,FALSE,,,District Votes:,,175549,
+OH,,FALSE,,,,,,
+OH,14,TRUE,David P.,Joyce,,R,135736,63.26%
+OH,14,FALSE,Matt ,Lynch,,R,,
+OH,14,FALSE,,,Party Votes:,R,,
+OH,14,FALSE,Michael ,Wager,,D,70856,33.02%
+OH,14,FALSE,,,Party Votes:,D,,
+OH,14,FALSE,David ,Macko,,LIB,7988,3.72%
+OH,14,FALSE,,,Party Votes:,LIB,,
+OH,14,FALSE,,,District Votes:,,214580,
+OH,,FALSE,,,,,,
+OH,15,TRUE,Steve,Stivers,,R,128496,66.02%
+OH,15,FALSE,Charles S.,Chope,,R,,
+OH,15,FALSE,,,Party Votes:,R,,
+OH,15,FALSE,Scott,Wharton,,D,66125,33.98%
+OH,15,FALSE,,,Party Votes:,D,,
+OH,15,FALSE,,,District Votes:,,194621,
+OH,,FALSE,,,,,,
+OH,16,TRUE,Jim,Renacci,,R,132176,63.74%
+OH,16,FALSE,,,Party Votes:,R,,
+OH,16,FALSE,Pete ,Crossland,,D,75199,36.26%
+OH,16,FALSE,James ,Donenwirth,,D,,
+OH,16,FALSE,,,Party Votes:,D,,
+OH,16,FALSE,,,District Votes:,,207375,
+OH,,FALSE,,,,,,
+OH,H,FALSE,,,Total State Votes:,,3000161,
+,,FALSE,,,,,,
+OK,1,TRUE,Jim,Bridenstine,,R,Unopposed,
+OK,1,FALSE,,,District Votes:,,,
+OK,,FALSE,,,,,,
+OK,2,TRUE,Markwayne,Mullin,,R,110925,70.03%
+OK,2,FALSE,Darrel,Robertson,,R,,
+OK,2,FALSE,,,Party Votes:,R,,
+OK,2,FALSE,Earl E.,Everett,,D,38964,24.6%
+OK,2,FALSE,Joshua,Harris-Till,,D,,
+OK,2,FALSE,,,Party Votes:,D,,
+OK,2,FALSE,Jon,Douthitt,,IND,8518,5.38%
+OK,2,FALSE,,,District Votes:,,158407,
+OK,,FALSE,,,,,,
+OK,3,TRUE,Frank D.,Lucas,,R,133335,78.62%
+OK,3,FALSE,Robert,Hubbard,,R,,
+OK,3,FALSE,Timothy Ray,Murray,,R,,
+OK,3,FALSE,,,Party Votes:,R,,
+OK,3,FALSE,Frankie,Robbins,,D,36270,21.38%
+OK,3,FALSE,,,District Votes:,,169605,
+OK,,FALSE,,,,,,
+OK,4,TRUE,Tom,Cole,,R,117721,70.8%
+OK,4,FALSE,Anna,Flatt,,R,,
+OK,4,FALSE,,,Party Votes:,R,,
+OK,4,FALSE,Bert,Smith,,D,40998,24.66%
+OK,4,FALSE,Tae,Si,,D,,
+OK,4,FALSE,,,Party Votes:,D,,
+OK,4,FALSE,Dennis B.,Johnson,,IND,7549,4.54%
+OK,4,FALSE,,,District Votes:,,166268,
+OK,,FALSE,,,,,,
+OK,5,FALSE,Steve,Russell,,R,95632,60.1%
+OK,5,FALSE,Patrice,Douglas,,R,,
+OK,5,FALSE,Clark,Jolley,,R,,
+OK,5,FALSE,Mike,Turner,,R,,
+OK,5,FALSE,Shane David,Jett,,R,,
+OK,5,FALSE,Harvey,Sparks,,R,,
+OK,5,FALSE,,,Party Votes:,R,,
+OK,5,FALSE,Al,McAffrey,,D,57790,36.32%
+OK,5,FALSE,Tom,Guild,,D,,
+OK,5,FALSE,Leona,Leonard,,D,,
+OK,5,FALSE,,,Party Votes:,D,,
+OK,5,FALSE,Robert T.,Murphy,,IND,2176,1.37%
+OK,5,FALSE,Tom,Boggs,,IND,2065,1.3%
+OK,5,FALSE,Buddy,Ray,,IND,1470,0.92%
+OK,5,FALSE,,,District Votes:,,159133,
+OK,,FALSE,,,,,,
+OK,H,FALSE,,,Total State Votes:,,653413,
+OK,,FALSE,,,,,,
+OK,,FALSE,,,,,,
+,,FALSE,,,,,,
+OR,1,TRUE,Suzanne ,Bonamici,,D*,160038,57.31%
+OR,1,FALSE,,Scattered,,W(D),,
+OR,1,FALSE,,,Party Votes:,D,,
+OR,1,FALSE,Jason,Yates,,R,96245,34.47%
+OR,1,FALSE,Delinda Delgado,Morgan,,R,,
+OR,1,FALSE,Bob,Niemeyer,,R,,
+OR,1,FALSE,,Scattered,,W(R),,
+OR,1,FALSE,,,Party Votes:,R,,
+OR,1,FALSE,James,Foster,,LIB,11213,4.02%
+OR,1,FALSE,Steven C.,Reynolds,,PRO/PG,11163,4%
+OR,1,FALSE,,,,,,
+OR,1,FALSE,,Scattered,,W,594,0.21%
+OR,1,FALSE,,,District Votes:,,279253,
+OR,,FALSE,,,,,,
+OR,,FALSE,,,,,,
+OR,2,TRUE,Greg ,Walden,,R,202374,70.41%
+OR,2,FALSE,Dennis B.,Linthicum,,R,,
+OR,2,FALSE,,Scattered,,W(R),,
+OR,2,FALSE,,,Party Votes:,R,,
+OR,2,FALSE,Aelea ,Christofferson,,D,73785,25.67%
+OR,2,FALSE,Barney ,Spera,,D,,
+OR,2,FALSE,C. F. (Frank),Vulliet,,D,,
+OR,2,FALSE,,Scattered,,W(D),,
+OR,2,FALSE,,,Party Votes:,D,,
+OR,2,FALSE,Sharon L.,Durbin,,LIB,10491,3.65%
+OR,2,FALSE,,,,,,
+OR,2,FALSE,,Scattered,,W,775,0.27%
+OR,2,FALSE,,,District Votes:,,287425,
+OR,,FALSE,,,,,,
+OR,3,TRUE,Earl ,Blumenauer,,D,211748,72.33%
+OR,3,FALSE,,Scattered,,W(D),,
+OR,3,FALSE,,,Party Votes:,D,,
+OR,3,FALSE,James,Buchal,,R,57424,19.61%
+OR,3,FALSE,,Scattered,,W(R),,
+OR,3,FALSE,,,Party Votes:,R,,
+OR,3,FALSE,Michael,Meo,,PG,12106,4.14%
+OR,3,FALSE,Jeffrey J.,Langan,,LIB,6381,2.18%
+OR,3,FALSE,David ,Walker,,NAF,4009,1.37%
+OR,3,FALSE,,,,,,
+OR,3,FALSE,,,,,,
+OR,3,FALSE,,Scattered,,W,1089,0.37%
+OR,3,FALSE,,,District Votes:,,292757,
+OR,,FALSE,,,,,,
+OR,4,TRUE,Peter A.,DeFazio,,D,181624,58.55%
+OR,4,FALSE,,Scattered,,W(D),,
+OR,4,FALSE,,,Party Votes:,D,,
+OR,4,FALSE,Art,Robinson,,R,116534,37.57%
+OR,4,FALSE,,Scattered,,W(R),,
+OR,4,FALSE,,,Party Votes:,R,,
+OR,4,FALSE,,,,,,
+OR,4,FALSE,Mike,Beilstein,,PG,6863,2.21%
+OR,4,FALSE,David L.,Chester,,LIB,4676,1.51%
+OR,4,FALSE,,Scattered,,W,482,0.16%
+OR,4,FALSE,,,District Votes:,,310179,
+OR,,FALSE,,,,,,
+OR,5,TRUE,Kurt,Schrader,,D,150944,53.7%
+OR,5,FALSE,Anita,Brown,,D,,
+OR,5,FALSE,,Scattered,,W(D),,
+OR,5,FALSE,,,Party Votes:,D,,
+OR,5,FALSE,,,,,,
+OR,5,FALSE,Tootie ,Smith,,R,110332,39.25%
+OR,5,FALSE,Ben,Pollock,,R,,
+OR,5,FALSE,,Scattered,,W(R),,
+OR,5,FALSE,,,Party Votes:,R,,
+OR,5,FALSE,,,,,,
+OR,5,FALSE,Marvin,Sannes,,IP,7674,2.73%
+OR,5,FALSE,Raymond,Baldwin,,CON,6208,2.21%
+OR,5,FALSE,Daniel K.,Souza,,LIB,5198,1.85%
+OR,5,FALSE,,,,,,
+OR,5,FALSE,,Scattered,,W,732,0.26%
+OR,5,FALSE,,,District Votes:,,281088,
+OR,,FALSE,,,,,,
+OR,H,FALSE,,,Total State Votes:,,1450702,
+OR,,FALSE,,,,,,
+,,FALSE,,,,,,
+PA,1,TRUE,Robert A.,Brady,,D,131248,82.84%
+PA,1,FALSE,,Scattered,,W(D),,
+PA,1,FALSE,,,Party Votes:,D,,
+PA,1,FALSE,Megan,Rath,,R,27193,17.16%
+PA,1,FALSE,,Scattered,,W(R),,
+PA,1,FALSE,,,Party Votes:,R,,
+PA,1,FALSE,,,District Votes:,,158441,
+PA,,FALSE,,,,,,
+PA,2,TRUE,Chaka ,Fattah,,D,181141,87.7%
+PA,2,FALSE,,Scattered,,W(D),,
+PA,2,FALSE,,,Party Votes:,D,,
+PA,2,FALSE,Armond,James,,R,25397,12.3%
+PA,2,FALSE,,Scattered,,W(R),,
+PA,2,FALSE,,,Party Votes:,R,,
+PA,2,FALSE,,,District Votes:,,206538,
+PA,,FALSE,,,,,,
+PA,3,TRUE,Mike,Kelly,,R,113859,60.63%
+PA,3,FALSE,,Scattered,,W(R),,
+PA,3,FALSE,,,Party Votes:,R,,
+PA,3,FALSE,Dan,Lavallee,,D,73931,39.37%
+PA,3,FALSE,,Scattered,,W(D),,
+PA,3,FALSE,,,Party Votes:,D,,
+PA,3,FALSE,,,District Votes:,,187790,
+PA,,FALSE,,,,,,
+PA,4,TRUE,Scott,Perry,,R,147090,74.54%
+PA,4,FALSE,,Scattered,,W(R),,
+PA,4,FALSE,,,Party Votes:,R,,
+PA,4,FALSE,Linda Deliah,Thompson,,D,50250,25.46%
+PA,4,FALSE,,Scattered,,W(D),,
+PA,4,FALSE,,,Party Votes:,D,,
+PA,4,FALSE,,,District Votes:,,197340,
+PA,,FALSE,,,,,,
+PA,5,TRUE,Glenn GT,Thompson,,R,115018,63.6%
+PA,5,FALSE,,Scattered,,W(R),,
+PA,5,FALSE,,,Party Votes:,R,,
+PA,5,FALSE,Kerith Strano ,Taylor,,D,65839,36.4%
+PA,5,FALSE,Thomas,Tarantella,,D,,
+PA,5,FALSE,,Scattered,,W(D),,
+PA,5,FALSE,,,Party Votes:,D,,
+PA,5,FALSE,,,District Votes:,,180857,
+PA,,FALSE,,,,,,
+PA,6,FALSE,Ryan,Costello,,R,119643,56.29%
+PA,6,FALSE,,Scattered,,W(R),,
+PA,6,FALSE,,,Party Votes:,R,,
+PA,6,FALSE,Manan,Trivedi,,D,92901,43.71%
+PA,6,FALSE,,Scattered,,W(D),,
+PA,6,FALSE,,,Party Votes:,D,,
+PA,6,FALSE,,,District Votes:,,212544,
+PA,,FALSE,,,,,,
+PA,7,TRUE,Patrick L.,Meehan,,R,145869,62.04%
+PA,7,FALSE,,Scattered,,W(R),,
+PA,7,FALSE,,,Party Votes:,R,,
+PA,7,FALSE,Mary Ellen,Balchunis,,D,89256,37.96%
+PA,7,FALSE,,Scattered,,W(D),,
+PA,7,FALSE,,,Party Votes:,D,,
+PA,7,FALSE,,,District Votes:,,235125,
+PA,,FALSE,,,,,,
+PA,8,TRUE,Michael G.,Fitzpatrick,,R,137731,61.9%
+PA,8,FALSE,,Scattered,,W(R),,
+PA,8,FALSE,,,Party Votes:,R,,
+PA,8,FALSE,Kevin,Strouse,,D,84767,38.1%
+PA,8,FALSE,Shaughnessy,Naughton,,D,,
+PA,8,FALSE,,Scattered,,W(D),,
+PA,8,FALSE,,,Party Votes:,D,,
+PA,8,FALSE,,,District Votes:,,222498,
+PA,,FALSE,,,,,,
+PA,9,TRUE,Bill,Shuster,,R,110094,63.52%
+PA,9,FALSE,Arthur L.,Halvorson,,R,,
+PA,9,FALSE,Travis G.,Schooley,,R,,
+PA,9,FALSE,,Scattered,,W(R),,
+PA,9,FALSE,,,Party Votes:,R,,
+PA,9,FALSE,Alanna,Hartzok,,D,63223,36.48%
+PA,9,FALSE,,Scattered,,W(D),,
+PA,9,FALSE,,,Party Votes:,D,,
+PA,9,FALSE,,,District Votes:,,173317,
+PA,,FALSE,,,,,,
+PA,10,TRUE,Tom,Marino,,R,112851,62.58%
+PA,10,FALSE,,Scattered,,W(R),,
+PA,10,FALSE,,,Party Votes:,R,,
+PA,10,FALSE,Scott F.,Brion,,D,44737,24.81%
+PA,10,FALSE,,Scattered,,W(D),,
+PA,10,FALSE,,,Party Votes:,D,,
+PA,10,FALSE,Nicholas,Troiano,,IND,22734,12.61%
+PA,10,FALSE,,,District Votes:,,180322,
+PA,,FALSE,,,,,,
+PA,11,TRUE,Lou,Barletta,,R,122464,66.31%
+PA,11,FALSE,,Scattered,,W(R),,
+PA,11,FALSE,,,Party Votes:,R,,
+PA,11,FALSE,Andy,Ostrowski,,D,62228,33.69%
+PA,11,FALSE,,Scattered,,W(D),,
+PA,11,FALSE,,,Party Votes:,D,,
+PA,11,FALSE,,,District Votes:,,184692,
+PA,,FALSE,,,,,,
+PA,12,TRUE,Keith ,Rothfus,,R,127993,59.28%
+PA,12,FALSE,,Scattered,,W(R),,
+PA,12,FALSE,,,Party Votes:,R,,
+PA,12,FALSE,Erin,McClelland,,D,87928,40.72%
+PA,12,FALSE,John A.,Hugya,,D,,
+PA,12,FALSE,,Scattered,,W(D),,
+PA,12,FALSE,,,Party Votes:,D,,
+PA,12,FALSE,,,District Votes:,,215921,
+PA,,FALSE,,,,,,
+PA,13,FALSE,Brendan F.,Boyle,,D,123601,67.12%
+PA,13,FALSE,Marjorie,Margolies,,D,,
+PA,13,FALSE,Daylin B.,Leach,,D,,
+PA,13,FALSE,Valerie,Arkoosh,,D,,
+PA,13,FALSE,,Scattered,,W(D),,
+PA,13,FALSE,,,Party Votes:,D,,
+PA,13,FALSE,Carson Dee,Adcock,,R,60549,32.88%
+PA,13,FALSE,Beverly A.,Plosa-Bowser,,R,,
+PA,13,FALSE,,Scattered,,W(R),,
+PA,13,FALSE,,,Party Votes:,R,,
+PA,13,FALSE,,,District Votes:,,184150,
+PA,,FALSE,,,,,,
+PA,14,TRUE,Mike,Doyle,,D,148351,100%
+PA,14,FALSE,Janis C.,Brooks,,D,,
+PA,14,FALSE,,Scattered,,W(D),,
+PA,14,FALSE,,,Party Votes:,D,,
+PA,14,FALSE,,Scattered,,W(R),,
+PA,14,FALSE,,,Party Votes:,R,,
+PA,14,FALSE,,,District Votes:,,148351,
+PA,,FALSE,,,,,,
+PA,15,TRUE,Charles W.,Dent,,R,128285,100%
+PA,15,FALSE,,Scattered,,W(R),,
+PA,15,FALSE,,,Party Votes:,R,,
+PA,15,FALSE,,Scattered,,W(D),,
+PA,15,FALSE,,,Party Votes:,D,,
+PA,15,FALSE,,,District Votes:,,128285,
+PA,,FALSE,,,,,,
+PA,16,TRUE,Joseph R.,Pitts,,R,101722,57.72%
+PA,16,FALSE,,Scattered,,W(R),,
+PA,16,FALSE,,,Party Votes:,R,,
+PA,16,FALSE,Tom,Houghton,,D,74513,42.28%
+PA,16,FALSE,Raja,Kittappa,,D,,
+PA,16,FALSE,,Scattered,,W(D),,
+PA,16,FALSE,,,Party Votes:,D,,
+PA,16,FALSE,,,District Votes:,,176235,
+PA,,FALSE,,,,,,
+PA,17,TRUE,Matt,Cartwright,,D,93680,56.76%
+PA,17,FALSE,,Scattered,,W(D),,
+PA,17,FALSE,,,Party Votes:,D,,
+PA,17,FALSE,David J.,Moylan,,R,71371,43.24%
+PA,17,FALSE,Matthew D.,Connolly,,R,,
+PA,17,FALSE,Matthew,Dietz,,R,,
+PA,17,FALSE,,Scattered,,W(R),,
+PA,17,FALSE,,,Party Votes:,R,,
+PA,17,FALSE,,,District Votes:,,165051,
+PA,,FALSE,,,,,,
+PA,18,TRUE,Tim,Murphy,,R,166076,100%
+PA,18,FALSE,,Scattered,,W(R),,
+PA,18,FALSE,,,Party Votes:,R,,
+PA,18,FALSE,,Scattered,,W(D),,
+PA,18,FALSE,,,Party Votes:,D,,
+PA,18,FALSE,,,District Votes:,,166076,
+PA,,FALSE,,,,,,
+PA,H,FALSE,,Scattered (Write-In Votes for All Districts),,W,5670,0.17%
+PA,H,FALSE,,,Total State Votes:,,3329203,
+,,FALSE,,,,,,
+RI,1,TRUE,David N.,Cicilline,,D,87060,59.49%
+RI,1,FALSE,Matthew J.,Fecteau,,D,,
+RI,1,FALSE,,,Party Votes:,D,,
+RI,1,FALSE,Cormick Brendan,Lynch,,R,58877,40.23%
+RI,1,FALSE,Stanford,Tran,,R,,
+RI,1,FALSE,,,Party Votes:,R,,
+RI,1,FALSE,,Scattered,,W,407,0.28%
+RI,1,FALSE,Mickey,Mouse,,W,9,0.01%
+RI,1,FALSE,,,District Votes:,,146353,
+RI,,FALSE,,,,,,
+RI,2,TRUE,James R.,Langevin,,D,105716,62.22%
+RI,2,FALSE,,,Party Votes:,D,,
+RI,2,FALSE,Rhue R.,Reis,,R,63844,37.58%
+RI,2,FALSE,,,Party Votes:,R,,
+RI,2,FALSE,,Scattered,,W,338,0.2%
+RI,2,FALSE,Charles,Picerno,,W,6,0%
+RI,2,FALSE,,,District Votes:,,169904,
+RI,,FALSE,,,,,,
+RI,H,FALSE,,,Total State Votes:,,316257,
+RI,,FALSE,,,,,,
+,,FALSE,,,,,,
+SC,1,TRUE,Mark,Sanford,,R,119392,93.41%
+SC,1,FALSE,,Scattered,,W,8423,6.59%
+SC,1,FALSE,,,District Votes:,,127815,
+SC,,FALSE,,,,,,
+SC,2,TRUE,Joe,Wilson,,R,121649,62.45%
+SC,2,FALSE,Eddie ,McCain,,R,,
+SC,2,FALSE,,,Party Votes:,R,,
+SC,2,FALSE,Phil ,Black,,D,68719,35.28%
+SC,2,FALSE,Ed ,Greenleaf,,D,,
+SC,2,FALSE,,,Party Votes:,D,,
+SC,2,FALSE,"Harold, III",Geddings,,LBR,4158,2.13%
+SC,2,FALSE,,Scattered,,W,282,0.14%
+SC,2,FALSE,,,District Votes:,,194808,
+SC,,FALSE,,,,,,
+SC,3,TRUE,Jeff,Duncan,,R,116741,71.18%
+SC,3,FALSE,Barbara Jo,Mullis,,D,47181,28.77%
+SC,3,FALSE,Hosea,Cleveland,,D,,
+SC,3,FALSE,,,Party Votes:,D,,
+SC,3,FALSE,,Scattered,,W,87,0.05%
+SC,3,FALSE,,,District Votes:,,164009,
+SC,,FALSE,,,,,,
+SC,4,TRUE,Trey,Gowdy,,R,126452,84.84%
+SC,4,FALSE,Curtis E.,McLaughlin,,LIB,21969,14.74%
+SC,4,FALSE,,Scattered,,W,628,0.42%
+SC,4,FALSE,,,District Votes:,,149049,
+SC,5,TRUE,Mick ,Mulvaney,,R,103078,58.85%
+SC,5,FALSE,Tom ,Adams,,D,66802,38.14%
+SC,5,FALSE,Tom ,Adams,,WF,5183,2.96%
+SC,5,FALSE,,Scattered,,W,82,0.05%
+SC,5,FALSE,,,District Votes:,,175145,
+SC,,FALSE,,,,,,
+SC,6,TRUE,"James E. ""Jim"" ",Clyburn,,D,125747,72.51%
+SC,6,FALSE,Karen,Smith,,D,,
+SC,6,FALSE,,,Party Votes:,D,,
+SC,6,FALSE,Anthony,Culler,,R,44311,25.55%
+SC,6,FALSE,Leon,Winn,,R,,
+SC,6,FALSE,,,Party Votes:,R,,
+SC,6,FALSE,Kevin R.,Umbaugh,,LIB,3176,1.83%
+SC,6,FALSE,,Scattered,,W,198,0.11%
+SC,6,FALSE,,,District Votes:,,173432,
+SC,,FALSE,,,,,,
+SC,7,TRUE,Tom ,Rice,,R,102833,59.95%
+SC,7,FALSE,Gloria,Bromell-Tinubu,,D,68576,39.98%
+SC,7,FALSE,,Scattered,,W,115,0.07%
+SC,7,FALSE,,,District Votes:,,171524,
+SC,,FALSE,,,,,,
+SC,H,FALSE,,,Total State Votes:,,1155782,
+SC,,FALSE,,,,,,
+SC,,FALSE,,,,,,
+,,FALSE,,,,,,
+SD,0,TRUE,Kristi,Noem,,R,183834,66.53%
+SD,0,FALSE,Corinna,Robinson,,D,92485,33.47%
+SD,0,FALSE,,,District Votes:,,276319,
+SD,0,FALSE,,,Total State Votes:,,276319,
+SD,,FALSE,,,,,,
+,,FALSE,,,,,,
+TN,1,TRUE,Phil,Roe,,R,115533,82.84%
+TN,1,FALSE,Daniel J.,Hartley,,R,,
+TN,1,FALSE,John Paul,Rader,,R,,
+TN,1,FALSE,,,Party Votes:,R,,
+TN,1,FALSE,Robert D.,Franklin,,IND,9906,7.1%
+TN,1,FALSE,Robert N.,Smith,,GRE,9869,7.08%
+TN,1,FALSE,Michael D.,Salyer,,IND,4148,2.97%
+TN,1,FALSE,Scott,Kudialis,,W,14,0.01%
+TN,1,FALSE,,,District Votes:,,139470,
+TN,,FALSE,,,,,,
+TN,2,TRUE,"John J., Jr.",Duncan,,R,120883,72.49%
+TN,2,FALSE,Jason,Zachary,,R,,
+TN,2,FALSE,,,Party Votes:,R,,
+TN,2,FALSE,Bob,Scott,,D,37612,22.56%
+TN,2,FALSE,,,Party Votes:,D,,
+TN,2,FALSE,Casey Adam,Gouge,,IND,4223,2.53%
+TN,2,FALSE,Norris,Dryer,,GRE,4033,2.42%
+TN,2,FALSE,,,District Votes:,,166751,
+TN,,FALSE,,,,,,
+TN,3,TRUE,Chuck,Fleischmann,,R,97344,62.36%
+TN,3,FALSE,Weston,Wamp,,R,,
+TN,3,FALSE,Harry,Lane,,W(R),,
+TN,3,FALSE,,,Party Votes:,R,,
+TN,3,FALSE,Mary M.,Headrick,,D,53983,34.58%
+TN,3,FALSE,,,Party Votes:,D,,
+TN,3,FALSE,Cassandra J.,Mitchell,,IND,4770,3.06%
+TN,3,FALSE,,,District Votes:,,156097,
+TN,,FALSE,,,,,,
+TN,4,TRUE,Scott,DesJarlais,,R,84815,58.32%
+TN,4,FALSE,Jim ,Tracy,,R,,
+TN,4,FALSE,John,Anderson,,R,,
+TN,4,FALSE,Steve,Lane,,R,,
+TN,4,FALSE,David R.,Tate,,R,,
+TN,4,FALSE,Michael S.,Warden,,R,,
+TN,4,FALSE,"Oluyomi ""Fapas,"" Sr.",Faparusi,,R,,
+TN,4,FALSE,,,Party Votes:,R,,
+TN,4,FALSE,Lenda ,Sherrell,,D,51357,35.32%
+TN,4,FALSE,,,Party Votes:,D,,
+TN,4,FALSE,Robert Rankin,Doggart,,IND,9246,6.36%
+TN,4,FALSE,,,District Votes:,,145418,
+TN,,FALSE,,,,,,
+TN,5,TRUE,Jim,Cooper,,D,96148,62.32%
+TN,5,FALSE,,,Party Votes:,D,,
+TN,5,FALSE,Bob,Ries,,R,55078,35.7%
+TN,5,FALSE,Chris,Carter,,R,,
+TN,5,FALSE,"John ""Big John""",Smith,,R,,
+TN,5,FALSE,Ronnie,Holden,,R,,
+TN,5,FALSE,,,Party Votes:,R,,
+TN,5,FALSE,Paul,Deakin,,IND,3050,1.98%
+TN,5,FALSE,,,District Votes:,,154276,
+TN,,FALSE,,,,,,
+TN,6,TRUE,Diane,Black,,R,115231,71.09%
+TN,6,FALSE,Jerry,Lowery,,R,,
+TN,6,FALSE,,,Party Votes:,R,,
+TN,6,FALSE,Amos Scott,Powers,,D,37232,22.97%
+TN,6,FALSE,,,Party Votes:,D,,
+TN,6,FALSE,Mike ,Winton,,IND,9634,5.94%
+TN,6,FALSE,,,District Votes:,,162097,
+TN,,FALSE,,,,,,
+TN,7,TRUE,Marsha,Blackburn,,R,110534,70%
+TN,7,FALSE,Jacob,Brimm,,R,,
+TN,7,FALSE,,,Party Votes:,R,,
+TN,7,FALSE,Daniel,Cramer,,D,42280,26.78%
+TN,7,FALSE,Credo Comlan,Amouzouvik,,D,,
+TN,7,FALSE,,,Party Votes:,D,,
+TN,7,FALSE,Leonard D.,Ladner,,IND,5093,3.23%
+TN,7,FALSE,,,District Votes:,,157907,
+TN,,FALSE,,,,,,
+TN,8,TRUE,Stephen Lee,Fincher,,R,122255,70.83%
+TN,8,FALSE,Dana,Matheny,,R,4,0%
+TN,8,FALSE,John,Mills,,R,,
+TN,8,FALSE,Nicholas,Pegues,,W(R),,
+TN,8,FALSE,,,Party Votes:,R,,
+TN,8,FALSE,Wes,Bradley,,D,42433,24.59%
+TN,8,FALSE,Rickey,Hobson,,D,,
+TN,8,FALSE,Tom,Reasons,,D,,
+TN,8,FALSE,Lawrence A.,Pivnick,,D,,
+TN,8,FALSE,,,Party Votes:,D,,
+TN,8,FALSE,Mark,Rawles,,CON,4451,2.58%
+TN,8,FALSE,James,Hart,,IND,3452,2%
+TN,8,FALSE,,,District Votes:,,172595,
+TN,,FALSE,,,,,,
+TN,9,TRUE,Steve ,Cohen,,D,87376,74.97%
+TN,9,FALSE,Ricky E.,Wilkins,,D,,
+TN,9,FALSE,Isaac,Richmond,,D,,
+TN,9,FALSE,,,Party Votes:,D,,
+TN,9,FALSE,Charlotte,Bergmann,,R,27173,23.31%
+TN,9,FALSE,,,Party Votes:,R,,
+TN,9,FALSE,Floyd Wayne,Alberson,,IND,766,0.66%
+TN,9,FALSE,Paul,Cook,,IND,752,0.65%
+TN,9,FALSE,Herbert,Bass,,IND,483,0.41%
+TN,9,FALSE,,,District Votes:,,116550,
+TN,,FALSE,,,,,,
+TN,H,FALSE,,,Total State Votes:,,1371161,
+TN,,FALSE,,,,,,
+,,FALSE,,,,,,
+TX,1,TRUE,Louie,Gohmert,,R,115084,77.47%
+TX,1,FALSE,,,Party Votes:,R,,
+TX,1,FALSE,Shirley J.,McKellar,,D,33476,22.53%
+TX,1,FALSE,,,Party Votes:,D,,
+TX,1,FALSE,Clark,Patterson,,LIB,,
+TX,1,FALSE,,,District Votes:,,148560,
+TX,,FALSE,,,,,,
+TX,2,TRUE,Ted,Poe,,R,101936,67.95%
+TX,2,FALSE,,,Party Votes:,R,,
+TX,2,FALSE,Niko,Letsos,,D,44462,29.64%
+TX,2,FALSE,,,Party Votes:,D,,
+TX,2,FALSE,James B.,Veasaw,,LIB,2316,1.54%
+TX,2,FALSE,Craig,Cleveland,,LIB,,
+TX,2,FALSE,Mark,Roberts,,GRE,1312,0.87%
+TX,2,FALSE,,,District Votes:,,150026,
+TX,,FALSE,,,,,,
+TX,3,TRUE,Sam,Johnson,,R,113404,82.01%
+TX,3,FALSE,Harry,Pierce,,R,,
+TX,3,FALSE,Cami,Dean,,R,,
+TX,3,FALSE,Josh,Loveless,,R,,
+TX,3,FALSE,,,Party Votes:,R,,
+TX,3,FALSE,Paul,Blair,,GRE,24876,17.99%
+TX,3,FALSE,Cecil Anthony,Ince,,LIB,,
+TX,3,FALSE,,,District Votes:,,138280,
+TX,,FALSE,,,,,,
+TX,4,FALSE,John,Ratcliffe,,R,115085,100%
+TX,4,TRUE,Ralph M.,Hall,,R,,
+TX,4,FALSE,Lou,Gigliotti,,R,,
+TX,4,FALSE,John,Stacy,,R,,
+TX,4,FALSE,Brent,Lawson,,R,,
+TX,4,FALSE,Tony,Arterburn,,R,,
+TX,4,FALSE,,,Party Votes:,R,,
+TX,4,FALSE,J. P.,Raley,,LIB,,
+TX,4,FALSE,,,District Votes:,,115085,
+TX,,FALSE,,,,,,
+TX,5,TRUE,Jeb,Hensarling,,R,88998,85.36%
+TX,5,FALSE,,,Party Votes:,R,,
+TX,5,FALSE,Ken,Ashby,,LIB,15264,14.64%
+TX,5,FALSE,,,District Votes:,,104262,
+TX,,FALSE,,,,,,
+TX,6,TRUE,Joe,Barton,,R,92334,61.15%
+TX,6,FALSE,Frank C.,Kuchar,,R,,
+TX,6,FALSE,,,Party Votes:,R,,
+TX,6,FALSE,David E.,Cozad,,D,55027,36.44%
+TX,6,FALSE,,,Party Votes:,D,,
+TX,6,FALSE,Hugh,Chauvin,,LIB,3635,2.41%
+TX,6,FALSE,,,District Votes:,,150996,
+TX,7,TRUE,John,Culberson,,R,90606,63.26%
+TX,7,FALSE,,,Party Votes:,R,,
+TX,7,FALSE,James,Cargas,,D,49478,34.55%
+TX,7,FALSE,Lissa,Squiers,,D,,
+TX,7,FALSE,,,Party Votes:,D,,
+TX,7,FALSE,Gerald,Fowler,,LIB,3135,2.19%
+TX,7,FALSE,,,District Votes:,,143219,
+TX,,FALSE,,,,,,
+TX,8,TRUE,Kevin,Brady,,R,125066,89.32%
+TX,8,FALSE,Craig,McMichael,,R,,
+TX,8,FALSE,,,Party Votes:,R,,
+TX,8,FALSE,Ken,Petty,,LIB,14947,10.68%
+TX,8,FALSE,Russ,Jones,,LIB,,
+TX,8,FALSE,,,District Votes:,,140013,
+TX,,FALSE,,,,,,
+TX,9,TRUE,Al,Green,,D,78109,90.82%
+TX,9,FALSE,,,Party Votes:,D,,
+TX,9,FALSE,Johnny,Johnson,,LIB,7894,9.18%
+TX,9,FALSE,,,District Votes:,,86003,
+TX,,FALSE,,,,,,
+TX,10,TRUE,Michael,McCaul,,R,109726,62.18%
+TX,10,FALSE,,,Party Votes:,R,,
+TX,10,FALSE,Tawana,Walter-Cadien,,D,60243,34.14%
+TX,10,FALSE,,,Party Votes:,D,,
+TX,10,FALSE,Bill,Kelsey,,LIB,6491,3.68%
+TX,10,FALSE,,,District Votes:,,176460,
+TX,,FALSE,,,,,,
+TX,11,TRUE,Mike,Conaway,,R,107939,90.27%
+TX,11,FALSE,Wade,Brown,,R,,
+TX,11,FALSE,,,Party Votes:,R,,
+TX,11,FALSE,Ryan T.,Lange,,LIB,11635,9.73%
+TX,11,FALSE,,,District Votes:,,119574,
+TX,,FALSE,,,,,,
+TX,12,TRUE,Kay,Granger,,R,113186,71.31%
+TX,12,FALSE,,,Party Votes:,R,,
+TX,12,FALSE,Mark,Greene,,D,41757,26.31%
+TX,12,FALSE,,,Party Votes:,D,,
+TX,12,FALSE,Ed,Colliver,,LIB,3787,2.39%
+TX,12,FALSE,Matt,Solodow,,LIB,,
+TX,12,FALSE,,,District Votes:,,158730,
+TX,,FALSE,,,,,,
+TX,13,TRUE,Mac,Thornberry,,R,110842,84.32%
+TX,13,FALSE,Elaine,Hays,,R,,
+TX,13,FALSE,Pam,Barlow,,R,,
+TX,13,FALSE,,,Party Votes:,R,,
+TX,13,FALSE,Mike,Minter,,D,16822,12.8%
+TX,13,FALSE,,,Party Votes:,D,,
+TX,13,FALSE,Emily,Pivoda,,LIB,2863,2.18%
+TX,13,FALSE,Don,Cook,,GRE,924,0.7%
+TX,13,FALSE,,,District Votes:,,131451,
+TX,,FALSE,,,,,,
+TX,14,TRUE,Randy,Weber,,R,90116,61.85%
+TX,14,FALSE,,,Party Votes:,R,,
+TX,14,FALSE,Donald G.,Brown,,D,52545,36.06%
+TX,14,FALSE,Buck,Willis,,D,,
+TX,14,FALSE,Gagan,Panjhazari,,D,,
+TX,14,FALSE,,,Party Votes:,D,,
+TX,14,FALSE,John,Wieder,,LIB,3037,2.08%
+TX,14,FALSE,,,District Votes:,,145698,
+TX,,FALSE,,,,,,
+TX,15,TRUE,Rubén,Hinojosa,,D,48708,54.01%
+TX,15,FALSE,,,Party Votes:,D,,
+TX,15,FALSE,Eddie,Zamora,,R,39016,43.26%
+TX,15,FALSE,Doug,Carlile,,R,,
+TX,15,FALSE,,,Party Votes:,R,,
+TX,15,FALSE,Johnny,Partain,,LIB,2460,2.73%
+TX,15,FALSE,Lewis,Alexander,,LIB,,
+TX,15,FALSE,Ross Lynn,Leone,,LIB,,
+TX,15,FALSE,,,District Votes:,,90184,
+TX,,FALSE,,,,,,
+TX,16,TRUE,Beto,O'Rourke,,D,49338,67.49%
+TX,16,FALSE,,,Party Votes:,D,,
+TX,16,FALSE,Corey,Roen,,R,21324,29.17%
+TX,16,FALSE,,,Party Votes:,R,,
+TX,16,FALSE,Jaime O.,Perez,,LIB,2443,3.34%
+TX,16,FALSE,,,District Votes:,,73105,
+TX,,FALSE,,,,,,
+TX,17,TRUE,Bill,Flores,,R,85807,64.58%
+TX,17,FALSE,,,Party Votes:,R,,
+TX,17,FALSE,Nick,Haynes,,D,43049,32.4%
+TX,17,FALSE,,,Party Votes:,D,,
+TX,17,FALSE,Shawn Michael,Hamilton,,LIB,4009,3.02%
+TX,17,FALSE,Bill,Oliver,,LIB,,
+TX,17,FALSE,,,District Votes:,,132865,
+TX,,FALSE,,,,,,
+TX,18,TRUE,Sheila,Jackson Lee,,D,76097,71.78%
+TX,18,FALSE,,,Party Votes:,D,,
+TX,18,FALSE,Sean,Seibert,,R,26249,24.76%
+TX,18,FALSE,,,Party Votes:,R,,
+TX,18,FALSE,Vince,Duncan,,IND,2362,2.23%
+TX,18,FALSE,Remington,Alessi,,GRE,1302,1.23%
+TX,18,FALSE,,,District Votes:,,106010,
+TX,,FALSE,,,,,,
+TX,19,TRUE,Randy,Neugebauer,,R,90160,77.18%
+TX,19,FALSE,Donald R.,May,,R,,
+TX,19,FALSE,Chris,Winn,,R,,
+TX,19,FALSE,,,Party Votes:,R,,
+TX,19,FALSE,Neal,Marchbanks,,D,21458,18.37%
+TX,19,FALSE,,,Party Votes:,D,,
+TX,19,FALSE,Richard (Chip),Peterson,,LIB,5146,4.41%
+TX,19,FALSE,Donald L.,Vance,,W,54,0.05%
+TX,19,FALSE,,,District Votes:,,116818,
+TX,,FALSE,,,,,,
+TX,20,TRUE,Joaquin,Castro,,D,66554,75.66%
+TX,20,FALSE,,,Party Votes:,D,,
+TX,20,FALSE,Jeffrey C.,Blunt,,LIB,21410,24.34%
+TX,20,FALSE,Michael (Commander),Idrogo,,LIB,,
+TX,20,FALSE,,,District Votes:,,87964,
+TX,,FALSE,,,,,,
+TX,21,TRUE,Lamar,Smith,,R,135660,71.78%
+TX,21,FALSE,Matt,McCall,,R,,
+TX,21,FALSE,Michael J.,Smith,,R,,
+TX,21,FALSE,,,Party Votes:,R,,
+TX,21,FALSE,Antonio,Diaz,,GRE,27831,14.73%
+TX,21,FALSE,Ryan,Shields,,LIB,25505,13.49%
+TX,21,FALSE,David,Cunningham,,LIB,,
+TX,21,FALSE,Mark,Loewe,,LIB,,
+TX,21,FALSE,,,District Votes:,,188996,
+TX,,FALSE,,,,,,
+TX,22,TRUE,Pete,Olson,,R,100861,66.55%
+TX,22,FALSE,,,Party Votes:,R,,
+TX,22,FALSE,Frank,Briscoe,,D,47844,31.57%
+TX,22,FALSE,Mark,Gibson,,D,,
+TX,22,FALSE,,,Party Votes:,D,,
+TX,22,FALSE,Rob,Lapham,,LIB,2861,1.89%
+TX,22,FALSE,,,District Votes:,,151566,
+TX,,FALSE,,,,,,
+TX,23,FALSE,Will,Hurd,,R,57459,49.78%
+TX,23,FALSE,"Francisco ""Quico""",Canseco,,R,,
+TX,23,FALSE,Robert,Lowry,,R,,
+TX,23,FALSE,,,Party Votes:,R,,
+TX,23,TRUE,Pete P.,Gallego,,D,55037,47.68%
+TX,23,FALSE,,,Party Votes:,D,,
+TX,23,FALSE,Ruben,Corvalan,,LIB,2933,2.54%
+TX,23,FALSE,,,District Votes:,,115429,
+TX,,FALSE,,,,,,
+TX,24,TRUE,Kenny E.,Marchant,,R,93712,65.04%
+TX,24,FALSE,,,Party Votes:,R,,
+TX,24,FALSE,Patrick,McGehearty,,D,46548,32.31%
+TX,24,FALSE,,,Party Votes:,D,,
+TX,24,FALSE,Mike,Kolls,,LIB,3813,2.65%
+TX,24,FALSE,,,District Votes:,,144073,
+TX,,FALSE,,,,,,
+TX,25,TRUE,Roger,Williams,,R,107120,60.22%
+TX,25,FALSE,,,Party Votes:,R,,
+TX,25,FALSE,Marco,Montoya,,D,64463,36.24%
+TX,25,FALSE,Stuart,Gourd,,D,,
+TX,25,FALSE,,,Party Votes:,D,,
+TX,25,FALSE,John,Betz,,LIB,6300,3.54%
+TX,25,FALSE,,,District Votes:,,177883,
+TX,,FALSE,,,,,,
+TX,26,TRUE,Michael,Burgess,,R,116944,82.66%
+TX,26,FALSE,Joel A.,Krause,,R,,
+TX,26,FALSE,Divenchy,Watrous,,R,,
+TX,26,FALSE,,,Party Votes:,R,,
+TX,26,FALSE,Mark,Boler,,LIB,24526,17.34%
+TX,26,FALSE,,,District Votes:,,141470,
+TX,,FALSE,,,,,,
+TX,27,TRUE,Blake,Farenthold,,R,83342,63.6%
+TX,27,FALSE,,,Party Votes:,R,,
+TX,27,FALSE,Wesley,Reed,,D,44152,33.69%
+TX,27,FALSE,,,Party Votes:,D,,
+TX,27,FALSE,Roxanne,Simonson,,LIB,3553,2.71%
+TX,27,FALSE,,,District Votes:,,131047,
+TX,,FALSE,,,,,,
+TX,28,TRUE,Henry,Cuellar,,D,62508,82.1%
+TX,28,FALSE,,,Party Votes:,D,,
+TX,28,FALSE,William,Aikens,,LIB,10153,13.34%
+TX,28,FALSE,Michael D.,Cary,,GRE,3475,4.56%
+TX,28,FALSE,,,District Votes:,,76136,
+TX,,FALSE,,,,,,
+TX,29,TRUE,Gene,Green,,D,41321,89.55%
+TX,29,FALSE,,,Party Votes:,D,,
+TX,29,FALSE,James,Stanczak,,LIB,4822,10.45%
+TX,29,FALSE,,,District Votes:,,46143,
+TX,,FALSE,,,,,,
+TX,30,TRUE,Eddie Bernice,Johnson,,D,93041,87.95%
+TX,30,FALSE,Barbara Mallory,Caraway,,D,,
+TX,30,FALSE,,,Party Votes:,D,,
+TX,30,FALSE,"Max W., III",Koch,,LIB,7154,6.76%
+TX,30,FALSE,Eric LeMonte,Williams,,IND,5598,5.29%
+TX,30,FALSE,,,District Votes:,,105793,
+TX,,FALSE,,,,,,
+TX,31,TRUE,John,Carter,,R,91607,64.05%
+TX,31,FALSE,,,Party Votes:,R,,
+TX,31,FALSE,Louie,Minor,,D,45715,31.96%
+TX,31,FALSE,,,Party Votes:,D,,
+TX,31,FALSE,Scott J.,Ballard,,LIB,5706,3.99%
+TX,31,FALSE,,,District Votes:,,143028,
+TX,,FALSE,,,,,,
+TX,32,TRUE,Pete,Sessions,,R,96495,61.82%
+TX,32,FALSE,Katrina,Pierson,,R,,
+TX,32,FALSE,,,Party Votes:,R,,
+TX,32,FALSE,Frank,Perez,,D,55325,35.44%
+TX,32,FALSE,,,Party Votes:,D,,
+TX,32,FALSE,Ed,Rankin,,LIB,4276,2.74%
+TX,32,FALSE,,,District Votes:,,156096,
+TX,,FALSE,,,,,,
+TX,33,TRUE,Marc,Veasey,,D,43769,86.51%
+TX,33,FALSE,Tom,Sanchez,,D,,
+TX,33,FALSE,,,Party Votes:,D,,
+TX,33,FALSE,Jason,Reeves,,LIB,6823,13.49%
+TX,33,FALSE,,,District Votes:,,50592,
+TX,,FALSE,,,,,,
+TX,34,TRUE,Filemon B.,Vela,,D,47503,59.47%
+TX,34,FALSE,,,Party Votes:,D,,
+TX,34,FALSE,Larry S.,Smith,,R,30811,38.57%
+TX,34,FALSE,,,Party Votes:,R,,
+TX,34,FALSE,Ryan,Rowley,,LIB,1563,1.96%
+TX,34,FALSE,Doug (Perla),Purl,,LIB,,
+TX,34,FALSE,,,District Votes:,,79877,
+TX,,FALSE,,,,,,
+TX,35,TRUE,Lloyd,Doggett,,D,60124,62.48%
+TX,35,FALSE,,,Party Votes:,D,,
+TX,35,FALSE,Susan,Narvaiz,,R,32040,33.3%
+TX,35,FALSE,,,Party Votes:,R,,
+TX,35,FALSE,Cory W.,Bruner,,LIB,2767,2.88%
+TX,35,FALSE,Kat,Swift,,GRE,1294,1.34%
+TX,35,FALSE,,,District Votes:,,96225,
+TX,,FALSE,,,,,,
+TX,36,FALSE,Brian,Babin,,R,101663,75.96%
+TX,36,FALSE,Ben,Streusand,,R,,
+TX,36,FALSE,John,Manlove,,R,,
+TX,36,FALSE,Doug,Centilli,,R,,
+TX,36,FALSE,Phil,Fitzgerald,,R,,
+TX,36,FALSE,Robin,Riley,,R,,
+TX,36,FALSE,Dave,Norman,,R,,
+TX,36,FALSE,Chuck,Meyer,,R,,
+TX,36,FALSE,John,Amdur,,R,,
+TX,36,FALSE,Kim I.,Morrell,,R,,
+TX,36,FALSE,Jim,Engstrand,,R,,
+TX,36,FALSE,Pat,Kasprzak,,R,,
+TX,36,FALSE,,,Party Votes:,R,,
+TX,36,FALSE,Michael K.,Cole,,D,29543,22.07%
+TX,36,FALSE,,,Party Votes:,D,,
+TX,36,FALSE,Rodney,Veach,,LIB,1951,1.46%
+TX,36,FALSE,Robb,Rourke,,LIB,,
+TX,36,FALSE,"Hal J., Jr.",Ridley,,GRE,685,0.51%
+TX,36,FALSE,,,District Votes:,,133842,
+TX,36,FALSE,,,,,,
+TX,H,FALSE,,,Total State Votes:,,4453499,
+TX,,FALSE,,,,,,
+,,FALSE,,,,,,
+UT,1,TRUE,Rob,Bishop,,R,84231,64.78%
+UT,1,FALSE,David Yu-Lin,Chiu,,R,,
+UT,1,FALSE,Donna,McAleer,,D,36422,28.01%
+UT,1,FALSE,Peter C.,Clemens,,D,,
+UT,1,FALSE,Craig,Bowden,,LIB,4847,3.73%
+UT,1,FALSE,Dwayne A.,Vance,,IAP,4534,3.49%
+UT,1,FALSE,,,District Votes:,,130034,
+UT,,FALSE,,,,,,
+UT,2,TRUE,Chris,Stewart,,R,88915,60.82%
+UT,2,FALSE,Larry,Meyers,,R,,
+UT,2,FALSE,Vaughn,Hatton,,R,,
+UT,2,FALSE,Zachary A.,Hartman,,R,,
+UT,2,FALSE,Luz,Robles,,D,47585,32.55%
+UT,2,FALSE,Shaun,McCausland,,CON,4509,3.08%
+UT,2,FALSE,Wayne L.,Hill,,IAP,3328,2.28%
+UT,2,FALSE,Bill,Barron,,UN,1734,1.19%
+UT,2,FALSE,Warren,Rogers,,W,117,0.08%
+UT,2,FALSE,,,District Votes:,,146188,
+UT,,FALSE,,,,,,
+UT,3,TRUE,Jason,Chaffetz,,R,102952,72.21%
+UT,3,FALSE,Mark,Hedengren,,R,,
+UT,3,FALSE,Robert J.,Stevens,,R,,
+UT,3,FALSE,Brian,Wonnacott,,D,32059,22.48%
+UT,3,FALSE,Zack,Strong,,IAP,3192,2.24%
+UT,3,FALSE,Stephen P.,Tryon,,UN,2584,1.81%
+UT,3,FALSE,Ben J.,Mates,,UN,1513,1.06%
+UT,3,FALSE,David A.,Else,,W,280,0.2%
+UT,3,FALSE,,,District Votes:,,142580,
+UT,,FALSE,,,,,,
+UT,4,FALSE,Mia B.,Love,,R,74936,50.92%
+UT,4,FALSE,Bob,Fuehr,,R,,
+UT,4,FALSE,Doug,Owens,,D,67425,45.81%
+UT,4,FALSE,Bill,Peterson,,D,,
+UT,4,FALSE,Tim,Aalders,,IAP,2032,1.38%
+UT,4,FALSE,Collin Robert,Simonsen,,CON,1424,0.97%
+UT,4,FALSE,Jim L.,Vein,,LIB,1351,0.92%
+UT,4,FALSE,,,District Votes:,,147168,
+UT,,FALSE,,,,,,
+UT,H,FALSE,,,Total State Votes:,,565970,
+,,FALSE,,,,,,
+VT,0,TRUE,Peter,Welch,,D,123349,64.41%
+VT,0,FALSE,,Scattered,,W(D),,
+VT,0,FALSE,,,Party Votes:,D,,
+VT,0,FALSE,Mark,Donka,,R,59432,31.03%
+VT,0,FALSE,Donald,Russell,,R,,
+VT,0,FALSE,Donald W.,Nolte,,R,,
+VT,0,FALSE,,Scattered,,W(R),,
+VT,0,FALSE,,,Party Votes:,R,,
+VT,0,FALSE,Cris,Ericson,,IND,2750,1.44%
+VT,0,FALSE,Matthew,Andrews,,LBU,2071,1.08%
+VT,0,FALSE,,Scattered,,W(LBU),,
+VT,0,FALSE,,,Party Votes:,LBU,,
+VT,0,FALSE,Jerry,Trudell,,ENI,2024,1.06%
+VT,0,FALSE,Randall,Meyer,,IND,1685,0.88%
+VT,0,FALSE,,Scattered,,W(PRO),,
+VT,0,FALSE,,,Party Votes:,PRO,,
+VT,0,FALSE,,Scattered,,W,193,0.1%
+VT,0,FALSE,,,District Votes:,,191504,
+VT,,FALSE,,,,,,
+VT,H,FALSE,,,Total State Votes:,,191504,
+VT,,FALSE,,,,,,
+,,FALSE,,,,,,
+VA,1,TRUE,"Robert J. ""Rob"" ",Wittman,,R,131861,62.9%
+VA,1,FALSE,Anthony T.,Riedel,,R,,
+VA,1,FALSE,,,Party Votes:,R,,
+VA,1,FALSE,"Norman G. ""Norm",Mosher,,D,72059,34.38%
+VA,1,FALSE,Glenda Gail,Parker,,IGR,5097,2.43%
+VA,1,FALSE,,Scattered,,W,604,0.29%
+VA,1,FALSE,,,District Votes:,,209621,
+VA,,FALSE,,,,,,
+VA,2,TRUE,E. Scott ,Rigell,,R,101558,58.68%
+VA,2,FALSE,Suzanne D.,Patrick,,D,71178,41.13%
+VA,2,FALSE,,Scattered,,W,324,0.19%
+VA,2,FALSE,,,District Votes:,,173060,
+VA,,FALSE,,,,,,
+VA,3,TRUE,"Robert C. ""Bobby""",Scott,,D,139197,94.43%
+VA,3,FALSE,,Scattered,,W,8205,5.57%
+VA,3,FALSE,,,District Votes:,,147402,
+VA,,FALSE,,,,,,
+VA,4,TRUE,J. Randy,Forbes,,R,120684,60.15%
+VA,4,FALSE,Elliott G.,Fausz,,D,75270,37.52%
+VA,4,FALSE,Bo C.,Brown,,LIB,4427,2.21%
+VA,4,FALSE,,Scattered,,W,257,0.13%
+VA,4,FALSE,,,District Votes:,,200638,
+VA,,FALSE,,,,,,
+VA,5,TRUE,Robert,Hurt,,R,124735,60.86%
+VA,5,FALSE,W. Lawrence,Gaughan,,D,73482,35.85%
+VA,5,FALSE,Ben,Hudson,,D,,
+VA,5,FALSE,Paul F.,Jones,,LIB,4298,2.1%
+VA,5,FALSE,Kenneth J.,Hildebrandt,,IGR,2209,1.08%
+VA,5,FALSE,,Scattered,,W,221,0.11%
+VA,5,FALSE,,,District Votes:,,204945,
+VA,,FALSE,,,,,,
+VA,6,TRUE,"Robert W. ""Bob""",Goodlatte,,R,133898,74.51%
+VA,6,FALSE,"William M. ""Will""",Hammer,,LIB,22161,12.33%
+VA,6,FALSE,Elaine B.,Hildebrandt,,IGR,21447,11.93%
+VA,6,FALSE,,Scattered,,W,2202,1.23%
+VA,6,FALSE,,,District Votes:,,179708,
+VA,,FALSE,,,,,,
+VA,7,FALSE,Dave A.,Brat,,R,148026,60.83%
+VA,7,TRUE,Eric I. ,Cantor,,R,,
+VA,7,FALSE,,,Party Votes:,R,,
+VA,7,FALSE,"John K. ""Jack""",Trammell,,D,89914,36.95%
+VA,7,FALSE,"James A., Jr.",Carr,,LIB,5086,2.09%
+VA,7,FALSE,,Scattered,,W,325,0.13%
+VA,7,FALSE,,,District Votes:,,243351,
+VA,,FALSE,,,,,,
+VA,8,FALSE,"Donald S., Jr.",Beyer,,D,128102,63.08%
+VA,8,FALSE,Patrick A.,Hope,,D,,
+VA,8,FALSE,Adam P.,Ebbin,,D,,
+VA,8,FALSE,"William D. ""Bill""",Euille,,D,,
+VA,8,FALSE,Mark H.,Levine,,D,,
+VA,8,FALSE,Lavern J.,Chatman,,D,,
+VA,8,FALSE,Derek S.,Hyra,,D,,
+VA,8,FALSE,Charniele L.,Herring,,D,,
+VA,8,FALSE,Bruce B.,Shuttleworth,,D,,
+VA,8,FALSE,Satish W.,Korpe,,D,,
+VA,8,FALSE,,,Party Votes:,D,,
+VA,8,FALSE,Micah K.,Edmond,,R,63810,31.42%
+VA,8,FALSE,Dennis,Bartow,,R,,
+VA,8,FALSE,Paul B.,Haring,,R,,
+VA,8,FALSE,,,Party Votes:,R,,
+VA,8,FALSE,Gwendolyn J. ,Beck,,IND,5420,2.67%
+VA,8,FALSE,Jeffrey S.,Carson,,LIB,4409,2.17%
+VA,8,FALSE,"Gerard C. ""Gerry,"" III",Blais,,IGR,963,0.47%
+VA,8,FALSE,,Scattered,,W,372,0.18%
+VA,8,FALSE,,,District Votes:,,203076,
+VA,,FALSE,,,,,,
+VA,9,TRUE,H. Morgan ,Griffith,,R,117465,72.15%
+VA,9,FALSE,"William R., Jr.",Carr,,IND,39412,24.21%
+VA,9,FALSE,,Scattered,,W,5938,3.65%
+VA,9,FALSE,,,District Votes:,,162815,
+VA,,FALSE,,,,,,
+VA,10,FALSE,Barbara J.,Comstock,,R,125914,56.49%
+VA,10,FALSE,"Robert G. ""Bob""",Marshall,,R,,
+VA,10,FALSE,"Howard R. ""Howie""",Lind,,R,,
+VA,10,FALSE,Stephen B.,Hollingshead,,R,,
+VA,10,FALSE,Rob K.,Wasinger,,R,,
+VA,10,FALSE,Mark S.,Savitt,,R,,
+VA,10,FALSE,,,Party Votes:,R,,
+VA,10,FALSE,John W.,Foust,,D,89957,40.36%
+VA,10,FALSE,William B.,Redpath,,LIB,3393,1.52%
+VA,10,FALSE,Brad A.,Eickholt,,IND,2442,1.1%
+VA,10,FALSE,Dianne L.,Blais,,IGR,946,0.42%
+VA,10,FALSE,,Scattered,,W,258,0.12%
+VA,10,FALSE,,,District Votes:,,222910,
+VA,,FALSE,,,,,,
+VA,11,TRUE,"Gerald E. ""Gerry""",Connolly,,D,106780,56.86%
+VA,11,FALSE,Suzanne K.,Scholte,,R,75796,40.36%
+VA,11,FALSE,Gerald,Geddes,,R,,
+VA,11,FALSE,Mike,Litzelman,,R,,
+VA,11,FALSE,Marc M.,Harrold,,LIB,3264,1.74%
+VA,11,FALSE,Joe F.,Galdo,,GRE,1739,0.93%
+VA,11,FALSE,,Scattered,,W,226,0.12%
+VA,11,FALSE,,,District Votes:,,187805,
+VA,,FALSE,,,,,,
+VA,H,FALSE,,,Total State Votes:,,2376644,
+VA,,FALSE,,,,,,
+,,FALSE,,,,,,
+WA,1,TRUE,Suzan,DelBene,,D,124151,55.04%
+WA,1,FALSE,Pedro,Celis,,R,101428,44.96%
+WA,1,FALSE,Robert J.,Sutherland,,R,,
+WA,1,FALSE,John ,Orlinski,,R,,
+WA,1,FALSE,Edwin F.,Moats,,GOP,,
+WA,1,FALSE,Richard J. ,Todd,,NOP,,
+WA,1,FALSE,Mike,The Mover,,NUP,,
+WA,1,FALSE,,,District Votes:,,225579,
+WA,,FALSE,,,,,,
+WA,2,TRUE,Rick,Larsen,,D,122173,60.57%
+WA,2,FALSE,B.J. ,Guillot,,R,79518,39.43%
+WA,2,FALSE,Mike,Lapointe,,IP,,
+WA,2,FALSE,,,District Votes:,,201691,
+WA,,FALSE,,,,,,
+WA,3,TRUE,Jaime Herrera,Beutler,,R,124796,61.53%
+WA,3,FALSE,Bob,Dingethal,,D,78018,38.47%
+WA,3,FALSE,Michael,Delavar,,R,,
+WA,3,FALSE,,,District Votes:,,202814,
+WA,,FALSE,,,,,,
+WA,4,FALSE,Dan,Newhouse,,R,77772,50.81%
+WA,4,FALSE,Clint,Didier,,R,75307,49.19%
+WA,4,FALSE,Estakio,Beltran,,D,,
+WA,4,FALSE,Janéa,Holmquist,,R,,
+WA,4,FALSE,George,Cicotte,,R,,
+WA,4,FALSE,Tony,Sandoval,,D,,
+WA,4,FALSE,Richard ,Wright,,IP,,
+WA,4,FALSE,Gavin,Seim,,R,,
+WA,4,FALSE,Josh ,Ramirez,,IP,,
+WA,4,FALSE,Glen R. ,Stockwell,,R,,
+WA,4,FALSE,Gordon Allen,Pross,,R,,
+WA,4,FALSE,Kevin,Midbust,,R,,
+WA,4,FALSE,,,District Votes:,,153079,
+WA,,FALSE,,,,,,
+WA,5,TRUE,Cathy McMorris,Rodgers,,R,135470,60.68%
+WA,5,FALSE,Joseph (Joe),Pakootas,,D,87772,39.32%
+WA,5,FALSE,Dave,Wilson,,IP,,
+WA,5,FALSE,Tom ,Horne,,R,,
+WA,5,FALSE,,,District Votes:,,223242,
+WA,,FALSE,,,,,,
+WA,6,TRUE,Derek ,Kilmer,,D,141265,62.98%
+WA,6,FALSE,Marty,McClendon,,R,83025,37.02%
+WA,6,FALSE,Douglas,Milholland,,GRE,,
+WA,6,FALSE,W. (Greybeard),McPherson,,NOP,,
+WA,6,FALSE,,,District Votes:,,224290,
+WA,,FALSE,,,,,,
+WA,7,TRUE,Jim,McDermott,,D,203954,80.97%
+WA,7,FALSE,Craig ,Keller,,R,47921,19.03%
+WA,7,FALSE,Scott ,Sutherland,,R,,
+WA,7,FALSE,Doug,McQuaid,,IP,,
+WA,7,FALSE,,GoodSpaceGuy,,WWP,,
+WA,7,FALSE,,,District Votes:,,251875,
+WA,,FALSE,,,,,,
+WA,8,TRUE,Dave,Reichert,,R,125741,63.27%
+WA,8,FALSE,Jason,Ritchie,,D,73003,36.73%
+WA,8,FALSE,Keith,Arnold,,D,,
+WA,8,FALSE,,,District Votes:,,198744,
+WA,,FALSE,,,,,,
+WA,9,TRUE,Adam,Smith,,D,118132,70.83%
+WA,9,FALSE,Doug,Basler,,R,48662,29.17%
+WA,9,FALSE,Don,Rivers,,D,,
+WA,9,FALSE,Mark,Greene,,CIT,,
+WA,9,FALSE,,,District Votes:,,166794,
+WA,,FALSE,,,,,,
+WA,10,TRUE,Denny,Heck,,D,99279,54.7%
+WA,10,FALSE,Joyce,McDonald,,R,82213,45.3%
+WA,10,FALSE,Jennifer Gigi ,Ferguson,,IP,,
+WA,10,FALSE,Sam,Wright,,HRP,,
+WA,10,FALSE,,,District Votes:,,181492,
+WA,,FALSE,,,,,,
+WA,H,FALSE,,,Total State Votes:,,2029600,
+,,FALSE,,,,,,
+WV,1,TRUE,David B. ,McKinley,,R,92491,63.9%
+WV,1,FALSE,,,Party Votes:,R,,
+WV,1,FALSE,"Glen B., III",Gainer,,D,52109,36%
+WV,1,FALSE,,,Party Votes:,D,,
+WV,1,FALSE,Chuck,Wood,,W,137,0.09%
+WV,1,FALSE,,,District Votes:,,144737,
+WV,,FALSE,,,,,,
+WV,2,FALSE,Alex X.,Mooney,,R,72619,47.08%
+WV,2,FALSE,Ken ,Reed,,R,,
+WV,2,FALSE,Charlotte ,Lane,,R,,
+WV,2,FALSE,Steve ,Harrison,,R,,
+WV,2,FALSE,"Ron, Jr.",Walters,,R,,
+WV,2,FALSE,Jim,Moss,,R,,
+WV,2,FALSE,Robert Lawrence ,Fluharty,,R,9,0.01%
+WV,2,FALSE,,,Party Votes:,R,,
+WV,2,FALSE,Nick,Casey,,D,67687,43.88%
+WV,2,FALSE,Meshea L.,Poore,,D,,
+WV,2,FALSE,,,Party Votes:,D,,
+WV,2,FALSE,Ed,Rabel,,IND,6250,4.05%
+WV,2,FALSE,Davy,Jones,,LIB,7682,4.98%
+WV,2,FALSE,Liz,Sullivan,,W,3,0%
+WV,2,FALSE,,,District Votes:,,154250,
+WV,,FALSE,,,,,,
+WV,3,FALSE,Evan,Jenkins,,R,77713,55.35%
+WV,3,FALSE,,,Party Votes:,R,,
+WV,3,TRUE,"Nick J., II",Rahall,,D,62688,44.65%
+WV,3,FALSE,"Richard, II",Ojeda,,D,,
+WV,3,FALSE,,,Party Votes:,D,,
+WV,3,FALSE,,,District Votes:,,140401,
+WV,,FALSE,,,,,,
+WV,H,FALSE,,,Total State Votes:,,439388,
+WV,,FALSE,,,,,,
+,,FALSE,,,,,,
+WI,1,TRUE,Paul,Ryan,,R,182316,63.27%
+WI,1,FALSE,Jeremy ,Ryan,,R,,
+WI,1,FALSE,,Scattered,,W(R),,
+WI,1,FALSE,,,Party Votes:,R,,
+WI,1,FALSE,Rob,Zerban,,D,105552,36.63%
+WI,1,FALSE,Amar,Kaleka,,D,,
+WI,1,FALSE,,Scattered,,W(D),,
+WI,1,FALSE,,,Party Votes:,D,,
+WI,1,FALSE,,Scattered,,W(CON),,
+WI,1,FALSE,,,Party Votes:,CON,,
+WI,1,FALSE,Keith R.,Deschler,,W,29,0.01%
+WI,1,FALSE,,Scattered,,W,273,0.09%
+WI,1,FALSE,,,District Votes:,,288170,
+WI,,FALSE,,,,,,
+WI,2,TRUE,Mark,Pocan,,D,224920,68.4%
+WI,2,FALSE,,Scattered,,W(D),,
+WI,2,FALSE,,,Party Votes:,D,,
+WI,2,FALSE,Peter,Theron,,R,103619,31.51%
+WI,2,FALSE,,Scattered,,W(R),,
+WI,2,FALSE,,,Party Votes:,R,,
+WI,2,FALSE,,Scattered,,W(CON),,
+WI,2,FALSE,,,Party Votes:,CON,,
+WI,2,FALSE,,Scattered,,W,308,0.09%
+WI,2,FALSE,,,,,,
+WI,2,FALSE,,,District Votes:,,328847,
+WI,3,TRUE,Ron ,Kind,,D,155368,56.46%
+WI,3,FALSE,,Scattered,,W(D),,
+WI,3,FALSE,,,Party Votes:,D,,
+WI,3,FALSE,Tony,Kurtz,,R,119540,43.44%
+WI,3,FALSE,Karen L.,Mueller,,R,,
+WI,3,FALSE,Ken,Van Doren,,R,128,0.05%
+WI,3,FALSE,,Scattered,,W(R),,
+WI,3,FALSE,,,Party Votes:,R,,
+WI,3,FALSE,,Scattered,,W(CON),,
+WI,3,FALSE,,,Party Votes:,CON,,
+WI,3,FALSE,,Scattered,,W,125,0.05%
+WI,3,FALSE,,,District Votes:,,275161,
+WI,,FALSE,,,,,,
+WI,4,TRUE,Gwen,Moore,,D,179045,70.24%
+WI,4,FALSE,Gary R.,George,,D,,
+WI,4,FALSE,,Scattered,,W(D),,
+WI,4,FALSE,,,Party Votes:,D,,
+WI,4,FALSE,Dan,Sebring,,R,68490,26.87%
+WI,4,FALSE,David D.,King,,R,,
+WI,4,FALSE,,Scattered,,W(R),,
+WI,4,FALSE,,,Party Votes:,R,,
+WI,4,FALSE,,Scattered,,W(CON),,
+WI,4,FALSE,,,Party Votes:,CON,,
+WI,4,FALSE,Robert R.,Raymond,,IND,7002,2.75%
+WI,4,FALSE,,Scattered,,W,355,0.14%
+WI,4,FALSE,,,District Votes:,,254892,
+WI,,FALSE,,,,,,
+WI,5,TRUE,"F. James., Jr.",Sensenbrenner,,R,231160,69.45%
+WI,5,FALSE,,Scattered,,W(R),,
+WI,5,FALSE,,,Party Votes:,R,,
+WI,5,FALSE,Chris,Rockwood,,D,101190,30.4%
+WI,5,FALSE,,Scattered,,W(D),,
+WI,5,FALSE,,,Party Votes:,D,,
+WI,5,FALSE,,Scattered,,W(CON),,
+WI,5,FALSE,,,Party Votes:,CON,,
+WI,5,FALSE,,Scattered,,W,476,0.14%
+WI,5,FALSE,,,District Votes:,,332826,
+WI,,FALSE,,,,,,
+WI,6,FALSE,Glenn ,Grothman,,R,169767,56.77%
+WI,6,FALSE,Joe ,Leibham,,R,,
+WI,6,FALSE,Duey ,Stroebel,,R,,
+WI,6,FALSE,Tom,Denow,,R,,
+WI,6,FALSE,,Scattered,,W(R),,
+WI,6,FALSE,,,Party Votes:,R,,
+WI,6,FALSE,Mark L.,Harris,,D,122212,40.87%
+WI,6,FALSE,,Scattered,,W(D),,
+WI,6,FALSE,,,Party Votes:,D,,
+WI,6,FALSE,Gus,Fahrendorf,,LIB,6865,2.3%
+WI,6,FALSE,,Scattered,,W(CON),,
+WI,6,FALSE,,,Party Votes:,CON,,
+WI,6,FALSE,,Scattered,,W,189,0.06%
+WI,6,FALSE,,,District Votes:,,299033,
+WI,,FALSE,,,,,,
+WI,7,TRUE,Sean,Duffy,,R,169891,59.28%
+WI,7,FALSE,Don,Raihala,,R,,
+WI,7,FALSE,,Scattered,,W(R),,
+WI,7,FALSE,John,Schiess,,W(R)/W,5,0%
+WI,7,FALSE,,,Party Votes:,R,,
+WI,7,FALSE,Kelly ,Westlund,,D,112949,39.41%
+WI,7,FALSE,Mike,Krsiean,,D,,
+WI,7,FALSE,,Scattered,,W(D),,
+WI,7,FALSE,,,Party Votes:,D,,
+WI,7,FALSE,Lawrence,Dale,,GRE,3686,1.29%
+WI,7,FALSE,,Scattered,,W(CON),,
+WI,7,FALSE,,,Party Votes:,CON,,
+WI,7,FALSE,Rob,Taylor,,W,30,0.01%
+WI,7,FALSE,,Scattered,,W,42,0.01%
+WI,7,FALSE,,,District Votes:,,286603,
+WI,,FALSE,,,,,,
+WI,8,TRUE,Reid J.,Ribble,,R,188553,65.01%
+WI,8,FALSE,,Scattered,,W(R),,
+WI,8,FALSE,,,Party Votes:,R,,
+WI,8,FALSE,Ron,Gruett,,D,101345,34.94%
+WI,8,FALSE,,Scattered,,W(D),,
+WI,8,FALSE,,,Party Votes:,D,,
+WI,8,FALSE,,Scattered,,W(CON),,
+WI,8,FALSE,,,Party Votes:,CON,,
+WI,8,FALSE,,Scattered,,W,150,0.05%
+WI,8,FALSE,,,District Votes:,,290048,
+WI,,FALSE,,,,,,
+WI,H,FALSE,,,Total State Votes:,,2355580,
+,,FALSE,,,,,,
+WY,0,TRUE,Cynthia,Lummis,,R,113038,68.47%
+WY,0,FALSE,Jason Adam,Senteney,,R,,
+WY,0,FALSE,,Scattered,,W(R),,
+WY,0,FALSE,,,Party Votes:,R,,
+WY,0,FALSE,Richard,Grayson,,D,37803,22.9%
+WY,0,FALSE,,Scattered,,W(D),,
+WY,0,FALSE,,,Party Votes:,D,,
+WY,0,FALSE,Richard,Brubaker,,LIB,7112,4.31%
+WY,0,FALSE,Daniel Clyde,Cummings,,CON,6749,4.09%
+WY,0,FALSE,,Scattered,,W,398,0.24%
+WY,0,FALSE,,,District Votes:,,165100,
+WY,H,FALSE,,,Total State Votes:,,165100,
+WY,,FALSE,,,,,,

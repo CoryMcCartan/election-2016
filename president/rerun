@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-rm -f output/history.csv
-touch output/history.csv
+rm -f output/president-history.csv
+touch output/president-history.csv
 
 for day in {5..31}
 do

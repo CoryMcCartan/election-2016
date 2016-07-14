@@ -134,10 +134,10 @@ function predict(iterations, history) {
 }
 
 function output(data, addToHistory) {
-    csv.writeToPath("output/states.csv", data.stateData, {headers: true});
-    csv.writeToPath("output/electors.csv", data.outcomes, {headers: true});
+    csv.writeToPath("output/president-states.csv", data.stateData, {headers: true});
+    csv.writeToPath("output/president-electors.csv", data.outcomes, {headers: true});
     if (addToHistory) 
-        csv.writeToPath("output/history.csv", data.history, {headers: true});
+        csv.writeToPath("output/president-history.csv", data.history, {headers: true});
 
     let current = data.history[0];
     let percent = current.probability * 100;
@@ -150,7 +150,7 @@ function loadHistory() {
    let history = [];
 
    return new Promise((resolve, reject) => {
-       csv.fromPath("output/history.csv", {headers: true})
+       csv.fromPath("output/president-history.csv", {headers: true})
        .on("data", d => history.push(d))
        .on("end", () => {
            resolve(history);

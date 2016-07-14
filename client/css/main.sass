@@ -1,3 +1,6 @@
+---
+---
+
 $font-stack: "Roboto Mono", "Courier", monospace
 $font-weight: 300
 
@@ -26,10 +29,32 @@ nav
     background: white
     z-index: 100
 
-nav > h1
-    display: inline-block
-    font-size: 1.2em
-    margin: 0
+    h1
+        display: inline-block
+        font-size: 1.2em
+        margin: 0
+
+    ul
+        list-style: none
+        display: inline
+
+    li
+        display: inline
+        font-size: 90%
+
+    li:not(:first-child):before
+        content: "|"
+        color: $grey
+
+    a
+        transition: color 200ms
+        text-decoration: none
+        color: $darkgrey
+
+    a.inactive
+        color: $grey
+    a.inactive:hover
+        color: $darkgrey
 
 img.flag-icon
     height: 1.2em
@@ -128,10 +153,9 @@ footer
 section
     margin-top: 1.5em
     padding: 1.0em
+    position: relative
 section:first-of-type
     margin-top: -6%
-main > section + section
-    position: relative
 main > section + section:before
     content: ""
     background-color: $lightgrey
@@ -168,7 +192,7 @@ table#scenario
     right: 2em
     color: $darkgrey
 
-    #ht-electors
+    #ht-electors, #ht-seats
         font-weight: bold
     #ht-percent
         font-size: 0.9em

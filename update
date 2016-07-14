@@ -3,6 +3,9 @@
 cd `dirname $_`/president
 ./run 5e5 --verbose
 cd ..
+cd `dirname $_`/house
+./run 1e5 --verbose
+cd ..
 git add .
 git commit -m 'MODEL RUN'
 ./deploy

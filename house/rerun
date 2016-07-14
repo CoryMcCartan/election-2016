@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+rm -f output/house-history.csv
+touch output/house-history.csv
+
+for day in {1..30}
+do
+    echo JUNE $day
+    ./run 1e4 --date 6/$day/2016
+done
+
+for day in {1..13}
+do
+    echo JULY $day
+    ./run 3e4 --date 7/$day/2016
+done
+
+cd ..
+git add .
+git commit -m 're-run of model'
+./update
+
+cd house

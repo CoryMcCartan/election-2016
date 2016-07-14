@@ -2,24 +2,11 @@ title: 2016 Election Predictions
 description: > 
     Statistical predictions for the 2016 U.S. general election.
 url: "https://corymccartan.github.io/election-2016/" 
+baseurl: "/election-2016"
 
 sass:
     style: compressed
 exclude: 
     - test
     - Gemfile
-
-gems:
-    - jekyll-assets
-
-assets:
-    compress:
-        css: sass
-        js: false
-
-    prefix: "build"
-
-    sources:
-        - js/
-        - css/
 

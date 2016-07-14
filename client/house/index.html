@@ -1,0 +1,91 @@
+---
+title: House
+layout: default
+---
+
+<time></time>
+
+<section>
+    <!-- SPACER -->
+    <div style="height: 3em"></div>
+
+    <figure id="histogram" class="graphic" aria-label="Histogram of Possible Outcomes">
+        <div id="hist-tooltip" class="tooltip">
+            <span id="ht-seats"></span> <br />
+            <span id="ht-percent"></span> 
+        </div>
+    </figure>
+
+    <summary id="overall">
+        <table>
+            <tr>
+                <td> <h1 class="dem" id="demEV"></h1> </td>
+                <td> <h1 class="gop" id="gopEV"></h1> </td>
+            </tr>
+            <tr>
+                <td> <h4>Democrats</h4> </td>
+                <td> <h4>Republicans</h4> </td>
+            </tr>
+        </table>
+        <span id="prediction"></span> 
+    </summary>
+</section>
+
+<section>
+    <h2>History</h2>
+    <summary>
+        The output of the model over time.  The blue line represents
+        Clinton&rsquo;s chances of winning, and the red line Trump&rsquo;s.
+    </summary>
+
+    <figure id="history" class="graphic" aria-label="Probabilities Over Time"></figure>
+</section>
+
+<section>
+    <h2>Possible Scenarios</h2>
+    <summary>
+        A list of possible scenarios, and the chance of each occurring.
+    </summary>
+
+    <table id="scenario" aria-label="Possible Scenarios">
+        <thead>
+        <tr>
+            <th>Scenario</td>
+            <th>Probability</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Democrats win popular vote</td>
+            <td id="scn-dem-pop"></td>
+        </tr>
+        <tr>
+            <td>Republicans win popular vote</td>
+            <td id="scn-gop-pop"></td>
+        </tr>
+        <tr>
+            <td>Democrats win popular vote but lose House</td>
+            <td id="scn-dem-mismatch"></td>
+        </tr>
+        <tr>
+            <td>Republicans win popular vote but lose House</td>
+            <td id="scn-gop-mismatch"></td>
+        </tr>
+        <tr>
+            <td>Democratic landslide (>10% popular vote margin)</td>
+            <td id="scn-dem-landslide"></td>
+        </tr>
+        <tr>
+            <td>Republican landslide (>10% popular vote margin)</td>
+            <td id="scn-gop-landslide"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<script src="{{site.baseurl}}/js/lib/d3.v3.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/queue.v1.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/lib.min.js"></script>
+<script src="{{site.baseurl}}/js/house.js"></script>
+<script src="{{site.baseurl}}/js/states.js"></script>

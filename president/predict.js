@@ -3,8 +3,8 @@ let loader = require("./loader.js")
 let LOG;
 
 const one_day = 1000 * 60 * 60 * 24;
-let NOW = Date.now();
 let untilElection;
+let NOW = Date.now();
 let date_multiplier;
 
 let data2012;

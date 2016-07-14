@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mkdir -p output/
+node main.js $@
+mkdir -p ../client/data/
+rm -f ../client/data/house-*
+cp output/* ../client/data/

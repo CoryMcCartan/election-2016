@@ -1,0 +1,13 @@
+{
+  "name": "election-2016-house",
+  "version": "1.0.0",
+  "description": "2016 U.S. House Predictions",
+  "main": "main.js",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^2.0.0",
+    "gaussian": "^1.1.0",
+    "minimist": "^1.2.0",
+    "node-fetch": "^1.5.1"
+  }
+}

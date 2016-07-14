@@ -1,0 +1,127 @@
+---
+title: President
+layout: default
+---
+
+<time></time>
+
+<section>
+    <figure id="map" class="graphic" aria-label="Electoral College Map"></figure>
+    <div id="map-tooltip" class="tooltip">
+        <span id="mt-name"></span><br />
+        Chance of winning:
+        <table>
+            <tr>
+                <td>Hillary Clinton &nbsp;&nbsp;</td>
+                <td id="mt-dem"></td>
+            </tr>
+            <tr>
+                <td>Donald Trump &nbsp;</td>
+                <td id="mt-gop"></td>
+            </tr>
+        </table>
+    </div>
+
+    <summary id="overall">
+        <table>
+            <tr>
+                <td> <h1 class="dem" id="demEV"></h1> </td>
+                <td> <h1 class="gop" id="gopEV"></h1> </td>
+            </tr>
+            <tr>
+                <td> <h4>Hillary Clinton</h4> </td>
+                <td> <h4>Donald Trump</h4> </td>
+            </tr>
+        </table>
+        <span id="prediction"></span> 
+    </summary>
+
+    <div class="graphic-controls">
+        <button id="callStates">Call Each State</button>
+        <button id="showProbs" hidden>Show Probabilities</button>
+    </div><br />
+</section>
+
+<section>
+    <h2>Distribution of Outcomes</h2>
+    <summary>
+        The cumulative result of all of the simulated elections.
+        The number of Democratic electors is shown.  The blue bars are wins for
+        Clinton, and the red ones are wins for Trump.
+    </summary>
+
+    <figure id="histogram" class="graphic" aria-label="Histogram of Possible Outcomes">
+        <div id="hist-tooltip" class="tooltip">
+            <span id="ht-electors"></span> <br />
+            <span id="ht-percent"></span> 
+        </div>
+    </figure>
+</section>
+
+<section>
+    <h2>History</h2>
+    <summary>
+        The output of the model over time.  The blue line represents
+        Clinton&rsquo;s chances of winning, and the red line Trump&rsquo;s.
+    </summary>
+
+    <figure id="history" class="graphic" aria-label="Probabilities Over Time"></figure>
+</section>
+
+<section>
+    <h2>Possible Scenarios</h2>
+    <summary>
+        A list of possible scenarios, and the chance of each occurring.
+    </summary>
+
+    <table id="scenario" aria-label="Possible Scenarios">
+        <thead>
+        <tr>
+            <th>Scenario</td>
+            <th>Probability</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Electoral College tie</td>
+            <td id="scn-tie"></td>
+        </tr>
+        <tr>
+            <td>Election-deciding recount</td>
+            <td id="scn-recount"></td>
+        </tr>
+        <tr>
+            <td>Clinton wins popular vote</td>
+            <td id="scn-dem-pop"></td>
+        </tr>
+        <tr>
+            <td>Trump wins popular vote</td>
+            <td id="scn-gop-pop"></td>
+        </tr>
+        <tr>
+            <td>Clinton wins popular vote but loses Electoral College</td>
+            <td id="scn-dem-pop-ec"></td>
+        </tr>
+        <tr>
+            <td>Trump wins popular vote but loses Electoral College</td>
+            <td id="scn-gop-pop-ec"></td>
+        </tr>
+        <tr>
+            <td>Clinton landslide (>10% popular vote margin)</td>
+            <td id="scn-dem-landslide"></td>
+        </tr>
+        <tr>
+            <td>Trump landslide (>10% popular vote margin)</td>
+            <td id="scn-gop-landslide"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<script src="{{site.baseurl}}/js/lib/d3.v3.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/queue.v1.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/topojson.v0.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/lib.min.js"></script>
+<script src="{{site.baseurl}}/js/president.js"></script>
+<script src="{{site.baseurl}}/js/states.js"></script>
