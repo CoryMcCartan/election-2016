@@ -17,7 +17,7 @@ done
 
 cd ..
 git add .
-git commit -m 're-run of model'
+git commit -m 're-run of house model'
 ./update
 
 cd house
