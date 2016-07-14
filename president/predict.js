@@ -87,6 +87,7 @@ function processPolls(polls) {
            && !name.includes("ge")) return false;
         if (name.includes("primary")) return false;
         if (name.includes("caucus")) return false;
+        if (!q.subpopulations.length) return false;
         let responses = q.subpopulations[0].responses;
         if (responses.find(r => r.choice === "Bloomberg")) return false;
         if (!responses.find(r => r.choice === "Clinton")) return false;
