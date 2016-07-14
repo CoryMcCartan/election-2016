@@ -98,10 +98,12 @@ function processPolls(polls) {
     const default_moe = 5.0; // MAGIC NUMBER
     const default_n = 400; // MAGIC NUMBER
 
+    let i = 0;
     for (let poll of polls) {
         // data cleanup
         poll.date = new Date(poll.start_date);
         poll.partisan = poll.partisan.toLowerCase !== "nonpartisan";
+        poll.skip = new Date(poll.last_updated) > NOW;
         delete poll.affiliation;
         delete poll.last_updated;
         delete poll.end_date;
@@ -109,13 +111,18 @@ function processPolls(polls) {
         delete poll.pollster;
         delete poll.source;
         delete poll.id;
+        i++; 
+    }
 
+    i = 0;
+    for (let poll of polls) {
+        if (poll.skip) continue;
         // remove questions we don't care about
         let questions = poll.questions.filter(q => isPresidentialPoll(q));
         let question = questions[0];
         if (!question) {
             if (LOG) console.log("Deleted poll — no matching question.");
-            delete poll;
+            poll.skip =  true;
             continue;
         }
 
@@ -134,10 +141,10 @@ function processPolls(polls) {
         poll.state = question.state;
         if (!poll.state) {
             let questionName = question.name.toLowerCase();
-            for (let i = 0; i < 51; i++) {
-                let name = stateFromAbbr[abbrs[i]].toLowerCase(); 
+            for (let j = 0; j < 51; j++) {
+                let name = stateFromAbbr[abbrs[j]].toLowerCase(); 
                 if (questionName.includes(name + " ")) {
-                    poll.state = abbrs[i];
+                    poll.state = abbrs[j];
                     if (LOG) console.log(`NO STATE: ${questionName}\n${poll.state}\n`);
                     break;
                 }
@@ -151,7 +158,11 @@ function processPolls(polls) {
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
         poll.moe += (100 - (dem + gop)) * 0.18 * date_multiplier; // MAGIC NUMBER 
+
+        i++;
     }
+
+    return polls;
 }
 
 function weightPolls(polls) {
@@ -167,6 +178,7 @@ function weightPolls(polls) {
 
     let now = Math.min(Date.now(), NOW);
     for (let poll of polls) {
+        if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
         let factor = 10 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
@@ -178,7 +190,7 @@ function weightPolls(polls) {
         if (pollsters.banned) {
             if (LOG) console.log("Deleted poll — pollster banned.");
             poll.weight = 0;
-            delete poll;
+            poll.skip = true;
             continue;
         }
         let pollsterRating = Math.exp(-pollsters.plusMinus);
@@ -316,7 +328,7 @@ function add2012Data(data2012, polls, avgs) {
             moe: (0.8 + 6*Math.abs(state.gap)) * moe_multiplier, // MAGIC NUMBER
             gap: state.gap + gapAdj / date_multiplier, 
             n: +state.totalVoters,
-            date: new Date(2012, 10, 08),
+            date: new Date(2012, 10, 8),
             weight,
         });
 
@@ -330,6 +342,7 @@ function trendAdjustment(polls, avgs) {
     let adj = Array(51).fill(0);
 
     for (let poll of polls) {
+        if (poll.skip) continue;
         if (poll.state === "US") continue;
         let index = abbrs.indexOf(poll.state);
         most_recent[index] = Math.max(most_recent[index], poll.date);
@@ -367,6 +380,7 @@ function calculateAverages(LOG, trendAdj = false) {
     let weights = Array(51).fill(0);
 
     for (let poll of polls) {
+        if (poll.skip) continue;
         if (poll.state === "US") {
             US_average += poll.gap * poll.weight;
             let now = Math.min(Date.now(), NOW);
@@ -404,6 +418,7 @@ function calculateAverages(LOG, trendAdj = false) {
 
     // calculate var in means
     for (let poll of polls) {
+        if (poll.skip) continue;
         if (poll.state === "US") {
             let weightAdj = Math.sqrt(poll.weight / (us_weight_old + us_weight_recent));
             US_mean_var += Math.pow(poll.gap - US_average, 2) * weightAdj / n_us_polls;

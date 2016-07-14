@@ -111,9 +111,11 @@ function processPolls(polls) {
     const default_n = 400; // MAGIC NUMBER
 
     for (let poll of polls) {
+        if (poll.skip) continue;
         // data cleanup
         poll.date = new Date(poll.start_date);
         poll.partisan = poll.partisan.toLowerCase !== "nonpartisan";
+        poll.skip = new Date(poll.last_updated) > NOW;
         delete poll.affiliation;
         delete poll.last_updated;
         delete poll.end_date;
@@ -127,7 +129,7 @@ function processPolls(polls) {
         let question = questions[0];
         if (!question) {
             if (LOG) console.log("Deleted poll — no matching question.");
-            delete poll;
+            poll.skip = true;
             continue;
         }
 
@@ -167,6 +169,7 @@ function weightPolls(polls) {
 
     let now = Math.min(Date.now(), NOW);
     for (let poll of polls) {
+        if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
         let factor = 14 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
