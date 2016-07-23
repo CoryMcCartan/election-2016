@@ -47,8 +47,10 @@ function showOverall(history, prediction = false) {
 
     let electors = prediction ? current.calledElectors : current.avgElectors;
     let winner = electors > 270 ? DEM : GOP;
-    $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
-    $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+    $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%";
+    $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%";
+    $("#probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
+    $("#probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -59,7 +61,7 @@ function showOverall(history, prediction = false) {
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
-    $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
+    $("summary#overall").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
 
     let oneDay = 24 * 60 * 60 * 1000;
     let last = history.find(e => current.date - e.date > oneDay);
@@ -67,26 +69,28 @@ function showOverall(history, prediction = false) {
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
 
-        $("#prediction").innerHTML += 
+        $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.abs(delta).toFixed(1)}% from yesterday.`
     }
 
     let demElectors = electors.toFixed(0);
     let gopElectors = (538 - electors).toFixed(0);
-    $("#prediction").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
+    $("summary#overall").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
         `electors to Trump’s ${gopElectors}.`
 
     $("#showProbs").addEventListener("click", function() {
-        $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
-        $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+        $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
+        $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+        $("main > h1").innerHTML = "Chance of winning";
 
         this.hidden = true;
         $("#callStates").hidden = false;
     });
     $("#callStates").addEventListener("click", function() {
-        $("#demEV").innerHTML = current.calledElectors.toFixed(0);
-        $("#gopEV").innerHTML = (538 - current.calledElectors).toFixed(0);
+        $("#prob-dem").innerHTML = current.calledElectors.toFixed(0);
+        $("#prob-gop").innerHTML = (538 - current.calledElectors).toFixed(0);
+        $("main > h1").innerHTML = "Called electors";
 
         this.hidden = true;
         $("#showProbs").hidden = false;

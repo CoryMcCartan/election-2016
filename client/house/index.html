@@ -3,32 +3,33 @@ title: House
 layout: default
 ---
 
-<time></time>
+<h1>Chance of winning control</h1>
+<div id="probability-bar">
+    <span class="dem">
+        <span class="name">Democrats</span>
+        <span id="prob-dem"></span>
+    </span>
+    <span class="gop">
+        <span class="name">Republicans</span>
+        <span id="prob-gop"></span>
+    </span>
+    <time></time>
+</div>
 
 <section>
     <!-- SPACER -->
     <div style="height: 3em"></div>
 
+    <summary id="overall">
+    </summary>
+
+    <br>
     <figure id="histogram" class="graphic" aria-label="Histogram of Possible Outcomes">
         <div id="hist-tooltip" class="tooltip">
             <span id="ht-seats"></span> <br />
             <span id="ht-percent"></span> 
         </div>
     </figure>
-
-    <summary id="overall">
-        <table>
-            <tr>
-                <td> <h1 class="dem" id="demEV"></h1> </td>
-                <td> <h1 class="gop" id="gopEV"></h1> </td>
-            </tr>
-            <tr>
-                <td> <h4>Democrats</h4> </td>
-                <td> <h4>Republicans</h4> </td>
-            </tr>
-        </table>
-        <span id="prediction"></span> 
-    </summary>
 </section>
 
 <section>

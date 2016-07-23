@@ -43,8 +43,10 @@ function showOverall(history, prediction = false) {
 
     let seats = current.mean;
     let winner = seats > 218 ? DEM : GOP;
-    $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
-    $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+    $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
+    $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+    $("#probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
+    $("#probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
     let name = winner === DEM ? "Democrats" : "Republicans";
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -55,7 +57,7 @@ function showOverall(history, prediction = false) {
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
-    $("#prediction").innerHTML = `The ${name} have ${article} ${prob}% chance of controlling the House.`
+    $("summary#overall").innerHTML = `The ${name} have ${article} ${prob}% chance of controlling the House.`
 
     let oneDay = 24 * 60 * 60 * 1000;
     let last = history.find(e => current.date - e.date > oneDay);
@@ -63,14 +65,14 @@ function showOverall(history, prediction = false) {
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
 
-        $("#prediction").innerHTML += 
+        $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.abs(delta).toFixed(1)}% from yesterday.`
     }
 
     let demSeats = seats.toFixed(0);
     let gopSeats = (435 - seats).toFixed(0);
-    $("#prediction").innerHTML += `<br />The Democrats are expected to have ${demSeats} ` +
+    $("summary#overall").innerHTML += `<br />The Democrats are expected to have ${demSeats} ` +
         `seats to the Republicans’ ${gopSeats}.`
 
     // scenarios
