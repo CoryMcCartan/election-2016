@@ -44,8 +44,10 @@ function showOverall(history, prediction = false) {
 
     let electors = prediction ? current.calledElectors : current.avgElectors;
     let winner = electors > 270 ? DEM : GOP;
-    $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
-    $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+    $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%";
+    $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%";
+    $(".probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
+    $(".probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
     let name = CANDIDATES[winner];
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -56,7 +58,7 @@ function showOverall(history, prediction = false) {
     let article = "a";
     if (prob[0] === "8" || prob === "11" || prob === "18")
         article += "n"; 
-    $("#prediction").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
+    $("summary#overall").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
 
     let oneDay = 24 * 60 * 60 * 1000;
     let last = history.find(e => current.date - e.date > oneDay);
@@ -64,26 +66,28 @@ function showOverall(history, prediction = false) {
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
 
-        $("#prediction").innerHTML += 
+        $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.abs(delta).toFixed(1)}% from yesterday.`
     }
 
     let demElectors = electors.toFixed(0);
     let gopElectors = (538 - electors).toFixed(0);
-    $("#prediction").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
+    $("summary#overall").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
         `electors to Trump’s ${gopElectors}.`
 
     $("#showProbs").addEventListener("click", function() {
-        $("#demEV").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
-        $("#gopEV").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+        $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
+        $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
+        $("main > h1").innerHTML = "Chance of winning";
 
         this.hidden = true;
         $("#callStates").hidden = false;
     });
     $("#callStates").addEventListener("click", function() {
-        $("#demEV").innerHTML = current.calledElectors.toFixed(0);
-        $("#gopEV").innerHTML = (538 - current.calledElectors).toFixed(0);
+        $("#prob-dem").innerHTML = current.calledElectors.toFixed(0);
+        $("#prob-gop").innerHTML = (538 - current.calledElectors).toFixed(0);
+        $("main > h1").innerHTML = "Called electors";
 
         this.hidden = true;
         $("#showProbs").hidden = false;
@@ -174,7 +178,7 @@ function makeMap(showProbabilities = true) {
                 tooltip
                     .style("opacity", 1.0)
                     .style("left", d3.event.pageX - 70 + "px")
-                    .style("top", d3.event.pageY + 30 + "px");
+                    .style("top", d3.event.pageY - 170 + "px");
 
                 let id = el.__data__.id;
                 let stateElectors = electors[ abbrFromState[id] ];
@@ -199,7 +203,7 @@ function makeMap(showProbabilities = true) {
 
                 tooltip
                     .style("left", d3.event.pageX - 70 + "px")
-                    .style("top", d3.event.pageY + 30 + "px");
+                    .style("top", d3.event.pageY - 170 + "px");
             })
             .on("mouseout", function() {
                 let el = d3.event.target;
@@ -414,7 +418,7 @@ function makeHistoryLine(history) {
     const margin = {L: 40, R: 40, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = history[0].date;
+    let endDate = new Date("11/8/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -437,8 +441,7 @@ function makeHistoryLine(history) {
         .ticks(smallScreen() ? 5 : 10, "%");
 
     let demLine = d3.svg.line()
-        .x(d => x(d.date))
-        .y(d => y(d.prob));
+        .x(d => x(d.date)) .y(d => y(d.prob));
 
     let gopLine = d3.svg.line()
         .x(d => x(d.date))
@@ -471,25 +474,27 @@ function makeHistoryLine(history) {
 
     // labels
     let prob = history[0].prob;
+    let circleX = x(history[0].date);
+    let labelX = circleX + 5;
     let demEndLabel = chart.append("text")
         .attr("class", "dem end-label")
-        .attr("x", width - 30)
+        .attr("x", labelX)
         .attr("y", y(prob) + 5)
-        .text((100 * prob).toFixed(0) + "%");
+        .text((100 * prob).toFixed(0) + "% Clinton");
     let gopEndLabel = chart.append("text")
         .attr("class", "gop end-label")
-        .attr("x", width - 30)
+        .attr("x", labelX)
         .attr("y", y(1 - prob) + 5)
-        .text((100 - 100 * prob).toFixed(0) + "%");
+        .text((100 - 100 * prob).toFixed(0) + "% Trump");
 
     let demCircle = chart.append("circle")
         .attr("class", "dem end-circle")
-        .attr("cx", x(endDate))
+        .attr("cx", circleX)
         .attr("cy", y(prob))
         .attr("r", 3);
     let gopCircle = chart.append("circle")
         .attr("class", "gop end-circle")
-        .attr("cx", x(endDate))
+        .attr("cx", circleX)
         .attr("cy", y(1 - prob))
         .attr("r", 3);
 
@@ -517,7 +522,7 @@ function makeHistoryLine(history) {
             let prob;
             if (i < 0 || i >= history.length - 1) {
                 prob = history[0].prob;
-                e_x = x(endDate);
+                e_x = circleX;
             } else {
                 let gap = history[i].date - history[i+1].date;
                 let weight = (date - history[i+1].date) / gap;
@@ -531,19 +536,19 @@ function makeHistoryLine(history) {
                 .attr("cx", e_x)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "%");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+            demEndLabel.text((100 * prob).toFixed(0) + "% Clinton");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Trump");
         })
         .on("mouseout", function() {
             demCircle
-                .attr("cx", x(endDate))
+                .attr("cx", circleX)
                 .attr("cy", y(prob));
             gopCircle
-                .attr("cx", x(endDate))
+                .attr("cx", circleX)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "%");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+            demEndLabel.text((100 * prob).toFixed(0) + "% Clinton");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Trump");
         });
 
     el.style.opacity = 1.0;

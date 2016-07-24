@@ -44,13 +44,26 @@
                     </li>
                 </ul>
             </h1>
-            <a href="https://github.com/CoryMcCartan/election-2016" target="_blank" id="github">View Code</a>
         </nav>
 
         <main>
-            <time></time>
+            <h1>Chance of winning the presidency</h1>
+<div class="probability-bar">
+    <span class="dem">
+        <span class="name">Clinton</span>
+        <span id="prob-dem"></span>
+    </span>
+    <span class="gop">
+        <span class="name">Trump</span>
+        <span id="prob-gop"></span>
+    </span>
+    <time></time>
+</div>
+<div class="bar-spacer"></div>
 
 <section>
+    <summary id="overall"></summary>
+
     <figure id="map" class="graphic" aria-label="Electoral College Map"></figure>
     <div id="map-tooltip" class="tooltip">
         <span id="mt-name"></span><br />
@@ -66,20 +79,6 @@
             </tr>
         </table>
     </div>
-
-    <summary id="overall">
-        <table>
-            <tr>
-                <td> <h1 class="dem" id="demEV"></h1> </td>
-                <td> <h1 class="gop" id="gopEV"></h1> </td>
-            </tr>
-            <tr>
-                <td> <h4>Hillary Clinton</h4> </td>
-                <td> <h4>Donald Trump</h4> </td>
-            </tr>
-        </table>
-        <span id="prediction"></span> 
-    </summary>
 
     <div class="graphic-controls">
         <button id="callStates">Call Each State</button>
@@ -175,6 +174,7 @@
 
         <footer>
             &copy; 2016.  All Rights Reserved.
+            <a href="https://github.com/CoryMcCartan/election-2016" target="_blank" id="github">View Code</a>.
         </footer>
     </body>
 </html>
