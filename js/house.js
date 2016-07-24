@@ -24,6 +24,8 @@ function main() {
         mode: +d.mode,
         prob: +d.probability,
         iterations: +d.iterations,
+        demGains: +d.demGains,
+        gopGains: +d.demLosses,
         demPop: +d.demPopWins,
         gopPop: +d.gopPopWins,
         demMismatch: +d.demMismatch,
@@ -76,6 +78,8 @@ function showOverall(history, prediction = false) {
         `seats to the Republicans’ ${gopSeats}.`
 
     // scenarios
+    $("td#scn-dem-gain").innerHTML = (100 * current.demGains).toFixed(1) + "%";
+    $("td#scn-gop-gain").innerHTML = (100 * current.gopGains).toFixed(1) + "%";
     $("td#scn-dem-pop").innerHTML = (100 * current.demPop).toFixed(1) + "%";
     $("td#scn-gop-pop").innerHTML = (100 * current.gopPop).toFixed(1) + "%";
     $("td#scn-dem-mismatch").innerHTML = (100 * current.demMismatch).toFixed(1) + "%";
@@ -410,8 +414,6 @@ function makeHistoryLine(history) {
     d3.select(window).on("resize.line", () => {
         let width = el.getBoundingClientRect().width;
         let height = width * chartRatio;
-        circleX = x(history[0].date);
-        labelX = circleX + 5;
 
         chart
             .attr("width", width)
@@ -419,6 +421,9 @@ function makeHistoryLine(history) {
 
         x.range([margin.L, width - margin.R]);
         y.range([height - margin.B, margin.T]);
+
+        circleX = x(history[0].date);
+        labelX = circleX + 5;
 
         xAxis.ticks(smallScreen() ? 4 : 7);
         yAxis.ticks(smallScreen() ? 5 : 10, "%");
