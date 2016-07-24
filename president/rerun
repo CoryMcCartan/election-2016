@@ -6,16 +6,16 @@ touch output/president-history.csv
 for day in {20..31}
 do
     echo MAY $day
-    ./run 1e5 --date 5/$day/2016
+    ./run 4e4 --date 5/$day/2016
 done
 
 for day in {1..30}
 do
     echo JUNE $day
-    ./run 1e5 --date 6/$day/2016
+    ./run 5e4 --date 6/$day/2016
 done
 
-for day in {1..13}
+for day in {1..22}
 do
     echo JULY $day
     ./run 1e5 --date 7/$day/2016
@@ -23,7 +23,7 @@ done
 
 cd ..
 git add .
-git commit -m 're-run of model'
-./update
+git commit -m 're-run of presidential model'
+#./update
 
 cd president

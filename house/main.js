@@ -173,7 +173,7 @@ function weightPolls(polls) {
         if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
-        let factor = 14 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        let factor = 20 * date_multiplier; // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
@@ -312,7 +312,7 @@ function calculateAverages(data2014, polls) {
     let mean_var = polls.reduce((p, c) => p + Math.pow(c.gap - average, 2) * c.weight, 0);
     mean_var /= weights;
     variance += mean_var;
-    variance *= date_multiplier * 1.5; // MAGIC NUMBER
+    variance *= date_multiplier * 1.6; // MAGIC NUMBER
 
     let shift = average - gap2014;
 
