@@ -3,7 +3,7 @@
 rm -f output/president-history.csv
 touch output/president-history.csv
 
-for day in {5..31}
+for day in {20..31}
 do
     echo MAY $day
     ./run 1e5 --date 5/$day/2016

@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-# rm -f output/house-history.csv
-# touch output/house-history.csv
-# 
-# for day in {1..30}
-# do
-#     echo JUNE $day
-#     ./run 5e4 --date 6/$day/2016
-# done
-./run 5e4 --date 6/30/2016
+rm -f output/house-history.csv
+touch output/house-history.csv
+
+for day in {1..30}
+do
+    echo JUNE $day
+    ./run 5e4 --date 6/$day/2016
+done
 
 for day in {1..13}
 do
