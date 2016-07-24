@@ -449,7 +449,7 @@ function output(data, addToHistory) {
     let percent = current.probability * 100;
     console.log("Wrote data to output folder.");
     console.log(`Democrats have a ${percent.toFixed(2)}% chance of winning control.`);
-    console.log(`Expected Democratic Seats: ${current.mean.toFixed(0)}.`);
+    console.log(`Expected Democratic Change: ${current.mean.toFixed(0)} seats.`);
 }
 
 function loadHistory() {
