@@ -177,8 +177,8 @@ function makeMap(showProbabilities = true) {
 
                 tooltip
                     .style("opacity", 1.0)
-                    .style("left", d3.event.pageX - 70 + "px")
-                    .style("top", d3.event.pageY - 170 + "px");
+                    .style("left", d3.event.pageX - 80 + "px")
+                    .style("top", d3.event.pageY + 30 + "px");
 
                 let id = el.__data__.id;
                 let stateElectors = electors[ abbrFromState[id] ];
@@ -202,8 +202,8 @@ function makeMap(showProbabilities = true) {
                 if (d3.event.target.classList[0] !== "state") return;
 
                 tooltip
-                    .style("left", d3.event.pageX - 70 + "px")
-                    .style("top", d3.event.pageY - 170 + "px");
+                    .style("left", d3.event.pageX - 80 + "px")
+                    .style("top", d3.event.pageY + 30 + "px");
             })
             .on("mouseout", function() {
                 let el = d3.event.target;

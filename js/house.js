@@ -137,7 +137,7 @@ function makeHistogram(stats) {
         yAxis
             .scale(y)
             .orient("left")
-            .ticks(smallScreen() ? 4 : 6, "%");
+            .ticks(smallScreen() ? 4 : 7, "%");
 
         chart
             .attr("width", width)
@@ -225,7 +225,7 @@ function makeHistogram(stats) {
         let values = x.domain().filter((d, i) => !(i % ticks));
         values.splice(values.findIndex(v => v > 0), 0, 0); // force 0 to be there
         xAxis.tickValues(values)
-        yAxis.ticks(smallScreen() ? 4 : 6, "%");
+        yAxis.ticks(smallScreen() ? 4 : 7, "%");
 
         chart.attr("width", width);
         chart.attr("height", height);
