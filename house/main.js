@@ -346,6 +346,7 @@ function predict(averages, districts, iterations, history) {
     }));
 
     let demWins = 0;
+    let demGains = 0;
     let demPopWins = 0;
     let demMismatch = 0;
     let gopMismatch = 0;
@@ -398,6 +399,9 @@ function predict(averages, districts, iterations, history) {
             demPopWins += one;
             demMismatch += one;
         }
+
+        if (seats > demSeats)
+            demGains += one;
     }
 
     let mean = outcomes.reduce((p, c, i) => p + c * i);
@@ -419,6 +423,8 @@ function predict(averages, districts, iterations, history) {
         gopMismatch,
         demLandslide,
         gopLandslide,
+        demGains,
+        demLosses: 1 - demGains - outcomes[demSeats],
     });
 
     outcomes = outcomes.map((c, i) => ({
