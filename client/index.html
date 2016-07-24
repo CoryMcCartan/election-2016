@@ -3,24 +3,52 @@ title: Home
 layout: default
 ---
 
-<style>
-    section:first-of-type {
-        margin: -2% 2%;
-    }
-    a {
-        color: #555;
-    }
-</style>
+<h1>2016 General Election Predictions</h1>
 
-<section>
-    <h1>2016 General Election Predictions</h1>
+<p style="margin: 0.5em;">
+    Using statistical models on polling data to estimate outcomes for the 2016 
+    general election.
+</p>
 
-    <a href="president/">
-        <h2>President</h2>
-    </a>
-    <a href="house/">
-        <h2>House</h2>
-    </a>
-</section>
+<a href="president/">
+    <h1>President</h1>
+</a>
+<a href="president/">
+    <div class="probability-bar" id="bar-pres">
+        <span class="dem">
+            <span class="name">Clinton</span>
+            <span id="prob-dem-pres"></span>
+        </span>
+        <span class="gop">
+            <span class="name">Trump</span>
+            <span id="prob-gop-pres"></span>
+        </span>
+    </div>
+    <div class="bar-spacer"></div>
+</a>
 
+<br>
+
+<a href="house/">
+    <h1>House</h1>
+</a>
+<a href="house/">
+    <div class="probability-bar" id="bar-house">
+        <span class="dem">
+            <span class="name">Democrats</span>
+            <span id="prob-dem-house"></span>
+        </span>
+        <span class="gop">
+            <span class="name">Republicans</span>
+            <span id="prob-gop-house"></span>
+        </span>
+    </div>
+    <div class="bar-spacer"></div>
+</a>
+
+<br>
+<br>
+
+<script src="{{site.baseurl}}/js/lib/d3.v3.min.js"></script>
+<script src="{{site.baseurl}}/js/lib/lib.min.js"></script>
 <script src="{{site.baseurl}}/js/main.js"></script>

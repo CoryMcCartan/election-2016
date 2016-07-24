@@ -12,6 +12,7 @@ let date_multiplier;
 
 let pollsters;
 
+const demSeats = 186;
 const gap2014 = 0.455 - 0.512;
 const turnout2014 = 78235240;
 const turnout2012 = 122346020;
@@ -402,6 +403,10 @@ function predict(averages, districts, iterations, history) {
     let mean = outcomes.reduce((p, c, i) => p + c * i);
     let mode = outcomes.reduce((p, c, i , a) => a[p] >= c ? p : i, 0);
 
+    // convert to +/- 
+    mean -= demSeats;
+    mode -= demSeats;
+
     history.unshift({
         date: date.getTime(),
         mean,
@@ -417,7 +422,7 @@ function predict(averages, districts, iterations, history) {
     });
 
     outcomes = outcomes.map((c, i) => ({
-        seats: i, 
+        seats: i - demSeats, 
         prob: c,
     }));
 

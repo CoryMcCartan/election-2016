@@ -17,6 +17,7 @@ function * main() {
     LOG = !!argv.v || !!argv.verbose;
     let nowCast = !!argv.now
     date = argv.date ? new Date(argv.date + " 00:00") : new Date();
+    if (nowCast) date = new Date("11/8/2016 00:00");
 
     yield* predictor.init(LOG, nowCast, date);
 

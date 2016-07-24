@@ -4,7 +4,7 @@ layout: default
 ---
 
 <h1>Chance of winning the presidency</h1>
-<div id="probability-bar">
+<div class="probability-bar">
     <span class="dem">
         <span class="name">Clinton</span>
         <span id="prob-dem"></span>
@@ -15,8 +15,11 @@ layout: default
     </span>
     <time></time>
 </div>
+<div class="bar-spacer"></div>
 
 <section>
+    <summary id="overall"></summary>
+
     <figure id="map" class="graphic" aria-label="Electoral College Map"></figure>
     <div id="map-tooltip" class="tooltip">
         <span id="mt-name"></span><br />
@@ -32,9 +35,6 @@ layout: default
             </tr>
         </table>
     </div>
-
-    <summary id="overall">
-    </summary>
 
     <div class="graphic-controls">
         <button id="callStates">Call Each State</button>

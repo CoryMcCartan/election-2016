@@ -10,6 +10,8 @@
 "use strict";
 
 const DEM = 0, GOP = 1;
+
+const DEM_SEATS = 186;
  
 const RED = "#f66660";
 const LIGHT_RED = "#fff0e7";
@@ -41,12 +43,12 @@ function main() {
 function showOverall(history, prediction = false) {
     let current = history[0];
 
-    let seats = current.mean;
+    let seats = current.mean + DEM_SEATS;
     let winner = seats > 218 ? DEM : GOP;
     $("#prob-dem").innerHTML = Math.round(current.prob * 100).toFixed(0) + "%"
     $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
-    $("#probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
-    $("#probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
+    $(".probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
+    $(".probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
     let name = winner === DEM ? "Democrats" : "Republicans";
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -111,9 +113,13 @@ function makeHistogram(stats) {
         if (error) throw error;
 
         let minSeats = data.findIndex(d => d.prob > 0);
-        let maxSeats = stats.mode + data.slice(stats.mode).findIndex(d => d.prob == 0);
+        let mode = stats.mode + DEM_SEATS;
+        let maxSeats = mode + data.slice(mode).findIndex(d => d.prob == 0);
         data = data.slice(minSeats, maxSeats);
         let most = d3.max(data, d => d.prob)
+
+        minSeats -= DEM_SEATS;
+        maxSeats -= DEM_SEATS;
 
         x
             .domain(d3.range(minSeats - 2, maxSeats + 8))
@@ -123,10 +129,13 @@ function makeHistogram(stats) {
             .range([height - margin.B, margin.T]);
 
         let ticks = smallScreen() ? 54 : 30;
+        let values = x.domain().filter((d, i) => !(i % ticks));
+        values.splice(values.findIndex(v => v > 0), 0, 0); // force 0 to be there
 
         xAxis
             .scale(x)
-            .tickValues(x.domain().filter((d, i) => !(i % ticks)))
+            .tickValues(values)
+            .tickFormat(d3.format("+"))
             .orient("bottom");
         yAxis
             .scale(y)
@@ -145,7 +154,7 @@ function makeHistogram(stats) {
             .attr("class", "x label")
             .attr("y", 25)
             .attr("x", width - 10)
-            .text("Democratic Seats");
+            .text("Change in Democratic Seats");
 
         chart.append("g")
             .attr("class", "y axis")
@@ -164,7 +173,7 @@ function makeHistogram(stats) {
             .attr("fill", d => {
                 if (Math.abs(d.seats - stats.mean) < 0.5) return YELLOW;
                 else if (d.seats === stats.mode) return YELLOW;
-                else if (d.seats >= 218) return BLUE;
+                else if (d.seats + DEM_SEATS >= 218) return BLUE;
                 else return RED;
             })
             .attr("x", d => x(d.seats))
@@ -193,7 +202,7 @@ function makeHistogram(stats) {
 
                 el.style.opacity = 0.5;
                 tooltip.style.opacity = 1.0;
-                tSeats.innerHTML = el.__data__.seats;
+                tSeats.innerHTML = d3.format("+")(el.__data__.seats);
                 tPercent.innerHTML = (100 * el.__data__.prob).toFixed(2) + "%";
             })
             .on("mouseout", function() {
@@ -216,7 +225,9 @@ function makeHistogram(stats) {
 
 
         let ticks = smallScreen() ? 54 : 30;
-        xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
+        let values = x.domain().filter((d, i) => !(i % ticks));
+        values.splice(values.findIndex(v => v > 0), 0, 0); // force 0 to be there
+        xAxis.tickValues(values)
         yAxis.ticks(smallScreen() ? 4 : 6, "%");
 
         chart.attr("width", width);
@@ -247,7 +258,7 @@ function makeHistoryLine(history) {
     const margin = {L: 40, R: 40, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = history[0].date;
+    let endDate = new Date("11/8/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -304,25 +315,27 @@ function makeHistoryLine(history) {
 
     // labels
     let prob = history[0].prob;
+    let circleX = x(history[0].date);
+    let labelX = circleX + 5;
     let demEndLabel = chart.append("text")
         .attr("class", "dem end-label")
-        .attr("x", width - 30)
+        .attr("x", labelX)
         .attr("y", y(prob) + 5)
-        .text((100 * prob).toFixed(0) + "%");
+        .text((100 * prob).toFixed(0) + "% Democrats Democrats");
     let gopEndLabel = chart.append("text")
         .attr("class", "gop end-label")
-        .attr("x", width - 30)
+        .attr("x", labelX)
         .attr("y", y(1 - prob) + 5)
-        .text((100 - 100 * prob).toFixed(0) + "%");
+        .text((100 - 100 * prob).toFixed(0) + "% Republicans");
 
     let demCircle = chart.append("circle")
         .attr("class", "dem end-circle")
-        .attr("cx", x(endDate))
+        .attr("cx", circleX)
         .attr("cy", y(prob))
         .attr("r", 3);
     let gopCircle = chart.append("circle")
         .attr("class", "gop end-circle")
-        .attr("cx", x(endDate))
+        .attr("cx", circleX)
         .attr("cy", y(1 - prob))
         .attr("r", 3);
 
@@ -350,7 +363,7 @@ function makeHistoryLine(history) {
             let prob;
             if (i < 0 || i >= history.length - 1) {
                 prob = history[0].prob;
-                e_x = x(endDate);
+                e_x = circleX;
             } else {
                 let gap = history[i].date - history[i+1].date;
                 let weight = (date - history[i+1].date) / gap;
@@ -364,19 +377,19 @@ function makeHistoryLine(history) {
                 .attr("cx", e_x)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "%");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+            demEndLabel.text((100 * prob).toFixed(0) + "% Democrats");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Republicans");
         })
         .on("mouseout", function() {
             demCircle
-                .attr("cx", x(endDate))
+                .attr("cx", circleX)
                 .attr("cy", y(prob));
             gopCircle
-                .attr("cx", x(endDate))
+                .attr("cx", circleX)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "%");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "%");
+            demEndLabel.text((100 * prob).toFixed(0) + "% Democrats");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Republicans");
         });
 
     el.style.opacity = 1.0;

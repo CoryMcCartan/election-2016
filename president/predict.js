@@ -130,14 +130,19 @@ function processPolls(polls) {
             if (questions.length > 1) 
                 console.log(`EXTRA QUESTIONS: ${JSON.stringify(questions)}`);
             if (question.subpopulations.length > 1) 
-                console.log(`EXTRA SUBPOPULATIONS: ${question.subpopulations.slice(1).map(x => x.name).join(" | ")}`);
+                console.log(`EXTRA SUBPOPULATIONS: ${question.subpopulations.map(x => x.name).join(" | ")}`);
         }
 
         delete poll.questions;
         // remove extraneous data
-        poll.moe = question.subpopulations[0].margin_of_error || default_moe;
-        poll.type = question.subpopulations[0].name.toLowerCase();
-        poll.n = question.subpopulations[0].observations || default_n;
+        let index = question.subpopulations.findIndex(s => {
+            let type = s.name.toLowerCase();
+            return type === "registered voters" || type === "likely voters";
+        });
+        if (index < 0) index = 0;
+        poll.moe = question.subpopulations[index].margin_of_error || default_moe;
+        poll.type = question.subpopulations[index].name.toLowerCase();
+        poll.n = question.subpopulations[index].observations || default_n;
         poll.state = question.state;
         if (!poll.state) {
             let questionName = question.name.toLowerCase();
@@ -150,7 +155,7 @@ function processPolls(polls) {
                 }
             }
         }
-        let responses  = question.subpopulations[0].responses;
+        let responses  = question.subpopulations[index].responses;
 
         let dem = responses.find(r => r.choice.toLowerCase().includes("clinton")).value;
         let gop = responses.find(r => r.choice.toLowerCase().includes("trump")).value;
