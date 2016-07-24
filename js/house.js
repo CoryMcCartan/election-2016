@@ -63,6 +63,7 @@ function showOverall(history, prediction = false) {
     if (last) { // if the model is at least one day old
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
+        delta *= -(winner * 2) + 1; // invert direction if GOP win
 
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
