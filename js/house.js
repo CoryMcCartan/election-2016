@@ -102,6 +102,7 @@ function makeHistogram(stats) {
     let tPercent = $("#ht-percent");
 
     let modeLabel, meanLabel;
+    let minRounded, maxRounded;
 
     d3.csv("/election-2016/data/house-seats.csv?" + Math.random(), d => ({
         seats: +d.seats,
@@ -119,15 +120,19 @@ function makeHistogram(stats) {
         maxSeats -= DEM_SEATS;
 
         x
-            .domain(d3.range(minSeats - 2, maxSeats + 8))
+            .domain(d3.range(minSeats - 2, maxSeats + 2))
             .rangeBands([margin.L, width - margin.R], smallScreen() ? -0.1 : -0.06);
         y
             .domain([0, most]) 
             .range([height - margin.B, margin.T]);
 
-        let ticks = smallScreen() ? 54 : 30;
-        let values = x.domain().filter((d, i) => !(i % ticks));
-        values.splice(values.findIndex(v => v > 0), 0, 0); // force 0 to be there
+        let values;
+        minRounded = Math.ceil(minSeats / 15) * 15;
+        maxRounded = Math.floor(maxSeats / 15) * 15;
+        if (smallScreen())
+            values = d3.range(minRounded, maxRounded, 30);
+        else
+            values = d3.range(minRounded, maxRounded, 15);
 
         xAxis
             .scale(x)
@@ -221,9 +226,11 @@ function makeHistogram(stats) {
         y.range([height - margin.B, margin.T]);
 
 
-        let ticks = smallScreen() ? 54 : 30;
-        let values = x.domain().filter((d, i) => !(i % ticks));
-        values.splice(values.findIndex(v => v > 0), 0, 0); // force 0 to be there
+        let values;
+        if (smallScreen())
+            values = d3.range(minRounded, maxRounded, 30);
+        else
+            values = d3.range(minRounded, maxRounded, 15);
         xAxis.tickValues(values)
         yAxis.ticks(smallScreen() ? 4 : 7, "%");
 
@@ -308,8 +315,7 @@ function makeHistoryLine(history) {
         .attr("class", "y label")
         .attr("y", 6)
         .attr("x", -5)
-        .text("Probability");
-
+        .text("Probability"); 
     let electionDay = new Date("11/8/2016");
     let electionDayLine = chart.append("line")
         .attr("x1", x(electionDay))
@@ -403,6 +409,8 @@ function makeHistoryLine(history) {
     d3.select(window).on("resize.line", () => {
         let width = el.getBoundingClientRect().width;
         let height = width * chartRatio;
+        circleX = x(history[0].date);
+        labelX = circleX + 5;
 
         chart
             .attr("width", width)
@@ -429,17 +437,17 @@ function makeHistoryLine(history) {
             .attr("y2", y(1));
 
         demEndLabel
-            .attr("x", width - 30)
+            .attr("x", labelX)
             .attr("y", y(prob) + 5);
         gopEndLabel
-            .attr("x", width - 30)
+            .attr("x", labelX)
             .attr("y", y(1 - prob) + 5);
 
         demCircle
-            .attr("cx", x(endDate))
+            .attr("cx", circleX)
             .attr("cy", y(prob));
         gopCircle
-            .attr("cx", x(endDate))
+            .attr("cx", circleX)
             .attr("cy", y(1 - prob));
             
             
