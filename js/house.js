@@ -255,7 +255,7 @@ function makeHistoryLine(history) {
     const margin = {L: 40, R: 40, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = new Date("11/8/2016");
+    let endDate = new Date("11/22/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -310,6 +310,15 @@ function makeHistoryLine(history) {
         .attr("x", -5)
         .text("Probability");
 
+    let electionDay = new Date("11/8/2016");
+    let electionDayLine = chart.append("line")
+        .attr("x1", x(electionDay))
+        .attr("x2", x(electionDay))
+        .attr("y1", y(0))
+        .attr("y2", y(1))
+        .attr("stroke-width", 1)
+        .attr("stroke", "#222");
+
     // labels
     let prob = history[0].prob;
     let circleX = x(history[0].date);
@@ -318,12 +327,12 @@ function makeHistoryLine(history) {
         .attr("class", "dem end-label")
         .attr("x", labelX)
         .attr("y", y(prob) + 5)
-        .text((100 * prob).toFixed(0) + "% Democrats Democrats");
+        .text((100 * prob).toFixed(0) + "% DEM");
     let gopEndLabel = chart.append("text")
         .attr("class", "gop end-label")
         .attr("x", labelX)
         .attr("y", y(1 - prob) + 5)
-        .text((100 - 100 * prob).toFixed(0) + "% Republicans");
+        .text((100 - 100 * prob).toFixed(0) + "% GOP");
 
     let demCircle = chart.append("circle")
         .attr("class", "dem end-circle")
@@ -374,8 +383,8 @@ function makeHistoryLine(history) {
                 .attr("cx", e_x)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "% Democrats");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Republicans");
+            demEndLabel.text((100 * prob).toFixed(0) + "% DEM");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% GOP");
         })
         .on("mouseout", function() {
             demCircle
@@ -385,8 +394,8 @@ function makeHistoryLine(history) {
                 .attr("cx", circleX)
                 .attr("cy", y(1 - prob));
 
-            demEndLabel.text((100 * prob).toFixed(0) + "% Democrats");
-            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% Republicans");
+            demEndLabel.text((100 * prob).toFixed(0) + "% DEM");
+            gopEndLabel.text((100 - 100 * prob).toFixed(0) + "% GOP");
         });
 
     el.style.opacity = 1.0;
@@ -412,6 +421,12 @@ function makeHistoryLine(history) {
             .attr("x", width - 50);
         chart.select(".y.axis")
             .call(yAxis);
+
+        electionDayLine
+            .attr("x1", x(electionDay))
+            .attr("x2", x(electionDay))
+            .attr("y1", y(0))
+            .attr("y2", y(1));
 
         demEndLabel
             .attr("x", width - 30)

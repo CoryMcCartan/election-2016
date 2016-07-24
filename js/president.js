@@ -418,7 +418,7 @@ function makeHistoryLine(history) {
     const margin = {L: 40, R: 40, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = new Date("11/8/2016");
+    let endDate = new Date("11/25/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -471,6 +471,15 @@ function makeHistoryLine(history) {
         .attr("y", 6)
         .attr("x", -5)
         .text("Probability");
+
+    let electionDay = new Date("11/8/2016");
+    let electionDayLine = chart.append("line")
+        .attr("x1", x(electionDay))
+        .attr("x2", x(electionDay))
+        .attr("y1", y(0))
+        .attr("y2", y(1))
+        .attr("stroke-width", 1)
+        .attr("stroke", "#222");
 
     // labels
     let prob = history[0].prob;
@@ -574,6 +583,12 @@ function makeHistoryLine(history) {
             .attr("x", width - 50);
         chart.select(".y.axis")
             .call(yAxis);
+
+        electionDayLine
+            .attr("x1", x(electionDay))
+            .attr("x2", x(electionDay))
+            .attr("y1", y(0))
+            .attr("y2", y(1));
 
         demEndLabel
             .attr("x", width - 30)
