@@ -31,6 +31,8 @@ function main() {
         gopGains: +d.demLosses,
         demPop: +d.demPopWins,
         gopPop: +d.gopPopWins,
+        demSuper: +d.demSupermajority,
+        gopSuper: +d.gopSupermajority,
         demMismatch: +d.demMismatch,
         gopMismatch: +d.gopMismatch,
         demLandslide: +d.demLandslide,
@@ -39,6 +41,14 @@ function main() {
         showOverall(history);
         makeHistogram(history[0]);
         makeHistoryLine(history);
+    });
+
+    d3.csv("{{site.baseurl}}/data/house-districts.csv?" + Math.random(), d => ({
+        id: d.id,
+        prob: +d.prob,
+        gap: +d.gap,
+    }), (error, districts) => {
+        makeTable(districts);
     });
 }
 
@@ -92,6 +102,8 @@ function showOverall(history, prediction = false) {
     $("td#scn-gop-pop").innerHTML = (100 * current.gopPop).toFixed(1) + "%";
     $("td#scn-dem-mismatch").innerHTML = (100 * current.demMismatch).toFixed(1) + "%";
     $("td#scn-gop-mismatch").innerHTML = (100 * current.gopMismatch).toFixed(1) + "%";
+    $("td#scn-dem-super").innerHTML = (100 * current.demSuper).toFixed(1) + "%";
+    $("td#scn-gop-super").innerHTML = (100 * current.gopSuper).toFixed(1) + "%";
     $("td#scn-dem-landslide").innerHTML = (100 * current.demLandslide).toFixed(1) + "%";
     $("td#scn-gop-landslide").innerHTML = (100 * current.gopLandslide).toFixed(1) + "%";
 }
@@ -272,6 +284,64 @@ function makeHistogram(stats) {
         modeLabel.attr("transform", `translate(${x(stats.mode)}, ${y0})`);
         meanLabel.attr("transform", `translate(${x(Math.round(stats.mean))}, ${y0})`);
     });
+}
+
+function makeTable(districts) {
+    let table = d3.select("table#districts"); 
+
+    let i = 0;
+    let tr = table.selectAll("tbody > tr")
+        .data(districts)
+        .enter().append("tr")
+        .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
+        .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
+
+    let demScale = d3.scale.linear()
+        .domain([0, 49.5, 50, 50.5, 100])
+        .range(["white", "white", YELLOW, LIGHT_BLUE, BLUE]);
+    let gopScale = d3.scale.linear()
+        .domain([0, 49.5, 50, 50.5, 100])
+        .range(["white", "white", YELLOW, LIGHT_RED, RED]);
+
+    let percent = d3.format(".1%");
+    let td = tr.selectAll("td")
+        .data(row => {
+            let gapNum = d3.format(".1f")(Math.abs(100 * row.gap));
+            let gapHTML = row.gap > 0 ? `<span class="dem">D+${gapNum}</span>` :
+                `<span class="gop">R+${gapNum}</span>`;
+
+                return [
+                    row.id,
+                    percent(row.prob),
+                    percent(1 - row.prob),
+                    gapHTML,
+                ];
+        })
+        .enter().append("td")
+        .html(d => d)
+        .style("background-color", (d, i) => {
+            if (i - 1 === DEM)
+                return demScale(parseFloat(d));
+            else if (i - 1 === GOP)
+                return gopScale(parseFloat(d));
+            else
+                return "initial";
+        });
+
+    $$("tr.hide").forEach(tr => tr.hidden = true);
+
+    $("#showAll").addEventListener("click", function(e) {
+        $$("tr.hide").forEach(tr => tr.hidden = false);
+        e.target.hidden = true;
+        $("#hideExtra").hidden = false;
+    });
+    $("#hideExtra").addEventListener("click", function(e) {
+        $$("tr.hide").forEach(tr => tr.hidden = true);
+        e.target.hidden = true;
+        $("#showAll").hidden = false;
+    });
+
+
 }
 
 function makeHistoryLine(history) {

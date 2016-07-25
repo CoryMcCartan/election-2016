@@ -30,6 +30,31 @@ layout: default
 </section>
 
 <section>
+    <h2>District Predictions</h2>
+    <summary>
+        Data and predictions about each of the 435 House districts, with the
+        most competitive districts at the top.
+    </summary>
+
+    <table id="districts" aria-label="District-level data">
+        <thead>
+        <tr>
+            <th id="th-dist">District</th>
+            <th id="th-dem">Dem. Chances</th>
+            <th id="th-gop">Rep. Chances</th>
+            <th id="th-marg">Predicted Margin</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="graphic-controls">
+        <button id="showAll">Show All</button>
+        <button id="hideExtra" hidden>Hide Extra</button>
+    </div><br />
+</section>
+
+<section>
     <h2>History</h2>
     <summary>
         The output of the model over time.  The blue line represents the
@@ -77,6 +102,15 @@ layout: default
             <td>Republicans win popular vote but lose House</td>
             <td id="scn-gop-mismatch"></td>
         </tr>
+        <tr class="div">
+            <td>Democratic supermajority</td>
+            <td id="scn-dem-super"></td>
+        </tr>
+        <tr>
+            <td>Republican supermajority</td>
+            <td id="scn-gop-super"></td>
+        </tr>
+        </tbody>
         <tr class="div">
             <td>Democratic landslide (>10% popular vote margin)</td>
             <td id="scn-dem-landslide"></td>

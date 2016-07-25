@@ -226,7 +226,7 @@ h2
     font-size: 1.25em
     margin: 0 0.5em 0.8em 0.5em
 
-table#scenario
+table#scenario, table#districts
     width: 95%
     margin: 0.75em auto
     border-collapse: collapse
@@ -242,6 +242,15 @@ table#scenario
 
     td:last-child
         font-weight: normal
+
+#districts th:not(:first-of-type)
+    text-align: center
+#districts td:nth-of-type(2), #districts td:nth-of-type(3)
+    text-align: center
+    width: 15%
+#districts td:nth-of-type(4)    
+    text-align: center
+    width: 30%
 
 #hist-tooltip
     position: relative

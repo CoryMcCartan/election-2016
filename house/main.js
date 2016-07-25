@@ -312,7 +312,7 @@ function calculateAverages(data2014, polls) {
     let mean_var = polls.reduce((p, c) => p + Math.pow(c.gap - average, 2) * c.weight, 0);
     mean_var /= weights;
     variance += mean_var;
-    variance *= date_multiplier * 1.6; // MAGIC NUMBER
+    variance *= date_multiplier * 2.1; // MAGIC NUMBER
 
     let shift = average - gap2014;
 
@@ -323,7 +323,8 @@ function calculateAverages(data2014, polls) {
     }
 
     for (let district of data2014) {
-        district.gap = district.gap2014 + shift / date_multiplier;
+        let old = district.gap2014;
+        district.gap = old + (1 - Math.abs(old)) * shift / date_multiplier;
         district.variance = 5*Math.abs(district.gap) * variance; // MAGIC NUMBER
     }
 
@@ -352,6 +353,8 @@ function predict(averages, districts, iterations, history) {
     let gopMismatch = 0;
     let demLandslide = 0;
     let gopLandslide = 0;
+    let demSupermajority = 0;
+    let gopSupermajority = 0;
 
     let one = 1 / iterations;
 
@@ -402,6 +405,11 @@ function predict(averages, districts, iterations, history) {
 
         if (seats > demSeats)
             demGains += one;
+
+        if (seats >= 290)
+            demSupermajority += one;
+        else if (435 - seats >= 290)
+            gopSupermajority += one;
     }
 
     let mean = outcomes.reduce((p, c, i) => p + c * i);
@@ -425,6 +433,8 @@ function predict(averages, districts, iterations, history) {
         gopLandslide,
         demGains,
         demLosses: 1 - demGains - outcomes[demSeats],
+        demSupermajority,
+        gopSupermajority,
     });
 
     outcomes = outcomes.map((c, i) => ({

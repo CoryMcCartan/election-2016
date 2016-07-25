@@ -73,8 +73,7 @@ function showOverall(history, prediction = false) {
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.abs(delta).toFixed(1)}% from yesterday.`
-    }
-
+    } 
     let demElectors = electors.toFixed(0);
     let gopElectors = (538 - electors).toFixed(0);
     $("summary#overall").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
