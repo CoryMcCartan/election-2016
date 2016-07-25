@@ -101,8 +101,8 @@
 <section>
     <h2>History</h2>
     <summary>
-        The output of the model over time.  The blue line represents the
-        Democrats’ chances of winning, and the red line the Republicans’.
+        How the candidate’s chances have changed over time.  The model is run 
+        every day, and continually incorporates new polling data.
     </summary>
 
     <figure id="history" class="graphic" aria-label="Probabilities Over Time"></figure>
@@ -111,7 +111,8 @@
 <section>
     <h2>Possible Scenarios</h2>
     <summary>
-        A list of possible scenarios, and the chance of each occurring.
+        The model simulates half a million elections, and keeps track of how
+        often a variety of outcomes occur.  Below are the results.
     </summary>
 
     <table id="scenario" aria-label="Possible Scenarios">
@@ -123,11 +124,11 @@
         </thead>
         <tbody>
         <tr class="div">
-            <td>Democrats gain seats</td>
+            <td>Democrats gain seats (currently 188)</td>
             <td id="scn-dem-gain"></td>
         </tr>
         <tr>
-            <td>Republicans gain seats</td>
+            <td>Republicans gain seats (currently 247)</td>
             <td id="scn-gop-gain"></td>
         </tr>
         <tr class="div">
@@ -147,7 +148,7 @@
             <td id="scn-gop-mismatch"></td>
         </tr>
         <tr class="div">
-            <td>Democratic supermajority</td>
+            <td>Democratic supermajority (290 seats or more)</td>
             <td id="scn-dem-super"></td>
         </tr>
         <tr>
@@ -160,7 +161,7 @@
             <td id="scn-dem-landslide"></td>
         </tr>
         <tr>
-            <td>Republican landslide (>10% popular vote margin)</td>
+            <td>Republican landslide</td>
             <td id="scn-gop-landslide"></td>
         </tr>
         </tbody>

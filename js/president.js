@@ -61,7 +61,7 @@ function showOverall(history, prediction = false) {
     $("summary#overall").innerHTML = `${name} has ${article} ${prob}% chance of winning the election.`
 
     let oneDay = 24 * 60 * 60 * 1000;
-    let last = history.find(e => current.date - e.date > oneDay);
+    let last = history.find(e => current.date - e.date > 7*oneDay);
     if (last) { // if the model is at least one day old
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
@@ -69,7 +69,7 @@ function showOverall(history, prediction = false) {
 
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.abs(delta).toFixed(1)}% from yesterday.`
+            ${Math.abs(delta).toFixed(1)}% since last week.`
     } 
     let demElectors = electors.toFixed(0);
     let gopElectors = (538 - electors).toFixed(0);

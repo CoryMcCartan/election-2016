@@ -8,7 +8,7 @@
 
 const DEM = 0, GOP = 1;
 
-const DEM_SEATS = 186;
+const DEM_SEATS = 188;
  
 const RED = "#ff6660";
 const LIGHT_RED = "#fff0e7";
@@ -76,7 +76,7 @@ function showOverall(history, prediction = false) {
     $("summary#overall").innerHTML = `The ${name} have ${article} ${prob}% chance of controlling the House.`
 
     let oneDay = 24 * 60 * 60 * 1000;
-    let last = history.find(e => current.date - e.date > oneDay);
+    let last = history.find(e => current.date - e.date > 7*oneDay);
     if (last) { // if the model is at least one day old
         // change since yesterday
         let delta = (current.prob - last.prob) * 100;
@@ -84,13 +84,13 @@ function showOverall(history, prediction = false) {
 
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.abs(delta).toFixed(1)}% from yesterday.`
+            ${Math.abs(delta).toFixed(1)}% since last week.`
     }
 
     let demSeats = seats.toFixed(0);
     let gopSeats = (435 - seats).toFixed(0);
     $("summary#overall").innerHTML += `<br />The Democrats are expected to have ${demSeats} ` +
-        `seats to the Republicans’ ${gopSeats}.`
+        `seats, a gain of ${seats.toFixed(0)}, to the Republicans’ ${gopSeats}.`
 
     // scenarios
     $("td#scn-dem-gain").innerHTML = (100 * current.demGains).toFixed(1) + "%";
