@@ -93,7 +93,7 @@ function showOverall(history, prediction = false) {
     let demSeats = seats.toFixed(0);
     let gopSeats = (435 - seats).toFixed(0);
     $("summary#overall").innerHTML += `<br />The Democrats are expected to have ${demSeats} ` +
-        `seats, a gain of ${seats.toFixed(0)}, to the Republicans’ ${gopSeats}.`
+        `seats, a gain of ${(seats - DEM_SEATS).toFixed(0)}, to the Republicans’ ${gopSeats}.`
 
     // scenarios
     $("td#scn-dem-gain").innerHTML = (100 * current.demGains).toFixed(1) + "%";
