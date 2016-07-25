@@ -10,7 +10,7 @@ const DEM = 0, GOP = 1;
 
 const DEM_SEATS = 186;
  
-const RED = "#f66660";
+const RED = "#ff6660";
 const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
 const LIGHT_BLUE = "#e7eeff";
@@ -28,6 +28,8 @@ function main() {
         gopGains: +d.demLosses,
         demPop: +d.demPopWins,
         gopPop: +d.gopPopWins,
+        demSuper: +d.demSupermajority,
+        gopSuper: +d.gopSupermajority,
         demMismatch: +d.demMismatch,
         gopMismatch: +d.gopMismatch,
         demLandslide: +d.demLandslide,
@@ -36,6 +38,14 @@ function main() {
         showOverall(history);
         makeHistogram(history[0]);
         makeHistoryLine(history);
+    });
+
+    d3.csv("/election-2016/data/house-districts.csv?" + Math.random(), d => ({
+        id: d.id,
+        prob: +d.prob,
+        gap: +d.gap,
+    }), (error, districts) => {
+        makeTable(districts);
     });
 }
 
@@ -48,6 +58,11 @@ function showOverall(history, prediction = false) {
     $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
     $(".probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
     $(".probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
+    if (smallScreen()) {
+        $(".dem > .name").innerHTML = "DEM";
+        $(".gop > .name").innerHTML = "GOP";
+    }
+    
     let name = winner === DEM ? "Democrats" : "Republicans";
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -84,6 +99,8 @@ function showOverall(history, prediction = false) {
     $("td#scn-gop-pop").innerHTML = (100 * current.gopPop).toFixed(1) + "%";
     $("td#scn-dem-mismatch").innerHTML = (100 * current.demMismatch).toFixed(1) + "%";
     $("td#scn-gop-mismatch").innerHTML = (100 * current.gopMismatch).toFixed(1) + "%";
+    $("td#scn-dem-super").innerHTML = (100 * current.demSuper).toFixed(1) + "%";
+    $("td#scn-gop-super").innerHTML = (100 * current.gopSuper).toFixed(1) + "%";
     $("td#scn-dem-landslide").innerHTML = (100 * current.demLandslide).toFixed(1) + "%";
     $("td#scn-gop-landslide").innerHTML = (100 * current.gopLandslide).toFixed(1) + "%";
 }
@@ -142,11 +159,13 @@ function makeHistogram(stats) {
         xAxis
             .scale(x)
             .tickValues(values)
+            .outerTickSize(0)
             .tickFormat(d3.format("+"))
             .orient("bottom");
         yAxis
             .scale(y)
             .orient("left")
+            .innerTickSize(-width + margin.L + margin.R)
             .ticks(smallScreen() ? 4 : 7, "%");
 
         chart
@@ -237,7 +256,9 @@ function makeHistogram(stats) {
         else
             values = d3.range(minRounded, maxRounded, 15);
         xAxis.tickValues(values)
-        yAxis.ticks(smallScreen() ? 4 : 7, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 4 : 7, "%");
 
         chart.attr("width", width);
         chart.attr("height", height);
@@ -262,12 +283,70 @@ function makeHistogram(stats) {
     });
 }
 
+function makeTable(districts) {
+    let table = d3.select("table#districts"); 
+
+    let i = 0;
+    let tr = table.selectAll("tbody > tr")
+        .data(districts)
+        .enter().append("tr")
+        .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
+        .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
+
+    let demScale = d3.scale.linear()
+        .domain([0, 49.5, 50, 50.5, 100])
+        .range(["white", "white", YELLOW, LIGHT_BLUE, BLUE]);
+    let gopScale = d3.scale.linear()
+        .domain([0, 49.5, 50, 50.5, 100])
+        .range(["white", "white", YELLOW, LIGHT_RED, RED]);
+
+    let percent = d3.format(".1%");
+    let td = tr.selectAll("td")
+        .data(row => {
+            let gapNum = d3.format(".1f")(Math.abs(100 * row.gap));
+            let gapHTML = row.gap > 0 ? `<span class="dem">D+${gapNum}</span>` :
+                `<span class="gop">R+${gapNum}</span>`;
+
+                return [
+                    row.id,
+                    percent(row.prob),
+                    percent(1 - row.prob),
+                    gapHTML,
+                ];
+        })
+        .enter().append("td")
+        .html(d => d)
+        .style("background-color", (d, i) => {
+            if (i - 1 === DEM)
+                return demScale(parseFloat(d));
+            else if (i - 1 === GOP)
+                return gopScale(parseFloat(d));
+            else
+                return "initial";
+        });
+
+    $$("tr.hide").forEach(tr => tr.hidden = true);
+
+    $("#showAll").addEventListener("click", function(e) {
+        $$("tr.hide").forEach(tr => tr.hidden = false);
+        e.target.hidden = true;
+        $("#hideExtra").hidden = false;
+    });
+    $("#hideExtra").addEventListener("click", function(e) {
+        $$("tr.hide").forEach(tr => tr.hidden = true);
+        e.target.hidden = true;
+        $("#showAll").hidden = false;
+    });
+
+
+}
+
 function makeHistoryLine(history) {
     const chartRatio = 0.5;
-    const margin = {L: 40, R: 40, B: 35, T: 15};
+    const margin = {L: 40, R: 60, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = new Date("11/22/2016");
+    let endDate = new Date("11/20/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -283,10 +362,12 @@ function makeHistoryLine(history) {
     let xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
+        .outerTickSize(0)
         .ticks(smallScreen() ? 4 : 7);
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
+        .innerTickSize(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 5 : 10, "%");
 
     let demLine = d3.svg.line()
@@ -426,7 +507,9 @@ function makeHistoryLine(history) {
         labelX = circleX + 5;
 
         xAxis.ticks(smallScreen() ? 4 : 7);
-        yAxis.ticks(smallScreen() ? 5 : 10, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 5 : 10, "%");
 
         chart.select(".x.axis")
             .attr("transform", `translate(0, ${height - margin.B})`)

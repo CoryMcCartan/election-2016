@@ -9,7 +9,7 @@
 const DEM = 0, GOP = 1;
 const CANDIDATES = ["Hillary Clinton", "Donald Trump"];
 
-const RED = "#f66660";
+const RED = "#ff6660";
 const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
 const LIGHT_BLUE = "#e7eeff";
@@ -70,8 +70,7 @@ function showOverall(history, prediction = false) {
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
             ${Math.abs(delta).toFixed(1)}% from yesterday.`
-    }
-
+    } 
     let demElectors = electors.toFixed(0);
     let gopElectors = (538 - electors).toFixed(0);
     $("summary#overall").innerHTML += `<br />Clinton is expected to have ${demElectors} ` +
@@ -265,7 +264,7 @@ function makeMap(showProbabilities = true) {
 }
 
 function makeHistogram(mean) {
-    const chartRatio = 0.3;
+    const chartRatio = 0.4;
     const margin = {L: 40, R: 5, B: 35, T: 15};
 
     let el = $("#histogram");
@@ -283,15 +282,16 @@ function makeHistogram(mean) {
     let xAxis = d3.svg.axis()
         .scale(x)
         .tickValues(x.domain().filter((d, i) => !(i % ticks)))
+        .outerTickSize(0)
         .orient("bottom");
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
+        .innerTickSize(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 4 : 6, "%");
 
     let chart = d3.select(el).append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width) .attr("height", height);
 
     let tooltip = $("#hist-tooltip");
     let tElectors = $("#ht-electors");
@@ -389,7 +389,9 @@ function makeHistogram(mean) {
 
         let ticks = smallScreen() ? 54 : 30;
         xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
-        yAxis.ticks(smallScreen() ? 4 : 6, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 4 : 6, "%");
 
         chart.attr("width", width);
         chart.attr("height", height);
@@ -435,10 +437,12 @@ function makeHistoryLine(history) {
     let xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
+        .outerTickSize(0)
         .ticks(smallScreen() ? 4 : 7);
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
+        .innerTickSize(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 5 : 10, "%");
 
     let demLine = d3.svg.line()
@@ -574,8 +578,13 @@ function makeHistoryLine(history) {
         x.range([margin.L, width - margin.R]);
         y.range([height - margin.B, margin.T]);
 
+        circleX = x(history[0].date);
+        labelX = circleX + 5;
+
         xAxis.ticks(smallScreen() ? 4 : 7);
-        yAxis.ticks(smallScreen() ? 5 : 10, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 5 : 10, "%");
 
         chart.select(".x.axis")
             .attr("transform", `translate(0, ${height - margin.B})`)
@@ -592,17 +601,17 @@ function makeHistoryLine(history) {
             .attr("y2", y(1));
 
         demEndLabel
-            .attr("x", width - 30)
+            .attr("x", labelX)
             .attr("y", y(prob) + 5);
         gopEndLabel
-            .attr("x", width - 30)
+            .attr("x", labelX)
             .attr("y", y(1 - prob) + 5);
 
         demCircle
-            .attr("cx", x(endDate))
+            .attr("cx", circleX)
             .attr("cy", y(prob));
         gopCircle
-            .attr("cx", x(endDate))
+            .attr("cx", circleX)
             .attr("cy", y(1 - prob));
             
             

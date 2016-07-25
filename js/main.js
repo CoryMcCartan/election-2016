@@ -29,6 +29,11 @@ function main() {
         $("#prob-gop-house").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
         $("#bar-house > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
         $("#bar-house > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
+        if (smallScreen()) {
+            $("#bar-house > .dem > .name").innerHTML = "DEM";
+            $("#bar-house > .gop > .name").innerHTML = "GOP";
+        }
+        
     });
 }
 
@@ -38,4 +43,8 @@ if (navigator.serviceWorker) {
     }).then(() => {
         console.log("Service Worker Registered.");
     })
+}
+
+function smallScreen() {
+    return window.innerWidth < 600;
 }
