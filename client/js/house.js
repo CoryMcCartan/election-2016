@@ -11,7 +11,7 @@
 
 const DEM = 0, GOP = 1;
 
-const DEM_SEATS = 186;
+const DEM_SEATS = 188;
  
 const RED = "#ff6660";
 const LIGHT_RED = "#fff0e7";

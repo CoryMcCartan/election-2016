@@ -12,7 +12,7 @@ let date_multiplier;
 
 let pollsters;
 
-const demSeats = 186;
+const demSeats = 188;
 const gap2014 = 0.455 - 0.512;
 const turnout2014 = 78235240;
 const turnout2012 = 122346020;
