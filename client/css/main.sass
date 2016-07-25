@@ -7,12 +7,12 @@
 $font-stack: "Roboto Mono", "Courier", monospace
 $font-weight: 300
 
-$grey: #aaa
+$grey: #999
 $darkgrey: #555
 $lightgrey: #bbb
 
-$blue: #69f
-$red: #e76
+$blue: #6a80ff
+$red: #ff6660
 
 $desktop: "(min-width: 600px)"
 $mobile: "(max-width: 600px)"
@@ -227,22 +227,27 @@ h2
     margin: 0 0.5em 0.8em 0.5em
 
 table#scenario
-    width: 80%
+    width: 95%
     margin: 0.75em auto
     border-collapse: collapse
 
     td,th
         text-align: left
     td
-        border-top: 1px solid $lightgrey
+        border-top: 1px dotted #ddd
         font-size: 85%
         padding: 0.4em 0.5em 0.4em 0
+    tr.div > td
+        border-top: 1px solid $grey
+
     td:last-child
         font-weight: normal
 
 #hist-tooltip
-    position: absolute
-    right: 2em
+    position: relative
+    float: right
+    top: 2.5em
+    margin-top: -3em
     color: $darkgrey
 
     #ht-electors, #ht-seats
@@ -266,6 +271,18 @@ svg .x.label
     transform: translateY(0.71em) 
 svg .y.label
     transform: rotate(-90deg) translateY(0.71em) 
+    fill: $darkgrey
+svg .y .tick
+    left: -6px
+svg .y .tick line
+    opacity: 0.3
+    stroke-dasharray: 1,2
+svg .y .tick:first-of-type line
+    opacity: 1.0
+svg .y.axis path
+    stroke: none
+svg .y .tick text
+    fill: $grey
 svg .hist-label
     font-size: 0.8em
     transform: rotate(-90deg) translate(0.3em, -0.3em)
@@ -327,9 +344,6 @@ h1
     .graphic
         width: 100%
         max-width: 100vw
-
-    table#scenario
-        width: 95%
 
     path.borders
         stroke: rgba(255, 255, 255, 0.6)

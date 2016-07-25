@@ -13,7 +13,7 @@ const DEM = 0, GOP = 1;
 
 const DEM_SEATS = 186;
  
-const RED = "#f66660";
+const RED = "#ff6660";
 const LIGHT_RED = "#fff0e7";
 const YELLOW = "#ee5";
 const LIGHT_BLUE = "#e7eeff";
@@ -51,6 +51,11 @@ function showOverall(history, prediction = false) {
     $("#prob-gop").innerHTML = Math.round(100 - current.prob * 100).toFixed(0) + "%"
     $(".probability-bar > .dem").style.width = (current.prob * 100).toFixed(1) + "%";
     $(".probability-bar > .gop").style.width = (100 - current.prob * 100).toFixed(1) + "%";
+    if (smallScreen()) {
+        $(".dem > .name").innerHTML = "DEM";
+        $(".gop > .name").innerHTML = "GOP";
+    }
+    
     let name = winner === DEM ? "Democrats" : "Republicans";
     // because DEM = 0 and GOP = 1, this will invert the probability (which is by
     // default in terms of the Democrats) if the GOP is favored.
@@ -145,11 +150,13 @@ function makeHistogram(stats) {
         xAxis
             .scale(x)
             .tickValues(values)
+            .outerTickSize(0)
             .tickFormat(d3.format("+"))
             .orient("bottom");
         yAxis
             .scale(y)
             .orient("left")
+            .innerTickSize(-width + margin.L + margin.R)
             .ticks(smallScreen() ? 4 : 7, "%");
 
         chart
@@ -240,7 +247,9 @@ function makeHistogram(stats) {
         else
             values = d3.range(minRounded, maxRounded, 15);
         xAxis.tickValues(values)
-        yAxis.ticks(smallScreen() ? 4 : 7, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 4 : 7, "%");
 
         chart.attr("width", width);
         chart.attr("height", height);
@@ -267,10 +276,10 @@ function makeHistogram(stats) {
 
 function makeHistoryLine(history) {
     const chartRatio = 0.5;
-    const margin = {L: 40, R: 40, B: 35, T: 15};
+    const margin = {L: 40, R: 60, B: 35, T: 15};
 
     let startDate = history[history.length - 1].date;
-    let endDate = new Date("11/22/2016");
+    let endDate = new Date("11/20/2016");
 
     let el = $("#history");
     let width = el.getBoundingClientRect().width;
@@ -286,10 +295,12 @@ function makeHistoryLine(history) {
     let xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
+        .outerTickSize(0)
         .ticks(smallScreen() ? 4 : 7);
     let yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
+        .innerTickSize(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 5 : 10, "%");
 
     let demLine = d3.svg.line()
@@ -429,7 +440,9 @@ function makeHistoryLine(history) {
         labelX = circleX + 5;
 
         xAxis.ticks(smallScreen() ? 4 : 7);
-        yAxis.ticks(smallScreen() ? 5 : 10, "%");
+        yAxis
+            .innerTickSize(-width + margin.L + margin.R)
+            .ticks(smallScreen() ? 5 : 10, "%");
 
         chart.select(".x.axis")
             .attr("transform", `translate(0, ${height - margin.B})`)
