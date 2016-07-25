@@ -297,11 +297,11 @@ function makeTable(districts) {
         .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
 
     let demScale = d3.scale.linear()
-        .domain([0, 49.5, 50, 50.5, 100])
-        .range(["white", "white", YELLOW, LIGHT_BLUE, BLUE]);
+        .domain([0, 10, 100])
+        .range(["white", LIGHT_BLUE, BLUE]);
     let gopScale = d3.scale.linear()
-        .domain([0, 49.5, 50, 50.5, 100])
-        .range(["white", "white", YELLOW, LIGHT_RED, RED]);
+        .domain([0, 10, 100])
+        .range(["white",  LIGHT_RED, RED]);
 
     let percent = d3.format(".1%");
     let td = tr.selectAll("td")
