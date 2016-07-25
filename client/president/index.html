@@ -61,8 +61,8 @@ layout: default
 <section>
     <h2>History</h2>
     <summary>
-        The output of the model over time.  The blue line represents
-        Clinton&rsquo;s chances of winning, and the red line Trump&rsquo;s.
+        How the candidate’s chances have changed over time.  The model is run 
+        every day, and continually incorporates new polling data.
     </summary>
 
     <figure id="history" class="graphic" aria-label="Probabilities Over Time"></figure>
@@ -71,7 +71,8 @@ layout: default
 <section>
     <h2>Possible Scenarios</h2>
     <summary>
-        A list of possible scenarios, and the chance of each occurring.
+        The model simulates half a million elections, and keeps track of how
+        often a variety of outcomes occur.  Below are the results.
     </summary>
 
     <table id="scenario" aria-label="Possible Scenarios">
@@ -87,7 +88,7 @@ layout: default
             <td id="scn-tie"></td>
         </tr>
         <tr>
-            <td>Election-deciding recount (critical state within 0.1%)</td>
+            <td>Election-deciding recount (critical state within 0.5%)</td>
             <td id="scn-recount"></td>
         </tr>
         <tr class="div">
