@@ -84,7 +84,7 @@ function showOverall(history, prediction = false) {
 
         $("summary#overall").innerHTML += 
             `<br />This is ${delta >= 0 ? "an increase" : "a decrease"} of 
-            ${Math.abs(delta).toFixed(1)}% since last week.`
+            ${Math.abs(delta).toFixed(1)}% over the last week.`
     }
 
     let demSeats = seats.toFixed(0);
