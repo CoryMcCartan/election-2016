@@ -186,7 +186,7 @@ function weightPolls(polls) {
         if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
-        let factor = 13 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        let factor = 10 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
@@ -316,7 +316,7 @@ function getPollsterAverages(surveyors, method) {
 }
 
 function add2012Data(data2012, polls, avgs) {
-    let weight = 7e-4 * Math.pow(date_multiplier, 20); // MAGIC NUMBER
+    let weight = 2e-5 * Math.pow(date_multiplier, 20); // MAGIC NUMBER
 
     // adjust 2012 results by adding in the shift since then
     let gap2012 = 0.5107 - 0.4715;
@@ -358,7 +358,7 @@ function trendAdjustment(polls, avgs) {
     for (let i = 0; i < 51; i++) {
         let dateDiff = (now - most_recent[i]) / one_day;
         let weight = 1 - Math.exp(-dateDiff / 28); // MAGIC NUMBER
-        weight /= Math.pow(1 + date_multiplier, 2); // MAGIC NUMBER
+        weight /= Math.pow(0.5 + date_multiplier, 3); // MAGIC NUMBER
         adj[i] = avgs.trend * weight;
     }
 
