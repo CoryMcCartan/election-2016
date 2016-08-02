@@ -103,8 +103,8 @@ function processPolls(polls) {
         if (name.includes("primary")) return false;
         if (!q.subpopulations.length) return false;
         let responses = q.subpopulations[0].responses;
-        if (!responses.find(r => r.choice.toLowerCase() === "democrat")) return false;
-        if (!responses.find(r => r.choice.toLowerCase() === "republican")) return false;
+        if (!responses.find(r => r.choice.toLowerCase().includes("democrat"))) return false;
+        if (!responses.find(r => r.choice.toLowerCase().includes("republican"))) return false;
         return true; 
     };
 
@@ -129,14 +129,21 @@ function processPolls(polls) {
         let questions = poll.questions.filter(q => isHousePoll(q));
         let question = questions[0];
         if (!question) {
-            if (LOG) console.log("Deleted poll — no matching question.");
+            if (LOG) {
+                let str = questions.map(q => q.subpopulations[0].responses
+                                    .map(r => r.choice).join("/")).join(" | ");
+                console.log(`NO MATCHING QUESTIONS: ${str}`);
+            }
             poll.skip = true;
             continue;
         }
 
         if (LOG) {
-            if (questions.length > 1) 
-                console.log(`EXTRA QUESTIONS: ${JSON.stringify(questions)}`);
+            if (questions.length > 1) {
+                let str = questions.map(q => q.subpopulations[0].responses
+                                    .map(r => r.choice).join("/")).join(" | ");
+                console.log(`EXTRA QUESTIONS: ${str}`);
+            }
             if (question.subpopulations.length > 1) 
                 console.log(`EXTRA SUBPOPULATIONS: ${question.subpopulations.slice(1).map(x => x.name).join(" | ")}`);
         }
@@ -148,8 +155,8 @@ function processPolls(polls) {
         poll.n = question.subpopulations[0].observations || default_n;
         let responses  = question.subpopulations[0].responses;
 
-        let dem = responses.find(r => r.choice.toLowerCase() == "democrat").value;
-        let gop = responses.find(r => r.choice.toLowerCase() == "republican").value;
+        let dem = responses.find(r => r.choice.toLowerCase().includes("democrat")).value;
+        let gop = responses.find(r => r.choice.toLowerCase().includes("republican")).value;
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE

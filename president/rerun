@@ -9,10 +9,16 @@ do
     ./run 5e4 --date 6/$day/2016
 done
 
-for day in {1..25}
+for day in {1..31}
 do
     echo JULY $day
     ./run 1e5 --date 7/$day/2016
+done
+
+for day in {1..1}
+do
+    echo AUGUST $day
+    ./run 1e5 --date 8/$day/2016
 done
 
 ./run 5e5

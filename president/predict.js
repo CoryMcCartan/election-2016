@@ -121,14 +121,21 @@ function processPolls(polls) {
         let questions = poll.questions.filter(q => isPresidentialPoll(q));
         let question = questions[0];
         if (!question) {
-            if (LOG) console.log("Deleted poll — no matching question.");
+            if (LOG) {
+                let str = questions.map(q => q.subpopulations[0].responses
+                                    .map(r => r.last_name).join("/")).join(" | ");
+                console.log(`NO MATCHING QUESTIONS: ${str}`);
+            }
             poll.skip =  true;
             continue;
         }
 
         if (LOG) {
-            if (questions.length > 1) 
-                console.log(`EXTRA QUESTIONS: ${JSON.stringify(questions)}`);
+            if (questions.length > 1) {
+                let str = questions.map(q => q.subpopulations[0].responses
+                                    .map(r => r.last_name).join("/")).join(" | ");
+                console.log(`EXTRA QUESTIONS: ${str}`);
+            }
             if (question.subpopulations.length > 1) 
                 console.log(`EXTRA SUBPOPULATIONS: ${question.subpopulations.map(x => x.name).join(" | ")}`);
         }
@@ -186,7 +193,7 @@ function weightPolls(polls) {
         if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
-        let factor = 10 * Math.pow(date_multiplier, 2); // MAGIC NUMBER
+        let factor = 18 * date_multiplier; // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
@@ -466,7 +473,7 @@ function calculateAverages(LOG, trendAdj = false) {
 
 let i = 0;
 function modelState(index, nationalShift) {
-    let nat_var = averages.national_var * 0.52; // MAGIC NUMBER
+    let nat_var = averages.national_var * 0.50; // MAGIC NUMBER
     nationalShift *= Math.sqrt(nat_var); 
 
     let state_var = averages.state_var[index] - nat_var; // MAGIC NUMBER
@@ -474,7 +481,7 @@ function modelState(index, nationalShift) {
         if (LOG && i%1e5 === 0) console.log(abbrs[index] + ": BELOW THRESHOLD");
         state_var = 0.0001;
     }
-    state_var *= 0.17 * date_multiplier; // MAGIC NUMBER
+    state_var *= 0.025 * Math.pow(date_multiplier, 4); // MAGIC NUMBER
     if (LOG && (++i)%7e5 === 0) 
         console.log(`${abbrs[index]}: ${(100 * Math.sqrt(state_var)).toFixed(2)}%`);
 
