@@ -344,7 +344,7 @@ function makeTable(districts) {
     $("#filter").addEventListener("input", e => {
         let text = e.target.value.toUpperCase();
         e.target.value = text;
-        let new_districts = districts.filter(d => d.id.toUpperCase().includes(text))
+        let new_districts = districts.filter(d => d.id.toUpperCase().startsWith(text))
         update(new_districts);
         if (text !== "") $("#showAll").click()
     });
