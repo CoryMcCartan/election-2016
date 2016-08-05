@@ -284,14 +284,7 @@ function makeHistogram(stats) {
 }
 
 function makeTable(districts) {
-    let table = d3.select("table#districts"); 
-
-    let i = 0;
-    let tr = table.selectAll("tbody > tr")
-        .data(districts)
-        .enter().append("tr")
-        .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
-        .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
+    let table = d3.select("table#districts > tbody"); 
 
     let demScale = d3.scale.linear()
         .domain([0, 10, 100])
@@ -300,32 +293,42 @@ function makeTable(districts) {
         .domain([0, 10, 100])
         .range(["white",  LIGHT_RED, RED]);
 
-    let percent = d3.format(".1%");
-    let td = tr.selectAll("td")
-        .data(row => {
-            let gapNum = d3.format(".1f")(Math.abs(100 * row.gap));
-            let gapHTML = row.gap > 0 ? `<span class="dem">D+${gapNum}</span>` :
-                `<span class="gop">R+${gapNum}</span>`;
+    let update = districts => {
+        let i = 0;
+        let tr = table.selectAll("tr").data(districts, d => d.id)
+        tr.enter().append("tr")
+            .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
+            .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
+        tr.exit().remove();
 
-                return [
-                    row.id,
-                    percent(row.prob),
-                    percent(1 - row.prob),
-                    gapHTML,
-                ];
-        })
-        .enter().append("td")
-        .html(d => d)
-        .style("background-color", (d, i) => {
-            if (i - 1 === DEM)
-                return demScale(parseFloat(d));
-            else if (i - 1 === GOP)
-                return gopScale(parseFloat(d));
-            else
-                return "initial";
-        });
+        let percent = d3.format(".1%");
+        let td = tr.selectAll("td")
+            .data(row => {
+                let gapNum = d3.format(".1f")(Math.abs(100 * row.gap));
+                let gapHTML = row.gap > 0 ? `<span class="dem">D+${gapNum}</span>` :
+                    `<span class="gop">R+${gapNum}</span>`;
 
-    $$("tr.hide").forEach(tr => tr.hidden = true);
+                    return [
+                        row.id,
+                        percent(row.prob),
+                        percent(1 - row.prob),
+                        gapHTML,
+                    ];
+            })
+            .enter().append("td")
+            .html(d => d)
+            .style("background-color", (d, i) => {
+                if (i - 1 === DEM)
+                    return demScale(parseFloat(d));
+                else if (i - 1 === GOP)
+                    return gopScale(parseFloat(d));
+                else
+                    return "initial";
+            });
+
+        $$("tr.hide").forEach(tr => tr.hidden = true);
+    }
+    update(districts);
 
     $("#showAll").addEventListener("click", function(e) {
         $$("tr.hide").forEach(tr => tr.hidden = false);
@@ -338,7 +341,13 @@ function makeTable(districts) {
         $("#showAll").hidden = false;
     });
 
-
+    $("#filter").addEventListener("input", e => {
+        let text = e.target.value.toUpperCase();
+        e.target.value = text;
+        let new_districts = districts.filter(d => d.id.toUpperCase().includes(text))
+        update(new_districts);
+        if (text !== "") $("#showAll").click()
+    });
 }
 
 function makeHistoryLine(history) {
