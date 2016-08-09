@@ -169,7 +169,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.2 * date_multiplier; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.15 * date_multiplier; // MAGIC NUMBER 
 
         i++;
     }
