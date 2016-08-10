@@ -9,7 +9,7 @@ var base = location.pathname.replace("service-worker.js", "");
 var STATIC_CACHE = [
     base + "assets/flag.gif",
     base + "assets/usa.json",
-    base + "js/lib/d3.v3.min.js",
+    base + "js/lib/d3.v4.min.js",
     base + "js/lib/queue.v1.min.js",
     base + "js/lib/topojson.v0.min.js",
     base + "js/lib/lib.min.js",
