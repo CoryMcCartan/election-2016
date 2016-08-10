@@ -114,7 +114,7 @@ function makeMap(showProbabilities = true) {
     let width = el.getBoundingClientRect().width;
     let height = width * mapRatio;
 
-    let projection = d3.geo.albersUsa()
+    let projection = d3.geoAlbersUsa()
         .scale(paddingRatio * width)
         .translate([width/2, height/2]);
 
@@ -122,14 +122,14 @@ function makeMap(showProbabilities = true) {
         .attr("width", width)
         .attr("height", height);
 
-    let path = d3.geo.path().projection(projection);
+    let path = d3.geoPath().projection(projection);
 
     let tooltip = d3.select("#map-tooltip");
     let tName = $("#mt-name");
     let tDEM = $("#mt-dem");
     let tGOP = $("#mt-gop");
 
-    let colorScale = d3.scale.linear()
+    let colorScale = d3.scaleLinear()
         .domain([0, 0.49, 0.50, 0.51, 1])
         .range([RED, LIGHT_RED, YELLOW, LIGHT_BLUE, BLUE]);
 
@@ -238,6 +238,8 @@ function makeMap(showProbabilities = true) {
             .scale(paddingRatio * width)
             .translate([width/2, height/2]);
 
+        path = d3.geoPath().projection(projection);
+
         map.attr("width", width);
         map.attr("height", height);
 
@@ -271,23 +273,19 @@ function makeHistogram(mean) {
     let width = el.getBoundingClientRect().width;
     let height = width * chartRatio;
 
-    let x = d3.scale.ordinal()
+    let x = d3.scaleBand()
         .domain(d3.range(538))
-        .rangeBands([margin.L, width - margin.R], smallScreen() ? -0.5 : -0.2);
-    let y = d3.scale.linear()
+        .range([margin.L, width - margin.R]);
+    let y = d3.scaleLinear()
         .range([height - margin.B, margin.T]);
 
     let ticks = smallScreen() ? 54 : 30;
 
-    let xAxis = d3.svg.axis()
-        .scale(x)
+    let xAxis = d3.axisBottom(x)
         .tickValues(x.domain().filter((d, i) => !(i % ticks)))
-        .outerTickSize(0)
-        .orient("bottom");
-    let yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left")
-        .innerTickSize(-width + margin.L + margin.R)
+        .tickSizeOuter(0);
+    let yAxis = d3.axisLeft(y)
+        .tickSizeInner(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 4 : 6, "%");
 
     let chart = d3.select(el).append("svg")
@@ -340,7 +338,7 @@ function makeHistogram(mean) {
                 else return RED;
             })
             .attr("x", d => x(d.electors))
-            .attr("width", x.rangeBand())
+            .attr("width", x.bandwidth() * 1.15)
             .attr("y", d => y(d.percentage))
             .attr("height", d => height - y(d.percentage) - margin.B);
 
@@ -383,14 +381,14 @@ function makeHistogram(mean) {
         width = el.getBoundingClientRect().width;
         height = width * chartRatio;
 
-        x.rangeBands([margin.L, width - margin.R], smallScreen() ? -0.5 : -0.2);
+        x.range([margin.L, width - margin.R]);
         y.range([height - margin.B, margin.T]);
 
 
         let ticks = smallScreen() ? 54 : 30;
         xAxis.tickValues(x.domain().filter((d, i) => !(i % ticks)))
         yAxis
-            .innerTickSize(-width + margin.L + margin.R)
+            .tickSizeInner(-width + margin.L + margin.R)
             .ticks(smallScreen() ? 4 : 6, "%");
 
         chart.attr("width", width);
@@ -406,7 +404,7 @@ function makeHistogram(mean) {
             
         chart.selectAll(".bar")
             .attr("x", d => x(d.electors))
-            .attr("width", x.rangeBand())
+            .attr("width", x.bandwidth() * 1.15)
             .attr("y", d => y(d.percentage))
             .attr("height", d => height - y(d.percentage) - margin.B);
         
@@ -427,30 +425,29 @@ function makeHistoryLine(history) {
     let width = el.getBoundingClientRect().width;
     let height = width * chartRatio;
 
-    let x = d3.time.scale()
+    let x = d3.scaleTime()
         .domain([startDate, endDate])
         .range([margin.L, width - margin.R]);
-    let y = d3.scale.linear()
+    let y = d3.scaleLinear()
         .domain([0, 1])
         .range([height - margin.B, margin.T]);
 
-    let xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom")
-        .outerTickSize(0)
+    let xAxis = d3.axisBottom(x)
+        .tickSizeOuter(0)
         .ticks(smallScreen() ? 4 : 7);
-    let yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left")
-        .innerTickSize(-width + margin.L + margin.R)
+    let yAxis = d3.axisLeft(y)
+        .tickSizeInner(-width + margin.L + margin.R)
         .ticks(smallScreen() ? 5 : 10, "%");
 
-    let demLine = d3.svg.line()
-        .x(d => x(d.date)) .y(d => y(d.prob));
+    let demLine = d3.line()
+        .x(d => x(d.date)) 
+        .y(d => y(d.prob))
+        .curve(d3.curveBasis);
 
-    let gopLine = d3.svg.line()
+    let gopLine = d3.line()
         .x(d => x(d.date))
-        .y(d => y(1 - d.prob));
+        .y(d => y(1 - d.prob))
+        .curve(d3.curveBasis);
 
     let chart = d3.select(el).append("svg")
         .attr("width", width)
@@ -489,7 +486,7 @@ function makeHistoryLine(history) {
     // labels
     let prob = history[0].prob;
     let circleX = x(history[0].date);
-    let labelX = circleX + 5;
+    let labelX = circleX + 7;
     let demEndLabel = chart.append("text")
         .attr("class", "dem end-label")
         .attr("x", labelX)
@@ -505,19 +502,19 @@ function makeHistoryLine(history) {
         .attr("class", "dem end-circle")
         .attr("cx", circleX)
         .attr("cy", y(prob))
-        .attr("r", 3);
+        .attr("r", 4);
     let gopCircle = chart.append("circle")
         .attr("class", "gop end-circle")
         .attr("cx", circleX)
         .attr("cy", y(1 - prob))
-        .attr("r", 3);
+        .attr("r", 4);
 
     chart.append("path")
         .datum(history)
         .attr("id", "demProbLine")
         .attr("d", demLine)
         .attr("stroke", BLUE)
-        .attr("stroke-width", 2)
+        .attr("stroke-width", 3)
         .attr("fill", "transparent");
 
     chart.append("path")
@@ -525,7 +522,7 @@ function makeHistoryLine(history) {
         .attr("d", gopLine)
         .attr("id", "gopProbLine")
         .attr("stroke", RED)
-        .attr("stroke-width", 2)
+        .attr("stroke-width", 3)
         .attr("fill", "transparent");
 
     chart
@@ -579,11 +576,11 @@ function makeHistoryLine(history) {
         y.range([height - margin.B, margin.T]);
 
         circleX = x(history[0].date);
-        labelX = circleX + 5;
+        labelX = circleX + 7;
 
         xAxis.ticks(smallScreen() ? 4 : 7);
         yAxis
-            .innerTickSize(-width + margin.L + margin.R)
+            .tickSizeInner(-width + margin.L + margin.R)
             .ticks(smallScreen() ? 5 : 10, "%");
 
         chart.select(".x.axis")
