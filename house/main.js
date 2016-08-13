@@ -74,9 +74,6 @@ function processElection(data) {
     }
 
     let new_gap2014 = (totalDem - totalRep) / total;
-    console.log(new_gap2014 - gap2014);
-    console.log(`DEM: ${totalDem / total - 0.455}`);
-    console.log(`GOP: ${totalRep / total - 0.512}`);
     turnout2014 = total;
 }
 
