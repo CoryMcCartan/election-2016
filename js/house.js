@@ -292,10 +292,10 @@ function makeTable(districts) {
     let update = districts => {
         let i = 0;
         let tr = table.selectAll("tr").data(districts, d => d.id)
-        tr.enter().append("tr")
+        tr.exit().remove();
+        tr = tr.enter().append("tr")
             .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
             .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
-        tr.exit().remove();
 
         let percent = d3.format(".1%");
         let td = tr.selectAll("td")
@@ -338,8 +338,7 @@ function makeTable(districts) {
     });
 
     $("#filter").addEventListener("input", e => {
-        let text = e.target.value.toUpperCase();
-        e.target.value = text;
+        let text = e.target.value = e.target.value.toUpperCase();
         let new_districts = districts.filter(d => d.id.toUpperCase().startsWith(text))
         update(new_districts);
         if (text !== "") $("#showAll").click()
