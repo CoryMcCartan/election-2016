@@ -13,9 +13,10 @@ let date_multiplier;
 let pollsters;
 
 const demSeats = 188;
-const gap2014 = 0.455 - 0.512;
-const turnout2014 = 78235240;
+let gap2014 = 0.455 - 0.512;
+let turnout2014;
 const turnout2012 = 122346020;
+const pop_change = 1.0153; // multiplier for increasing turnout
 
 const topicName = "2016-national-house-race";
 
@@ -61,9 +62,22 @@ function * main() {
 }
 
 function processElection(data) {
+    let totalDem = 0;
+    let totalRep = 0;
+    let total = 0;
     for (let district of data) {
-        district.gap2014 = (district.dem - district.gop) / district.total;
+        district.total = +district.total;
+        district.gap2014 = (+district.dem - +district.gop) / district.total;
+        totalDem += +district.dem;
+        totalRep += +district.gop;
+        total += district.total;
     }
+
+    let new_gap2014 = (totalDem - totalRep) / total;
+    console.log(new_gap2014 - gap2014);
+    console.log(`DEM: ${totalDem / total - 0.455}`);
+    console.log(`GOP: ${totalRep / total - 0.512}`);
+    turnout2014 = total;
 }
 
 function processPollsterData(data) {
@@ -160,7 +174,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.5 * date_multiplier; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
     }
 }
 
@@ -168,7 +182,7 @@ function weightPolls(polls) {
     const base_n = Math.log(600);
     const regVoterBias = +0.000; 
     const likelyVoterBias = -0.000; 
-    const biasBuffer = 0.005; // ignore biases less than this amount MAGIC NUMBER
+    const biasBuffer = 0.0025; // ignore biases less than this amount MAGIC NUMBER
 
     let rv_avg = 0;
     let n_rv = 0;
@@ -319,7 +333,9 @@ function calculateAverages(data2014, polls) {
     let mean_var = polls.reduce((p, c) => p + Math.pow(c.gap - average, 2) * c.weight, 0);
     mean_var /= weights;
     variance += mean_var;
-    variance *= date_multiplier * 2.1; // MAGIC NUMBER
+    let factor = Math.pow(date_multiplier, 0.25); // MAGIC NUMBER
+    let mix = 0.2; // how much of variance is at the local level
+    variance *= (1 - mix) * factor * 3.0; // MAGIC NUMBER
 
     let shift = average - gap2014;
 
@@ -331,8 +347,8 @@ function calculateAverages(data2014, polls) {
 
     for (let district of data2014) {
         let old = district.gap2014;
-        district.gap = old + (1 - Math.abs(old)) * shift / date_multiplier;
-        district.variance = 5*Math.abs(district.gap) * variance; // MAGIC NUMBER
+        district.gap = old + shift / factor;
+        district.variance = (1 + Math.abs(district.gap)) * mix * variance;
     }
 
     return {
@@ -376,7 +392,7 @@ function predict(averages, districts, iterations, history) {
             let avg = district.gap + nationalShift;
             let result = gaussian(avg, district.variance).ppf(Math.random());
 
-            let turnout = district.total * turnout2014 / turnout2012;
+            let turnout = district.total * (turnout2012 / turnout2014) * pop_change;
             demPopularVote += turnout * (0.5 + result / 2);
             gopPopularVote += turnout * (0.5 - result / 2);
 
