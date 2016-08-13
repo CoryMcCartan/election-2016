@@ -171,7 +171,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.2; // MAGIC NUMBER 
     }
 }
 
@@ -330,9 +330,9 @@ function calculateAverages(data2014, polls) {
     let mean_var = polls.reduce((p, c) => p + Math.pow(c.gap - average, 2) * c.weight, 0);
     mean_var /= weights;
     variance += mean_var;
-    let factor = Math.pow(date_multiplier, 0.25); // MAGIC NUMBER
-    let mix = 0.2; // how much of variance is at the local level
-    variance *= (1 - mix) * factor * 3.0; // MAGIC NUMBER
+    let factor = Math.pow(date_multiplier, 1/4); // MAGIC NUMBER
+    let mix = 0.5; // how much of variance is at the local level
+    variance *= (1 - mix) * factor * 1.5; // MAGIC NUMBER
 
     let shift = average - gap2014;
 
@@ -345,7 +345,7 @@ function calculateAverages(data2014, polls) {
     for (let district of data2014) {
         let old = district.gap2014;
         district.gap = old + shift / factor;
-        district.variance = (1 + Math.abs(district.gap)) * mix * variance;
+        district.variance = (0.75 + Math.abs(district.gap)) * mix * variance; // MAGIC NUMBERS
     }
 
     return {

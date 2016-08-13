@@ -1510,8 +1510,8 @@ MI,,FALSE,,,,,,
 MI,H,FALSE,,,Total State Votes:,,3089477,
 MI,,FALSE,,,,,,
 ,,FALSE,,,,,,
-MN,1,TRUE,Tim,Walz,,DFL,122851,54.19%
-MN,1,FALSE,,,Party Votes:,DFL,,
+MN,1,TRUE,Tim,Walz,,D,122851,54.19%
+MN,1,FALSE,,,Party Votes:,D,,
 MN,1,FALSE,Jim,Hagedorn,,R,103536,45.67%
 MN,1,FALSE,Aaron,Miller,,R,,
 MN,1,FALSE,,,Party Votes:,R,,
@@ -1520,47 +1520,47 @@ MN,1,FALSE,,,District Votes:,,226695,
 MN,,FALSE,,,,,,
 MN,2,TRUE,John,Kline,,R,137778,56.04%
 MN,2,FALSE,,,Party Votes:,R,,
-MN,2,FALSE,Mike,Obermueller,,DFL,95565,38.87%
-MN,2,FALSE,Michael J.,Roberts,,DFL,,
-MN,2,FALSE,,,Party Votes:,DFL,,
-MN,2,FALSE,Paula,Overby,,IDP,12319,5.01%
-MN,2,FALSE,,,Party Votes:,IDP,,
+MN,2,FALSE,Mike,Obermueller,,D,95565,38.87%
+MN,2,FALSE,Michael J.,Roberts,,D,,
+MN,2,FALSE,,,Party Votes:,D,,
+MN,2,FALSE,Paula,Overby,,D,12319,5.01%
+MN,2,FALSE,,,Party Votes:,D,,
 MN,2,FALSE,,Scattered,,W,186,0.08%
 MN,2,FALSE,,,District Votes:,,245848,
 MN,,FALSE,,,,,,
 MN,3,TRUE,Erik,Paulsen,,R,167515,62.14%
-MN,3,FALSE,Sharon,Sund,,DFL,101846,37.78%
+MN,3,FALSE,Sharon,Sund,,D,101846,37.78%
 MN,3,FALSE,,Scattered,,W,224,0.08%
 MN,3,FALSE,,,District Votes:,,269585,
 MN,,FALSE,,,,,,
-MN,4,TRUE,Betty,McCollum,,DFL,147857,61.19%
+MN,4,TRUE,Betty,McCollum,,D,147857,61.19%
 MN,4,FALSE,Sharna,Wahlgren,,R,79492,32.9%
 MN,4,FALSE,Dave,Thomas,,IDP,14059,5.82%
 MN,4,FALSE,,Scattered,,W,229,0.09%
 MN,4,FALSE,,,District Votes:,,241637,
 MN,,FALSE,,,,,,
-MN,5,TRUE,Keith,Ellison,,DFL,167079,70.79%
+MN,5,TRUE,Keith,Ellison,,D,167079,70.79%
 MN,5,FALSE,Doug,Daggett,,R,56577,23.97%
-MN,5,FALSE,Lee,Bauer,,IDP,12001,5.08%
+MN,5,FALSE,Lee,Bauer,,D,12001,5.08%
 MN,5,FALSE,,Scattered,,W,353,0.15%
 MN,5,FALSE,,,District Votes:,,236010,
 MN,,FALSE,,,,,,
 MN,6,FALSE,Tom,Emmer,,R,133328,56.29%
 MN,6,FALSE,Rhonda,Sivarajah,,R,,
 MN,6,FALSE,,,Party Votes:,R,,
-MN,6,FALSE,Joe,Perske,,DFL,90926,38.39%
-MN,6,FALSE,,,Party Votes:,DFL,,
+MN,6,FALSE,Joe,Perske,,D,90926,38.39%
+MN,6,FALSE,,,Party Votes:,D,,
 MN,6,FALSE,John,Denney,,IDP,12457,5.26%
 MN,6,FALSE,,,Party Votes:,IDP,,
 MN,6,FALSE,,Scattered,,W,135,0.06%
 MN,6,FALSE,,,District Votes:,,236846,
 MN,,FALSE,,,,,,
-MN,7,TRUE,Collin C.,Peterson,,DFL,130546,54.21%
+MN,7,TRUE,Collin C.,Peterson,,D,130546,54.21%
 MN,7,FALSE,Torrey,Westrom,,R,109955,45.66%
 MN,7,FALSE,,Scattered,,W,334,0.14%
 MN,7,FALSE,,,District Votes:,,240835,
 MN,,FALSE,,,,,,
-MN,8,TRUE,Rick,Nolan,,DFL,129090,48.51%
+MN,8,TRUE,Rick,Nolan,,D,129090,48.51%
 MN,8,FALSE,Stewart,Mills,,R,125358,47.11%
 MN,8,FALSE,Ray Skip,Sandman,,GRE,11450,4.3%
 MN,8,FALSE,,Scattered,,W,185,0.07%
@@ -1854,21 +1854,21 @@ NH,,FALSE,,,,,,
 NH,H,FALSE,,,Total State Votes:,,480920,
 NH,,FALSE,,,,,,
 ,,FALSE,,,,,,
-NJ,01,FALSE,Donald W. ,Norcross,,D,93315,57.43%
-NJ,01,FALSE,"Frank C., Jr.",Broomell,,D,,
-NJ,01,FALSE,Frank W.,Minor,,D,,
-NJ,01,FALSE,,,Party Votes:,D,,
-NJ,01,FALSE,Garry W.,Cobb,,R,64073,39.43%
-NJ,01,FALSE,Claire H. ,Gustafson,,R,,
-NJ,01,FALSE,Gerard ,McManus,,R,,
-NJ,01,FALSE,Lee,Lucas,,R,,
-NJ,01,FALSE,,,Party Votes:,R,,
-NJ,01,FALSE,Scot John,Tomaszewski,,WDB,1784,1.1%
-NJ,01,FALSE,Robert,Shapiro,,SBP,1134,0.7%
-NJ,01,FALSE,Margaret M.,Chapman,,CN,1103,0.68%
-NJ,01,FALSE,Mike,Berman,,OP,634,0.39%
-NJ,01,FALSE,Donald E.,Letton,,DRP,449,0.28%
-NJ,01,FALSE,,,District Votes:,,162492,
+NJ,1,FALSE,Donald W. ,Norcross,,D,93315,57.43%
+NJ,1,FALSE,"Frank C., Jr.",Broomell,,D,,
+NJ,1,FALSE,Frank W.,Minor,,D,,
+NJ,1,FALSE,,,Party Votes:,D,,
+NJ,1,FALSE,Garry W.,Cobb,,R,64073,39.43%
+NJ,1,FALSE,Claire H. ,Gustafson,,R,,
+NJ,1,FALSE,Gerard ,McManus,,R,,
+NJ,1,FALSE,Lee,Lucas,,R,,
+NJ,1,FALSE,,,Party Votes:,R,,
+NJ,1,FALSE,Scot John,Tomaszewski,,WDB,1784,1.1%
+NJ,1,FALSE,Robert,Shapiro,,SBP,1134,0.7%
+NJ,1,FALSE,Margaret M.,Chapman,,CN,1103,0.68%
+NJ,1,FALSE,Mike,Berman,,OP,634,0.39%
+NJ,1,FALSE,Donald E.,Letton,,DRP,449,0.28%
+NJ,1,FALSE,,,District Votes:,,162492,
 NJ,,FALSE,,,,,,
 NJ,2,TRUE,Frank A. ,LoBiondo,,R,108875,61.46%
 NJ,2,FALSE,Mike,Assad,,R,,
