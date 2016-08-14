@@ -364,6 +364,7 @@ function predict(averages, districts, iterations, history) {
         prob: 0,
         gap: d.gap,
         stddev: Math.sqrt(d.variance + averages.variance),
+        flip: Math.sign(d.gap) !== Math.sign(d.gap2014),
     }));
 
     let demWins = 0;
