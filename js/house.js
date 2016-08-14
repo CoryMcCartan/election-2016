@@ -44,6 +44,7 @@ function main() {
         id: d.id,
         prob: +d.prob,
         gap: +d.gap,
+        flip: d.flip === "true",
     }), (error, districts) => {
         makeTable(districts);
     });
@@ -295,7 +296,8 @@ function makeTable(districts) {
         tr.exit().remove();
         tr = tr.enter().append("tr")
             .sort((a, b) => Math.abs(a.gap) - Math.abs(b.gap))
-            .attr("class", d => Math.abs(d.gap) > 0.04 ? "hide" : "");
+            .classed("hide", d => Math.abs(d.gap) > 0.04)
+            .classed("flip", d => d.flip);
 
         let percent = d3.format(".1%");
         let td = tr.selectAll("td")
