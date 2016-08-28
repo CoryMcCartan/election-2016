@@ -171,7 +171,7 @@ function processPolls(polls) {
 
         poll.gap = (dem - gop) / 100; // assume undecideds split evenly
         // add undecideds/3rd party to MOE
-        poll.moe += (100 - (dem + gop)) * 0.2; // MAGIC NUMBER 
+        poll.moe += (100 - (dem + gop)) * 0.25; // MAGIC NUMBER 
     }
 }
 
@@ -332,7 +332,7 @@ function calculateAverages(data2014, polls) {
     variance += mean_var;
     let factor = Math.pow(date_multiplier, 1/4); // MAGIC NUMBER
     let mix = 0.5; // how much of variance is at the local level
-    variance *= (1 - mix) * factor * 1.5; // MAGIC NUMBER
+    variance *= (1 - mix) * factor * 2; // MAGIC NUMBER
 
     let shift = average - gap2014;
 
