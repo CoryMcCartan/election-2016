@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <meta name="description" content="Statistical predictions for the 2016 U.S. general election.
+">
+        <link rel="manifest" href="/election-2016/manifest.json">
+        <link rel="canonical" href="https://corymccartan.github.io/election-2016/" /> <!-- for search engines -->
+
+        <link rel="icon" type="image/gif" href="/election-2016/assets/flag.gif">
+
+        <title>2016 Election Predictions: House</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,400italic' rel='stylesheet' type='text/css'> 
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300,700,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/election-2016/css/main.css">
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)
+            },i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79274202-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <nav>
+            <h1> 
+                <img class="flag-icon" src="/election-2016/assets/flag.gif">
+                <a href="/election-2016/" style="color: black">2016 Election Predictions</a>
+                <ul class="nav">
+                    <li>
+                        <a class="inactive"
+                            href="/election-2016/president/">President</a>
+                    </li>
+                    <li>
+                        <a 
+                            href="/election-2016/house/">House</a>
+                    </li>
+                </ul>
+            </h1>
+        </nav>
+
+        <main>
+            <h1>Chance of winning control</h1>
+<div class="probability-bar">
+    <span class="dem">
+        <span class="name">Democrats</span>
+        <span id="prob-dem"></span>
+    </span>
+    <span class="gop">
+        <span class="name">Republicans</span>
+        <span id="prob-gop"></span>
+    </span>
+    <time></time>
+</div>
+<div class="bar-spacer"></div>
+
+<section>
+    <summary id="overall"></summary>
+
+    <br>
+    <figure id="histogram" class="graphic" aria-label="Histogram of Possible Outcomes">
+        <div id="hist-tooltip" class="tooltip">
+            <span id="ht-seats"></span> <br />
+            <span id="ht-percent"></span> 
+        </div>
+    </figure>
+</section>
+
+<section>
+    <h2>District Predictions</h2>
+    <summary>
+        Data and predictions about each of the 435 House districts, with the
+        most competitive districts at the top.  Districts expected to flip 
+        parties are highlighted in grey and italicized.
+    </summary>
+
+    <input type="text" id="filter" placeholder="Search by district">
+
+    <table id="districts" aria-label="District-level data">
+        <thead>
+        <tr>
+            <th id="th-dist">District</th>
+            <th id="th-dem">Dem. Chances</th>
+            <th id="th-gop">Rep. Chances</th>
+            <th id="th-marg">Predicted Margin</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="graphic-controls">
+        <button id="showAll">Show All</button>
+        <button id="hideExtra" hidden>Hide Extra</button>
+    </div><br />
+</section>
+
+<section>
+    <h2>History</h2>
+    <summary>
+        How the parties’ chances have changed over time.  The model is run 
+        every day, and continually incorporates new polling data.
+    </summary>
+
+    <figure id="history" class="graphic" aria-label="Probabilities Over Time"></figure>
+</section>
+
+<section>
+    <h2>Possible Scenarios</h2>
+    <summary>
+        The model simulates a hundred thousand elections, and keeps track of how
+        often a variety of outcomes occur.  Below are the results.
+    </summary>
+
+    <table id="scenario" aria-label="Possible Scenarios">
+        <thead>
+        <tr>
+            <th>Scenario</td>
+            <th>Probability</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="div">
+            <td>Democrats gain seats (currently 188)</td>
+            <td id="scn-dem-gain"></td>
+        </tr>
+        <tr>
+            <td>Republicans gain seats (currently 247)</td>
+            <td id="scn-gop-gain"></td>
+        </tr>
+        <tr class="div">
+            <td>Democrats win popular vote</td>
+            <td id="scn-dem-pop"></td>
+        </tr>
+        <tr>
+            <td>Republicans win popular vote</td>
+            <td id="scn-gop-pop"></td>
+        </tr>
+        <tr class="div">
+            <td>Democrats win popular vote but lose House</td>
+            <td id="scn-dem-mismatch"></td>
+        </tr>
+        <tr>
+            <td>Republicans win popular vote but lose House</td>
+            <td id="scn-gop-mismatch"></td>
+        </tr>
+        <tr class="div">
+            <td>Democratic supermajority (290 seats or more)</td>
+            <td id="scn-dem-super"></td>
+        </tr>
+        <tr>
+            <td>Republican supermajority</td>
+            <td id="scn-gop-super"></td>
+        </tr>
+        </tbody>
+        <tr class="div">
+            <td>Democratic landslide (>10% popular vote margin)</td>
+            <td id="scn-dem-landslide"></td>
+        </tr>
+        <tr>
+            <td>Republican landslide</td>
+            <td id="scn-gop-landslide"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<script src="/election-2016/js/lib/d3.v4.min.js"></script>
+<script src="/election-2016/js/lib/queue.v1.min.js"></script>
+<script src="/election-2016/js/lib/lib.min.js"></script>
+<script src="/election-2016/js/house.js"></script>
+<script src="/election-2016/js/states.js"></script>
+
+        </main>
+
+        <footer>
+            &copy; 2016.  All Rights Reserved.
+            <a href="https://github.com/CoryMcCartan/election-2016" target="_blank" id="github">View Code</a>.
+            Polling data from the Huffington Post.  Pollster ratings from FiveThirtyEight.
+        </footer>
+    </body>
+</html>

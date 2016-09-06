@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <meta name="description" content="Statistical predictions for the 2016 U.S. general election.
+">
+        <link rel="manifest" href="/election-2016/manifest.json">
+        <link rel="canonical" href="https://corymccartan.github.io/election-2016/" /> <!-- for search engines -->
+
+        <link rel="icon" type="image/gif" href="/election-2016/assets/flag.gif">
+
+        <title>2016 Election Predictions: Home</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,400italic' rel='stylesheet' type='text/css'> 
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300,700,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/election-2016/css/main.css">
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)
+            },i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79274202-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <nav>
+            <h1> 
+                <img class="flag-icon" src="/election-2016/assets/flag.gif">
+                <a href="/election-2016/" style="color: black">2016 Election Predictions</a>
+                <ul class="nav">
+                    <li>
+                        <a class="inactive"
+                            href="/election-2016/president/">President</a>
+                    </li>
+                    <li>
+                        <a class="inactive"
+                            href="/election-2016/house/">House</a>
+                    </li>
+                </ul>
+            </h1>
+        </nav>
+
+        <main>
+            <h1>2016 General Election Predictions</h1>
+
+<p style="margin: 0.5em;">
+    Using statistical models on polling data to estimate outcomes for the 2016 
+    general election.
+</p>
+
+<a href="president/">
+    <h1>President</h1>
+</a>
+<a href="president/">
+    <div class="probability-bar" id="bar-pres">
+        <span class="dem">
+            <span class="name">Clinton</span>
+            <span id="prob-dem-pres"></span>
+        </span>
+        <span class="gop">
+            <span class="name">Trump</span>
+            <span id="prob-gop-pres"></span>
+        </span>
+    </div>
+    <div class="bar-spacer"></div>
+</a>
+
+<br>
+
+<a href="house/">
+    <h1>House</h1>
+</a>
+<a href="house/">
+    <div class="probability-bar" id="bar-house">
+        <span class="dem">
+            <span class="name">Democrats</span>
+            <span id="prob-dem-house"></span>
+        </span>
+        <span class="gop">
+            <span class="name">Republicans</span>
+            <span id="prob-gop-house"></span>
+        </span>
+    </div>
+    <div class="bar-spacer"></div>
+</a>
+
+<br>
+<br>
+
+<script src="/election-2016/js/lib/d3.v4.min.js"></script>
+<script src="/election-2016/js/lib/lib.min.js"></script>
+<script src="/election-2016/js/main.js"></script>
+
+        </main>
+
+        <footer>
+            &copy; 2016.  All Rights Reserved.
+            <a href="https://github.com/CoryMcCartan/election-2016" target="_blank" id="github">View Code</a>.
+            Polling data from the Huffington Post.  Pollster ratings from FiveThirtyEight.
+        </footer>
+    </body>
+</html>
