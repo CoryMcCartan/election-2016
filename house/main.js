@@ -196,6 +196,11 @@ function weightPolls(polls) {
 
         let sampleWeight = Math.log(poll.n) / base_n; 
 
+        if (poll.survey_houses.find(s => s.name.includes("Tarrance"))) {
+            poll.weight = 0;
+            delete poll;
+            continue;
+        }
         let pollsters = getPollsterAverages(poll.survey_houses, poll.method);
         if (pollsters.banned) {
             if (LOG) console.log("Deleted poll — pollster banned.");
@@ -332,7 +337,8 @@ function calculateAverages(data2014, polls) {
     variance += mean_var;
     let factor = Math.pow(date_multiplier, 1/4); // MAGIC NUMBER
     let mix = 0.5; // how much of variance is at the local level
-    variance *= (1 - mix) * factor * 2; // MAGIC NUMBER
+    variance *= (1 - mix) * factor;
+    variance *= 3;  // MAGIC NUMBER
 
     let shift = average - gap2014;
 
@@ -345,7 +351,7 @@ function calculateAverages(data2014, polls) {
     for (let district of data2014) {
         let old = district.gap2014;
         district.gap = old + shift / factor;
-        district.variance = (0.75 + Math.abs(district.gap)) * mix * variance; // MAGIC NUMBERS
+        district.variance = (0.8 + Math.abs(district.gap)) * mix * variance; // MAGIC NUMBERS
     }
 
     return {
