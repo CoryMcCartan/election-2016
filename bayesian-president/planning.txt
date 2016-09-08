@@ -1,0 +1,12 @@
+- use R
+- use bayesian stats
+- build linear regression for who should win based on unemployment rate, wage
+  growth, current party in power (or how long in power).
+- get priors for each state based on recency-weighted election results from
+  last 3 elections. Ensure enough variance
+- priors also influenced by population growth (& demographic changes ?)
+- update priors for each state based on state polling.  Weight by poll type
+  (registered vs likely, cell phones/internet, pollster ratings?)
+- update priors for each state based on national polling, using some measure of
+  elasticity for each state.
+- monte carlo election results, like I do now

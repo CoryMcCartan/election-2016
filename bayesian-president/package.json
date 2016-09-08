@@ -1,0 +1,13 @@
+{
+  "name": "presidential-predictions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^2.1.0",
+    "node-fetch": "^1.6.0",
+    "touch": "^1.0.0"
+  }
+}
