@@ -292,7 +292,8 @@ function getPollsterAverages(surveyors, method) {
             } else if (name.includes("Selzer")) {
                 matched = pollsters.find(p => p.pollster.includes("Selzer"));
                 break;
-            } else if (name.includes("Opinion Research Corporation")) { matched = pollsters.find(p => p.pollster.includes("Opinion Research Corp."));
+            } else if (name.includes("Opinion Research Corporation")) { 
+                matched = pollsters.find(p => p.pollster.includes("Opinion Research Corp."));
                 break;
             } else if (name.includes("Greenberg Quinlan Rosner")) {
                 matched = pollsters.find(p => p.pollster.includes("Greenberg Quinlan Rosner"));
