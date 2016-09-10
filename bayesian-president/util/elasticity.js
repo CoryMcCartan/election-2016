@@ -55,7 +55,21 @@ function * calculateElasticities() {
         elasticities.push(elasticity);
     }
 
-    console.log(1);
+    let combined = [];
+    let length= elasticities[0].length;
+    for (let j = 0; j < length; j++) {
+        let obj = {};
+
+        for (let [i, state] of abbrs.entries()) {
+            obj[state + "_dem"] = elasticities[i][j].dem;
+            obj[state + "_gop"] = elasticities[i][j].gop;
+        }
+
+        combined.push(obj);
+    }
+
+    csv.writeToPath(path.join(__dirname, "../data/elasticity.csv"), 
+                    combined, {headers: true});
 }
 
 function interpolateNationalPolling(polls, averages) {
