@@ -196,7 +196,7 @@ function weightPolls(polls) {
         if (poll.skip) continue;
         let dateDiff = (now - poll.date) / one_day;
         let recencyWeight;
-        let factor = 18 * date_multiplier; // MAGIC NUMBER
+        let factor = 20 * date_multiplier; // MAGIC NUMBER
         recencyWeight = Math.exp(-dateDiff / factor); 
 
         let sampleWeight = Math.log(poll.n) / base_n; 
@@ -485,7 +485,7 @@ function modelState(index, nationalShift) {
         if (LOG && i%1e5 === 0) console.log(abbrs[index] + ": BELOW THRESHOLD");
         state_var = 0.0001;
     }
-    state_var *= 0.025 * Math.pow(date_multiplier, 4); // MAGIC NUMBER
+    state_var *= 0.08 * Math.pow(date_multiplier, 3.5); // MAGIC NUMBER
     if (LOG && (++i)%7e5 === 0) 
         console.log(`${abbrs[index]}: ${(100 * Math.sqrt(state_var)).toFixed(2)}%`);
 

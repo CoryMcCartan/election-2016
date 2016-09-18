@@ -51,6 +51,7 @@ function getPolls(topicName, date) {
         Promise.all(promises).then((values) => {
             // flatten
             let polls = values.reduce((p, c) => p.concat(c));
+            polls = polls.filter(p => new Date(p.last_updated) <= date);
             resolve(polls);
         });
     });
