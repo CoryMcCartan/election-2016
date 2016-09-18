@@ -101,7 +101,10 @@ function processPolls(polls) {
     let i = 0;
     for (let poll of polls) {
         // data cleanup
-        poll.date = new Date(poll.start_date);
+        let start = +(new Date(poll.start_date));
+        let end = +(new Date(poll.end_date));
+        poll.date = new Date((start + end) / 2);
+
         poll.partisan = poll.partisan.toLowerCase !== "nonpartisan";
         poll.skip = new Date(poll.last_updated) > NOW;
         delete poll.affiliation;
