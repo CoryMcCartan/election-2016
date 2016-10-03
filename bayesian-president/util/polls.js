@@ -30,7 +30,7 @@ function * getNewPolls(topic, log=false) {
     let mostRecentID = Math.max(...polls.map(p => p.id));
 
     // get new pages of polls back unti the most recent one we currently have
-    let maxNewPolls = 700;
+    let maxNewPolls = 1000;
     let count = 0;
     let exit = false;
     for (let i = 0; i < ~~(maxNewPolls / 10); i++) {
@@ -66,7 +66,7 @@ function formatPolls(polls) {
         let end = +(new Date(poll.end_date));
         poll.date = new Date((start + end) / 2);
 
-        poll.partisan = poll.partisan.toLowerCase !== "nonpartisan";
+        poll.partisan = poll.partisan.toLowerCase() !== "nonpartisan";
         delete poll.affiliation;
         delete poll.last_updated;
         delete poll.end_date;
@@ -125,10 +125,8 @@ function formatPolls(polls) {
                    || {value: -100}).value / 100; // use negative val. as flag for no 3rd party
 
         // split undecideds evenly
-        let undecided = (responses.find(r => r.choice.toLowerCase().includes("undecided")) 
-            || {value: 0.5*Math.abs(100 - poll.dem + poll.gop)}).value / 100;
-        poll.dem += undecided / 2;
-        poll.gop += undecided / 2;
+        poll.undecided = (responses.find(r => r.choice.toLowerCase().includes("undecided")) 
+            || {value: 100*(1 - poll.dem - poll.gop - (poll.lib === -1 ? 0: poll.lib))}).value / 100;
 
         poll.gap = poll.dem - poll.gop;
     }
