@@ -1,7 +1,7 @@
 {
   "name": "presidential-predictions",
   "version": "1.0.0",
-  "description": "",
+  "description": "General Election Statistical Models & Forecasts.",
   "main": "run.js",
   "author": "",
   "license": "ISC",
