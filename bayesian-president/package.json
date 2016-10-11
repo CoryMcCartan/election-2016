@@ -1,8 +1,8 @@
 {
   "name": "presidential-predictions",
   "version": "1.0.0",
-  "description": "General Election Statistical Models & Forecasts.",
-  "main": "run.js",
+  "description": "General election statistical models & forecasts.",
+  "main": "predict.R",
   "author": "",
   "license": "ISC",
   "dependencies": {
