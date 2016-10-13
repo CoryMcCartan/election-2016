@@ -16,15 +16,17 @@ getVAP = function() {
     pop$year = c(2010, 2011, 2012, 2013, 2014, 2015)
 
     vap_model = nls(US ~ SSlogis(year, x1, x2, x3), data = pop)
-    VAP = predict(vap_model, newdata = data.frame(year = 2016))
+    VAP = predict(vap_model, data.frame(year = 2016))
 
     return(as.integer(VAP))
 }
 
-getTurnout = function() {
-	data = read.csv("data/turnout.csv")
-	weights = exp((data$year - 2012) / 500)
-	percent = weighted.mean(data$turnout, weights) / 100
+getTurnout = function(current_gap) {
+	elec = read.csv("data/elections/all.csv")
+	weights = exp((elec$year - 2012) / 20)
+	gap = abs(elec$dem_pct - elec$gop_pct)
+	model = lm(turnout ~ gap + relec, data = elec, weights = weights)
+	percent = predict(model, data.frame(gap = current_gap, relec = FALSE)) / 100 
 	VAP = getVAP()
 
 	return(VAP * percent)
