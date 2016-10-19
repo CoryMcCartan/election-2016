@@ -10,7 +10,6 @@ let csv = require("fast-csv");
 const path = require("path");
 let async = require("./async.js");
 require("./states.js")(global);
-
 // get past polling data at state and national levels
 // interpolate for daily estimated polling average
 // calculate elasticity (perhaps as function of date or other variable)
@@ -41,14 +40,20 @@ function * calculateElasticities() {
             let s_r_0 = state[d-1].gop;
             let s_r_1 = state[d].gop;
 
-            let pct_nat_dem = 2 * (nat_d_1 - nat_d_0) / (nat_d_0 + nat_d_1);
-            let pct_nat_gop = 2 * (nat_r_1 - nat_r_0) / (nat_r_0 + nat_r_1);
-            let pct_s_dem = 2 * (s_d_1 - s_d_0) / (s_d_0 + s_d_1);
-            let pct_s_gop = 2 * (s_r_1 - s_r_0) / (s_r_0 + s_r_1);
+            let pct_nat_dem = (nat_d_1 - nat_d_0) / nat_d_0;
+            let pct_nat_gop = (nat_r_1 - nat_r_0) / nat_r_0;
+            let pct_s_dem = (s_d_1 - s_d_0) / s_d_0;
+            let pct_s_gop = (s_r_1 - s_r_0) / s_r_0;
+            //pct_s_dem = s_d_0;
+            //pct_s_gop = s_r_0;
+            //pct_nat_dem = nat_d_0;
+            //pct_nat_gop = nat_r_0;
 
             elasticity.push({
-                dem: pct_s_dem / pct_nat_dem,
-                gop: pct_s_gop / pct_nat_gop,
+                pct_s_dem,
+                pct_s_gop,
+                pct_nat_dem,
+                pct_nat_gop,
             });
         }
 
@@ -61,9 +66,12 @@ function * calculateElasticities() {
         let obj = {};
 
         for (let [i, state] of abbrs.entries()) {
-            obj[state + "_dem"] = elasticities[i][j].dem;
-            obj[state + "_gop"] = elasticities[i][j].gop;
+            obj[state + "_dem"] = elasticities[i][j].pct_s_dem;
+            obj[state + "_gop"] = elasticities[i][j].pct_s_gop;
         }
+
+        obj["nat_dem"] = elasticities[0][j].pct_nat_dem;
+        obj["nat_gop"] = elasticities[0][j].pct_nat_gop;
 
         combined.push(obj);
     }
@@ -83,14 +91,14 @@ function interpolatePolling(polls, averages, state) {
     polls = polls.filter(p => p.state === state);
 
     // consolidate all polls on a given day
+    let lastLength = 0;
     for (let date = +startDate; date < Date.now(); date += one_day) {
-        let day = new Date(date).toDateString(); 
-        let todaysPolls = polls.filter(p => new Date(p.date).toDateString() === day);
+        let todaysPolls = polls.filter(p => new Date(p.date) <= date);
 
-        if (todaysPolls.length === 0) {
+        if (todaysPolls.length === lastLength) {
             consolidated.push(null);
             continue;
-        }
+        } else lastLength = todaysPolls.length;
 
         let average = {
             dem: 0,
@@ -99,9 +107,10 @@ function interpolatePolling(polls, averages, state) {
 
         let weights = 0;
         for (let poll of todaysPolls) {
-            average.dem += +poll.dem * +poll.weight;
-            average.gop += +poll.gop * +poll.weight;
-            weights += +poll.weight;
+            let recency = Math.exp((new Date(poll.date) - date) / (21 * one_day));
+            average.dem += +poll.dem * +poll.weight * recency;
+            average.gop += +poll.gop * +poll.weight * recency;
+            weights += +poll.weight * recency;
         }
 
         average.dem /= weights;
@@ -109,6 +118,8 @@ function interpolatePolling(polls, averages, state) {
 
         consolidated.push(average);
     }
+
+    return consolidated;
 
     let startIndex = consolidated.findIndex(c => c !== null);
 
