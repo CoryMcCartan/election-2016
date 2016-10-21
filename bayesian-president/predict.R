@@ -9,7 +9,7 @@ polls = read.csv("data/polls.csv")
 states = row.names(getStateTurnout())
 
 dates = as.Date(polls$date, "%a %b %d %Y")
-recency.weights = exp(0.75 * as.integer(dates - Sys.Date()))
+recency.weights = exp(0.5 * as.integer(dates - Sys.Date()))
 # add in recency weights, and weight polls with 3rd party candidates more
 polls$weight = 100 * recency.weights * polls$weight * (1 + (polls$lib != -1))
 
@@ -53,9 +53,19 @@ averages = ddply(polls, .(state), function(x) {
 levels(averages$state) = c(levels(averages$state), "DC")
 row.names(averages) = averages$state
 
-priors = getPriors()
-dc_dem = priors["DC",]$dem + dem_loss
-dc_gop = priors["DC",]$gop + gop_loss
+d2004 = read.csv("data/elections/2004.csv")
+d2008 = read.csv("data/elections/2008.csv")
+d2012 = read.csv("data/elections/2012.csv")
+# Weighted average of proportion in each state
+mean_dem = (d2004$dem/d2004$total) * (3/6) +
+    (d2008$dem/d2008$total) * (2/6) +
+    (d2012$dem/d2012$total) * (1/6)
+mean_gop = (d2004$gop/d2004$total) * (3/6) +
+    (d2008$gop/d2008$total) * (2/6) +
+    (d2012$gop/d2012$total) * (1/6)
+prior = data.frame(row.names=d2004$state, dem=mean_dem, gop=mean_gop)
+dc_dem = prior["DC",]$dem + dem_loss
+dc_gop = prior["DC",]$gop + gop_loss
 dc = data.frame(state="DC", dem=dc_dem, gop=dc_gop, lib=nat_lib)
 
 averages = rbind(averages, DC=dc)
