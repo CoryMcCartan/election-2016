@@ -1,3 +1,4 @@
+#!/usr/local/bin/Rscript
 # 2016 PRESIDENTIAL ELECTION PREDICTIONS
 # © 2016 Cory McCartan
 
