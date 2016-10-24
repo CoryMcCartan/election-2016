@@ -10,7 +10,7 @@ polls = read.csv("data/polls.csv")
 states = row.names(getStateTurnout())
 
 dates = as.Date(polls$date, "%a %b %d %Y")
-recency.weights = exp(0.5 * as.integer(dates - Sys.Date()))
+recency.weights = exp(0.95 * as.integer(dates - Sys.Date()))
 # add in recency weights, and weight polls with 3rd party candidates more
 polls$weight = 100 * recency.weights * polls$weight * (1 + (polls$lib != -1))
 
@@ -93,4 +93,8 @@ cat(paste0("GOP:      ", round(gop*100, 1), "%\n"))
 cat(paste0("LIB:      ", round(lib*100, 1), "%\n"))
 cat(paste0("OTHER:    ", round((1 - lib - dem - gop)*100, 1), "%\n\n"))
 print(result[, "dem.win", drop=FALSE])
+cat("\n")
+print(100*result[, "dem", drop=FALSE])
+cat("\n")
+print(100*result[, "gop", drop=FALSE])
 cat("\n")

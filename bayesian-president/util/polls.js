@@ -157,7 +157,7 @@ function weightPolls(polls, pollsterRatings, averagePollster) {
         else
             log("Other type: " + poll.type)
 
-        poll.weight = 5 * pollsterRating * partisanWeight * typeWeight; // 5 just for easier reading
+        poll.weight = 5 * pollsterRating * partisanWeight * typeWeight; 
 
         let bias = pollsters.meanBias;
         let biasAdj = bias - Math.sign(bias) * biasBuffer;
@@ -170,7 +170,7 @@ function weightPolls(polls, pollsterRatings, averagePollster) {
         // log poll
         log(
             `POLL: ${(poll.survey_houses + "                     ").substring(0, 20)}\t` +
-            `DATE: ${poll.date.toLocaleDateString()}\t\t` + 
+            `DATE: ${poll.date.toLocaleDateString()}  \t` + 
             `STATE: ${poll.state}\t` + 
             `WEIGHT: ${poll.weight.toFixed(2)}\t` + 
             `GAP: ${(100 * poll.gap).toFixed(2)}%\t` +
