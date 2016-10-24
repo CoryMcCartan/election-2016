@@ -16,7 +16,7 @@ let LOG;
 
 function * getNewPolls(topic, log=false) {
     LOG = log;
-    const filename = path.join(__dirname, "../data/polls.csv");
+    const filename = path.join(__dirname, "../data/polls-2012.csv");
 
     console.log("Fetching polls...");
 
@@ -119,8 +119,8 @@ function formatPolls(polls) {
 
         let responses  = question.subpopulations[index].responses;
 
-        poll.dem = responses.find(r => r.choice.toLowerCase().includes("clinton")).value / 100;
-        poll.gop = responses.find(r => r.choice.toLowerCase().includes("trump")).value / 100;
+        poll.dem = responses.find(r => r.choice.toLowerCase().includes("obama")).value / 100;
+        poll.gop = responses.find(r => r.choice.toLowerCase().includes("romney")).value / 100;
         poll.lib = (responses.find(r => r.choice.toLowerCase().includes("johnson")) 
                    || {value: -100}).value / 100; // use negative val. as flag for no 3rd party
 
@@ -195,9 +195,8 @@ function isPresidentialPoll(poll) {
     if (!poll.subpopulations.length) return false;
     let responses = poll.subpopulations[0].responses;
 
-    if (responses.find(r => r.choice.toLowerCase().includes("bloomberg"))) return false;
-    if (!responses.find(r => r.choice.toLowerCase().includes("clinton"))) return false;
-    if (!responses.find(r => r.choice.toLowerCase().includes("trump"))) return false;
+    if (!responses.find(r => r.choice.toLowerCase().includes("obama"))) return false;
+    if (!responses.find(r => r.choice.toLowerCase().includes("romney"))) return false;
 
     return true; 
 }
@@ -325,7 +324,7 @@ function log(txt) {
 
 
 if (require.main === module) // called directly as a script
-    async.run(getNewPolls.bind(this, "2016-president", true)); 
+    async.run(getNewPolls.bind(this, "2012-president", true)); 
 else
     module.exports = {
         getNewPolls,
