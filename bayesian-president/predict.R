@@ -64,15 +64,23 @@ turnout = getTurnout(gap, 80)
 cat(paste0("\nTURNOUT:  ", formatC(turnout["US","total"], format="d", big.mark=","), "\n\n"))
 
 # national trends
-nat_dem_p = polls$dem[polls$state == "US"]
-nat_gop_p = polls$gop[polls$state == "US"]
-nat_lib_p = polls$gop[polls$state == "US"]
-nat_w = polls$weight[polls$state == "US"]
-nat_r = polls$recency[polls$state == "US"]
+polls$trend.weight = exp(polls$recency / 14)
+recent = tail(polls, 100)
+nat_dem_p = recent$dem[recent$state == "US"]
+nat_gop_p = recent$gop[recent$state == "US"]
+nat_lib_p = recent$lib[recent$state == "US"]
+nat_w = recent$trend.weight[recent$state == "US"]
+nat_r = recent$recency[recent$state == "US"]
 
 nat.dem.trend = coef(lm(nat_dem_p ~ nat_r, weights = nat_w))[[2]]
 nat.gop.trend = coef(lm(nat_gop_p ~ nat_r, weights = nat_w))[[2]]
 nat.lib.trend = coef(lm(nat_lib_p ~ nat_r, weights = nat_w))[[2]]
+
+
+weight = 0.333
+nat_dem = nat_dem + nat.dem.trend * weight * until.election
+nat_gop = nat_gop + nat.gop.trend * weight * until.election
+nat_lib = nat_lib + nat.lib.trend * weight * until.election
 
 if (opt$verbose) {
     cat(paste0("DEM TREND:  ", round(700*nat.dem.trend, 1), "%\n"))
@@ -90,8 +98,8 @@ averages = ddply(polls, .(state), function(x) {
     gop = weighted.mean(x$gop, x$weight)
     lib = weighted.mean(adjlib, adjlib.w)
 
-    dem.trend = lm(dem ~ recency, data = x, weights = x$weights)
-    gop.trend = lm(gop ~ recency, data = x, weights = x$weights)
+    dem.trend = lm(dem ~ recency, data = x, weights = x$trend.weight)
+    gop.trend = lm(gop ~ recency, data = x, weights = x$trend.weight)
     pred.dem = predict(dem.trend, data.frame(recency = until.election))[[1]]
     pred.gop = predict(gop.trend, data.frame(recency = until.election))[[1]]
 
@@ -103,11 +111,11 @@ averages = ddply(polls, .(state), function(x) {
     gop.nat.shift = (most.recent + until.election) * nat.gop.trend
     lib.nat.shift = (most.recent + until.election) * nat.lib.trend
 
-    weight = 0.25 #1 - exp(most.recent / -14)
+    weight = 0.333
 
-    dem = dem + weight*(dem.state.shift + weight*dem.nat.shift)
-    gop = gop + weight*(gop.state.shift + weight*gop.nat.shift)
-    lib = lib + weight * lib.nat.shift
+    dem = dem + weight*dem.state.shift + weight*dem.nat.shift
+    gop = gop + weight*gop.state.shift + weight*gop.nat.shift
+    lib = lib + weight*2 * lib.nat.shift
 
     return(data.frame(dem=dem, gop=gop, lib=lib))
 })
@@ -141,8 +149,8 @@ row.names(r) = r$state
 
 demVote = sum(r$total[r$state != "US"] * r$dem[r$state != "US"])
 gopVote = sum(r$total[r$state != "US"] * r$gop[r$state != "US"])
-libVote = sum(r$total[r$state != "US"] * r$lib[r$state != "US"])
 
+libVote = sum(r$total[r$state != "US"] * r$lib[r$state != "US"])
 state_dem = demVote / r["US", "total"]
 state_gop = gopVote / r["US", "total"]
 state_lib = libVote / r["US", "total"]
@@ -153,6 +161,8 @@ if (opt$verbose) {
     cat(paste0("NAT. DEM:     ", round(nat_dem*100, 1), "%\n"))
     cat(paste0("STATE GOP:    ", round(state_gop*100, 1), "%\n"))
     cat(paste0("NAT. GOP:     ", round(nat_gop*100, 1), "%\n"))
+    cat("\n")
+    print(data.frame(gap=round(100*(r$dem - r$gop), 1), row.names=r$state))
     cat("\n")
 }
 
