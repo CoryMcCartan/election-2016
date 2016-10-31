@@ -5,8 +5,7 @@
  * © 2016 Cory McCartan
  */
 
-let fetch = require("node-fetch");
-let touch = require("touch");
+let fetch = require("node-fetch"); let touch = require("touch");
 let csv = require("fast-csv");
 const path = require("path");
 let async = require("./async.js");
@@ -146,6 +145,7 @@ function weightPolls(polls, pollsterRatings, averagePollster) {
         let pollsterRating = Math.exp(-pollsters.plusMinus);
 
         let partisanWeight = poll.partisan ? 0.5 : 1.0; // MAGIC NUMBERS
+        let sizeWeight = Math.log(poll.n);
 
         let typeWeight = 0;
         if (poll.type === "likely voters")
@@ -157,7 +157,7 @@ function weightPolls(polls, pollsterRatings, averagePollster) {
         else
             log("Other type: " + poll.type)
 
-        poll.weight = 10 * pollsterRating * partisanWeight * typeWeight; 
+        poll.weight = 10 * pollsterRating * partisanWeight * typeWeight * sizeWeight;  
 
         let bias = pollsters.meanBias;
         let biasAdj = bias - Math.sign(bias) * biasBuffer;

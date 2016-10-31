@@ -1,0 +1,81 @@
+DEM:      49.1%
+GOP:      45.9%
+DEM LIB:  45.3%
+GOP LIB:  40.6%
+DEM LOSS: 3.8%
+GOP LOSS: 5.3%
+
+TURNOUT:  147,139,976
+
+DEM TREND:  0.2%
+GOP TREND:  1%
+LIB TREND:  -0.7%
+UND TREND:  -0.6%
+
+STATE DEM:    49.5%
+NAT. DEM:     49.3%
+STATE GOP:    44.3%
+NAT. GOP:     44.5%
+
+     gap
+AK   3.9
+AL -18.4
+AR -17.8
+AZ  -2.9
+CA  25.1
+CO   0.7
+CT  20.4
+DC  84.0
+DE  22.4
+FL   1.1
+GA  -2.4
+IA  -0.7
+ID -16.4
+IL  12.9
+IN -10.5
+KS -11.3
+KY -20.9
+LA -17.8
+MA  31.0
+MD  34.9
+ME   7.7
+MI   6.7
+MN   8.3
+MO  -4.6
+MS -11.7
+MT -18.3
+NC   2.6
+ND  -8.0
+NE -16.5
+NH   5.2
+NJ  12.7
+NM   6.0
+NV   2.4
+NY  22.7
+OH  -3.0
+OK -36.1
+OR   6.1
+PA   5.2
+SC   0.0
+SD  -6.5
+TN -10.9
+TX  -6.9
+US   3.7
+UT  -5.3
+VA   7.7
+VT  27.4
+WA  13.5
+WI   6.4
+WV -19.3
+WY -38.9
+
+POPULAR VOTE
+DEM:      49.4%
+GOP:      44.4%
+LIB:      4.7%
+OTHER:    1.5%
+
+ELECTORAL COLLEGE
+DEM:      318
+GOP:      212
+

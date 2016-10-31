@@ -34,10 +34,10 @@ nat.polls = polls$state == "US"
 nat.lib.polls = polls$state == "US" & polls$lib != -1
 nat.nolib.polls = polls$state == "US" & polls$lib == -1
 
-nat_dem = weighted.mean(polls$dem[nat.nolib.polls], polls$weight[nat.nolib.polls])
-nat_gop = weighted.mean(polls$gop[nat.nolib.polls], polls$weight[nat.nolib.polls])
-nat_dem_lib = weighted.mean(polls$dem[nat.lib.polls], polls$weight[nat.lib.polls])
-nat_gop_lib = weighted.mean(polls$gop[nat.lib.polls], polls$weight[nat.lib.polls])
+nat_dem = weighted.mean(polls$dem[nat.nolib.polls], polls$weight[nat.nolib.polls]^2)
+nat_gop = weighted.mean(polls$gop[nat.nolib.polls], polls$weight[nat.nolib.polls]^2)
+nat_dem_lib = weighted.mean(polls$dem[nat.lib.polls], polls$weight[nat.lib.polls]^2)
+nat_gop_lib = weighted.mean(polls$gop[nat.lib.polls], polls$weight[nat.lib.polls]^2)
 
 dem_loss = nat_dem_lib - nat_dem
 gop_loss = nat_gop_lib - nat_gop
@@ -71,13 +71,13 @@ nat.und.trend = coef(lm(nat_und_p ~ nat_r, weights = nat_w))[[2]]
 avg.trend = (nat_dem*nat.dem.trend + nat_gop*nat.gop.trend
              + weighted.mean(nat_lib_p, nat_w)*nat.lib.trend
              + weighted.mean(nat_und_p, nat_w)*nat.und.trend)
-nat.dem.trend = nat.dem.trend - 0.5*avg.trend
-nat.gop.trend = nat.gop.trend - 0.5*avg.trend
-nat.lib.trend = nat.lib.trend - 0.5*avg.trend
-nat.und.trend = nat.und.trend - 0.5*avg.trend
+nat.dem.trend = nat.dem.trend - 0.1*avg.trend
+nat.gop.trend = nat.gop.trend - 0.1*avg.trend
+nat.lib.trend = nat.lib.trend - 0.1*avg.trend
+nat.und.trend = nat.und.trend - 0.1*avg.trend
 
 # apply trends
-weight = 0.5
+weight = 0.75
 nat_dem_shift = nat.dem.trend * weight * until.election
 nat_gop_shift = nat.gop.trend * weight * until.election
 nat_lib_shift = nat.lib.trend * weight * until.election
